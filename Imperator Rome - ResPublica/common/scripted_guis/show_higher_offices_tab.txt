@@ -1,0 +1,250 @@
+﻿show_higher_offices_tab = {
+    scope = country
+	ai_is_valid = {
+		always = no
+	}
+    effect = {
+		set_variable = {
+			name = chosen_election_category
+			value = 1
+			days = 365
+		}
+		if = { 
+			limit = { NOT = { has_variable = last_update_higher_offices_ranking } }
+			clear_variable_list = consul_election_lead
+			clear_variable_list = consul_election_candidates
+			clear_variable_list = censor_election_lead
+			clear_variable_list = censor_election_candidates
+			clear_variable_list = praetor_election_lead
+			clear_variable_list = praetor_election_candidates
+			clear_variable_list = princeps_senatus_election_lead
+			clear_variable_list = princeps_senatus_election_candidates
+			clear_variable_list = praefectus_urbanus_election_lead
+			clear_variable_list = praefectus_urbanus_election_candidates
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_character = {
+					limit = { 
+						eligible_for_consulship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_consul_supp > 0
+					}
+					order_by = rp_calc_consul_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = consul_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 24
+				ordered_character = {
+					limit = { 
+						eligible_for_consulship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_consul_supp > 0
+					}
+					order_by = rp_calc_consul_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = consul_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_censorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_censor_supp > 0
+					}
+					order_by = rp_calc_censor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = censor_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 9
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_censorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_censor_supp > 0
+					}
+					order_by = rp_calc_censor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = censor_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_princeps_senatus = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_princeps_senatus_supp > 0
+					}
+					order_by = rp_calc_princeps_senatus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = princeps_senatus_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 9
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_princeps_senatus = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_princeps_senatus_supp > 0
+					}
+					order_by = rp_calc_princeps_senatus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = princeps_senatus_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 6
+				ordered_character = {
+					limit = { 
+						eligible_for_praetorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_praetor_supp > 0
+					}
+					order_by = rp_calc_praetor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = praetor_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 24
+				ordered_character = {
+					limit = { 
+						eligible_for_praetorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_praetor_supp > 0
+					}
+					order_by = rp_calc_praetor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = praetor_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_praefectus_urbanus = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_praefectus_urbanus_supp > 0
+					}
+					order_by = rp_calc_praefectus_urbanus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = praefectus_urbanus_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 9
+				ordered_in_list = {
+					variable = former_consuls_list
+					limit = { 
+						eligible_for_praefectus_urbanus = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_praefectus_urbanus_supp > 0
+					}
+					order_by = rp_calc_praefectus_urbanus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = praefectus_urbanus_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			set_variable = {
+				name = last_update_higher_offices_ranking
+				days = 7
+			}
+		}
+    }
+}

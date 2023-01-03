@@ -1,0 +1,596 @@
+## All time limits have 275 days subtracted from them, as the game starts on 1 October
+assign_former_consuls = {
+	# Marcus Valerius Corvus
+	char:129 = { 
+		set_variable = { name = cursus_honorum value = 3 }
+		set_variable = {
+			name = served_as_consul # 348 BC, 346 BC, 343 BC, 335 BC
+			value = 4
+		}
+		set_variable = {
+			name = served_as_dictator # 342 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+	} 
+	
+	# Quintus Publilius Philo
+	char:612 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 339 BC, 327 BC, 320 BC, 315 BC
+			value = 4
+		}
+		set_variable = {
+			name = served_as_dictator # 339 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 335 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_censor # 332 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+	} 
+		
+	# Gaius Sulpicius Longus
+	char:610 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 337 BC, 323 BC, 314 BC
+			value = 3
+		}
+		set_variable = {
+			name = served_as_dictator # 312 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+	} 
+	
+	# Publius Aelius Paetus
+	char:631 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 337 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 321 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	# Lucius Plautius Venox 
+	char:615 = {
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 330 BC, 318 BC
+			value = 2
+		}
+		add_character_experience = past_consulate_experience		
+	}
+	# Gaius Plautius Decianus
+	char:619 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 329 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	# Publius Cornelius Scipio Barbatus 
+	char:305 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 328 BC 
+			value = 1
+		}
+		set_variable = {
+			name = served_as_dictator # 306 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	
+	# Lucius Cornelius Lentulus
+	char:667 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 327 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+		
+	# Lucius Papirius Cursor
+	char:256 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 326 BC, 320 BC, 319 BC, 315 BC, 313 BC
+			value = 5
+		}
+		set_variable = {
+			name = served_as_dictator # 325 BC, 310 BC
+			value = 2
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 340 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 93 # 1 year
+		}
+	}
+	
+	# Gaius Poetelius Libo Visolus
+	char:628 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 326 BC (unless it was his old-ass father)
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	
+	# Decimus Junius Brutus Scaeva
+	char:617 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 325 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+
+	# Quintus Fabius Maximus Rullianus 
+	char:302 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 322 BC, 310 BC, 308 BC
+			value = 3
+		}
+		set_variable = {
+			name = served_as_dictator # 315 BC, 313 BC
+			value = 2
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 325 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_censor # 304 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 1918 # 6 years
+		}
+	}
+	
+	# Lucius Fulvius Curvus
+	char:713 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 322 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	
+	# Marcus Foslius Flaccinator
+	char:614 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 318 BC 
+			value = 1
+		}	
+		set_variable = {
+			name = served_as_magister_equitum # 320 BC, 314 BC 
+			value = 2
+		}
+		add_character_experience = past_consulate_experience	
+	}								
+	
+	# Quintus Aemilius Barbula
+	char:708 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 317 BC, 311 BC
+			value = 2
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 823 # 3 years
+		}
+	}	
+	
+	# Gaius Junius Bubulcus Brutus 
+	char:298 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 317 BC, 313 BC, 311 BC
+			value = 3
+		}
+		set_variable = {
+			name = served_as_censor # 307 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 823 # 3 years
+		}
+	}
+	
+	# Spurius Nautius Rutilus 
+	char:613 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 316 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	
+	# Marcus Popilius Laenas
+	char:620 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 316 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}
+	
+	# Marcus Poetelius Libo 
+	char:611 = { 
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 314 BC 
+			value = 1
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 313 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+	}		
+	
+	# Publius Decius Mus 
+	char:284 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 312 BC, 308 BC
+			value = 2
+		}
+		set_variable = {
+			name = served_as_magister_equitum # 306 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_censor # 304 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 1918 # 6 years
+		}
+	}
+	
+	# Marcus Valerius Maximus Corvinus
+	char:608 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 312 BC
+			value = 1
+		}
+		set_variable = {
+			name = served_as_censor # 307 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 458 # 2 years
+		}
+	}		
+	
+	# Gaius Marcius Rutilus Censorinus
+	char:609 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 310 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 1188 # 4 years
+		}
+	}
+			
+	# Appius Claudius Caecus
+	char:313 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 307 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 2283 # 7 years
+		}
+	}
+	
+	# Lucius Volumnius Flamma Violens
+	char:321 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 307 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 2283 # 7 years
+		}
+	}
+		
+	# Publius Cornelius Arvina
+	char:297 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 306 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 2648 # 8 years
+		}
+	}
+	
+	# Quintus Marcius Tremulus
+	char:132 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 306 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 2648 # 8 years
+		}
+	}
+
+	# Lucius Postiumius Megellus
+	char:286 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 305 BC 
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 3013 # 9 years
+		}
+	}
+	
+	# Marcus Fulvius Paetinus
+	char:133 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 305 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 3013 # 9 years
+		}
+	}
+
+	# Publius Sempronius Sophus
+	char:310 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 304 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 3378 # 10 years
+		}
+	}
+	
+	# Publius Sulpicius Saverrio 
+	char:301 = {  
+		set_variable = { name = cursus_honorum value = 3 }	
+		set_variable = {
+			name = served_as_consul # 304 BC
+			value = 1
+		}
+		add_character_experience = past_consulate_experience	
+		set_variable = {
+			name = recently_elected_consul
+			days = 3378 # 10 years
+		}
+	}
+}
+assign_former_praetors = {
+	# Most of these are my conjectiures because i assume that Romans wouldn't give office of Dictator or Magister Equitum to someone who hasn't even been a Praetor. Altough we have cases where they did (i.e. Mark Antony)
+	# Or at least that this office jumpstarted their career to become Praetors
+	# Sadly, we have little to no information about Praetors in that period. It's much better in late republic.
+	
+	# Dictators and Magister Equitums, so maybe possible
+	char:312 = { # Gaius Claudius Crassus Inregillensis, Dictator in 337 BC
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_dictator # 337 BC
+			value = 1
+		}	
+	}
+	char:663 = { # Marcus Aemilius Papus, Dictator in 321 BC
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_dictator # 321 BC
+			value = 1
+		}		
+	}
+	char:642 = { # Lucius Valerius Flaccus, Magister Equitum in 321 BC
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_magister_equitum # 321 BC
+			value = 1
+		}		
+	}
+	char:630 = { # Quintus Fabius Ambustus, Dictator in 321 BC but immediately resigned
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_dictator # 321 BC
+			value = 1
+		}		
+	}
+	char:629 = { # Gaius Fabius Ambustus, Magister Equitum in 315 BC
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_magister_equitum # 315 BC
+			value = 1
+		}		
+	}
+	char:751 = { # Marcus Titinius, Magister Equitum in 302 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	
+	# Semi-Confirmed (Livy)
+	char:627 = { # Gaius Claudius Hortator, Magister Equitum in 337 BC, considered as possible Praetor or Propraetor in 310 BC in Livy
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_magister_equitum # 337 BC
+			value = 1
+		}		
+	}
+	char:626 = { # Marcus Fabius Ambustus, Magister Equitum in 322 BC, considered as possible Praetor or Propraetor in 310 BC in Livy
+		set_variable = { name = cursus_honorum value = 2 }	
+		set_variable = {
+			name = served_as_magister_equitum # 322 BC
+			value = 1
+		}			
+	}
+	char:624 = { # Kaeso Fabius, considered as possible Praetor or Propraetor in 310 BC in Livy
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	
+	# Pretty confirmed
+	char:632 = { # Lucius Furius, Praetor in 318 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	char:718 = { # Servius Cornelius Lentulus, Consul in 303 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	char:635 = { # Lucius Genucius Aventinensis, Consul in 303 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	char:353 = { # Marcus Aemilius Paullus, Consul in 302 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	char:643 = { # Marcus Livius Denter, Consul in 302 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+	char:131 = { # Quintus Appuleius Pansa, Consul in 300 BC
+		set_variable = { name = cursus_honorum value = 2 }		
+	}
+}
+
+assign_former_senators = {
+	
+	# Confirmed
+	char:639 = { # Marcus Flavius, Plebeian Tribune in 327 BC and 323 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:639 = { # Marcus Antistius, Plebeian Tribune in 319 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:638 = { # Ovinius, Plebeian Tribune in 313 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:633 = { # Lucius Cominius, Plebeian Tribune in 312 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:636 = { # Lucius Atilius, Plebeian Tribune in 311 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:637 = { # Marcus Decius, Plebeian Tribune in 311 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:622 = { # Lucius Furius, Plebeian Tribune in 308 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:623 = { # Juventius, Aedile in 305 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:659 = { # Gnaeus Domitius Calvinus Maximus, Consul in 291 BC, candidate for Aedile in 304 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	
+	# Future magistrates
+	char:133 = { # Marcus Fulvius Paetinus, Consul in 299 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:764 = { # Titus Manlius Torquatus, Consul in 299 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:127 = { # Lucius Cornelius Scipio Barbatus, Consul in 298 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:645 = { # Gnaeus Fulvius Maximus Centumalus, Consul in 298 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:603 = { # Marcus Atilius Regulus, Consul in 294 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:300 = { # Lucius Papirius Cursor, Consul in 293 BC and 272 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:646 = { # Spurius Carvilius Maximus, Consul in 293 BC and 272 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:647 = { # Decimus Junius Brutus Scaeva, Consul in 292 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:654 = { # Marcus Claudius Marcellus, Consul in 287 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+	char:655 = { # Gaius Aelius Paetus, Consul in 286 BC
+		set_variable = { name = cursus_honorum value = 1 }
+	}	
+}

@@ -1,0 +1,269 @@
+﻿# Values for amount of elected offices
+number_of_elected_legates_svalue = {
+	value = 0 
+	every_governorships = {
+		limit = {
+			NOT = { # Italy should be handpicked by player
+				any_governorship_state = {
+					is_capital_state = yes
+				}
+			}
+			legion = {
+				any_legion_unit = {
+					unit_size >= 1
+				}
+			}
+		}
+		add = 4
+	}
+}
+number_of_elected_questors_svalue = {
+	value = 4 # 2 Consular Questors, 2 Urban Questors
+	if = { 
+		limit = { 
+			has_law = magistrate_law_sicily
+		}
+		add = 4 # Conquest of Sicily brought amount of Urban Questors to 4 and created two more for province governors of Sicilia and Sardinia et Corsica 
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_provincial   
+		}
+		every_governorships = {
+			limit = { NOT = { any_governorship_state = { is_capital_state = yes } } }
+			add = 1 # Later each province seemed to bring one more Questor
+		}
+		add = 2
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_sulla 
+		}
+		add = 16 # Sullan constitution set amount of Questors at 20
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_ceasar 
+		}
+		add = 16 # Allegiadely Ceasar has expanded amount of Questors up to 40 [Citation Needed]
+	}
+}
+number_of_elected_aediles_svalue = {
+	value = 4
+}
+number_of_elected_tribunes_svalue = {
+	value = 10
+}
+number_of_elected_praetors_svalue = {
+	value = 2 # Praetor Urbanus and Praetor Peregrinus
+	if = { 
+		limit = { 
+			has_law = magistrate_law_sicily
+		}
+		add = 2 # Conquest of Sicily brought two new Praetors to handle trials involving provincials from Sicily and Sardinia et Corsica
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_provincial   
+		}
+		add = 4 # Two more Praetors were added after conquest of Spain
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_sulla 
+		}
+		add = 6 # Sullan constitution set amount of Praetors at 8
+	}
+	if = { 
+		limit = { 
+			has_law = magistrate_law_ceasar 
+		}
+		add = 8 # Ceasar has expanded amount of Praetors up to 10 
+	}
+}
+number_of_elected_pontiffs_svalue = {
+	value = 4 # Pontifex Maximus is counted separately to not clutter UI too much
+	if = { 
+		limit = { 
+			OR = { # Lex Ogulnia allowed plebeians to apply for these offices and created 4 extra slots
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		add = 4
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_law = magistrate_law_sulla 
+				has_law = magistrate_law_ceasar 
+			}
+		}
+		add = 6 # Sullan constitution set amount of Pontiffs at 15
+	}
+}
+number_of_elected_augurs_svalue = {
+	value = 5
+	if = { 
+		limit = { 
+			OR = { # Lex Ogulnia allowed plebeians to apply for these offices and created 4 extra slots
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		add = 4
+	}
+	if = { 
+		limit = { 
+			OR = {
+				has_law = magistrate_law_sulla 
+				has_law = magistrate_law_ceasar 
+			}
+		}
+		add = 6 # Sullan constitution set amount of Pontiffs at 15
+	}
+}
+number_of_elected_vestal_virgins_svalue = {
+	# During the reign of Numa there were only two and then number was increased to 4 and then to 6, but i think it happened before starting date of Imperator
+	value = 5 # Vestalis Maxima is counted separately like Pontifex Maximus is
+}
+number_of_elected_governors_svalue = {
+	value = 0
+	every_governorships = { # Governors
+		limit = {
+			NOT = { # Italy should be handpicked by player
+				any_governorship_state = {
+					is_capital_state = yes
+				}
+			}
+		}
+		add = 1
+	}
+}
+number_of_elected_consuls_svalue = {
+	value = 2
+}
+number_of_elected_censors_svalue = {
+	value = 2
+}
+number_of_elected_princeps_senatus_svalue = {
+	value = 1
+}
+number_of_elected_praefectus_urbanus_svalue = {
+	value = 1
+}
+number_of_elected_vestalis_maxima_svalue = {
+	value = 1
+}
+number_of_elected_pontifex_maximus_svalue = {
+	value = 1
+}
+
+
+### Patrician Families Limit
+number_of_patrician_families = {
+	value = 15
+}
+
+### Creating New Senator
+new_senator_age_range = {
+	integer_range = {
+		min = 30
+		max = 60
+	}
+}
+new_vestal_age_range = {
+	integer_range = {
+		min = 10
+		max = 50
+	}
+}
+new_woman_age_range = {
+	integer_range = {
+		min = 16
+		max = 25
+	}
+}
+calc_initial_vestal_term = {
+	value = 0
+	add = 40
+	subtract = THIS.age
+	multiply = 365
+	subtract = 1
+	min = 364 # 1 year
+	max = 10949 # 30 years
+}
+new_senator_loyalty_range = {
+	integer_range = {
+		min = -100
+		max = 0
+	}
+}
+new_senator_corruption_range = {
+	integer_range = {
+		min = 0
+		max = 100
+	}
+}
+
+
+past_consulate_experience = {
+	value = 20
+}
+calc_strip_of_office_tyranny = {
+	value = 0 
+	# Why this abnoxious IFology - because i need to be ready for special cases of one char having two offices at once
+	# Why variable lists instead of vars - because i need to wean of these vars. I would do it already if cus-locs allowed using them, but i'll find a way, no worries
+	if = {
+		limit = { is_target_in_variable_list = { name = princeps_senatus_list target = scope:target } }
+		add = 5
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = censors_list target = scope:target } }
+		add = 10
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = praefectus_urbanus_list target = scope:target } }
+		add = 5
+	}
+	if = {
+		limit = { 
+			OR = { 
+				is_target_in_variable_list = { name = consuls_list target = scope:target } 
+				is_co_ruler = yes # Consul Suffectus
+			}
+		}
+		add = 20
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = praetors_list target = scope:target } }
+		add = 10
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = aediles_list target = scope:target } }
+		add = 5
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = tribune_of_the_plebs_list target = scope:target } }
+		add = 20
+	}
+	if = {
+		limit = { is_target_in_variable_list = { name = questor_list target = scope:target } }
+		add = 5
+	}
+	if = { # Princeps Civitatis is less restrictive than Dictatorship
+		limit = { has_law = princeps_civitatis }
+		divide = 2
+	}
+	else_if = { # Senatus Consultum is more restrictive than Dictatorship
+		limit = { has_law = senatus_consultum_ultimum }
+		multiply = 2
+	}
+}
+calc_strip_of_office_popularity = {
+	value = scope:target.popularity
+	multiply = -1
+	divide = 2
+}

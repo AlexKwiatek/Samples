@@ -1,0 +1,487 @@
+res_publica_calc_support_skill_martial = { # No Limit
+	value = 0
+	add = THIS.martial
+}
+res_publica_calc_support_skill_zeal = { # No Limit
+	value = 0
+	add = THIS.zeal
+}
+res_publica_calc_support_skill_charisma = { # No Limit
+	value = 0
+	add = THIS.charisma
+}
+res_publica_calc_support_skill_finesse = { # No Limit
+	value = 0
+	add = THIS.finesse
+}
+res_publica_calc_support_popularity = { #1-10 of your own popularity, 1-10 of your party leaders and no limit of friend bonus/rival penalty
+	value = 0
+	# # Add popularity of party leader multiplied by % of character's Party Conviction
+	character_party = {	
+		party_leader = {
+			add = THIS.popularity
+		}
+	}
+	if = {
+		limit = { is_party_leader = no } # Party leaders basically get their own popularity doubled
+		multiply = THIS.current_party_conviction 
+		divide = 100
+	}	
+	# Add popularity of Character himself
+	add = THIS.popularity
+	# Add popularity of friends and remove popularity of rivals
+	# every_friend = { # Add popularity of friends
+		# limit = { employer = ROOT.employer }
+		# add = THIS.popularity
+	# }
+	# every_rival = { # Remove popularity of rivals
+		# limit = { employer = ROOT.employer }
+		# subtract = THIS.popularity
+	# }
+	divide = 5
+}
+res_publica_calc_support_loyal_army = { # 1-10, strongarming your way into political power 
+	value = 0
+	add = THIS.num_loyal_cohorts 
+	divide = 5
+	max = 20
+}
+# Consider replacing Prominence with some other trait as it really isn't what i tought it is
+res_publica_calc_support_prominence = { # 1-10
+	value = 0
+	add = THIS.prominence 
+	divide = 10
+}
+res_publica_calc_support_statesmanship = { # 1-10
+	value = 0
+	add = THIS.character_experience
+	divide = 10
+}
+res_publica_calc_support_wealth = { # 1-10
+	value = 0
+	add = THIS.wealth
+	divide = 100
+	max = 10
+}
+res_publica_calc_support_family = { # 1-10
+	value = 0
+	if = {
+		limit = { is_minor_character = no }
+		add = THIS.family.prestige
+	}
+	divide = 100
+	max = 10
+}
+res_publica_calc_support_pos_loyalty = { # 0-10
+	value = 0
+	add = THIS.loyalty
+	divide = 10
+}
+res_publica_calc_support_neg_loyalty = { # 0-10
+	value = 100
+	subtract = THIS.loyalty
+	divide = 10
+}
+res_publica_calc_support_neg_corruption = { # 0-10
+	value = 100
+	subtract = THIS.corruption
+	divide = 10
+}
+res_publica_calc_support_age = { # 1-10
+	value = 0
+	add = THIS.age
+	divide = 10
+}
+res_publica_calc_support_owned_land = {
+	value = 0 
+	add = THIS.num_holdings_owned 
+	max = 10
+}
+res_publica_calc_governor_quality = {
+	value = 0
+	if = {
+		limit = { has_variable = consular_province } # Character have just been a consul 
+		add = 50
+	}
+	if = {
+		limit = { has_variable = praetorian_province } # Character have just been a praetor 
+		add = 30
+	}
+	if = {
+		limit = { var:cursus_honorum >= 3 } # Character used to be a consul
+		add = 10
+	}
+	add = THIS.finesse
+	add = THIS.martial
+}
+
+## General Rules:
+# All assemblies have Popularity and Loyal Army as their factors
+# No need to add Charisma as a factor, because it's already included in Popularity factor
+# Each office factors it's attribute, except Questor and Consul which factor all of attributes
+# Higher Offices (Praetor, Consul, Censor, Princeps Senatus and Pontifex Maximus) factor statecraft, lower do not
+rp_calc_assembly_of_centuries_supp = {
+	value = 0
+	add = res_publica_calc_support_family
+	# Assembly
+	add = res_publica_calc_support_popularity
+	add = res_publica_calc_support_loyal_army
+}
+rp_calc_tribal_assembly_supp = {
+	value = 0
+	add = res_publica_calc_support_wealth
+	add = res_publica_calc_support_owned_land
+	# Assembly
+	add = res_publica_calc_support_popularity
+	add = res_publica_calc_support_loyal_army
+}
+rp_calc_plebeian_assembly_supp = {
+	value = 0
+	add = res_publica_calc_support_neg_loyalty
+	# Assembly
+	add = res_publica_calc_support_popularity
+	add = res_publica_calc_support_loyal_army
+}
+rp_calc_senatorial_endorsement_supp = {
+	value = 0
+	add = res_publica_calc_support_family
+	add = res_publica_calc_support_age
+}
+rp_calc_priestly_endorsement_supp = {
+	value = 0
+	add = res_publica_calc_support_family
+}
+rp_calc_traits_bonus = {
+	value = 0
+	add = res_publica_calc_support_skill_charisma
+	add = res_publica_calc_support_skill_finesse
+	add = res_publica_calc_support_skill_martial
+	add = res_publica_calc_support_skill_zeal
+}
+rp_calc_experience_bonus = {
+	value = 0
+	add = res_publica_calc_support_statesmanship
+}
+
+# Assembly of Centuries - Censors, Consuls, Praetors
+rp_calc_censor_supp = {
+	value = 0
+	add = rp_calc_assembly_of_centuries_supp
+	add = res_publica_calc_support_skill_charisma
+	add = rp_calc_experience_bonus # Higher Office
+}
+rp_calc_consul_supp = {
+	value = 0
+	add = rp_calc_assembly_of_centuries_supp
+	add = rp_calc_traits_bonus
+	add = rp_calc_experience_bonus # Higher Office
+}
+rp_calc_praetor_supp = {
+	value = 0
+	add = rp_calc_assembly_of_centuries_supp
+	add = res_publica_calc_support_skill_martial
+	add = rp_calc_experience_bonus # Higher Office
+}
+
+# Tribal Assembly - Aediles, Questors
+rp_calc_aedile_supp = {
+	value = 0
+	add = rp_calc_tribal_assembly_supp
+	add = res_publica_calc_support_skill_finesse
+}
+rp_calc_questor_supp = {
+	value = 0
+	add = rp_calc_tribal_assembly_supp
+	add = rp_calc_traits_bonus
+}
+
+# Plebeian Assembly - Plebeian Tribunes
+rp_calc_plebeian_tribune_supp = {
+	value = 0
+	add = rp_calc_plebeian_assembly_supp
+	add = res_publica_calc_support_skill_charisma
+	if = {
+		limit = { has_variable = recently_elected_tribune }
+		subtract = 20
+	}
+}
+
+# Senatorial Endorsement - Princeps Senatus, Praefectus Urbanus
+rp_calc_princeps_senatus_supp = {
+	value = 0
+	add = rp_calc_senatorial_endorsement_supp
+	add = res_publica_calc_support_skill_charisma
+	add = rp_calc_experience_bonus # Higher Office
+}
+# What's the deal - Princeps Senatus is chosen basically at the same moment as Censors so it doesn't make sense to show players that their opinion influences it
+# By the time Princeps Senatus is decided there would be new Censors in office
+rp_calc_princeps_senatus_supp_real = { 
+	value = rp_calc_princeps_senatus_supp
+	every_friend = { # One of Censors is their friend
+		limit = { var:cursus_honorum_active_office = 6 }
+		add = 10
+	}
+	every_rival = { # One of Censors is their friend
+		limit = { var:cursus_honorum_active_office = 6 }
+		subtract = 10
+	}
+	employer = { # Censors have final say
+		every_in_list = {
+			variable = censors_list
+			if = {	
+				limit = { is_same_party_as = ROOT }
+				add = 5
+				if = { # Extra bonus for Party Leader
+					limit = { ROOT = { is_party_leader = yes } }
+					add = 5
+				}
+			}
+			if = {
+				limit = { has_same_family = ROOT }
+				add = 5
+			}
+		}
+	}
+}
+rp_calc_praefectus_urbanus_supp = {
+	value = 0
+	add = rp_calc_senatorial_endorsement_supp
+	add = res_publica_calc_support_skill_martial
+	add = rp_calc_experience_bonus # Higher Office
+}
+rp_calc_praefectus_urbanus_supp_real = { 
+	value = rp_calc_praefectus_urbanus_supp
+	every_friend = { # One of Consuls is their friend
+		limit = { var:cursus_honorum_active_office = 5 }
+		add = 10
+	}
+	every_rival = { # One of Censors is their friend
+		limit = { var:cursus_honorum_active_office = 5 }
+		subtract = 10
+	}
+	employer = { # Censors have final say
+		every_in_list = {
+			variable = consuls_list
+			if = {	
+				limit = { is_same_party_as = ROOT }
+				add = 5
+				if = { # Extra bonus for Party Leader
+					limit = { ROOT = { is_party_leader = yes } }
+					add = 5
+				}
+			}
+			if = {
+				limit = { has_same_family = ROOT }
+				add = 5
+			}
+		}
+	}
+}
+
+# Priestly Endorsement - Augurs, Pontiffs and Pontifex Maximus
+rp_calc_priestly_endorsement_augur_variant = {
+	value = rp_calc_priestly_endorsement_supp
+	every_friend = { # Has friend in College of Augurs
+		limit = { var:cursus_honorum_religious_office = 2 }
+		add = 10
+	}
+	every_rival = {
+		limit = { var:cursus_honorum_religious_office = 2 }
+		subtract = 10
+	}
+	employer = { # Party supporters in College of Augurs
+		every_in_list = {
+			variable = augurs_list
+			if = {
+				limit = { is_same_party_as = ROOT }
+				add = 5
+			}
+			if = {
+				limit = { has_same_family = ROOT }
+				add = 5
+			}
+		}
+	}
+}
+rp_calc_priestly_endorsement_pontiff_variant = {
+	value = rp_calc_priestly_endorsement_supp
+	every_friend = { # Has friend in College of Pontiffs
+		limit = { var:cursus_honorum_religious_office = 3 }
+		add = 10
+	}
+	every_rival = {
+		limit = { var:cursus_honorum_religious_office = 3 }
+		subtract = 10		
+	}
+	employer = { # Party supporters in College of Pontiffs
+		every_in_list = {
+			variable = pontiffs_list
+			if = {
+				limit = { is_same_party_as = ROOT }
+				add = 5
+			}
+			if = {
+				limit = { has_same_family = ROOT }
+				add = 5
+			}
+		}
+	}
+}
+rp_calc_priestly_endorsement_vestal_variant = {
+	value = rp_calc_priestly_endorsement_supp
+	every_friend = { # Pontifex Maximus is their friend
+		limit = { var:cursus_honorum_religious_office = 5 }
+		add = 10
+	}
+	every_rival = { # Pontifex Maximus is their friend
+		limit = { var:cursus_honorum_religious_office = 5 }
+		subtract = 10
+	}
+	employer = { # Pontifex Maximus have final say
+		every_in_list = {
+			variable = pontifex_maximus_list
+			if = {	
+				limit = { is_same_party_as = ROOT.father }
+				add = 5
+				if = { # Extra bonus for Party Leader
+					limit = { ROOT = { father = { is_party_leader = yes } } }
+					add = 5
+				}
+			}
+			if = {
+				limit = { has_same_family = ROOT }
+				add = 5
+			}
+		}
+	}
+}
+
+### Note for testing: any change in this file during debug_mode will result in engine ignoring has_law checks until restart of a game
+# I considered replacing this with Var but it is rather pointless as for end user it will be working fine
+rp_calc_augur_supp = {
+	value = 0
+	if = { 
+		limit = { employer = { has_law = lex_domitia_de_sacerdotiis } }
+		add = rp_calc_tribal_assembly_supp
+	}
+	else = {
+		add = rp_calc_priestly_endorsement_augur_variant
+	}
+	add = res_publica_calc_support_skill_zeal
+}
+rp_calc_pontiff_supp = {
+	value = 0
+	if = { 
+		limit = { employer = { has_law = lex_domitia_de_sacerdotiis } }
+		add = rp_calc_tribal_assembly_supp
+	}
+	else = {
+		add = rp_calc_priestly_endorsement_pontiff_variant
+	}
+	add = res_publica_calc_support_skill_zeal
+}
+rp_calc_vestal_virgin_supp = {
+	value = 0
+	add = rp_calc_priestly_endorsement_vestal_variant
+	add = res_publica_calc_support_skill_zeal
+}
+rp_calc_pontifex_maximus_supp = {
+	value = 0
+	if = { 
+		limit = { employer = { has_law = lex_domitia_de_sacerdotiis } }
+		add = rp_calc_tribal_assembly_supp
+	}
+	else = {
+		add = rp_calc_priestly_endorsement_pontiff_variant
+	}
+	add = res_publica_calc_support_age
+	add = res_publica_calc_support_skill_zeal
+	add = rp_calc_experience_bonus # Higher Office
+}
+rp_calc_vestalis_maxima_supp = {
+	value = 0
+	add = res_publica_calc_support_age
+	add = res_publica_calc_support_skill_zeal
+	add = rp_calc_experience_bonus # Higher Office
+}
+
+
+###
+# Total Score
+###
+rp_succession_support_total = {
+	value = 0
+	add = rp_calc_assembly_of_centuries_supp
+	add = rp_calc_experience_bonus
+	add = rp_calc_traits_bonus
+	# add = res_publica_calc_support_family
+	# add = res_publica_calc_support_prominence
+	# add = res_publica_calc_support_popularity
+	# add = res_publica_calc_support_wealth
+	# add = res_publica_calc_support_age
+	# add = res_publica_calc_support_neg_loyalty
+	# add = rp_calc_experience_bonus
+	# add = rp_calc_traits_bonus
+}
+
+### Calc Legate Quality
+res_publica_calc_legate_skill = { #1-10?
+	value = 1
+	add = THIS.martial
+	add = res_publica_calc_support_pos_loyalty 
+}
+### Calc Imperium Quality
+res_publica_calc_imperium_quality = {
+	value = THIS.martial
+	if = { # Dictator
+		limit = { var:cursus_honorum_extraordinary_office = 3 }
+		add = 200
+	}
+	if = { # Magister Equitum
+		limit = { var:cursus_honorum_extraordinary_office = 2 }
+		add = 150
+	}
+	if = { # Consul
+		limit = { var:cursus_honorum_active_office = 5 }
+		add = 100
+	}
+	if = { # Proconsul
+		limit = { var:cursus_honorum = 3 }
+		add = 30
+	}
+	if = { # Praetor
+		limit = { var:cursus_honorum_active_office = 4 }
+		add = 10
+	}
+	min = 1
+	if = {
+		limit = { NOT = { var:cursus_honorum >= 2 } }
+		multiply = 0
+	}
+}
+res_publica_calc_legatus_quality = {
+	value = THIS.martial
+	if = { # Consul, Praetor, Proconsul, Propraetor - they shouldn't be used unless there are no able legate candidates
+		limit = { 
+			OR = {
+				is_ruler = yes 
+				is_co_ruler = yes
+				var:cursus_honorum >= 2
+			}
+		}
+		multiply = 0.1
+	}
+	min = 1
+	if = {
+		limit = { NOT = { var:cursus_honorum >= 1 } }
+		multiply = 0
+	}	
+}
+res_publica_calc_dignitas = {
+	value = 0
+	add = var:served_as_consul
+	add = var:served_as_censor
+	add = var:served_as_princeps_senatus
+	add = var:served_as_dictator
+	add = var:served_as_magister_equitum
+}

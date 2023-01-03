@@ -1,0 +1,1435 @@
+# HERE WILL BE HISTORICAL CHARGEN SCRIPT
+
+questorize_effect = {
+	set_variable = {
+		name = cursus_honorum
+		value = 1 # Questor 
+	}
+	add_trait = questor	
+	set_variable = { 
+		name = cursus_honorum_active_office 
+		value = 1 # Questor
+		days = 364
+	}	
+}
+
+### FIRST PUNIC WAR BATCH 
+##############################
+
+
+generate_historical_characters = {
+	if = {
+		limit = {
+			NOT = { has_variable = chargen_lastcheckedchar }
+		}
+		set_variable = {
+			name = chargen_lastcheckedchar
+			value = 0
+		}
+	}
+	
+	### FIRST PUNIC WAR
+	##############################
+	
+	### SECOND PUNIC WAR
+	##############################
+	
+	### Year 239 BC batch - Marcus Atilius Regulus (c.217); Publius Cornelius Scipio FATHER (c.218)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5150
+			#current_date >= 515.1.1 # 239 BC
+		}
+		create_character = { # Marcus Minucius Rufus
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Marcus"
+			family_name = "Atilii"
+			add_nickname = NICKNAME_REGULUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 
+			add_trait = submissive	 
+			add_trait = reckless
+			# Military
+			add_trait = tactically_inflexible 
+
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5150
+		}
+	}	
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5151
+			#current_date >= 515.1.1 # 239 BC
+		}
+		create_character = { # Publius Cornelius Scipio
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Publius"
+			family_name = "Cornelii"
+			add_nickname = NICKNAME_SCIPIO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 
+			add_trait = prominent
+			# Military
+			add_trait = tactically_inflexible
+			
+			set_family = c:ROM.fam:Cornelii 
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5151
+		}
+	}
+	### Year 237 BC batch - THE Fabius Maximus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5170
+			#current_date >= 517.1.1 # 237 BC
+		}
+		create_character = { # Quintus Fabius Maximus Verrucosus AKA: Cunctator
+			culture = roman
+			religion = roman_pantheon
+			age = 43
+			first_name = "Quintus"
+			family_name = "Fabii"
+			add_nickname = NICKNAME_MAXIMUS_VERRUCOSUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 10
+			add_finesse = 10
+			# Personality 
+			add_trait = secure 			
+			add_trait = stubborn 
+			add_trait = assertive 
+			add_trait = cautious 
+			add_trait = intelligent  
+			# Military
+			add_trait = tactician 
+			add_trait = original_thinker   
+			
+			set_family = c:ROM.fam:Fabii
+			
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5170
+		}
+	}
+	### Year 234 BC batch - Marcus Minucius Rufus, THE Magister Equitum; Gnaeus Servilius Geminus (c.217)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5200
+			#current_date >= 520.1.1 # 234 BC
+		}
+		create_character = { # Marcus Minucius Rufus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Minucii"
+			add_nickname = NICKNAME_RUFUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 
+			add_trait = assertive	
+			add_trait = stubborn  
+			add_trait = reckless
+			# Military
+			add_trait = brave  
+			add_trait = confident    
+
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5200
+		}
+	}
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5201
+			#current_date >= 520.1.1 # 234 BC
+		}
+		create_character = { # Marcus Minucius Rufus
+			culture = roman
+			religion = roman_pantheon
+			age = 33
+			first_name = "Gnaeus"
+			family_name = "Servilii"
+			add_nickname = NICKNAME_GEMINUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 
+			add_trait = submissive	
+			add_trait = cautious
+			# Military
+			add_trait = confident    
+			
+			set_family = c:ROM.fam:Servilii 
+
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5201
+		}
+	}
+	### Year 233 BC batch - Gaius Flaminius, TRASIMENE (c.217)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5210
+			#current_date >= 521.1.1 # 233 BC
+		}
+		create_character = { # Quintus Fabius Maximus Verrucosus AKA: Cunctator
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Gaius"
+			family_name = "Flaminii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 
+			add_trait = harsh		
+			add_trait = stubborn 
+			add_trait = cruel 
+			add_trait = reckless
+			# Military
+			add_trait = aggressive  
+			add_trait = confident    
+
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5210
+		}
+	}
+	### Year 230 BC batch - Lucius Aemilius Paullus, CANNAE (c.216)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5240
+			#current_date >= 524.1.1 # 230 BC
+		}
+		create_character = { # Lucius Aemilius Paullus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Lucius"
+			family_name = "Aemilii"
+			add_nickname = NICKNAME_PAULLUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 			
+			add_trait = submissive  
+			add_trait = cautious 
+			# Military
+			add_trait = tactically_inflexible  
+			
+			questorize_effect = yes 
+			
+			set_family = c:ROM.fam:Aemilii
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5240
+		}
+	}
+	### Year 229 BC batch - Tiberius Sempronius Longus, TREBIA (c.218)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5250
+			#current_date >= 525.1.1 # 229 BC
+		}
+		create_character = { # Tiberius Sempronius Longus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Tiberius"
+			family_name = "Sempronii"
+			add_nickname = NICKNAME_LONGUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality 			
+			add_trait = submissive  
+			add_trait = cautious 
+			# Military
+			add_trait = tactically_inflexible  
+			
+			questorize_effect = yes
+			
+			set_family = c:ROM.fam:Sempronii			
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5250
+		}
+	}	
+	### Year 222 BC batch - Gaius Terentius Varro, CANNAE (c.216)
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5320
+			#current_date >= 532.1.1 # 222 BC
+		}
+		create_character = { # Gaius Terentius Varro
+			culture = roman
+			religion = roman_pantheon
+			age = 36
+			first_name = "Gaius"
+			family_name = "Terentii"
+			add_nickname = NICKNAME_VARRO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = -5
+			add_charisma = 5
+			# Personality 
+			add_trait = ambitious 			
+			add_trait = stubborn 
+			add_trait = jealous 
+			add_trait = reckless
+			add_trait = prominent 
+			# Military
+			add_trait = coward  
+			add_trait = tactically_inflexible    
+			
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5320
+		}
+	}
+	### Year 213 BC batch - THE Scipio Africanus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5410
+			#current_date >= 541.1.1 # 213 BC
+		}
+		create_character = { # Publius Cornelius Scipio
+			culture = roman
+			religion = roman_pantheon
+			age = 23
+			first_name = "Publius"
+			family_name = "Cornelii"
+			add_nickname = NICKNAME_SCIPIO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 15
+			add_charisma = 5
+			# Personality 
+			add_trait = prominent			
+			add_trait = ambitious
+			add_trait = just
+			add_trait = energetic 
+			add_trait = intelligent  
+			# Military
+			add_trait = tactician 
+			add_trait = confident  
+			add_trait = original_thinker   
+			
+			set_family = c:ROM.fam:Cornelii 
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5410
+		}
+	}
+	### Year 187 BC batch - Tiberius Gracchus AKA: Gracchii Father
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 5670
+			#current_date >= 567.1.1 # 187 BC
+		}
+		create_character = { # Tiberius Sempronius Gracchus
+			culture = roman
+			religion = roman_pantheon
+			age = 33
+			first_name = "Tiberius"
+			family_name = "Sempronii"
+			add_nickname = NICKNAME_GRACCHUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 5
+			add_finesse = 5
+			# Personality 
+			add_trait = prominent  
+			add_trait = shrewd      	 	
+			add_trait = honest 
+			add_trait = generous 
+			add_trait = righteous  
+			add_trait = kindly      
+			
+			# Character's Party   	
+			character_democratic_party_conviction_effect = {
+				VALUE = 100
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 5670
+		}
+	}
+	### Year 137 BC batch - Tiberius Gracchus AKA: First Gracchii Brother
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6170
+			#current_date >= 617.1.1 # 137 BC
+		}
+		create_character = { # Tiberius Sempronius Gracchus
+			culture = roman
+			religion = roman_pantheon
+			age = 26
+			first_name = "Tiberius"
+			family_name = "Sempronii"
+			add_nickname = NICKNAME_GRACCHUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 15
+			add_finesse = 5
+			# Personality 
+			add_trait = prominent  
+			add_trait = shrewd    
+			add_trait = energetic   	 	
+			add_trait = honest 
+			add_trait = generous 
+			add_trait = righteous  
+			add_trait = kindly   
+			add_trait = cautious    
+			
+			# Character's Party   	
+			character_democratic_party_conviction_effect = {
+				VALUE = 100
+			}
+			# questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6170
+		}
+	}
+	### Year 127 BC batch - Gaius Gracchus AKA: Second Gracchii Brother
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6270
+			#current_date >= 627.1.1 # 137 BC
+		}
+		create_character = { # Gaius Sempronius Gracchus
+			culture = roman
+			religion = roman_pantheon
+			age = 27
+			first_name = "Gaius"
+			family_name = "Sempronii"
+			add_nickname = NICKNAME_GRACCHUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 15
+			# Personality 
+			add_trait = prominent    
+			add_trait = energetic   	 	
+			add_trait = honest 
+			add_trait = blunt
+			add_trait = ambitious
+			add_trait = kindly   
+			add_trait = reckless    
+			
+			# Character's Party   	
+			character_democratic_party_conviction_effect = {
+				VALUE = 100
+			}
+			# questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6270
+		}
+	}
+	
+	
+	### MARIUS-SULLA PREQUEL -  121-84
+	##############################
+	
+	### Year 121 BC batch - THE Marius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6330
+			#current_date >= 633.1.1 # 121 BC
+		}
+		create_character = { # Gaius Marius
+			culture = roman
+			religion = roman_pantheon
+			age = 36
+			first_name = "Gaius"
+			family_name = "Marii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 15
+			add_charisma = 5
+			# Personality 
+			add_trait = energetic 
+			add_trait = proud   
+			add_trait = jealous  	 	
+			add_trait = prominent      
+			add_trait = ambitious       
+			# Status  
+			add_trait = original_thinker  
+			add_trait = tactician  
+			
+			# Character's Party   	
+			character_democratic_party_conviction_effect = {
+				VALUE = 100
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6330
+		}
+	}
+	### Year 107 BC batch - THE Sulla
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6470
+			#current_date >= 647.1.1 # 107 BC
+		}
+		create_character = { # Lucius Cornelius Sulla Felix
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Lucius"
+			family_name = "Cornelii"
+			add_nickname = NICKNAME_SULLA_FELIX
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 15
+			add_charisma = 5
+			add_finesse = 5
+			# Personality
+			add_trait = arrogant 
+			add_trait = vengeful  
+			add_trait = proud   
+			add_trait = harsh    
+			add_trait = righteous 	 	
+			add_trait = prominent      
+			add_trait = ambitious       
+			# Status
+			add_trait = tactician 
+			
+			# Character's Party   	
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 100
+			}
+			set_family = c:ROM.fam:Cornelii 
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6470
+		}
+	}
+	
+	
+	
+	### TIME OF GIANTS - 84+
+	##############################
+	
+	### Year 84 BC batch - THE Crassus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6700
+			#current_date >= 670.1.1 # 84 BC
+		}
+		create_character = { # Marcus Licinius Crassus
+			culture = roman
+			religion = roman_pantheon
+			age = 31 
+			first_name = "Marcus"
+			family_name = "Licinii"
+			add_nickname = NICKNAME_CRASSUS_DIVES
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_gold = 10000
+			# Personality 
+			add_trait = selfish   
+			add_trait = proud   
+			add_trait = stubborn    	 	
+			add_trait = arrogant 
+			add_trait = prominent      
+			add_trait = ambitious       
+			add_trait = reckless         
+			# Status  
+			add_trait = steadfast  
+			
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6700
+		}
+	}
+	### Year 83 BC batch - THE Pompey Magnus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6710
+			#current_date >= 671.1.1 # 83 BC
+		}
+		create_character = { # Gnaeus Pompeius Magnus
+			culture = roman
+			religion = roman_pantheon
+			age = 23 
+			first_name = "Gnaeus"
+			family_name = "Pompeii"
+			add_nickname = NICKNAME_MAGNUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 15
+			add_charisma = 5
+			add_finesse = 10
+			# Personality 
+			add_trait = crafty  
+			add_trait = proud   
+			add_trait = arbitrary   	 	
+			add_trait = assertive       
+			add_trait = prominent      
+			add_trait = ambitious       
+			add_trait = energetic        
+			# Status  
+			add_trait = steadfast   
+			add_trait = tactician  
+			
+			# questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6710
+		}
+	}
+	### Year 75 BC batch - THE Cicero
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6790
+			#current_date >= 679.1.1 # 75 BC
+		}
+		create_character = { # Marcus Tullius Cicero
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Tullii"
+			add_nickname = NICKNAME_CICERO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 10
+			add_finesse = 5
+			# Personality
+			add_trait = silver_tongued 	
+			add_trait = just 	
+			add_trait = righteous  	
+			add_trait = scholar   	
+			add_trait = intelligent 
+			add_trait = wise  
+			add_trait = modest   
+			# Status
+			add_trait = orator 
+			
+			# Character's Party   	
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6790
+		}
+	}
+	### Year 69 BC batch - THE Caesar; THE Labienus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6850
+			#current_date >= 685.1.1 # 69 BC
+		}
+		create_character = { # Gaius Julius Ceasar
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Gaius"
+			family_name = "Julii"
+			add_nickname = NICKNAME_CAESAR
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 5
+			add_martial = 15
+			add_finesse = 5
+			add_zeal = 10 # Officialy he was Pontifex Maximus
+			# Personality
+			add_trait = forgiving  	 	
+			add_trait = prominent   	 	
+			add_trait = intelligent   
+			add_trait = arrogant       	
+			add_trait = ambitious # Noble Brutus says so, and he's a honorable man  	
+			add_trait = cautious # Let's make a fortified camp, shall we?   	
+			add_trait = lustful # Bald adulterous whore 	
+			# Military
+			add_trait = original_thinker 
+			add_trait = tactician 
+			# Health
+			add_trait = epileptic 
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			set_family = c:ROM.fam:Julii 
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6850
+		}
+	}
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6851
+			#current_date >= 685.1.1 # 69 BC
+		}
+		create_character = { # Titus Labienus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Titus"
+			family_name = "Labienii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 15
+			# Personality
+			add_trait = righteous
+			add_trait = just
+			add_trait = honest
+			add_trait = assertive 
+			
+			# Military
+			add_trait = confident  
+			add_trait = tactician 
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 20
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6851
+		}
+	}
+	### Year 68 BC batch - Quintus Tullius Cicero
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6860
+			#current_date >= 686.1.1 # 68 BC
+		}
+		create_character = { # Quintus Tullius Cicero
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Quintus"
+			family_name = "Tullii"
+			add_nickname = NICKNAME_CICERO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality	 	
+			add_trait = loving 
+			add_trait = self_controlled  
+			add_trait = cautious   
+
+			# Military
+			add_trait = steadfast  
+
+			# Character's Party
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6860
+		}
+	}	
+	### Year 66 BC batch - Domitius AHENOBARBUS
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6880
+			#current_date >= 688.1.1 # 66 BC
+		}
+		create_character = { # Lucius Domitius Ahenobarbus
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Lucius"
+			family_name = "Domitii"
+			add_nickname = NICKNAME_AHENOBARBUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality	 	
+			add_trait = righteous             		 	
+			add_trait = energetic             		 	
+			add_trait = stubborn       	
+			add_trait = vengeful       	
+
+			# Military
+			add_trait = tactically_inflexible 
+
+			# Character's Party
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6880
+		}
+	}	
+	### Year 64 BC batch - Cato the Younger
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6900
+			#current_date >= 690.1.1 # 64 BC
+		}
+		create_character = { # Marcus Porcius Cato
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Porcii"
+			add_nickname = NICKNAME_CATO
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_finesse = 5
+			# Personality
+			add_trait = blunt     		 	
+			add_trait = righteous      		 	
+			add_trait = content       		 	
+			add_trait = suspicious        		 	
+			add_trait = plain_speaking         		 	
+			add_trait = stubborn       	
+
+			# Character's Party
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 100
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6900
+		}
+	}	
+	### Year 61 BC batch - THE Clodius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6930
+			#current_date >= 693.1.1 # 61 BC
+		}
+		create_character = { # Publius Claudius Pulcher
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Publius"
+			family_name = "Claudii"
+			add_nickname = NICKNAME_PULCHER
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 10
+			# Personality
+			add_trait = blunt     		 	
+			add_trait = crafty      		 	
+			add_trait = arbitrary       		 	
+			add_trait = cruel       		 	
+			add_trait = corrupt       		 	
+			add_trait = harsh       		 	
+			add_trait = lustful       		 	
+			add_trait = vengeful        		 	
+			add_trait = selfish         	
+			add_trait = arrogant          	
+
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 100
+			}
+			set_family = c:ROM.fam:Claudii 
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6930
+		}
+	}	
+	### Year 60 BC batch - Gaius Trebonius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6940
+			#current_date >= 694.1.1 # 60 BC
+		}
+		create_character = { # Gaius Trebonius
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Gaius"
+			family_name = "Trebonii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality
+			add_trait = righteous    		 	
+			add_trait = trusting     		 	
+
+			# Military
+			add_trait = disciplined  
+
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6940
+		}
+	}	
+	### Year 57 BC batch - THE Lepidus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6970
+			#current_date >= 697.1.1 # 57 BC
+		}
+		create_character = { # Marcus Aemilius Lepidus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Aemilii"
+			add_nickname = NICKNAME_LEPIDUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_finesse = 10
+			add_zeal = 10 # Pontifex Maximus
+			# Personality
+			add_trait = content   
+			add_trait = submissive       		 	
+			add_trait = cautious        		 	
+			add_trait = unnoticeable         		 	
+			add_trait = trusting          		 	
+			add_trait = intelligent        		 	
+			add_trait = shrewd         		 	
+
+			# Military
+			add_trait = steadfast   
+
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			set_family = c:ROM.fam:Aemilii 
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6970
+		}
+	}	
+	### Year 55 BC batch - Publius Licinius Crassus
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 6990
+			#current_date >= 699.1.1 # 54 BC
+		}
+		create_character = { # Publius Licinius Crassus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Publius"
+			family_name = "Licinii"
+			add_nickname = NICKNAME_CRASSUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality
+			add_trait = reckless        		 	
+
+			# Military
+			add_trait = brave 
+
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+			# Son of THE Crassus
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 6990
+		}
+	}	
+	### Year 54 BC batch - Marcus Licinius Crassus Jr.
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7000
+			#current_date >= 700.1.1 # 54 BC
+		}
+		create_character = { # Marcus Licinius Crassus
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Licinii"
+			add_nickname = NICKNAME_CRASSUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality
+			add_trait = energetic          		 	
+
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+			# Son of THE Crassus
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7000
+		}
+	}	
+	### Year 53 BC batch - THE Brutus; THE Cassius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7010
+			#current_date >= 701.1.1 # 53 BC
+		}
+		create_character = { # Marcus Junius Brutus
+			culture = roman
+			religion = roman_pantheon
+			age = 32
+			first_name = "Marcus"
+			family_name = "Junii"
+			add_nickname = NICKNAME_BRUTUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality
+			add_trait = humble         	
+			add_trait = scholar  	
+			add_trait = lazy   	
+			add_trait = cautious    	
+			add_trait = just # For Brutus
+			add_trait = honest # Is
+			add_trait = righteous # A honorable man  	 	
+	
+			# Character's Party
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 50
+			}
+			set_family = c:ROM.fam:Junii 
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7010
+		}
+	}	
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7011
+			#current_date >= 701.1.1 # 53 BC
+		}
+		create_character = { # Gaius Cassius Longinus
+			culture = roman
+			religion = roman_pantheon
+			age = 33
+			first_name = "Gaius"
+			family_name = "Cassius"
+			add_nickname = NICKNAME_LONGINUS
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 5
+			# Personality
+			add_trait = vengeful          	
+			add_trait = energetic   	
+			add_trait = reckless    	
+			add_trait = honest	 	
+			add_trait = narrowminded 	 	
+			add_trait = blunt  	 	
+			
+			# Military
+			add_trait = brave  
+			add_trait = aggressive 
+			
+			# Character's Party
+			character_oligarchic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7011
+		}
+	}
+	### Year 52 BC batch - THE Mark Antony
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7020
+			#current_date >= 702.1.1 # 52 BC
+		}
+		create_character = { # Marcus Antonius
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Marcus"
+			family_name = "Antonii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_martial = 10
+			add_charisma = 10
+			add_zeal = 5 # College of Augurs
+			add_finesse = -10
+			# Personality
+			add_trait = vengeful  			
+			add_trait = jealous        	
+			add_trait = ambitious 	
+			add_trait = arbitrary  	
+			add_trait = corrupt   	 	
+			add_trait = reckless      	
+			add_trait = silver_tongued 
+			add_trait = lustful # Cleopatra affair
+			# Military
+			add_trait = brave  
+			add_trait = aggressive  
+			add_trait = confident   
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7020
+		}
+	}
+	### Year 51 BC batch - Gaius Antonius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7030
+			#current_date >= 703.1.1 # 51 BC
+		}
+		create_character = { # Gaius Antonius
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Gaius"
+			family_name = "Antonii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality				 	
+			add_trait = reckless    
+			add_trait = unnoticeable     
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+			# Brother of THE Mark Antony
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7030
+		}
+	}
+	### Year 50 BC batch - Lucius Antonius
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7040
+			#current_date >= 704.1.1 # 50 BC
+		}
+		create_character = { # Lucius Antonius
+			culture = roman
+			religion = roman_pantheon
+			age = 31
+			first_name = "Lucius"
+			family_name = "Antonii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			# Personality				 	
+			add_trait = selfish     
+			add_trait = ambitious    
+			add_trait = deceitful     
+			add_trait = submissive    
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			questorize_effect = yes
+			# Brother of THE Mark Antony
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7040
+		}
+	}
+	### Year 45 BC batch - THE Octavian
+	if = {
+		limit = {
+			any_character = { # Still has free Questors slots
+				count < number_of_elected_questors_svalue 
+				var:cursus_honorum_active_office = 1
+			}
+			# Have passed the date set as this Questor's batch
+			var:chargen_lastcheckedchar < 7090
+			#current_date >= 709.1.1 # 45 BC
+		}
+		create_character = { # Gaius Octavius
+			culture = roman
+			religion = roman_pantheon
+			age = 18
+			first_name = "Gaius"
+			family_name = "Octavii"
+			save_scope_as = new_chargen_senator 
+		}
+		scope:new_chargen_senator = {
+			add_charisma = 10
+			add_finesse = 10
+			# Personality
+			add_trait = vengeful       	
+			add_trait = ambitious 	
+			add_trait = arbitrary  	
+			add_trait = humble   	
+			add_trait = assertive    	
+			add_trait = intelligent     	
+			add_trait = energetic 
+			# Military
+			add_trait = coward   
+			
+			# Character's Party
+			character_democratic_party_conviction_effect = {
+				VALUE = 50
+			}
+			# questorize_effect = yes
+		}
+		set_variable = { 
+			name = chargen_lastcheckedchar 
+			value = 7090
+		}
+	}
+}

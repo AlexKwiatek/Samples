@@ -1,0 +1,9 @@
+NPolitics = {
+	SENATE_SIZE = 300
+}
+NCharacter = {
+	COURT_SIZE_CHILD_PENALTY_THRESHOLD = 480	
+}
+NFamily = {
+	EXPECTED_JOB_PERCENTAGE = 1
+}

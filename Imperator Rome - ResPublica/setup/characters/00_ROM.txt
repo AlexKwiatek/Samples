@@ -1,0 +1,2720 @@
+﻿"ROM"={
+	country="ROM"
+		
+	### GENS FLAVIA
+	113={
+		first_name="Gnaeus" # Gnaeus Flavius
+		family_name="Flavii"
+		# Aedile 304 BC
+		# Plebeian Tribune 305 BC
+		birth_date=402.12.19
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=3
+		add_charisma=5
+		add_finesse=7
+		add_zeal=4
+		no_traits=yes
+		add_trait="scholar"
+		add_gold=50
+		add_popularity=50
+		give_office=office_plebeian_aedile # Aedile
+		dna="H+wf7Il0iXS32rfaAmkCaQJpAmkCagJqAo0CjQJoAmgCjAKMApcClwKRApEChQKFAm8CbwJ8AnwCfgJ+AWIBYgJ9An0CeAJ4ApkCmQKUApQCbAJsAoMCgwKWApYCfgJ+AnkCeQKEAoQBZAFkAoACgAKFAoUCmQKZAm8CbwJxAnECbwJvAosCiwJ5AnkCjwKPApMCkwJoAmgCgQKBAnQCdAKHAocEswSzApICkgJoAmgDqQOpAnkCeQJ4AngClAKUAmoCagKKAooCigKKBHkEeQJyAnIDqwOrBMQExAJwAnACkgKSAn8CfwRwBHAAZwBnAQcBBwDCAMIAQABAABEAEQBAAEAApACkAMMAwwC+AL4DaANoAMgAyAAAAAAANQA1AEEAQQCJAIkBTwFPAPMA8wBsAGwB+gH6Ar4CvgAAAAAAEAAQAF8AXwE7ATsA7ADsAK4ArgSuBK4C/gL+AKcApwKGAoYAngCeAsECwQEmASYFaQVpAAAAAAFlAWUBFwEXAD0APQkYCRgBYgFiAEwATAAAAAAAAAAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS CORNELIA
+	127={
+		first_name="Lucius" # Lucius Cornelius Scipio Barbatus
+		nickname="NICKNAME_SCIPIO_BARBATUS"
+		family = c:ROM.fam:Cornelii
+		# Aedile 302 BC
+		# Consul 298 BC
+		# Censor 280 BC
+		birth_date=416.3.20
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=4
+		add_finesse=7
+		add_zeal=3
+		no_traits=yes
+		add_trait="proud"
+		add_gold=250
+		add_popularity=40
+		dna="Mt8y3759vn3FwcXBApYClgKLAosCdgJ2AokCiQKIAogCaQJpAoACgAJtAm0BUwFTAnQCdAKFAoUClwKXAWMBYwOcA5wCbQJtAnECcQKBAoEClAKUA7ADsAKQApACcgJyAnQCdAKGAoYEvQS9AmwCbAJ8AnwE3wTfApMCkwJ5AnkCfwJ/AmsCawJtAm0ClQKVAncCdwKSApICkwKTApACkAKXApcCiwKLAmsCawJrAmsBZgFmAnQCdAKVApUCkwKTApgCmAJrAmsCiQKJAoECgQJrAmsCiAKIAoMCgwOlA6UCdQJ1An0CfQIvAi8AkACQAWcBZwCXAJcANQA1ASsBKwFrAWsBSAFIAScBJwFrAWsC/wL/AoYChgAAAAABPAE8AMEAwQE0ATQBZAFkAtgC2ABaAFoBrAGsAMAAwAAAAAAA1wDXAXEBcQDEAMQAmgCaAMEAwQSRBJEC3ALcAv8C/wAbABsAPgA+AE0ATQB/AH8B8QHxAAAAAATKBMoBEgESALYAtglaCVoBEwETAP0A/QAAAAAAAAAAAAAAAA=="
+		# Son of Gnaeus
+	}
+	128={
+		first_name="Lucius" # Lucius Cornelius Scipio
+		nickname="NICKNAME_SCIPIO"
+		family = c:ROM.fam:Cornelii
+		# Aedile 261 BC
+		# Consul 259 BC
+		# Censor 258 BC
+		birth_date=444.8.29
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:127"
+		no_stats=yes
+		add_martial=2
+		add_charisma=1
+		add_finesse=1
+		add_zeal=0
+		no_traits=yes
+		dna="LNYs1stpy2mw2bDZAoYChgJ7AnsCjgKOAn8CfwKQApADoAOgApMCkwJxAnEDrgOuAnkCeQJyAnICjQKNBMsEywKBAoECigKKApUClQFlAWUClAKUAnECcQJxAnECjQKNAn8CfwKKAooCgwKDAWQBZAKHAocCcgJyAmsCawKZApkCcgJyAmcCZwKVApUChwKHApICkgJzAnMCaAJoApACkAKLAosCiwKLAnMCcwKAAoACdAJ0ACYAJgJ/An8CmAKYAm8CbwJ6AnoBWQFZAmgCaAKSApICeAJ4AncCdwKGAoYCgwKDAnACcAQcBBwA/gD+Aq4CrgDnAOcAaQBpAsACwAFqAWoAUQBRAS4BLgFGAUYAWABYAL0AvQAAAAAAMQAxASkBKQD/AP8BNgE2ADMAMwLTAtMApQClAX8BfwAAAAAAEAAQARMBEwL0AvQAdQB1AIkAiQFwAXABSgFKAEQARADPAM8BKQEpAWIBYgCEAIQGiAaIAAAAAAMPAw8BxAHEADwAPAmgCaABngGeAGcAZwAAAAAAAAAAAAAAAA=="
+	}
+	
+	305={
+		first_name="Publius" # Publius Cornelius Scipio Barbatus
+		nickname="NICKNAME_SCIPIO_BARBATUS"
+		family = c:ROM.fam:Cornelii
+		# Consul 328 BC
+		# Dictator 306 BC
+		# Pontifex Maximus 304 BC
+		birth_date=400.4.7
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=6
+		add_finesse=6
+		add_zeal=8
+		no_traits=yes
+		add_trait="prominent"
+		add_trait="good_natured"
+		add_trait="humble"
+		add_gold=1000
+		add_popularity=80
+		give_office=office_pontifex # Pontifex Maximus
+		dna="A/kD+Y9nj2fx/vH+AnwCfAJzAnMBWgFaApICkgJ2AnYCeAJ4A5sDmwKHAocCaQJpAo4CjgKWApYChgKGAocChwAdAB0CbgJuAU4BTgOZA5kCewJ7AnwCfAKBAoECkgKSAngCeAKXApcCdAJ0AmgCaAKAAoACkwKTAnwCfAKSApICawJrApQClAJxAnECdQJ1BM0EzQJ/An8AIwAjAnsCewJ6AnoDnQOdAn4CfgJpAmkCgAKAAmgCaAKDAoMBZAFkAm8CbwJqAmoClQKVAo8CjwKUApQEwwTDAnkCeQJuAm4CbAJsAoUChQIOAg4AKAAoAQ0BDQDgAOABbgFuACkAKQB6AHoAEwATAscCxwA5ADkAwQDBACYAJgAAAAAAKwArANcA1wBRAFEAtAC0AAUABQAbABsAnQCdABYAFgAAAAAA4QDhAE8ATwArACsBdgF2AX8BfwNRA1EACgAKBIoEigAWABYBXQFdACsAKwMAAwAB0QHRAAAAAASMBIwBFgEWAA8ADwkbCRsB7wHvAGQAZAAAAAAAAAAAAAAAAA=="
+	}
+	297={
+		first_name="Publius" # Publius Cornelius Arvina
+		nickname="NICKNAME_ARVINA"
+		family = c:ROM.fam:Cornelii
+		# Consul 306 BC, 288 BC 
+		# Censor 294 BC
+		birth_date=402.12.19
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=6
+		add_zeal=6
+		no_traits=yes
+		add_trait="arrogant"
+		add_gold=300
+		add_popularity=30
+		dna="Iuwi7Ip6inrzpvOmAmkCaQJ6AnoCiwKLAogCiAKJAokCawJrAVkBWQJ1AnUCgAKAAnECcQJ7AnsCfQJ9AogCiAJ2AnYCjQKNADMAMwKHAocCjgKOAVgBWAKMAowAYABgAowCjAKAAoACdQJ1ApQClAKAAoACbgJuAnICcgJ+An4CeAJ4AogCiAKQApACggKCACIAIgKWApYCawJrAmoCagJnAmcCeQJ5AmYCZgJ+An4ClQKVAnkCeQJ7AnsCkgKSAmsCawOdA50CfgJ+AnkCeQKZApkDmwObAnACcAJ8AnwCZwJnAoACgAI1AjUAcwBzAFgAWAEuAS4AwQDBADUANQFVAVUAgQCBAGYAZgDyAPICOAI4AQ0BDQAAAAAALgAuAW0BbQFaAVoBLAEsALEAsQC6ALoAFQAVAMkAyQAAAAAA4wDjAEsASwAjACMBAQEBAswCzADeAN4CtAK0AXkBeQDNAM0DNgM2AA0ADQBkAGQBhQGFAAAAAAK/Ar8BWAFYAHYAdgl5CXkBVQFVAMkAyQAAAAAAAAAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS VALERIA
+	129={
+		first_name="Marcus" # Marcus Valerius Corvus
+		nickname="NICKNAME_CORVUS"
+		family=c:ROM.fam:Valerii
+		# Consul 348 BC; 346 BC; 343 BC; 335 BC; 300 BC; 299 BC
+		# Dictator 342 BC; 302 BC
+		birth_date=383.6.14
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=9
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="victorious"
+		add_trait="generous"
+		add_gold=800
+		add_popularity=100
+		dna="UttS25RglGDYxtjGAmwCbAJ9An0EywTLAn0CfQKBAoEClgKWAncCdwKBAoECaQJpAnoCegJ1AnUCcAJwAnkCeQKTApMChwKHAncCdwJsAmwCbQJtAnACcAJpAmkCkAKQAmYCZgJ9An0CawJrApYClgKAAoACcAJwBLoEugKJAokDpQOlAmsCawJwAnACeQJ5AoQChAJ/An8CcQJxAmkCaQKCAoIDsgOyAocChwKLAosCdgJ2ApMCkwKZApkDrQOtAoUChQJrAmsCiAKIAnECcQJtAm0ChgKGAo4CjgKWApYCeQJ5AoMCgwIMAgwATgBOAPEA8QFYAVgAEgASAA0ADQKiAqICmQKZAGcAZwC6ALoAqgCqANsA2wAAAAABWgFaAMoAygCEAIQBKgEqACsAKwBYAFgC9gL2AsgCyAAAAAACkwKTAsgCyAKkAqQAAQABAT0BPQM0AzQAywDLAyoDKgDaANoAQgBCAysDKwMqAyoC0gLSAAAAAAONA40BnQGdAEwATAkWCRYBBQEFAMEAwQAAAAAAAAAAAAAAAA=="
+	}
+	130={
+		first_name="Marcus"
+		nickname="NICKNAME_CORVINUS"
+		family = c:ROM.fam:Valerii
+		birth_date=418.5.25
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:129"
+		no_stats=yes
+		add_martial=7
+		add_charisma=4
+		add_finesse=5
+		add_zeal=3
+		no_traits=yes
+		add_gold=150
+		add_popularity=20
+		dna="P0w/TMJewl7Y39jfBNEE0QFlAWUDqgOqApcClwKDAoMCZwJnAn0CfQFUAVQCdAJ0BMUExQKBAoECggKCAWEBYQOeA54ClwKXAmkCaQJ5AnkCbwJvAmoCagKIAogCcAJwAnMCcwKFAoUCiAKIAooCigJ7AnsCdwJ3AoUChQKBAoECbgJuApUClQJ6AnoCagJqApQClAJqAmoAQABAA7EDsQS3BLcCbQJtAoICggKMAowCdwJ3ApICkgJzAnMCkAKQAngCeAFiAWICbAJsAokCiQJqAmoChgKGAo4CjgJrAmsCaQJpAmoCagIMAgwAHwAfAGQAZADnAOcCzQLNAW0BbQK/Ar8APgA+AVwBXAAlACUDWANYAREBEQAAAAAAewB7AN8A3wD8APwAiQCJANoA2gLaAtoAQwBDAWsBawAAAAABOQE5AMYAxgAqACoA5gDmASsBKwE6AToA/QD9A1oDWgDrAOsBXwFfATYBNgB2AHYGowajAAAAAAT+BP4BWgFaAAoACgmmCaYB2AHYAJ4AngAAAAAAAAAAAAAAAA=="
+	}
+	299={
+		first_name="Marcus"
+		nickname="NICKNAME_CORVINUS"
+		family = c:ROM.fam:Valerii
+		birth_date=448.2.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:130"
+		no_stats=yes
+		add_martial=1
+		add_charisma=1
+		add_finesse=1
+		add_zeal=1
+		no_traits=yes
+		dna="Eu4S7odkh2TElMSUApgCmAJnAmcChgKGAooCigJwAnACmAKYApQClAKDAoMCgQKBAoICggKJAokCbQJtA54DngJpAmkCjwKPAooCigKAAoACeQJ5ApcClwKZApkExgTGAn4CfgKIAogCagJqAmkCaQJ0AnQCbgJuAoUChQJuAm4CcgJyAnkCeQJ1AnUCjwKPAVIBUgKMAowCeQJ5AVwBXAKMAowCeQJ5AogCiAJ2AnYCeQJ5AncCdwJ4AngChgKGApUClQJpAmkCZgJmA6oDqgKEAoQCdgJ2AocChwJ3AncDrAOsAocChwPGA8YAOwA7ATYBNgCBAIEANgA2AW8BbwCnAKcBRQFFAP4A/gC2ALYBDAEMAHMAcwAAAAAAJQAlACMAIwELAQsBUQFRAMsAywFiAWIBVgFWAK0ArQAAAAAAEwATArwCvACSAJIBcgFyAN4A3gSbBJsAawBrAPUA9QB8AHwArACsAWABYAFaAVoJugm6AAAAAAFVAVUBJQElAFcAVwl8CXwBDwEPAIoAigAAAAAAAAAAAAAAAA=="
+	}
+	
+	### GENS APPULEIA
+	131={
+		first_name="Quintus" # Quintus Appuleius Pansa
+		nickname="NICKNAME_PANSA"
+		family_name="Appuleii"
+		# Consul 300 BC
+		birth_date=408.6.28
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=4
+		add_finesse=7
+		add_zeal=5
+		no_traits=yes
+		add_gold=150
+		add_popularity=40
+		dna="jL2MvY15jXm8nryeADQANAKGAoYBZQFlAVsBWwJ6AnoDqgOqApICkgKRApEBXAFcAosCiwJ8AnwCfwJ/A7IDsgKMAowCbwJvAVYBVgTUBNQCmQKZAnUCdQKDAoMCmQKZBKAEoATIBMgCagJqAVcBVwFZAVkCkwKTBLkEuQJtAm0ChwKHAowCjAKCAoICfwJ/AmcCZwJoAmgCmAKYAmcCZwFfAV8CeAJ4AncCdwJ4AngCkwKTA5sDmwJ1AnUDqgOqA6oDqgJyAnICbQJtAVwBXAJrAmsCmQKZAWIBYgKXApcChQKFAo4CjgQ3BDcA5ADkAAUABQA+AD4BawFrAAQABAEEAQQAuQC5ASsBKwDEAMQCKAIoALcAtwAAAAACrAKsAKIAogByAHIAHgAeAosCiwAyADIAWABYAMAAwAAAAAABdwF3ACQAJAC1ALUANgA2AR0BHQCQAJACywLLAHIAcgCrAKsE4gTiANYA1gBuAG4LUQtRAAAAAAE9AT0BewF7ABQAFAkxCTEB4AHgAOcA5wAAAAAAAAAAAAAAAA=="
+	}
+	
+	### GENS MARCIA
+	132={
+		first_name="Quintus" # Quintus Marcius Tremulus
+		nickname="NICKNAME_TREMULUS"
+		family_name="Marcii"
+		# Consul 306 BC, 288 BC
+		birth_date=400.4.7
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=5
+		add_finesse=5
+		add_zeal=3
+		no_traits=yes
+		add_trait="victorious"
+		add_gold=100
+		add_popularity=40
+		dna="P9k/2b9wv3DD2cPZApcClwJ0AnQClwKXAm8CbwAvAC8CfwJ/AoICggJxAnECawJrAnECcQKEAoQEygTKAnECcQJ+An4ClAKUAncCdwTEBMQCkAKQApUClQKYApgCdQJ1AmoCagKOAo4CgwKDAosCiwJ7AnsCfAJ8AoUChQKRApECcQJxAogCiAJzAnMChAKEApYClgJ4AngEygTKApQClAKAAoAClAKUAmYCZgKPAo8AHQAdA6YDpgJ2AnYCkgKSADIAMgJnAmcALAAsAD0APQJ/An8ChQKFAmsCawKOAo4ClwKXApkCmQIeAh4BKwErALwAvALNAs0C1QLVAv4C/gChAKEBTAFMAFMAUwDLAMsBZgFmAOYA5gAAAAAAXABcAGEAYQFmAWYALAAsARwBHADZANkAYQBhArkCuQAAAAABbAFsANUA1QATABMAVgBWAWABYAD4APgAawBrA1UDVQDXANcEvQS9AGcAZwMkAyQMgAyAAAAAAAQ3BDcBwgHCAL4Avgm7CbsBaAFoALAAsAAAAAAAAAAAAAAAAA=="
+		# Son of Quintus
+	}
+	344={
+		first_name="Quintus" # Quintus Marcius Philippus
+		nickname="NICKNAME_PHILIPPUS"
+		family_name="Marcii"
+		# Consul 281 BC 
+		# Censor 269 BC, 
+		# Magister Equitum 263 BC
+		birth_date=432.9.30
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:132"
+		no_stats=yes
+		add_martial=7
+		add_charisma=7
+		add_finesse=4
+		add_zeal=4
+		no_traits=yes
+		add_gold=100
+		add_popularity=10
+		dna="M+Az4Lx2vHbJr8mvAoACgAKBAoECkQKRAm8CbwKPAo8DmgOaAn4CfgOiA6ICdgJ2AmcCZwJ5AnkDowOjAmcCZwKXApcCiQKJAo4CjgJpAmkCaAJoAo0CjQKVApUClgKWAnkCeQKFAoUChQKFApkCmQJxAnECewJ7ApMCkwJvAm8CbwJvAo8CjwKFAoUCbAJsAVwBXAJsAmwCaAJoApECkQOsA6wCkwKTAogCiAKVApUE0gTSAoMCgwTIBMgE2QTZADkAOQKTApMDpAOkApACkAJsAmwCiAKIAo0CjQFlAWUCdgJ2AoECgQKtAq0AewB7APQA9ABPAE8CwwLDACkAKQFNAU0BQgFCAJMAkwCLAIsBQgFCAEsASwAAAAABCgEKAWkBaQBvAG8BfwF/AC4ALgLMAswDagNqAB4AHgAAAAAAQABAAJUAlQCgAKABWQFZAoUChQE2ATYBTgFOBNEE0QDEAMQAYABgACwALACtAK0CsQKxAAAAAAKuAq4BJQElAAEAAQkHCQcBJAEkAFQAVAAAAAAAAAAAAAAAAA=="
+		# Son of Quintus, son of Quintus
+	}
+	
+	### GENS FULVIA
+	133={
+		first_name="Marcus" # Marcus Fulvius Paetinus
+		nickname="NICKNAME_PAETINUS"
+		family_name="Fulvii"
+		# Consul 299 BC
+		birth_date=412.7.24
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=4
+		add_charisma=3
+		add_finesse=6
+		add_zeal=4
+		no_traits=yes
+		add_gold=75
+		add_popularity=20
+		dna="nZudm7RstGweZx5nAV4BXgFkAWQCiwKLAnMCcwJ0AnQCkAKQAnYCdgJqAmoChQKFAngCeAJsAmwCegJ6AoYChgKMAowClwKXAokCiQTiBOICjAKMAncCdwKBAoECkgKSAmsCawKIAogCZwJnAmsCawJ/An8CfAJ8AmgCaAJ2AnYCeAJ4AmcCZwKGAoYCbgJuAVEBUQOhA6ECeAJ4AVABUAKZApkCmQKZAnUCdQKHAocCbAJsAo0CjQKCAoICkwKTAm4CbgKBAoECaQJpAC0ALQKXApcCfgJ+ApkCmQKPAo8AIgAiABkAGQIfAh8AegB6AEAAQAAwADAADwAPACIAIgBgAGAAQgBCAFUAVQK4ArgDegN6AL4AvgAAAAAAPwA/AN4A3gB/AH8BGAEYANcA1wA3ADcAsQCxAK8ArwAAAAAAWwBbAL4AvgBnAGcA1gDWALAAsANdA10CiAKIAy0DLQK1ArUA7wDvAGEAYQKUApQBfgF+AAAAAABaAFoBOwE7AOYA5gldCV0BEgESANAA0AAAAAAAAAAAAAAAAA=="
+	}
+	285={
+		first_name="Marcus" # Marcus Fulvius Curvus Paetinus
+		nickname="NICKNAME_CURVUS_PAETINUS"
+		family_name="Fulvii"
+		# Consul S. 305 BC
+		birth_date=406.8.9
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=5
+		add_finesse=4
+		add_zeal=4
+		no_traits=yes
+		add_trait="unnoticeable"
+		add_trait="stubborn"
+		add_gold=200
+		add_popularity=30
+		dna="O9k72cJ3wnfkquSqAmoCagKRApECfwJ/AncCdwTVBNUCjQKNBLgEuAFPAU8CdAJ0ApkCmQJpAmkCewJ7AoECgQJwAnACawJrAWQBZAAdAB0CeAJ4AmkCaQKDAoMCkAKQAosCiwKVApUCmAKYAncCdwJuAm4ClgKWAnYCdgKAAoACZgJmAosCiwKEAoQCawJrAVUBVQJ1AnUCcQJxAnYCdgKNAo0CfAJ8AnACcAObA5sClAKUAo4CjgJyAnICmQKZAnoCegJ2AnYCcAJwApcClwJyAnIDpQOlAnUCdQKEAoQClQKVAooCigLGAsYAGgAaAB8AHwFiAWICwALAAUIBQgLTAtMBUAFQAQUBBQKxArECQAJAAJwAnAAAAAAAgwCDAX0BfQEHAQcA5QDlAWsBawEDAQMBcwFzArcCtwAAAAACnAKcApICkgBtAG0AGQAZAowCjAFxAXEAZwBnAHMAcwBvAG8AfQB9AHAAcAAOAA4BkgGSAAAAAASHBIcBGwEbAEUARQkGCQYB6QHpAJIAkgAAAAAAAAAAAAAAAA=="
+	}
+	# Marcus Fulvius Paetinus son of Marcus Fulvius Curvus Paetinus? And his son, Servius Fulvius Paetius Nobilior, consul 255 BC 
+	
+	### PATRICIAN GENS JULIA
+	134={
+		first_name="Lucius"
+		nickname="NICKNAME_LIBO"
+		family = c:ROM.fam:Julii
+		birth_date=408.6.28
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=4
+		add_charisma=3
+		add_finesse=5
+		add_zeal=2
+		no_traits=yes
+		add_gold=100
+		add_popularity=15
+		dna="B/oH+rFssWzJjcmNAoECgQFPAU8DmgOaApkCmQKSApICmQKZApcClwKLAosCggKCA7ADsAJvAm8CbAJsApECkQKEAoQCigKKAnkCeQOsA6wCiQKJAn4CfgKRApECcQJxAnYCdgS/BL8CgwKDA58DnwAZABkCkgKSAooCigKGAoYChgKGAoMCgwKEAoQChgKGAWABYAJmAmYCdQJ1AVQBVAKQApABXgFeAmoCagFTAVMAJwAnAoUChQJ9An0CdgJ2AoYChgOlA6UCaAJoAokCiQJ+An4CeQJ5ApECkQTCBMICdAJ0ApACkAJrAmsAGQAZAQEBAQBfAF8ALAAsApACkAFjAWMAkgCSAO0A7QF3AXcA1gDWAVYBVgAAAAAA4gDiAMcAxwExATEAKAAoAKkAqQF3AXcD/wP/AWMBYwAAAAACwQLBAUEBQQAoACgAxADEAAMAAwFcAVwAGwAbAU0BTQAPAA8AgwCDAH8AfwNxA3EAtQC1AAAAAAFxAXEBbQFtALcAtwnrCesBEQERAHkAeQAAAAAAAAAAAAAAAA=="
+	}
+	135={
+		first_name="Lucius" # Lucius Julius Libo
+		nickname="NICKNAME_LIBO"
+		family = c:ROM.fam:Julii
+		# Consul 267 BC 
+		birth_date=442.11.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:134"
+		no_stats=yes
+		add_martial=3
+		add_charisma=2
+		add_finesse=0
+		add_zeal=1
+		no_traits=yes
+		dna="Mdsx25VelV7/6P/oAoACgAKIAogCcwJzAooCigKVApUDsgOyAnACcAJ5AnkCgQKBAnoCegAvAC8CkgKSApYClgJwAnADqgOqAnACcAFhAWECjQKNAmkCaQKSApICmAKYAnECcQObA5sCegJ6AVEBUQKEAoQCbwJvAocChwFOAU4ChgKGAoUChQKZApkBXAFcAC8ALwKIAogCjAKMAm4CbgKMAowDqQOpAoQChAJ0AnQCkQKRAmoCagJvAm8CcQJxAEAAQAKCAoICbwJvApMCkwKEAoQCawJrAoQChAKRApEChQKFA6ADoALvAu8AIAAgAOAA4AEsASwBdgF2ASABIAD3APcA2QDZAuYC5gK3ArcEqwSrAB4AHgAAAAABDwEPAQQBBADfAN8AqwCrACMAIwLgAuAAyQDJAq8CrwAAAAABHQEdAJQAlAC+AL4AIQAhARIBEgS/BL8AIgAiBLgEuABtAG0AngCeAyMDIwCeAJ4L1wvXAAAAAAO8A7wBVQFVADMAMwlUCVQBRAFEAN8A3wAAAAAAAAAAAAAAAA=="
+	}
+	
+	### GENS OGULNIA
+	136={
+		first_name="Quintus" # Quintus Ogulnius Gallus - authors of Lex Ogulnia
+		nickname="NICKNAME_GALLUS"
+		family_name="Ogulnii"
+		birth_date=420.11.1
+		# Plebeian Tribune 300 BC
+		# Aedile 296 BC, 
+		# Consul 269 BC
+		# Dictator 257 BC
+		# Cousin of Quintus Fabius Gurges Elder
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=3
+		add_charisma=7
+		add_finesse=6
+		add_zeal=4
+		no_traits=yes
+		add_trait="intelligent"
+		add_trait="blunt"
+		add_gold=150
+		add_popularity=30
+		dna="I/Ej8cRyxHK6mrqaAn0CfQJsAmwChQKFAogCiAKFAoUChgKGAo4CjgKEAoQCiAKIAooCigS7BLsClwKXAnMCcwJ2AnYChwKHApgCmAOiA6IAHwAfAocChwKJAokCdQJ1AoECgQKGAoYCjQKNAmoCagKPAo8CaQJpA6sDqwOpA6kCfgJ+An4CfgKIAogCeQJ5AowCjAKVApUCdwJ3ApgCmAKMAowClwKXAnkCeQJ8AnwCeAJ4An4CfgJmAmYCjwKPAngCeAJxAnECgAKAApYClgKLAosE0ATQAocChwJqAmoCkgKSAngCeAP+A/4AyADIAH8AfwFtAW0BXQFdATABMAEeAR4A5ADkAowCjACtAK0DeQN5AQ0BDQAAAAAAPQA9ATYBNgKAAoAAhwCHAE0ATQE2ATYAXgBeAOwA7AAAAAAA4QDhASMBIwKNAo0ABAAEAI4AjgMeAx4BGAEYAz0DPQDGAMYACAAIABcAFwMvAy8JjQmNAAAAAAGdAZ0B/wH/ANEA0QnNCc0BiQGJAGsAawAAAAAAAAAAAAAAAA=="
+		# Son of Lucius, son of Aulus
+	}
+	137={
+		first_name="Gnaeus" # Gnaeus Ogulnius - authors of Lex Ogulnia
+		family_name="Ogulnii"
+		birth_date=422.8.27
+		# Plebeian Tribune 300 BC,
+		# Aedile 296 BC, 
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=2
+		add_charisma=5
+		add_finesse=8
+		add_zeal=4
+		no_traits=yes
+		add_trait="sceptical"
+		add_trait="cautious"
+		add_gold=150
+		add_popularity=20
+		dna="beNt45xqnGqy9rL2AocChwKEAoQCigKKAnMCcwOtA60CjwKPAoACgAKIAogCegJ6A50DnQKTApMCkgKSAngCeAKAAoADsAOwAo0CjQJxAnEBVAFUAmsCawJsAmwAYQBhAm0CbQKNAo0CiwKLApUClQKLAosCbAJsAooCigJqAmoClAKUAmsCawAyADIChgKGAogCiATBBMEClAKUA6wDrAJvAm8CkgKSAmkCaQKJAokCegJ6AoICggKLAosClwKXAoECgQKUApQCZwJnAmkCaQKOAo4CZwJnAo4CjgKVApUCfgJ+ApgCmAKWApYAbwBvAMwAzAL0AvQBNAE0AIwAjAFxAXEAxADEACoAKgCbAJsAkACQAL8AvwAAAAAAHAAcAPkA+QB4AHgA1QDVAFMAUwDSANIAMgAyAO8A7wAAAAABKgEqAu8C7wEnAScAVgBWANwA3ADPAM8ANgA2AwoDCgFvAW8DXANcA2wDbAFKAUoHYwdjAAAAAAI5AjkBzAHMALwAvAmDCYMBCwELAHkAeQAAAAAAAAAAAAAAAA=="
+	}
+	
+	### GENS CURIA
+	138={
+		first_name="Manius" # Manius Curius Dentatus
+		nickname="NICKNAME_DENTATUS"
+		family_name="Curii"
+		# Consul 290 BC; 275 BC; 274 BC,
+		# Plebeian Tribune 298 BC
+		# Censor 272 BC
+		birth_date=424.12.21
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=5
+		add_finesse=7
+		add_zeal=3
+		no_traits=yes
+		add_trait="assertive"
+		add_trait="ambitious"
+		add_gold=25
+		add_popularity=35
+		dna="Ods526d2p3b/pv+mAowCjAKAAoACbAJsBOME4wJ0AnQCjgKOA58DnwJmAmYCegJ6AnwCfAJ1AnUChAKEAm4CbgKGAoYBUgFSApcClwJ5AnkCdAJ0ADgAOAAoACgCggKCAngCeAKFAoUBUwFTAVkBWQJ7AnsCiQKJAosCiwFNAU0CeAJ4AmwCbAJ/An8CbgJuAWMBYwJ0AnQDqgOqAnsCewKNAo0ASABIAnwCfAJwAnACkgKSAnECcQJnAmcChQKFAoUChQJ6AnoCbQJtAo8CjwOoA6gCmQKZAoQChAJnAmcCkwKTApQClALyAvIAvgC+ABMAEwKeAp4BHAEcARgBGAEkASQARwBHASIBIgEUARQCcAJwAr0CvQAAAAAATQBNAHQAdAA0ADQAOgA6AJkAmQCPAI8AnQCdAFUAVQAAAAAAlQCVAs4CzgASABIAfAB8AAAAAANsA2wAhgCGAK8ArwAyADIAhgCGABwAHACXAJcB0AHQAAAAAAQGBAYBgwGDADIAMglaCVoB6QHpALkAuQAAAAAAAAAAAAAAAA=="
+		# Son of Manius, son of Manius
+	}
+	
+	### NC Easter Egg
+	139={
+		first_name="Sebastianus"
+		nickname="NICKNAME_CATTUS"
+		family_name="Castiliani"
+		birth_date=420.11.1
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=5
+		add_finesse=5
+		add_zeal=5
+		no_traits=yes
+		add_trait="sceptical"
+		add_trait="stubborn"
+		add_trait="secure"
+		add_trait="just"
+		add_trait="tolerant"
+		add_gold=150
+		add_popularity=30
+		dna="xKzff5xKe0r9lm+EA6ACmAKsAnQCHAKEAs4CbgLGAnQClQKVAlkCdwLYAmwCaAJoApUClQJ0AnQCdAKXAnQCdAJpAmkDpQOuBBQEvQS8BMwClwKIAaMBZgJ5ApICzwKOA4kChQLUAncCdQKLAlQCewFbAU8CfgJpAo8CjwKBAoECiAKIApECkQJiApACawJrA70DqAHNAU4CTwJ8Aq0CgAN0A7ECSAJqAksCeAJNApYCgAKSAkYCeAJoAmgCdQKRAo4CjgKyAo0DrgOqAssChwKEAocDYAKHAckCcgKCAngCoAJmAmICaQOnAg8AAQBkAFoCiAG2ATECxQKIAHwAiwLmAuYA0gDFAM8A7gF3AHUAWQCcAGAAXQAAAH8AbABsAQAA/AF6ABEAiABFAXQBdAHAAWQDdADMAn4AgAGlAH8AlwDTAM4AzgCyALIBrgEzAB4AEwPGAz0BAwBnA6wAkADaANoBLAEgBP8AZAEvAXkDQQR7AJAAfwEAAaoB6AFHAHQAagBLAAwBZQH+AEQAegAAAAAAAQAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS PAPIRIA
+	256={
+		first_name="Lucius" # Lucius Papirius Cursor
+		nickname="NICKNAME_CURSOR"
+		family = c:ROM.fam:Papirii
+		# Magister Equitum 340 BC, 
+		# Praetor 332 BC, 
+		# Consul 326 BC; 320 BC; 319 BC; 315 BC; 313 BC, 
+		# Dictator 325 BC; 310 BC
+		birth_date=390.5.11
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=9
+		add_finesse=6
+		add_zeal=8
+		no_traits=yes
+		add_trait="tactician"
+		add_trait="wounded"
+		add_gold=500
+		add_popularity=70
+		dna="mZSZlKdhp2Gv8a/xApICkgJnAmcCkQKRApICkgJzAnMCcwJzApgCmAJ/An8DsQOxAmcCZwKGAoYBYgFiAnsCewJzAnMCaAJoApMCkwKQApAClAKUAooCigKWApYChQKFAmsCawFaAVoCfAJ8AnsCewKLAosCeQJ5Ao4CjgFSAVIASwBLAU4BTgKLAosCbgJuAoECgQOfA58DngOeAnICcgKIAogCfgJ+AowCjAJyAnIDpgOmAo0CjQTaBNoANgA2AmYCZgKQApACbAJsAoECgQJ0AnQClgKWAn8CfwJnAmcClAKUApkCmQKBAoEBcQFxAu4C7gL6AvoAfAB8ABwAHAFYAVgAOAA4AAcABwKbApsBCgEKASoBKgAAAAAA+gD6As4CzgEeAR4BbgFuANMA0wKjAqMAwwDDALQAtAAAAAAAywDLAQoBCgLGAsYA/AD8AKkAqQBtAG0AyQDJACcAJwBuAG4APAA8AvwC/ACzALMJ4wnjAAAAAAOGA4YBAAEAALQAtAk9CT0BNgE2AIoAigAAAAAAAAAAAAAAAA=="
+		# Son of Spurius
+	}
+	300={
+		first_name="Lucius" # Lucius Papirius Cursor
+		nickname="NICKNAME_CURSOR"
+		family = c:ROM.fam:Papirii
+		# Consul 293 BC; 272 BC
+		birth_date=416.9.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:256"
+		no_stats=yes
+		add_martial=8
+		add_charisma=6
+		add_finesse=6
+		add_zeal=7
+		no_traits=yes
+		add_trait="proud"
+		add_gold=299
+		add_popularity=50
+		dna="SNFI0YRchFz0uvS6AmcCZwOrA6sBVAFUAooCigJ+An4CeAJ4A6gDqAKJAokDpwOnAmYCZgKMAowCcAJwAoUChQKOAo4CegJ6Am8CbwA+AD4CfwJ/AnQCdAKHAocBbQFtAnICcgJrAmsChAKEAn4CfgJ5AnkCggKCAU0BTQJuAm4CjQKNAoUChQJ/An8CfgJ+An0CfQJrAmsDpgOmAVoBWgKWApYCjgKOAmoCagJ6AnoCagJqAWIBYgJ6AnoBTQFNAmgCaAKBAoECcwJzA6EDoQFUAVQCmQKZApQClAKKAooCdAJ0BL0EvQK5ArkBIQEhAMoAygARABEAAAAAANgA2ABwAHAC8wLzAtsC2wE6AToBMQExARMBEwAAAAABKAEoAPQA9ALOAs4AKQApATkBOQBzAHMABgAGAAwADAAAAAABcAFwAVsBWwCgAKACwQLBAIUAhQDHAMcBGQEZATsBOwCuAK4EmwSbAFIAUgEVARUIjgiOAAAAAAKDAoMBeQF5AIkAiQm9Cb0B8wHzAC4ALgAAAAAAAAAAAAAAAA=="
+	}
+	
+	### GENS DECIA
+	284={
+		first_name="Publius" # Publius Decius Mus
+		nickname="NICKNAME_MUS"
+		family_name="Decii"
+		# Magister Equitum 306 BC;
+		# Consul 312 BC; 308 BC; 297 BC; 295 BC
+		# Censor 304 BC
+		# Pontiff 300 BC
+		birth_date=406.4.23
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=7
+		add_finesse=3
+		add_zeal=7
+		no_traits=yes
+		add_trait="brave"
+		add_trait="prominent"
+		add_gold=200
+		add_popularity=40
+		dna="VNFU0bZZtlnq1OrUAo4CjgOrA6sClwKXAosCiwKMAowAPQA9AngCeAJ3AncCeAJ4AnACcAJyAnICmAKYAm0CbQJ1AnUEpgSmAmoCagTCBMICeAJ4AnsCewKSApIChQKFAmsCawKHAocClgKWAnYCdgKNAo0CdgJ2AmsCawKQApADpwOnAnMCcwJ2AnYCgwKDAocChwFlAWUCcQJxAVsBWwKXApcCcAJwAosCiwKEAoQChQKFAosCiwTFBMUCaQJpApkCmQKXApcChgKGA7IDsgKNAo0ClwKXAocChwJxAnEBXAFcAn0CfQLLAssAWQBZAGYAZgAPAA8AdwB3AJwAnACWAJYArQCtARcBFwE1ATUEpASkALwAvAAAAAAAgQCBAB0AHQKtAq0BcQFxATYBNgF+AX4A0ADQAUcBRwAAAAAAtwC3AXkBeQFZAVkAcwBzAWYBZgDsAOwAHQAdAqoCqgCKAIoAcQBxAsUCxQCZAJkItQi1AAAAAAT3BPcBGAEYAJkAmQnjCeMBGQEZAGMAYwAAAAAAAAAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS POSTUMIA
+	286={
+		first_name="Lucius" # Lucius Postumius Megellus
+		nickname="NICKNAME_MEGELLUS"
+		family = c:ROM.fam:Postumii
+		# Consul 305 BC; 294 BC; 291 BC
+		birth_date=402.12.19
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=4
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="arrogant"
+		add_trait="prominent"
+		add_gold=600
+		add_popularity=70
+		dna="P0w/TKhhqGFPZE9kAngCeAKTApMCdAJ0AooCigJ/An8DoQOhApQClAJ9An0CaQJpAm0CbQKMAowCcQJxAncCdwJ3AncCdgJ2AmoCagJ9An0CbwJvAoUChQKRApECcwJzAnYCdgJyAnIE0wTTAmwCbAKMAowCigKKAo0CjQJvAm8CkwKTAnwCfAJwAnADmgOaBOUE5QJ8AnwClgKWAmgCaAAcABwCiwKLAoICggKYApgCfAJ8Am0CbQKAAoACdQJ1Ao0CjQJnAmcCawJrAoACgAJsAmwCegJ6Ao8CjwJoAmgCZgJmAmcCZwJUAlQAcgByAD0APQKxArEAWwBbArUCtQFFAUUAQQBBAMsAywFyAXIDNwM3AUIBQgAAAAAAxADEAv0C/QD4APgAhgCGAMoAygFdAV0DzQPNAusC6wAAAAAC6wLrAEkASQFRAVEASgBKAEYARgNcA1wBTwFPAJcAlwLJAskA+QD5ACkAKQDnAOcK+wr7AAAAAASUBJQBNAE0AFkAWQnjCeMB8AHwAOkA6QAAAAAAAAAAAAAAAA=="
+		# Son of Lucius, son of Spurius (Censor 332 BC)
+	}
+	
+	### PATRICIAN GENS JUNIA
+	298={
+		first_name="Gaius" # Gaius Junius Bubulcus Brutus
+		family = c:ROM.fam:Junii
+		nickname="NICKNAME_BUBULCUS_BRUTUS"
+		# Consul 317 BC; 313 BC; 311 BC
+		# Censor 307 BC
+		birth_date=400.4.7
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=11
+		add_charisma=8
+		add_finesse=6
+		add_zeal=5
+		no_traits=yes
+		add_trait="crafty"
+		add_trait="aggressive"
+		add_trait="prominent"
+		add_gold=600
+		add_popularity=60
+		#give_office=office_tribune_of_the_soldiers
+		dna="IvMi845xjnG8hbyFApkCmQKLAosCiwKLAoUChQKKAooCeQJ5AmwCbAJpAmkCegJ6AnsCewKSApICfAJ8ApkCmQKLAosChQKFApUClQKKAooCcwJzA7IDsgTABMACfgJ+AoQChAKEAoQBTwFPApgCmAKRApECmAKYAoMCgwA4ADgBXwFfAnECcQKSApIClwKXAooCigJ+An4CZgJmA6gDqAJ9An0CdwJ3Am4CbgJvAm8CiAKIAo8CjwJyAnIChgKGAocChwJoAmgCdgJ2AnoCegJ7AnsCjAKMApkCmQJ2AnYCbwJvAowCjAKhAqEBJgEmAPYA9gFaAVoAugC6AS0BLQBhAGEA8gDyADoAOgD7APsEtwS3AT8BPwAAAAAAfAB8AFEAUQBCAEIA9AD0AIoAigBsAGwAVgBWARYBFgAAAAABVgFWAT8BPwFHAUcAVwBXAMUAxQSqBKoAsgCyAUQBRAFoAWgDWwNbAysDKwMyAzIJ+wn7AAAAAADUANQBNgE2AJoAmgnfCd8BdgF2AOoA6gAAAAAAAAAAAAAAAA=="
+		# Son of Gaius
+	}
+	355={
+		first_name="Decimus" # Decimus Junius Brutus
+		nickname="NICKNAME_BRUTUS"
+		family = c:ROM.fam:Junii
+		# Consul 292 BC
+		birth_date=432.6.7
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=7
+		add_finesse=6
+		add_zeal=6
+		no_traits=yes
+		add_trait="prominent"
+	}
+	
+	### PATRICIAN GENS SULPICIA
+	301={
+		first_name="Publius" # Publius Sulpicius Saverrio
+		nickname="NICKNAME_SAVERRIO"
+		family = c:ROM.fam:Sulpicii
+		# Consul 304 BC
+		# Censor 300 BC
+		birth_date=401.11.17
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=5
+		add_finesse=5
+		add_zeal=7
+		no_traits=yes
+		add_trait="ugly"
+		add_trait="cautious"
+		add_gold=200
+		add_popularity=30
+		c:ROM={ set_as_coruler=char:301 } # Consul
+		dna="dEh0SJR3lHfdn92fAocChwKZApkCigKKAnwCfAKYApgBZgFmAoMCgwJoAmgCkQKRAo8CjwKNAo0CaQJpAooCigKHAocCgAKAAn0CfQTJBMkBUgFSAocChwJ0AnQCaAJoA5gDmAKFAoUCiwKLBM4EzgJnAmcCgQKBAnECcQKLAosDnQOdA5kDmQJ+An4CiQKJAo8CjwJ/An8CaAJoAoYChgKDAoMCdQJ1Am8CbwKWApYCggKCApYClgKFAoUCbQJtAnYCdgKCAoIATABMBGQEZAKEAoQDnwOfAnsCewKSApICbAJsA7EDsQKYApgAhwCHAvwC/AKeAp4BWwFbArYCtgL3AvcAsACwACUAJQDuAO4A8QDxAV0BXQAAAAACwQLBABMAEwDOAM4BYwFjARwBHAAXABcA6wDrAM4AzgAAAAAAngCeAHQAdALZAtkA2ADYALMAswEtAS0AxQDFABkAGQAPAA8CnQKdA1QDVAAyADICewJ7AAAAAAAtAC0BLAEsAK0ArQmICYgBIgEiAPgA+AAAAAAAAAAAAAAAAA=="
+	}
+	311={
+		first_name="Publius" # Publius Sulpicius Saverrio, Consul 279 BC
+		family = c:ROM.fam:Sulpicii
+		nickname="NICKNAME_SAVERRIO"
+		father="char:301"
+		birth_date=429.9.11
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=8
+		add_finesse=4
+		add_zeal=5
+		no_traits=yes
+		add_trait="shrewd"
+		add_trait="righteous"
+	}
+	
+	### PATRICIAN GENS FABIA
+	302={
+		first_name="Quintus" # Quintus Fabius Maximus Rullianus
+		nickname="NICKNAME_MAXIMUS_RULLIANUS"
+		family = c:ROM.fam:Fabii
+		# Magister Equitum 325 BC, 302 BC
+		# Consul 322 BC; 310 BC; 308 BC; 297 BC; 295 BC
+		# Dictator 315 BC, 313 BC
+		# Censor 304 BC
+		# Princeps Senatus 275 BC
+		birth_date=398.1.31
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=10
+		add_charisma=7
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="victorious"
+		add_trait="prominent"
+		add_trait="devout"
+		add_gold=600
+		add_popularity=70
+		give_office=office_censor # Censor
+		dna="TdZN1rN8s3ytiK2IAoICggKXApcClwKXAnQCdAJ3AncCkQKRAmoCagJqAmoCkwKTBLQEtAKSApICkwKTApUClQFSAVICjwKPAm0CbQJ6AnoCkQKRAmsCawKZApkCawJrAogCiAKMAowCiQKJAmwCbAKDAoMCfAJ8ApgCmAJtAm0CkQKRAooCigKRApEDsQOxA5sDmwKUApQClwKXAVwBXAKZApkBVgFWAn0CfQTNBM0CaAJoApcClwJwAnACfgJ+AmgCaAKYApgBUQFRAmsCawJmAmYCegJ6Ao8CjwKHAocClAKUBLkEuQIMAgwAVABUADYANgK6AroBNQE1AP0A/QEnAScAHwAfAtEC0QELAQsCVQJVALgAuAAAAAAAlgCWARYBFgF/AX8BCAEIARABEAEPAQ8AQABAAGcAZwAAAAAAEAAQAPgA+AEUARQAhgCGAHIAcgDtAO0CiQKJAMUAxQADAAMAggCCBMsEywFsAWwL3QvdAAAAAAG0AbQBJwEnAGkAaQmrCasB5QHlAAYABgAAAAAAAAAAAAAAAA=="
+		# Brother to Gaius Fabius Ambustus and Marcus Fabius Ambustus
+		# Son of Marcus
+	}
+	303={
+		first_name="Gaius" # Gaius Fabius Licinus
+		nickname="NICKNAME_LICINUS"
+		family = c:ROM.fam:Fabii
+		# Consul 273 BC
+		birth_date=428.8.11
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=5
+		add_finesse=7
+		add_zeal=5
+		no_traits=yes
+		add_trait="unnoticeable"
+		add_trait="stubborn"
+		add_gold=500
+		add_popularity=40
+		dna="G+wb7Idxh3G547njApYClgKXApcCfgJ+ACcAJwJmAmYCfQJ9Am4CbgJtAm0CmAKYAm0CbQKUApQDpgOmAnICcgJtAm0DogOiAmsCawKMAowCiAKIApMCkwJuAm4CcwJzAoECgQOwA7ACgAKABN4E3gJpAmkDsQOxAooCigJxAnECiAKIADkAOQJuAm4CgwKDApECkQKRApECZwJnAnwCfAJ8AnwCkQKRAosCiwKFAoUCegJ6AWUBZQJzAnMCgQKBAm0CbQFTAVMCbAJsAnMCcwKKAooCaQJpAm0CbQKKAooCagJqAoICggJgAmAA+QD5AIUAhQA5ADkAxADEAQgBCAAVABUANwA3As4CzgEyATIBRwFHAQkBCQAAAAAAfQB9AI4AjgCDAIMBDwEPAsICwgKQApABUwFTAPQA9AAAAAACuwK7AQ0BDQFRAVEAPQA9AWgBaANbA1sACQAJAPYA9gC6ALoBEQERAzYDNgMIAwgE5ATkAAAAAASPBI8B6wHrAN4A3gkJCQkB+wH7AMIAwgAAAAAAAAAAAAAAAA=="
+		# Son of Marcus a son of Marcus
+	}
+	309={
+		first_name="Quintus" # Quintus Fabius Maximus Gurges
+		nickname="NICKNAME_MAXIMUS_GURGES"
+		family = c:ROM.fam:Fabii
+		# Consul 292 BC; 276 BC
+		# Aedile 295 BC
+		# Questor 296 BC?
+		# Censor 289 BC
+		# Tribune of Soldiers 297 BC
+		father="char:302"
+		birth_date=420.11.1
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=9
+		add_finesse=7
+		add_zeal=6
+		no_traits=yes
+		add_trait="crafty"
+		add_trait="gluttonous"
+		add_trait="coward"
+		add_gold=500
+		add_popularity=50
+		dna="Ytti25t5m3nY3NjcAm4CbgObA5sCkwKTAnQCdAKNAo0CkAKQApUClQJ+An4CewJ7ApcClwJoAmgChwKHApcClwKMAowCbgJuAo0CjQOeA54CcgJyApMCkwJqAmoCiQKJAokCiQKNAo0CigKKAm0CbQKZApkCfAJ8An0CfQKKAooChwKHApICkgJoAmgCiQKJAWMBYwOxA7ECkQKRAngCeAJ/An8CdAJ0AmwCbAKPAo8CggKCAoECgQKYApgCZgJmAoECgQJsAmwCdgJ2AnwCfAKYApgCiwKLAoUChQKUApQCfAJ8AnoCegO9A70BHAEcAV0BXQFrAWsCgwKDAK4ArgFsAWwBQAFAAMAAwAE9AT0A9AD0AIsAiwAAAAABSwFLAKEAoQF5AXkBcgFyAokCiQBdAF0AiwCLAtwC3AAAAAABBgEGAKUApQKoAqgBCgEKAUgBSALOAs4BRQFFA1wDXAClAKUBUQFRAKcApwCiAKIC7gLuAAAAAAFZAVkBzgHOAOwA7An+Cf4BswGzAJcAlwAAAAAAAAAAAAAAAA=="
+	}
+	345={
+		first_name="Quintus" # Quintus Fabius Maximus Gurges
+		nickname="NICKNAME_MAXIMUS_GURGES"
+		family = c:ROM.fam:Fabii
+		# Consul 265 BC
+		# Might be that didn't existed
+		father="char:309"
+		birth_date=447.7.3
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=8
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="unnoticeable"
+	}
+	
+	### PATRICIAN GENS SEMPRONIA
+	310={
+		first_name="Publius" # Publius Sempronius Sophus
+		nickname="NICKNAME_SOPHUS"
+		family = c:ROM.fam:Sempronii
+		# Consul 304 BC
+		# Praetor 294 BC, which is weird because it is lower in Cursus Honorum
+		# Censor 300 BC
+		# Pontiff 300 BC
+		birth_date=400.8.25
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=7
+		add_finesse=8
+		add_zeal=8
+		no_traits=yes
+		add_trait="jealous"
+		add_trait="victorious"
+		add_trait="wise"
+		add_gold=200
+		add_popularity=60
+		c:ROM={ set_as_ruler=char:310 } # Consul
+		dna="Os06zYd1h3Xfld+VA6UDpQJvAm8CdwJ3Am4CbgJuAm4CbgJuAoMCgwJ9An0CcwJzApECkQKQApACiwKLApQClAJ/An8DrQOtAnACcAJ/An8ChQKFAmkCaQJtAm0CggKCAnQCdAKVApUCdQJ1AnwCfAJqAmoCbAJsAoACgAKAAoACdwJ3AooCigJzAnMCeAJ4AnoCegJzAnMCaQJpAnsCewJoAmgCbgJuAnoCegJ7AnsChQKFApcClwKDAoMCgAKAA5wDnAJqAmoCcQJxAnkCeQKXApcCawJrAngCeAKMAowCawJrAnUCdQKpAqkADQANAL8AvwAcABwBdwF3AMMAwwBLAEsCrgKuArYCtgCeAJ4DJwMnAp8CnwAAAAAAZwBnAPkA+QDwAPAACQAJAKIAogLsAuwDdgN2ApICkgAAAAABcgFyAGIAYgAaABoBHAEcAMwAzATTBNMAMgAyAJEAkQKWApYDAQMBAPEA8QTwBPADoQOhAAAAAAKsAqwBXgFeAFIAUglJCUkBKwErAOoA6gAAAAAAAAAAAAAAAA=="
+	}
+	342={
+		first_name="Publius" # Publius Sempronius Sophus
+		nickname="NICKNAME_SOPHUS"
+		family = c:ROM.fam:Sempronii
+		# Consul 268 BC 
+		# Censor 252 BC
+		father="char:310"
+		birth_date=430.8.2
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=8
+		add_finesse=7
+		add_zeal=6
+		no_traits=yes
+		add_trait="arrogant"
+		add_trait="prominent"
+	}
+	
+	### PATRICIAN GENS CLAUDIA
+	312={
+		first_name="Gaius" # Gaius Claudius Crassus Inregillensis
+		nickname="NICKNAME_CRASSUS_INREGILLENSIS"
+		family = c:ROM.fam:Claudii
+		# Dictator 337 BC
+		birth_date=381.7.2
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=8
+		add_finesse=6
+		add_zeal=4
+		no_traits=yes
+		add_trait="prominent"
+		add_trait="trusting"
+		add_gold=300
+		add_popularity=60
+	}
+	313={
+		first_name="Appius" # Appius Claudius Caecus
+		nickname="NICKNAME_CAECUS"
+		family = c:ROM.fam:Claudii
+		# Censor 312-308 BC 
+		# Consul 307 BC; 296 BC
+		# Dictator 285 BC
+		father="char:312"
+		birth_date=414.1.13
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=7
+		add_finesse=9
+		add_zeal=7
+		no_traits=yes
+		add_trait="scholar"
+		add_trait="founder"
+		add_trait="maimed"
+		add_gold=900
+		add_popularity=60
+		dna="RuJG4oNrg2vW69brAocChwKLAosClQKVApECkQJuAm4CmAKYAoACgAKTApMCcwJzAVEBUQJ7AnsClAKUAosCiwJ7AnsChQKFApACkAKAAoACkQKRAWUBZQKBAoECaAJoAn4CfgKIAogCbQJtAmsCawJmAmYCfAJ8AWYBZgKUApQCeQJ5AoUChQJ/An8CdwJ3AVMBUwOfA58CdwJ3AoACgAJ/An8CiwKLBMwEzAKIAogARwBHAocChwKMAowChwKHAnMCcwJ1AnUChgKGAogCiAKLAosChAKEAmwCbAKBAoECigKKAoECgQIbAhsAKgAqAIEAgQAfAB8A2ADYAUABQAA1ADUBKgEqAWwBbABDAEMCVAJUAMoAygAAAAAAwgDCAroCugA9AD0AyADIADcANwBsAGwCSgJKAUoBSgAAAAAAsACwADMAMwC9AL0BdAF0AVYBVgCJAIkARgBGALQAtACPAI8BCgEKAToBOgF3AXcLaQtpAAAAAAHeAd4BigGKAJ4AnglWCVYBGwEbAM0AzQAAAAAAAAAAAAAAAA=="
+	}
+	314={
+		first_name="Appius" # Appius Claudius Russus
+		nickname="NICKNAME_RUSSUS"
+		family = c:ROM.fam:Claudii
+		# Consul 268 BC
+		father="char:313"
+		birth_date=438.10.7
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=8
+		add_finesse=5
+		add_zeal=7
+		no_traits=yes
+		add_trait="ambitious"
+		add_trait="blunt"
+	}
+	315={
+		first_name="Publius" # Publius Claudius Pulcher
+		nickname="NICKNAME_PULCHER"
+		family = c:ROM.fam:Claudii
+		# Aedile 253 BC
+		# Consul 249 BC
+		# Threw sacred chickens across the board and lost battle in First Punic War that ended his career
+		father="char:313"
+		birth_date=447.2.6
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=0
+		add_charisma=1
+		add_finesse=2
+		add_zeal=0
+		no_traits=yes
+		add_trait="fair"
+		add_trait="lapsed"
+	}
+	316={
+		first_name="Gaius" # Gaius Claudius Centho
+		nickname="NICKNAME_CENTHO"
+		family = c:ROM.fam:Claudii
+		# Consul 240 BC
+		# Censor 225 BC
+		# Interrex 217 BC 
+		# Dictator 213 BC 
+		# I must say that i'm highly sceptical about the birth date, as the guy would then have to be 91 during his dictatorship
+		# Consider moving him to CharGen System
+		# Besides - his original-game father would be 68 when he made him, so thats why i think it's historical Gaius Claudius Centho instead of Appius Claudius Centho
+		father="char:313"
+		birth_date=449.8.2
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=1
+		add_charisma=1
+		add_finesse=0
+		add_zeal=0
+		no_traits=yes
+		add_trait="proud"
+	}
+	343={
+		first_name="Appius" # Appius Claudius Caudex
+		nickname="NICKNAME_CAUDEX"
+		family = c:ROM.fam:Claudii
+		# Consul 264 BC
+		father="char:312"
+		birth_date=424.7.3
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=8
+		add_charisma=8
+		add_finesse=6
+		add_zeal=4
+		no_traits=yes
+		add_trait="ambitious"
+		add_trait="prominent"
+	}
+	
+	### GENS VOLUMNIA
+	321 = {
+		first_name="Lucius" # Lucius Volumnius Flamma Violens
+		nickname="NICKNAME_FLAMMA_VIOLENS"
+		family_name="Volumnii"
+		# Consul 307 BC; 296 BC
+		birth_date=414.1.13
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=10
+		add_finesse=7
+		add_zeal=8
+		no_traits=yes
+		add_trait="founder"
+		add_gold=800
+		add_popularity=40
+		dna="PM08zbN9s33Nvs2+AoACgAJsAmwBTAFMAnYCdgKJAokCjwKPAm0CbQKUApQCewJ7BNwE3AKVApUCbgJuAooCigJ7AnsCcgJyAoQChAOvA68CdwJ3A6cDpwObA5sCeQJ5AoACgAJ2AnYCcwJzA6UDpQOvA68CkAKQA6YDpgKYApgChAKEAosCiwJtAm0EzgTOAU0BTQJvAm8ChwKHAogCiAJ9An0ClQKVAnACcAJ0AnQCiQKJAnYCdgKLAosCiQKJAU4BTgJ6AnoCkQKRAm0CbQFkAWQCkwKTAooCigKKAooCiwKLAmcCZwFKAUoBWwFbATgBOAAlACUBXwFfATMBMwDbANsAawBrAPYA9gEqASoBMwEzAQIBAgAAAAABZAFkAKIAogLaAtoAVABUAoACgAKWApYC6QLpAVkBWQAAAAAAvQC9ALkAuQEmASYA1ADUAIQAhAErASsA/QD9BN0E3QBqAGoAgwCDAOoA6gNtA20M/wz/AAAAAAOPA48B7AHsAPUA9QljCWMBDwEPACgAKAAAAAAAAAAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS VERGINIA
+	340={
+		first_name="Aulus" # Aulus Verginius
+		family_name="Verginii"
+		birth_date=390.5.11
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=5
+		add_charisma=7
+		add_finesse=8
+		add_zeal=7
+		no_traits=yes
+		add_trait="shrewd"
+		add_gold=2000
+		add_popularity=10
+		dna="A/YD9p9cn1zQtdC1AnACcAKNAo0BXwFfApUClQKJAokCkAKQAnECcQJvAm8BVQFVApICkgJ3AncCcwJzAoICggKNAo0CkAKQAm0CbQA8ADwCdgJ2AnkCeQKBAoECbAJsAnICcgJvAm8CmQKZAokCiQKIAogChwKHA7IDsgKBAoECfAJ8AnoCegKMAowCegJ6A64DrgFOAU4AMQAxAmkCaQJ4AngDrAOsAmcCZwOpA6kCZgJmAmwCbAJ+An4BVQFVAmgCaAJ3AncCZgJmAm4CbgKFAoUCggKCAm8CbwTTBNMCawJrAmoCagFJAUkAIgAiAJkAmQFjAWMACgAKAToBOgFZAVkA0ADQAsMCwwDtAO0DeAN4AVYBVgAAAAAANwA3AEsASwFAAUABWwFbAAIAAgK7ArsBbQFtAE0ATQAAAAAAXQBdALcAtwDIAMgBQAFAAH4AfgDaANoCjwKPAPIA8gC7ALsBEAEQACYAJgNOA04EnQSdAAAAAAETARMBsAGwACIAIgk0CTQBxAHEALQAtAAAAAAAAAAAAAAAAA=="
+	}
+	341={
+		first_name="Aulia" # Verginia Aulia, wife of Lucius Volumnius Flamma Violens (296 BC)
+		family_name="Verginii"
+		female=yes
+		birth_date=420.11.1
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:340"
+		no_stats=yes
+		add_martial=2
+		add_charisma=5
+		add_finesse=3
+		add_zeal=9
+		no_traits=yes
+		add_trait="devout"
+		add_gold=50
+		add_popularity=20
+		dna="rMKswotZi1nJi8mLAn4CfgJqAmoCdQJ1Ao4CjgJqAmoCaAJoAn8CfwOvA68CdAJ0AnwCfAOZA5kClQKVAoYChgKOAo4CkAKQAnECcQJpAmkCcAJwAo4CjgJ5AnkCiwKLAnwCfAFUAVQCjgKOAmYCZgKSApIBXAFcApICkgJ8AnwCeAJ4AnMCcwKMAowCaQJpAU4BTgJ1AnUClgKWAm0CbQJmAmYCcQJxAmsCawKQApACmQKZAmYCZgKSApIE4ATgApkCmQKBAoEChAKEApkCmQKNAo0CawJrApUClQKOAo4CbQJtAoACgACaAJoABAAEAT4BPgBPAE8ATABMALcAtwEWARYAhwCHAJ8AnwD+AP4AYABgAU0BTQAAAAAApwCnAAkACQBUAFQBZQFlAJMAkwEyATICLgIuADsAOwAAAAAA9QD1ASIBIgKNAo0AJAAkASEBIQEyATIBYAFgABcAFwDsAOwDPwM/APEA8QE3ATcCrgKuAAAAAACBAIEB0wHTABEAEQmfCZ8BDAEMAOYA5gAAAAAAAAAAAAAAAA=="
+	}
+	
+	### PATRICIAN GENS AEMILIA
+	353={
+		first_name="Marcus" # Marcus Aemilius Paullus
+		nickname="NICKNAME_PAULLUS"
+		family = c:ROM.fam:Aemilii
+		# Consul 302 BC 
+		# Magister Equitum 302 BC
+		birth_date=411.3.4
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=7
+		add_charisma=6
+		add_finesse=6
+		add_zeal=7
+		no_traits=yes
+		add_trait="brave"
+	}
+	354={
+		first_name="Marcus" # Marcus Aemilius Lepidus
+		nickname="NICKNAME_LEPIDUS"
+		family = c:ROM.fam:Aemilii
+		# Consul 285 BC
+		birth_date=432.8.12
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=6
+		add_charisma=7
+		add_finesse=8
+		add_zeal=6
+		no_traits=yes
+		add_trait="stubborn"
+	}
+	
+	### PATRICIAN HOUSES THAT REMAIN UNADDED:
+	# Aebutia, Aternia, Cloelia, Curtia, Gegania, Herminia, Horatia
+	# Lartia, Lucretia, Metilia, Menenia, Mucia, Numicia, Pinaria, Pollia, Potitia, Quinctilia
+	# Romilia, Sergia, Sestia, Siccia, Tarpeia, Tarquitia, Tullia, Veturia, Vitellia
+	# # Antonia, Cassia, Cominia, Curiatia, Hostilia
+	
+	### PATRICIAN HOUSES THAT ARE ADDED BUT ARE MECHANICALLY PLEBEIAN:
+	# Atilia, Verginia, Nautia, Genucia, Foslia, Aquillia
+	# # Marcia
+		
+	## UPDATE:
+	# Patrician families introduced via new hacky way:
+	# Furia, Manlia, Postumia, Quinctia, Sempronia
+		
+	### NEW CHARS
+	#########
+	## Main Sources:
+	## Fastus Capitolini; Broughton "Magistrates of the Roman Republic"
+	## Fastus Capitolini usually have father's and grandfather's name attached so i included them as well
+	##
+	
+	### PATRICIAN GENS SERVILIA
+	601={
+		first_name="Gaius" # Gaius Servilius Tucca
+		nickname="NICKNAME_TUCCA"
+		family = c:ROM.fam:Servilii
+		# Consul 284 BC
+		birth_date=426.9.21
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS MANLIA
+	602={
+		first_name="Gnaeus" # Gnaeus Manlius Vulso Capitolinus
+		nickname="NICKNAME_VULSO_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		birth_date=229.1.23
+		death_date=294.6.7
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	675={
+		first_name="Aulus" # Aulus Manlius Vulso Capitolinus
+		nickname="NICKNAME_VULSO_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		birth_date=256.10.11
+		death_date=315.3.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:602"
+	}
+	# Sons of Aulus
+	755={
+		first_name="Aulus" # Aulus Manlius Vulso Capitolinus
+		nickname="NICKNAME_VULSO_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		# Consular Tribune 405 BC; 402 BC; 397 BC
+		birth_date=283.3.15
+		death_date=361.3.18
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=prominent
+		father="char:675"
+	}
+	753={
+		first_name="Titus" # Titus Manlius Vulso Capitolinus
+		nickname="NICKNAME_VULSO_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		birth_date=285.3.15
+		death_date=349.8.16
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:675"
+	}
+	754={
+		first_name="Quintus" # Quintus Manlius Vulso Capitolinus
+		nickname="NICKNAME_VULSO_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		# Consular Tribune 396 BC
+		birth_date=300.2.22
+		death_date=366.4.12
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=prominent
+		father="char:675"
+	}
+	# Sons of Titus
+	756={
+		first_name="Titus" # Titus Manlius Capitolinus
+		nickname="NICKNAME_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		birth_date=305.9.11
+		death_date=377.5.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:753"
+	}
+	757={
+		first_name="Marcus" # Marcus Manlius Capitolinus
+		nickname="NICKNAME_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		# Consul 392 BC
+		birth_date=307.9.12
+		death_date=365.3.13
+		culture="roman"
+		religion="roman_pantheon"
+		add_martial=15 # Defended Rome against Brennus
+		add_trait=brave
+		add_trait=righteous
+		add_trait=prominent
+		father="char:753"
+	}
+	758={
+		first_name="Aulus" # Aulus Manlius Capitolinus
+		nickname="NICKNAME_CAPITOLINUS"
+		family = c:ROM.fam:Manlii
+		# Consular Tribune 389 BC; 385 BC; 383 BC; 370 BC and probably once more
+		birth_date=309.2.28
+		death_date=385.1.30
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=prominent
+		father="char:753"
+	}
+	# Sons of Aulus
+	760={
+		first_name="Lucius" # Lucius Manlius Capitolinus Imperiosus
+		nickname="NICKNAME_CAPITOLINUS_IMPERIOSUS"
+		family = c:ROM.fam:Manlii
+		# Dictator 363 BC
+		birth_date=330.8.12
+		death_date=389.4.30
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=cruel
+		add_trait=prominent
+		father="char:758"
+	}
+	759={
+		first_name="Publius" # Publius Manlius Capitolinus 
+		nickname="NICKNAME_CAPITOLINUS_IMPERIOSUS"
+		family = c:ROM.fam:Manlii
+		# Consular Tribune 379 BC; 367 BC
+		birth_date=339.10.11
+		death_date=390.12.7
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=prominent
+		father="char:758"
+	}
+	# Sons of Lucius
+	762={
+		first_name="Gnaeus" # Gnaeus Manlius Capitolinus Imperiosus
+		nickname="NICKNAME_CAPITOLINUS_IMPERIOSUS"
+		family = c:ROM.fam:Manlii
+		# Consul 359 BC; 357 BC
+		birth_date=352.7.14
+		death_date=411.3.22
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait=prominent
+		father="char:760"
+	}
+	761={
+		first_name="Titus" # Titus Manlius Imperiosus Torquatus
+		nickname="NICKNAME_IMPERIOSUS_TORQUATUS"
+		family = c:ROM.fam:Manlii
+		# Consul 347 BC; 344 BC; 340 BC:
+		# Dictator 353 BC; 349 BC; 320 BC
+		birth_date=361.3.15
+		death_date=435.1.30
+		culture="roman"
+		religion="roman_pantheon"
+		add_martial=10
+		add_trait=prominent
+		father="char:760"
+	}
+	# Sons of Titus
+	763={
+		first_name="Titus" # Titus Manlius Torquatus
+		nickname="NICKNAME_TORQUATUS"
+		family = c:ROM.fam:Manlii
+		birth_date=385.7.19
+		death_date=447.6.10
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:761"
+	}
+	# Sons of Titus
+	764={
+		first_name="Titus" # Titus Manlius Torquatus
+		nickname="NICKNAME_TORQUATUS"
+		family = c:ROM.fam:Manlii
+		# Consul 299 BC
+		birth_date=412.3.15
+		culture="roman"
+		religion="roman_pantheon"
+		add_martial=2
+		father="char:763"
+	}
+	765={
+		first_name="Lucius" # Lucius Manlius Torquatus
+		nickname="NICKNAME_TORQUATUS"
+		family = c:ROM.fam:Manlii
+		# Legate 295 BC
+		birth_date=424.5.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:763"
+	}
+	
+	### PATRICIAN GENS ATILIA
+	# Regulus branch
+	603={
+		first_name="Marcus" # Marcus Atilius Regulus
+		nickname="NICKNAME_REGULUS"
+		family_name="Atilii"
+		# Consul 294 BC
+		birth_date=417.5.10
+		culture="roman"
+		religion="roman_pantheon"
+		no_stats=yes
+		add_martial=9
+		add_charisma=3
+		add_finesse=3
+		add_zeal=2
+	}
+	604={
+		first_name="Marcus" # Marcus Atilius Regulus
+		nickname="NICKNAME_REGULUS"
+		family_name="Atilii"
+		# Consul 267 BC
+		# Consul S. 256 BC
+		birth_date=447.2.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:603"
+	}
+	605={
+		first_name="Gaius" # Gaius Atilius Regulus
+		nickname="NICKNAME_REGULUS"
+		family_name="Atilii"
+		# Consul 257 BC; 250 BC
+		birth_date=450.5.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:603"
+	}
+	# Calatinus branch
+	701={
+		first_name="Gaius" # Gaius Atilius Calatinus
+		nickname="NICKNAME_CALATINUS"
+		family_name="Atilii"
+		birth_date=391.4.20
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	702={
+		first_name="Aulus" # Aulus Atilius Calatinus
+		nickname="NICKNAME_CALATINUS"
+		family_name="Atilii"
+		birth_date=421.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:701"
+	}
+	703={
+		first_name="Aulus" # Aulus Atilius Calatinus
+		nickname="NICKNAME_CALATINUS"
+		family_name="Atilii"
+		# Consul 258 BC; 254 BC
+		# Praetor 257 BC
+		# Dictator 249 BC
+		# Censor 247 BC
+		birth_date=450.1.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:702"
+	}
+	
+	### PATRICIAN GENS AEMILIA (Again)
+	# Barbula branch
+	606={
+		first_name="Lucius" # Lucius Aemilius Barbula
+		nickname="NICKNAME_BARBULA"
+		family = c:ROM.fam:Aemilii
+		birth_date=332.1.19
+		death_date=391.12.15
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	607={
+		first_name="Quintus" # Quintus Aemilius Barbula
+		nickname="NICKNAME_BARBULA"
+		family = c:ROM.fam:Aemilii
+		birth_date=365.5.14
+		death_date=411.10.1
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:606"
+		# Son of Lucius
+	}
+	708={
+		first_name="Quintus" # Quintus Aemilius Barbula
+		nickname="NICKNAME_BARBULA"
+		family = c:ROM.fam:Aemilii
+		# Consul 317 BC; 311 BC
+		birth_date=393.1.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:607"
+		add_martial=4
+	}
+	709={
+		first_name="Marcus" # Marcus Aemilius Barbula
+		nickname="NICKNAME_BARBULA"
+		family = c:ROM.fam:Aemilii
+		# Dictator 285 BC
+		birth_date=405.7.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:607"
+	}
+	710={
+		first_name="Lucius" # Lucius Aemilius Barbula
+		nickname="NICKNAME_BARBULA"
+		family = c:ROM.fam:Aemilii
+		# Consul 281 BC
+		# Censor 269 BC
+		birth_date=421.11.5
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:708"
+		add_martial=4
+	}
+	# Papus branch
+	641={
+		first_name="Lucius" # Lucius Aemilius Papus
+		nickname="NICKNAME_PAPUS"
+		family = c:ROM.fam:Aemilii
+		birth_date=358.4.2
+		death_date=420.3.15
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	663={
+		first_name="Marcus" # Marcus Aemilius Papus
+		nickname="NICKNAME_PAPUS"
+		family = c:ROM.fam:Aemilii
+		# Dictator 321 BC
+		birth_date=388.7.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:641"
+	}
+	661={
+		first_name="Gnaeus" # Gnaeus Aemilius Papus
+		nickname="NICKNAME_PAPUS"
+		family = c:ROM.fam:Aemilii
+		birth_date=392.4.2
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:641"
+	}
+	662={
+		first_name="Quintus" # Quintus Aemilius Papus
+		nickname="NICKNAME_PAPUS"
+		family = c:ROM.fam:Aemilii
+		# Consul 282 BC; 278 BC
+		# Censor 275 BC
+		birth_date=427.9.27
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:661"
+	}
+	
+	### PATRICIAN GENS VALERIA (Again)
+	608={
+		first_name="Marcus" # Marcus Valerius Maximus Corvinus
+		nickname="NICKNAME_MAXIMUS_CORVINUS"
+		family = c:ROM.fam:Valerii
+		# Consul 312 BC; 289 BC; 286 BC
+		# Censor 307 BC
+		birth_date=400.2.1 # It's kinda strange for him not be the son of Marcus Valerius Corvus but the timeline doesn't really fit. He would have to be 24 at his first consulship
+		culture="roman"
+		religion="roman_pantheon"
+		# Son of Marcus
+	}
+	687={
+		first_name="Manius" # Manius Valerius Maximus Messala
+		nickname="NICKNAME_MAXIMUS_CORVINUS" # _MESSALA aquired later in history
+		family = c:ROM.fam:Valerii
+		# Consul 263 BC
+		# Censor 253 BC
+		birth_date=449.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:608"
+	}
+	642={
+		first_name="Lucius" # Lucius Valerius Flaccus
+		nickname="NICKNAME_FLACCUS"
+		family = c:ROM.fam:Valerii
+		# Magister Equitum 321 BC
+		birth_date=397.9.21
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	634={
+		first_name="Publius" # Publius Valerius Laevinus
+		nickname="NICKNAME_LAEVINUS"
+		family = c:ROM.fam:Valerii
+		# Consul 280 BC
+		# Lost battle at Heraclea
+		birth_date=431.2.19
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS MARCIA (Again)
+	609={
+		first_name="Gaius" # Gaius Marcius Rutilus
+		nickname="NICKNAME_RUTILUS"
+		family_name="Marcii"
+		# Consul 310 BC
+		# Pontiff 300 BC
+		# Censor 294 BC; 265 BC
+		birth_date=402.4.2
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS SULPICIA (Again)
+	610={
+		first_name="Gaius" # Gaius Sulpicius Longus
+		nickname="NICKNAME_LONGUS"
+		family = c:ROM.fam:Sulpicii
+		# Consul 337 BC; 323 BC; 314 BC
+		# Dictator 312 BC
+		birth_date=374.8.5
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Paterculus branch
+	704={
+		first_name="Quintus" # Quintus Sulpicius Paterculus
+		nickname="NICKNAME_PATERCULUS"
+		family = c:ROM.fam:Sulpicii
+		birth_date=380.6.22
+		death_date=435.3.18
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	705={
+		first_name="Quintus" # Quintus Sulpicius Paterculus
+		nickname="NICKNAME_PATERCULUS"
+		family = c:ROM.fam:Sulpicii
+		birth_date=413.4.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:704"
+	}
+	706={
+		first_name="Gaius" # Gaius Sulpicius Paterculus
+		nickname="NICKNAME_PATERCULUS"
+		family = c:ROM.fam:Sulpicii
+		birth_date=446.10.17
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:705"
+	}
+	
+	### GENS POETELIA
+	628={
+		first_name="Gaius" # Gaius Poetelius Libo Visolus
+		nickname="NICKNAME_LIBO_VISOLUS"
+		family_name="Poetelii"
+		# Consul 326 BC
+		# Conflicting source claims he was a Dictator in 313 BC
+		# There is a lot of confusion about all of this character because of Roman name-inheriting tradition
+		# There was a consul Gaius Poetelius Libo Visolus that is mentioned in 360, 346 and 326, and there are sources claiming there was a dictator of the same name in 313 BC 
+		# But if that all was one guy then he would be like a very old in 313 and 326
+		# But there could be his son that would be dictator in both 313 and consul in 326
+		# However i already chose Rullianus to be 313 dictator, so that's out of the way
+		birth_date=380.4.10
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	611={
+		first_name="Marcus" # Marcus Poetelius Libo
+		nickname="NICKNAME_LIBO"
+		family_name="Poetelii"
+		# Consul 314 BC
+		# Magister Equitum 313 BC
+		birth_date=404.9.15
+		culture="roman"
+		religion="roman_pantheon"
+		# Son of another Marcus, so maybe a nephew to Gaius
+	}
+	
+	### GENS PUBLILIA
+	612={
+		first_name="Quintus" # Quintus Publilius Philo
+		nickname="NICKNAME_PHILO"
+		family_name="Publilii"
+		# Consul 339 BC; 327 BC; 320 BC; 315 BC
+		# Dictator 339 BC 
+		# Magister Equitum 335 BC
+		# Censor 332 BC
+		birth_date=373.6.22
+		culture="roman"
+		religion="roman_pantheon"
+		# Son of Quintus, son of Quintus
+	}
+	717={
+		first_name="Titus" # Titus Publilius
+		family_name="Publilii"
+		birth_date=399.3.27
+		# Augur 300 BC
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS NAUTIA
+	613={
+		first_name="Spurius" # Spurius Nautius Rutilus
+		nickname="NICKNAME_RUTILUS"
+		family_name="Nautii"
+		# Consul 316 BC
+		birth_date=391.3.5
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	653={
+		first_name="Spurius" # Spurius Nautius Rutilus
+		nickname="NICKNAME_RUTILUS"
+		family_name="Nautii"
+		# Legate 293 BC, his father is bit old at this point so i assume it was him
+		birth_date=421.3.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:613"
+	}
+	652={
+		first_name="Gaius" # Gaius Nautius Rutilus
+		nickname="NICKNAME_RUTILUS"
+		family_name="Nautii"
+		# Consul 287 BC
+		birth_date=422.7.17
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:613"
+	}
+	
+	### GENS POPILIA
+	620={
+		first_name="Marcus" # Marcus Popilius Laenas
+		nickname="NICKNAME_LAENAS"
+		family_name="Popillii"
+		# Consul 316 BC
+		birth_date=394.7.4
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS FOSLIA
+	614={
+		first_name="Marcus" # Marcus Foslius Flaccinator
+		nickname="NICKNAME_FLACCINATOR"
+		family_name="Foslii"
+		# Consul 318 BC
+		# Magister Equitum 320 BC; 314 BC
+		birth_date=394.5.1
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS PLAUTIA
+	615={
+		first_name="Lucius" # Lucius Plautius Venox
+		nickname="NICKNAME_VENOX"
+		family_name="Plautii"
+		# Consul 330 BC; 318 BC
+		birth_date=381.2.25
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	619={
+		first_name="Gaius" # Gaius Plautius Decianus
+		nickname="NICKNAME_DECIANUS"
+		family_name="Plautii"
+		# Consul 329 BC
+		birth_date=380.6.6
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS FULVIA (AGAIN)
+	# Curvus branch
+	616={
+		first_name="Lucius" # Lucius Fulvius Curvus
+		nickname="NICKNAME_CURVUS"
+		family_name="Fulvii"
+		birth_date=330.12.10
+		death_date=391.3.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	712={
+		first_name="Lucius" # Lucius Fulvius Curvus
+		nickname="NICKNAME_CURVUS"
+		family_name="Fulvii"
+		birth_date=361.8.8
+		death_date=423.5.4
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:616"
+	}
+	713={
+		first_name="Lucius" # Lucius Fulvius Curvus
+		nickname="NICKNAME_CURVUS"
+		family_name="Fulvii"
+		# Consul 322 BC
+		birth_date=388.11.2
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:712"
+	}
+	714={
+		first_name="Gaius" # Gaius Fulvius Curvus
+		nickname="NICKNAME_CURVUS"
+		family_name="Fulvii"
+		# Aedile 296 BC
+		birth_date=415.8.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:616" # Unconfirmed
+	}
+	# Maximus branch
+	645={
+		first_name="Gnaeus" # Gnaeus Fulvius Maximus Centumalus
+		nickname="NICKNAME_MAXIMUS_CENTUMALUS"
+		family_name="Fulvii"
+		# Consul 298 BC
+		# Dictator 263 BC
+		# Legate 302 BC 
+		birth_date=414.6.7
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Flaccus branch
+	684={
+		first_name="Marcus" # Marcus Fulvius Flaccus
+		nickname="NICKNAME_FLACCUS"
+		family_name="Fulvii"
+		birth_date=378.4.21
+		death_date=432.9.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	685={
+		first_name="Quintus" # Quintus Fulvius Flaccus
+		nickname="NICKNAME_FLACCUS"
+		family_name="Fulvii"
+		birth_date=411.12.1
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:684"
+	}
+	686={
+		first_name="Marcus" # Marcus Fulvius Flaccus
+		nickname="NICKNAME_FLACCUS"
+		family_name="Fulvii"
+		# Consul 264 BC
+		# Plebeian Tribune 270 BC
+		birth_date=439.6.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:685"
+	}
+	
+	
+	### PATRICIAN GENS JUNIA (Again)
+	617={
+		first_name="Decimus" # Decimus Junius Brutus Scaeva
+		nickname="NICKNAME_BRUTUS_SCAEVA"
+		family = c:ROM.fam:Junii
+		# Consul 325 BC
+		birth_date=385.5.5
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	647={
+		first_name="Decimus" # Decimus Junius Brutus Scaeva
+		nickname="NICKNAME_BRUTUS_SCAEVA"
+		family = c:ROM.fam:Junii
+		# Consul 292 BC
+		birth_date=418.7.25
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:617"
+	}
+	648={
+		first_name="Gaius" # Gaius Junius Bubulcus Brutus
+		family = c:ROM.fam:Junii
+		nickname="NICKNAME_BUBULCUS_BRUTUS"
+		# Consul 291 BC
+		birth_date=420.8.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:298"
+	}
+	# Pera branch
+	680={
+		first_name="Decimus" # Decimus Junius Pera
+		family = c:ROM.fam:Junii
+		nickname="NICKNAME_PERA"
+		birth_date=375.4.22
+		death_date=437.9.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	681={
+		first_name="Decimus" # Decimus Junius Pera
+		family = c:ROM.fam:Junii
+		nickname="NICKNAME_PERA"
+		birth_date=409.12.1
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:680"
+	}
+	682={
+		first_name="Decimus" # Decimus Junius Pera
+		family = c:ROM.fam:Junii
+		nickname="NICKNAME_PERA"
+		# Consul 266 BC
+		# Censor 253 BC
+		birth_date=440.7.25
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:681"
+	}
+	
+	### PATRICIAN GENS CORNELIA (Again)
+	693={
+		first_name="Gnaeus" # Gnaeus Cornelius Scipio Asina
+		nickname="NICKNAME_SCIPIO_ASINA"
+		family = c:ROM.fam:Cornelii
+		# Consul 260 BC; 254 BC
+		birth_date=450.8.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:127"
+	}
+	
+	# Lentulus branch
+	618={
+		first_name="Gnaeus" # Gnaeus Cornelius Lentulus
+		nickname="NICKNAME_LENTULUS"
+		family = c:ROM.fam:Cornelii
+		birth_date=332.9.3
+		death_date=389.5.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	666={
+		first_name="Gnaeus" # Gnaeus Cornelius Lentulus
+		nickname="NICKNAME_LENTULUS"
+		family = c:ROM.fam:Cornelii
+		birth_date=369.4.22
+		death_date=420.6.17
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:618"
+	}
+	667={
+		first_name="Lucius" # Lucius Cornelius Lentulus
+		nickname="NICKNAME_LENTULUS"
+		family = c:ROM.fam:Cornelii
+		# Consul 327 BC
+		birth_date=381.10.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:618"
+	}
+	718={
+		first_name="Servius" # Servius Cornelius Lentulus
+		nickname="NICKNAME_LENTULUS"
+		family = c:ROM.fam:Cornelii
+		# Consul 303 BC
+		birth_date=392.5.1
+		culture="roman"
+		religion="roman_pantheon"
+		add_popularity=100 # Should win election within 3 months
+		father="char:666"
+	}
+	719={
+		first_name="Tiberius" # Tiberius Cornelius Lentulus
+		nickname="NICKNAME_LENTULUS"
+		family = c:ROM.fam:Cornelii
+		birth_date=413.10.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:718"
+	}
+	720={
+		first_name="Lucius" # Lucius Cornelius Lentulus Caudinus
+		nickname="NICKNAME_LENTULUS_CAUDINUS"
+		family = c:ROM.fam:Cornelii
+		# Consul 275 BC
+		birth_date=436.12.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:719"
+	}
+	
+	# Rufinus branch
+	649={
+		first_name="Gnaeus" # Publius Cornelius Rufinus
+		nickname="NICKNAME_RUFINUS"
+		family = c:ROM.fam:Cornelii
+		birth_date=361.12.1
+		death_date=415.6.6
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	650={
+		first_name="Gnaeus" # Gnaeus Cornelius Rufinus
+		nickname="NICKNAME_RUFINUS"
+		family = c:ROM.fam:Cornelii
+		birth_date=387.8.8
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:649"
+	}
+	736={
+		first_name="Publius" # Publius Cornelius Rufinus
+		nickname="NICKNAME_RUFINUS"
+		family = c:ROM.fam:Cornelii
+		# Consul 290 BC
+		birth_date=421.5.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:650"
+	}
+	# Dolabella branch
+	658={
+		first_name="Publius" # Publius Cornelius Dolabella
+		nickname="NICKNAME_DOLABELLA"
+		family = c:ROM.fam:Cornelii
+		# Consul 283 BC
+		birth_date=428.9.16
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Merenda branch 
+	668={
+		first_name="Servius" # Servius Cornelius Merenda
+		nickname="NICKNAME_MERENDA"
+		family = c:ROM.fam:Cornelii
+		birth_date=375.9.3
+		death_date=433.6.1
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	745={
+		first_name="Publius" # Publius Cornelius Merenda
+		nickname="NICKNAME_MERENDA"
+		family = c:ROM.fam:Cornelii
+		birth_date=407.1.30
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:668"
+	}
+	746={
+		first_name="Servius" # Servius Cornelius Merenda
+		nickname="NICKNAME_MERENDA"
+		family = c:ROM.fam:Cornelii
+		# Consul 274 BC
+		birth_date=435.7.29
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:745"
+	}
+	# Blasio branch 
+	674={	
+		first_name="Gnaeus" # Gnaeus Cornelius Blasio
+		nickname="NICKNAME_BLASIO"
+		family = c:ROM.fam:Cornelii
+		birth_date=380.2.25
+		death_date=443.10.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	743={	
+		first_name="Publius" # Publius Cornelius Blasio
+		nickname="NICKNAME_BLASIO"
+		family = c:ROM.fam:Cornelii
+		birth_date=411.7.22
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:674"
+	}
+	744={	
+		first_name="Gnaeus" # Gnaeus Cornelius Blasio
+		nickname="NICKNAME_BLASIO"
+		family = c:ROM.fam:Cornelii
+		# Consul 270 BC; 257 BC 
+		# Censor 265 BC
+		birth_date=439.5.4
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:743"
+	}
+	
+	### GENS ANCIA
+	621={
+		first_name="Quintus" # Quintus Anicius Praenestinus
+		nickname="NICKNAME_PRAENESTINUS"
+		family_name="Anicii"
+		# Aedile 304 BC
+		birth_date=413.1.30
+		culture="roman"
+		religion="roman_pantheon"
+		give_office=office_curule_aedile # Aedile
+	}
+	
+	### PATRICIAN GENS FURIA 
+	632={
+		first_name="Lucius" # Lucius Furius
+		family = c:ROM.fam:Furii
+		# Praetor 318 BC
+		birth_date=387.11.11
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS FURIA (Plebeian Branch)
+	622={
+		first_name="Lucius" # Lucius Furius
+		family_name="Furii"
+		# Plebeian Tribune 308 BC
+		# I assumed this is different guy since otherwise he would somehow be tribuning around 10 years after Praetorship
+		birth_date=412.5.27
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS JUVENTIA
+	623={
+		first_name="Gaius" # [NameUnrecorded] Juventius
+		family_name="Juventii"
+		# Aedile 306 BC
+		birth_date=410.8.15
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS FABIA (Again)
+	624={
+		first_name="Kaeso" # Kaeso Fabius
+		family = c:ROM.fam:Fabii
+		# Unconfirmed Praetor 310 BC, Livy isn't sure who it was, Broughton says it's Legate but original clearly has Praetor in it. Might be a pro-praetor at this point tho
+		birth_date=402.7.7
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Ambustus branch
+	626={
+		first_name="Marcus" # Marcus Fabius Ambustus
+		nickname="NICKNAME_AMBUSTUS"
+		family = c:ROM.fam:Fabii
+		# Magister Equitum 322 BC
+		# Unconfirmed Praetor 310 BC, Livy isn't sure who it was, Broughton says it's Legate but original clearly has Praetor in it. Might be a pro-praetor at this point tho
+		birth_date=400.3.19
+		culture="roman"
+		religion="roman_pantheon" 
+		# Brother to Quintus Fabius Rullianus and Gaius Fabius Ambustus
+	}
+	629={
+		first_name="Gaius" # Gaius Fabius Ambustus
+		nickname="NICKNAME_AMBUSTUS"
+		family = c:ROM.fam:Fabii
+		# Magister Equitum 315 BC
+		birth_date=406.6.15
+		culture="roman"
+		religion="roman_pantheon" 
+		# Brother to Quintus Fabius Rullianus and Marcus Fabius Ambustus
+	}
+	630={
+		first_name="Quintus" # Quintus Fabius Ambustus
+		nickname="NICKNAME_AMBUSTUS"
+		family = c:ROM.fam:Fabii
+		# Dictator 321 BC for like 5 minutes before he resigned
+		birth_date=399.8.12
+		culture="roman"
+		religion="roman_pantheon" 
+	}
+	# Pictor branch 
+	677={
+		first_name="Gaius" # Gaius Fabius Pictor
+		nickname="NICKNAME_PICTOR"
+		family = c:ROM.fam:Fabii
+		birth_date=421.11.22
+		culture="roman"
+		religion="roman_pantheon" 
+		father="char:626" # Marcus Fabius Ambustus, since Numerius and Gurges were cousins
+	}
+	678={
+		first_name="Gaius" # Gaius Fabius Pictor
+		nickname="NICKNAME_PICTOR"
+		family = c:ROM.fam:Fabii
+		# Consul 269 BC
+		birth_date=443.6.13
+		culture="roman"
+		religion="roman_pantheon" 
+		father="char:677"
+	}
+	679={
+		first_name="Numerius" # Numerius Fabius Pictor
+		nickname="NICKNAME_PICTOR"
+		family = c:ROM.fam:Fabii
+		# Consul 266 BC
+		birth_date=445.2.11
+		culture="roman"
+		religion="roman_pantheon" 
+		father="char:677"
+	}
+	
+	### PATRICIAN GENS CLAUDIA (Again)
+	627={
+		first_name="Gaius" # Gaius Claudius Hortator
+		nickname="NICKNAME_HORTATOR"
+		family = c:ROM.fam:Claudii
+		# Magister Equitum 337 BC
+		# Unconfirmed Praetor 310 BC, Livy isn't sure who it was, Broughton says it's Legate but original clearly has Praetor in it. Might be a pro-praetor at this point tho
+		birth_date=384.10.22
+		culture="roman"
+		religion="roman_pantheon"
+	}	
+	654={
+		first_name="Marcus" # Marcus Claudius Marcellus
+		nickname="NICKNAME_MARCELLUS"
+		family = c:ROM.fam:Claudii
+		# Consul 287 BC
+		birth_date=403.11.22
+		culture="roman"
+		religion="roman_pantheon"
+	}	
+	# Canina branch
+	656={
+		first_name="Gaius" # Gaius Claudius Canina
+		nickname="NICKNAME_CANINA"
+		family = c:ROM.fam:Claudii
+		birth_date=365.10.15
+		death_date=429.5.19
+		culture="roman"
+		religion="roman_pantheon"
+	}	
+	739={
+		first_name="Marcus" # Marcus Claudius Canina
+		nickname="NICKNAME_CANINA"
+		family = c:ROM.fam:Claudii
+		birth_date=399.7.18
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:656"
+	}	
+	740={
+		first_name="Gaius" # Gaius Claudius Canina
+		nickname="NICKNAME_CANINA"
+		family = c:ROM.fam:Claudii
+		# Consul 285 BC; 273 BC
+		birth_date=427.2.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:739"
+	}	
+	
+	### GENS AELIA
+	631={
+		first_name="Publius" # Publius Aelius Paetus
+		nickname="NICKNAME_PAETUS"
+		family_name="Aelii"
+		# Consul 337 BC
+		# Magister Equitum 321 BC for like 5 minutes before he resigned
+		# Augur 300 BC
+		birth_date=374.7.7
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	655={
+		first_name="Gaius" # Gaius Aelius Paetus
+		nickname="NICKNAME_PAETUS"
+		family_name="Aelii"
+		# Consul 286 BC
+		birth_date=406.10.29
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:631" # Unconfirmed
+	}
+	711={
+		first_name="Lucius" # Lucius Aelius Paetus
+		nickname="NICKNAME_PAETUS"
+		family_name="Aelii"
+		# Aedile 296 BC
+		birth_date=413.5.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:631" # Unconfirmed
+	}
+	# Distant Family?
+	730={
+		first_name="Gaius" # Gaius Aelius 
+		family_name="Aelii"
+		# Plebeian Tribune 295 BC
+		birth_date=422.8.18
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS COMINIA
+	633={
+		first_name="Lucius" # Lucius Cominius
+		family_name="Cominii"
+		# Plebeian Tribune 312 BC
+		birth_date=408.12.5
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS GENUCIA
+	635={
+		first_name="Lucius" # Lucius Genucius Aventinensis
+		nickname="NICKNAME_AVENTINENSIS"
+		family_name="Genucii"
+		# Consul 303 BC
+		# Plebeian Tribune 342 BC, altough it isn't really confirmed that tribune Lucius Genucius is him
+		birth_date=379.3.15
+		culture="roman"
+		religion="roman_pantheon"
+		add_popularity=99 # Should win election within 3 months
+	}
+	625={
+		first_name="Gaius" # Gaius Genucius Augurinus
+		nickname="NICKNAME_AUGURINUS"
+		family_name="Genucii" 
+		# Augur 300 BC
+		birth_date=409.3.29
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Clepsina branch
+	665={
+		first_name="Lucius" # Lucius Genucius Clepsina
+		nickname="NICKNAME_CLEPSINA"
+		family_name="Genucii"
+		birth_date=377.11.14
+		death_date=439.8.13
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	669={
+		first_name="Lucius" # Lucius Genucius Clepsina
+		nickname="NICKNAME_CLEPSINA"
+		family_name="Genucii"
+		birth_date=403.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:665"
+	}
+	670={
+		first_name="Lucius" # Lucius Genucius Clepsina
+		nickname="NICKNAME_CLEPSINA"
+		family_name="Genucii"
+		# Consul 271 BC
+		birth_date=432.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:669"
+	}
+	742={ 
+		first_name="Gaius" # Gaius Genucius Clepsina
+		nickname="NICKNAME_CLEPSINA"
+		family_name="Genucii"
+		# Consul 276 BC; 270 BC
+		birth_date=434.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:669"
+	}
+	
+	### GENS ATILIA (Plebeian Branch)
+	636={
+		first_name="Lucius" # Lucius Atilius
+		family_name="Atilii"
+		# Plebeian Tribune 311 BC
+		birth_date=406.10.15
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS DECIA (Again)
+	637={
+		first_name="Marcus" # Marcus Decius
+		family_name="Decii"
+		# Plebeian Tribune 311 BC
+		birth_date=406.5.24
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	664={
+		first_name="Publius" # Publius Decius Mus
+		nickname="NICKNAME_MUS"
+		family_name="Decii"
+		# Consul 279 BC
+		# Consul S. 265 BC
+		birth_date=432.7.28
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:284"
+	}
+	
+	### GENS OVINIA
+	638={
+		first_name="Publius" # [NameUnrecorded] Ovinius
+		family_name="Ovinii"
+		# Plebeian Tribune 313 BC
+		birth_date=402.3.22
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS ANTISTIA
+	639={
+		first_name="Marcus" # Marcus Antistius
+		family_name="Antistii"
+		# Plebeian Tribune 319 BC
+		birth_date=399.8.9
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS FLAVIA (Again)
+	640={
+		first_name="Marcus" # Marcus Flavius
+		family_name="Flavii"
+		# Plebeian Tribune 327 BC; 323 BC
+		birth_date=392.10.2
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS TITINIA
+	644={
+		first_name="Gaius" # Gaius Titinius
+		family_name="Titinii"
+		birth_date=349.10.13
+		death_date=398.3.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	750={
+		first_name="Gaius" # Gaius Titinius
+		family_name="Titinii"
+		birth_date=381.12.2
+		death_date=448.6.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:644"
+	}
+	751={
+		first_name="Marcus" # Marcus Titinius
+		family_name="Titinii"
+		# Magister Equitum 302 BC
+		birth_date=408.5.23
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:750"
+	}
+	
+	### GENS LIVIA   
+	643={
+		first_name="Marcus" # Marcus Livius Denter
+		family_name="Livii"
+		nickname="NICKNAME_DENTER"
+		# Consul 302 BC
+		# Pontiff 300 BC
+		birth_date=403.10.12
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS CARVILIA  
+	646={
+		first_name="Gaius" # Gaius Carvilius Maximus
+		family_name="Carvilii"
+		nickname="NICKNAME_MAXIMUS"
+		birth_date=362.12.15
+		death_date=444.12.3
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	676={
+		first_name="Gaius" # Gaius Carvilius Maximus
+		family_name="Carvilii"
+		nickname="NICKNAME_MAXIMUS"
+		birth_date=390.6.19
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:646"
+	}
+	741={
+		first_name="Spurius" # Spurius Carvilius Maximus
+		family_name="Carvilii"
+		nickname="NICKNAME_MAXIMUS"
+		# Consul 293 BC; 272 BC
+		# Censor 289 BC
+		# Aedile 299 BC
+		birth_date=417.11.13
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:676"
+	}
+	
+	### GENS CAEDICIA   
+	651={
+		first_name="Quintus" # Quintus Caedicius Noctua
+		nickname="NICKNAME_NOCTUA"
+		family_name="Caedicii"
+		birth_date=398.6.5
+		culture="roman"
+		religion="roman_pantheon"
+	}  
+	724={
+		first_name="Quintus" # Quintus Caedicius Noctua
+		nickname="NICKNAME_NOCTUA"
+		family_name="Caedicii"
+		# Consul 289 BC
+		# Censor 283 BC
+		birth_date=423.3.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:651"
+	}
+	723={
+		first_name="Marcus" # Marcus Caedicius
+		nickname="NICKNAME_NOCTUA" # Unconfirmed
+		family_name="Caedicii"
+		birth_date=427.12.9
+		# Legate 293 BC
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:651" # Unconfirmed
+	}
+	
+	### GENS CAECILIA   
+	657={
+		first_name="Lucius" # Lucius Caecilius Metellus Denter
+		family_name="Caecilii"
+		nickname="NICKNAME_METELLUS_DENTER"
+		# Consul 284 BC
+		birth_date=425.4.20
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS DOMITIA   
+	659={
+		first_name="Gnaeus" # Gnaeus Domitius Calvinus Maximus
+		family_name="Domitii"
+		nickname="NICKNAME_CALVINUS_MAXIMUS"
+		# Consul 283 BC
+		# Lost Aedileship in 304 BC
+		# Censor 280 BC
+		# Dictator 280 BC
+		birth_date=414.8.14
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS FABRICIA  
+	660={
+		first_name="Gaius" # Gaius Fabricius Luscinius
+		family_name="Fabricii"
+		nickname="NICKNAME_LUSCINIUS"
+		birth_date=373.9.10
+		death_date=444.4.24
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	734={
+		first_name="Gaius" # Gaius Fabricius Luscinius
+		family_name="Fabricii"
+		nickname="NICKNAME_LUSCINIUS"
+		birth_date=401.2.23
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:660"
+	}
+	735={
+		first_name="Gaius" # Gaius Fabricius Luscinius Monocularis
+		family_name="Fabricii"
+		nickname="NICKNAME_LUSCINIUS"
+		# Consul 282 BC; 278 BC
+		# Censor 275 BC
+		birth_date=429.5.22
+		culture="roman"
+		religion="roman_pantheon"
+		no_traits=yes
+		add_trait="honest"
+		add_trait="righteous"
+		father="char:734"
+	}
+	
+	### GENS CORUNCANIA  
+	715={
+		first_name="Tiberius" # Tiberius Coruncanius
+		family_name="Coruncanii"
+		birth_date=360.9.12
+		death_date=422.12.10
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	731={
+		first_name="Tiberius" # Tiberius Coruncanius
+		family_name="Coruncanii"
+		birth_date=392.10.14
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:715"
+	} 
+	732={
+		first_name="Tiberius" # Tiberius Coruncanius
+		family_name="Coruncanii"
+		# Consul 280 BC
+		# Pontifex Maximus 254 BC
+		birth_date=423.7.21
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:731"
+	} 
+	
+	### PATRICIAN GENS QUINCTIA
+	671={
+		first_name="Gnaeus" # Gnaeus Quinctius Capitolinus
+		family = c:ROM.fam:Quinctii
+		nickname="NICKNAME_CAPITOLINUS"
+		# Dictator 331 BC
+		birth_date=375.8.19
+		death_date=433.9.25
+		culture="roman"
+		religion="roman_pantheon"
+		add_trait="prominent"
+	} 
+	672={
+		first_name="Lucius" # Lucius Quinctius Claudus
+		family = c:ROM.fam:Quinctii
+		nickname="NICKNAME_CLAUDUS"
+		# Military Tribune 326 BC
+		birth_date=406.12.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:671"
+	} 
+	673={
+		first_name="Kaeso" # Kaeso Quinctius Claudus
+		family = c:ROM.fam:Quinctii
+		nickname="NICKNAME_CLAUDUS"
+		# Consul 271 BC
+		birth_date=440.2.17
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:672"
+	} 
+	
+	### GENS MAMILIA
+	683={
+		first_name="Marcus" # Marcus Mamilius Vitulus
+		family_name="Mamilii"
+		nickname="NICKNAME_VITULUS"
+		birth_date=371.10.22
+		death_date=422.12.10
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	690={
+		first_name="Quintus" # Quintus Mamilius Vitulus
+		family_name="Mamilii"
+		nickname="NICKNAME_VITULUS"
+		birth_date=402.9.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:683"
+	} 
+	691={
+		first_name="Quintus" # Quintus Mamilius Vitulus
+		family_name="Mamilii"
+		nickname="NICKNAME_VITULUS"
+		# Consul 262 BC
+		birth_date=438.7.9
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:690"
+	} 
+	692={
+		first_name="Lucius" # Lucius Mamilius Vitulus
+		family_name="Mamilii"
+		nickname="NICKNAME_VITULUS"
+		# Consul 265 BC
+		birth_date=440.3.14
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:690"
+	} 
+	
+	### GENS OTACILIA
+	688={
+		first_name="Manius" # Manius Otacilius Crassus
+		family_name="Otacilii"
+		nickname="NICKNAME_CRASSUS"
+		# Consul 263 BC
+		birth_date=443.5.24
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	
+	### PATRICIAN GENS POSTUMIA (Again)
+	689={
+		first_name="Lucius" # Lucius Postumius Megellus
+		nickname="NICKNAME_MEGELLUS"
+		family = c:ROM.fam:Postumii
+		# Legate 293 BC
+		# Consul 262 BC
+		# Censor 253 BC
+		birth_date=450.7.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:286"
+	} 
+	# Albinus branch
+	737={
+		first_name="Lucius" # Lucius Postumius Albinus
+		nickname="NICKNAME_ALBINUS"
+		family = c:ROM.fam:Postumii
+		birth_date=413.10.7
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	738={
+		first_name="Lucius" # Lucius Postumius Albinus
+		nickname="NICKNAME_ALBINUS"
+		family = c:ROM.fam:Postumii
+		# Rex Sacrorum 275 BC
+		birth_date=444.4.12
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:737"
+		add_zeal=10
+	} 
+	
+	### GENS DUILIA
+	694={
+		first_name="Marcus" # Marcus Duilius
+		family_name="Duilii"
+		# Plebeian Tribune 357 BC
+		birth_date=348.12.3
+		death_date=421.3.15
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	695={
+		first_name="Marcus" # Marcus Duilius
+		family_name="Duilii"
+		birth_date=372.10.13
+		death_date=425.3.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:694"
+	} 
+	696={
+		first_name="Kaeso" # Kaeso Duilius
+		family_name="Duilii"
+		# Consul 336 BC
+		birth_date=373.12.3
+		death_date=421.3.15
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:694"
+	} 
+	697={
+		first_name="Marcus" # Marcus Duilius
+		family_name="Duilii"
+		birth_date=405.2.13
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:695"
+	} 
+	752={
+		first_name="Gaius" # Gaius Duilius
+		family_name="Duilii"
+		# Consul 260 BC
+		# Censor 258 BC
+		# Dictator 231 BC
+		birth_date=442.10.17
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:697"
+	} 
+	
+	### PATRICIAN GENS AQUILLIA
+	698={
+		first_name="Gaius" # Gaius Aquillius
+		nickname="NICKNAME_FLORUS"
+		family_name="Aquillii"
+		birth_date=382.11.11
+		death_date=438.1.30
+		culture="roman"
+		religion="roman_pantheon"
+	} 
+	699={
+		first_name="Marcus" # Marcus Aquillius
+		nickname="NICKNAME_FLORUS"
+		family_name="Aquillii"
+		birth_date=411.4.7
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:698"
+	} 
+	700={
+		first_name="Gaius" # Gaius Aquillius
+		nickname="NICKNAME_FLORUS"
+		family_name="Aquillii"
+		# Consul 259 BC
+		birth_date=443.5.18
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:699"
+	}
+
+	### GENS HORTENSIA
+	707={
+		first_name="Quintus" # Quintus Hortensius
+		family_name="Hortensii"
+		# Dictator 287 BC
+		birth_date=417.6.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:699"
+	}
+	
+	### PATRICIAN GENS MINUCIA
+	716={
+		first_name="Marcus" # Marcus Minucius Faesus
+		nickname="NICKNAME_FAESUS"
+		family_name="Minucii"
+		# Augur 300 BC
+		birth_date=406.6.11
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS OPIMIA
+	721={
+		first_name="Lucius" # Lucius Opimius Pansa
+		nickname="NICKNAME_PANSA"
+		family_name="Opimii"
+		# Questor 294 BC
+		birth_date=426.2.22
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS CANTIA
+	722={
+		first_name="Marcus" # Marcus Cantius
+		family_name="Cantii"
+		# Plebeian Tribune 293 BC
+		birth_date=425.6.19
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS TREBONIA
+	725={
+		first_name="Titus" # Titus Trebonius
+		family_name="Trebonii"
+		# Legate 293 BC
+		birth_date=423.4.28
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### GENS MAECIA
+	726={
+		first_name="Octavius" # Octavius Maecius
+		family_name="Maecii"
+		# Legate 293 BC
+		birth_date=427.8.8
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	
+	### PATRICIAN GENS PAPIRIA (Again)
+	727={
+		first_name="Spurius" 
+		nickname="NICKNAME_CURSOR"
+		family = c:ROM.fam:Papirii
+		birth_date=418.5.4
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:256"
+	}
+	728={
+		first_name="Spurius" # Spurius Papirius Cursor
+		nickname="NICKNAME_CURSOR"
+		family = c:ROM.fam:Papirii
+		birth_date=441.2.11
+		# Broughton tells he's a Legate in 293 BC but i don't buy it. Timeline doesn't fit and Livy doesn't mention his rank
+		# In my opinion during 293BC war he was a tribune, not a legate
+		# TODO: verify other of Broughton's "Legates"
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:727"
+	}
+	# Maso branch
+	729={
+		first_name="Lucius" # Lucius Papirius Maso
+		nickname="NICKNAME_MASO"
+		family = c:ROM.fam:Papirii
+		# Aedile 290 BC
+		birth_date=428.6.13
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	# Praetextanus branch
+	747={
+		first_name="Marcus" # Marcus Papirius Praetextanus
+		nickname="NICKNAME_PRAETEXTANUS"
+		family = c:ROM.fam:Papirii
+		birth_date=373.3.13
+		death_date=439.12.1
+		culture="roman"
+		religion="roman_pantheon"
+	}
+	748={
+		first_name="Lucius" # Lucius Papirius Praetextanus
+		nickname="NICKNAME_PRAETEXTANUS"
+		family = c:ROM.fam:Papirii
+		birth_date=401.10.3
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:747"
+	}
+	749={
+		first_name="Lucius" # Lucius Papirius Praetextanus
+		nickname="NICKNAME_PRAETEXTANUS"
+		family = c:ROM.fam:Papirii
+		# Censor 272 BC altough it is debatable
+		birth_date=432.9.11
+		culture="roman"
+		religion="roman_pantheon"
+		father="char:748"
+	}
+	
+	
+	### GENS MAENIA
+	733={
+		first_name="Spurius" # [NameUnrecorded] Maenius
+		family_name="Maenii"
+		# Plebeian Tribune 279 BC
+		birth_date=442.8.8
+		culture="roman"
+		religion="roman_pantheon"
+	}	
+}

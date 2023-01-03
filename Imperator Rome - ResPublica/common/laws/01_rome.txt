@@ -1,0 +1,56 @@
+
+magistrate_law_rom = { # Praetor Amount
+	potential = {
+		is_republic = yes
+		tag = ROM
+	}
+	magistrate_law_initial = { # 2 Praetors, 4 Questors, 9 Pontiffs
+		modifier = {
+			character_loyalty = 5
+		}
+	}
+	magistrate_law_sicily = { # 4 Praetors, 8 Questors, 9 Pontiffs 
+	
+		allow = {
+			any_governorships = {
+				count >= 3
+				always = yes
+			}
+		}
+		modifier = {
+			governor_loyalty = 5
+			general_loyalty = 5
+		}
+	}
+	magistrate_law_provincial = { # 6 Praetors, 6+Provinces Questors, 9 Pontiffs 
+	
+		allow = {
+			any_governorships = {
+				count >= 8
+				always = yes
+			}
+		}
+		modifier = {
+			loyalty_gain_chance_modifier = 0.25
+		}
+	}
+	magistrate_law_sulla = { # 8 Praetors, 20 Questors, 15 Pontiffs
+		
+		allow = {
+			civic_tech >= 12
+		}
+		modifier = {
+			general_loyalty = -20
+			governor_loyalty = -20
+		}
+	}
+	magistrate_law_ceasar = { # 10 Praetors, 20 Questors, 15 Pontiffs
+		
+		allow = {
+			civic_tech >= 24
+		}
+		modifier = {
+			loyalty_gain_chance_modifier = 0.5
+		}
+	}
+}

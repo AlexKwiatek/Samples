@@ -1,0 +1,226 @@
+﻿office_praetor = { # Princeps Senatus
+	type = republic
+	skill = charisma
+	
+	skill_modifier = {
+		agressive_expansion_monthly_change = -0.025
+	}
+	
+	personal_modifier = {
+		monthly_wage_for_character = 0.01
+		monthly_character_popularity = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.7
+		monthly_character_fam_prestige = 0.1
+		prominence = 10
+	}
+	
+}
+
+office_censor = { # Censor
+	type = republic
+	skill = charisma
+
+
+	skill_modifier = {
+		monthly_party_approval = 0.02 
+	}
+	personal_modifier = {
+		senate_influence = 0.15
+		monthly_wage_for_character = 0.02
+		prominence = 30
+		monthly_character_fam_prestige = 0.1
+		monthly_character_prominence = 0.25
+		monthly_character_experience = 0.8
+	}
+}
+
+office_tribune_of_the_plebs = { # Tribune of the Plebs
+	type = republic
+	skill = charisma
+	
+	skill_modifier = {
+		global_unrest = -0.1
+	}
+	
+	personal_modifier = {
+		senate_influence = 0.1
+		monthly_character_popularity = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_fam_prestige = 0.1
+		monthly_character_experience = 0.8
+		monthly_wage_for_character = 0.01
+
+		prominence = 10
+	}	
+}
+
+office_praefectus_urbanus = { # Urban Praefect
+
+	type = republic
+	skill = martial
+
+
+	skill_modifier = {
+		fort_maintenance_cost = -0.02
+	}
+	personal_modifier = {
+		monthly_wage_for_character = 0.01
+		monthly_character_popularity = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.7
+		monthly_character_fam_prestige = 0.1
+		prominence = 10
+	}
+}
+
+office_tribune_of_the_soldiers = { # Praetor
+
+	type = republic
+	skill = martial
+
+
+	skill_modifier = {
+		monthly_military_experience = 0.01
+	}
+	personal_modifier = {
+		prominence = 10
+		
+		monthly_wage_for_character = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_fam_prestige = 0.1
+		monthly_character_experience = 0.8
+	}
+}
+
+office_tribune_of_the_treasury = { # Consular Questor
+
+	type = republic
+	skill = martial
+
+
+	skill_modifier = {
+		global_tax_modifier = 0.015
+	}
+	personal_modifier = {
+		monthly_character_popularity = 0.01
+		monthly_wage_for_character = 0.01
+		monthly_character_fam_prestige = 0.1
+		prominence = 10
+
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.8
+	}
+}
+
+office_curule_aedile = { # Curule Aedile
+	type = republic
+	skill = finesse
+	
+	skill_modifier = {
+		global_commerce_modifier = 0.02
+	}
+	
+	personal_modifier = {
+		senate_influence = 0.1
+		monthly_character_popularity = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_fam_prestige = 0.1
+		monthly_character_experience = 0.8
+		monthly_wage_for_character = 0.01
+
+		prominence = 10
+	}
+	
+}
+office_plebeian_aedile = { # Plebeian Aedile
+	type = republic
+	skill = finesse
+
+
+	skill_modifier = {
+		global_monthly_civilization = 0.01
+	}
+	personal_modifier = {
+		senate_influence = 0.1
+		monthly_character_popularity = 0.01
+		monthly_character_prominence = 0.05
+		monthly_character_fam_prestige = 0.1
+		monthly_character_experience = 0.8
+		monthly_wage_for_character = 0.01
+
+		prominence = 10
+	}
+}
+
+office_republic_physician = { # Urban Questor
+	
+	type = republic
+	skill = finesse
+	
+	skill_modifier = {
+		health = 0.005
+	}
+	
+	personal_modifier = {
+		prominence = 5
+		monthly_character_fam_prestige = 0.1
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.5
+		monthly_wage_for_character = 0.01
+	}
+}
+
+
+office_pontifex = { # Pontifex Maximus
+
+	type = republic
+	skill = zeal
+
+
+	skill_modifier = {
+		stability_cost_modifier = -0.02
+	}
+	personal_modifier = {
+		prominence = 10
+		monthly_character_fam_prestige = 0.1
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.8
+		monthly_wage_for_character = 0.01
+	}
+	
+}
+office_vestalis_maxima = { # Vestalis Maxima
+	type = republic
+	skill = zeal
+	
+	skill_modifier = {
+		inspire_devotio_cost_modifier = -0.04
+	}
+	
+	personal_modifier = {
+		prominence = 10
+		monthly_character_fam_prestige = 0.1
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.8
+		monthly_wage_for_character = 0.01
+	}
+	
+}
+
+office_augur = { # Augur
+	type = republic
+	skill = zeal
+
+
+	skill_modifier = {
+		omen_power = 0.03
+	}
+	personal_modifier = {
+		prominence = 5
+		monthly_character_fam_prestige = 0.1
+		monthly_character_prominence = 0.05
+		monthly_character_experience = 0.6
+		monthly_wage_for_character = 0.01
+	}
+}

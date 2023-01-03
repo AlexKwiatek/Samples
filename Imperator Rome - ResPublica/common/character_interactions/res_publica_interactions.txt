@@ -1,0 +1,812 @@
+extend_governorship = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {
+			has_character_modifier = governor_term
+			is_governor = yes
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_governor = yes
+		}
+		scope:actor = {
+			political_influence >= 5
+		}
+	}
+	
+	effect = {
+		scope:target = {
+			if = {
+				limit = { 
+					has_variable = long_governorship 
+				}
+				remove_character_modifier = governor_term
+				add_character_modifier = {
+					name = governor_term
+					duration  = 1824 # Five year term!
+				}
+				scope:actor = {			
+					every_governorships = {
+						limit = { governor = scope:target }
+						governor = {
+							set_variable = {
+								name = provincial_governor_of
+								value = PREV
+								days = 1824
+							}
+						}
+					}
+				}
+				set_variable = {
+					name = long_governorship
+					days = 1824
+				}
+			}
+			else = {
+				remove_character_modifier = governor_term
+				# Standard term
+				add_character_modifier = {
+					name = governor_term
+					duration  = 364 
+				}
+				scope:actor = {			
+					every_governorships = {
+						limit = { governor = scope:target }
+						governor = {
+							set_variable = {
+								name = provincial_governor_of
+								value = PREV
+								days = 364
+							}
+						}
+					}
+				}
+			}		
+		}
+		scope:actor = {
+			add_political_influence = -5
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+
+make_propraetor = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {			
+			employer = scope:actor
+			is_alive = yes
+			is_mercenary = no
+			prisoner = no
+			
+			var:cursus_honorum = 1 # Wasn't a preator!
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_adult = yes
+		}
+		scope:actor = {
+			political_influence >= 5
+		}
+	}
+	
+	effect = {
+		scope:target = {		
+			set_variable = {
+				name = cursus_honorum
+				value = 2
+			}
+			add_character_modifier = {
+				name = cursus_honorum_former_praetor
+				duration = -1
+			}
+		}
+		scope:actor = {
+			if = {
+				limit = { scope:target.age < 39 }
+				add_tyranny = 10 # Isn't even old enough
+			}
+			else = {
+				add_tyranny = 5
+			}
+			add_to_variable_list = {
+				name = former_praetors_list
+				target = scope:target
+			}
+			remove_list_variable = { 
+				name = senators_list 
+				target = scope:target 
+			}
+			add_political_influence = -5
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+make_proconsul = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {			
+			employer = scope:actor
+			is_alive = yes
+			is_mercenary = no
+			prisoner = no
+			
+			var:cursus_honorum = 2 # Wasn't a consul!
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_adult = yes
+		}
+		scope:actor = {
+			political_influence >= 10
+		}
+	}
+	hidden_effect = {
+		scope:target = {
+			remove_character_modifier = cursus_honorum_former_praetor
+		}		
+	}
+	effect = {
+		scope:target = {		
+			set_variable = {
+				name = cursus_honorum
+				value = 3
+			}
+			add_character_modifier = {
+				name = cursus_honorum_former_consul  
+				duration = -1
+			}
+		}
+		scope:actor = {
+			if = {
+				limit = { scope:target.age < 42 }
+				add_tyranny = 20 # Isn't even old enough
+			}
+			else = {
+				add_tyranny = 10
+			}
+			add_to_variable_list = {
+				name = former_consuls_list
+				target = scope:target
+			}
+			remove_list_variable = { 
+				name = former_praetors_list 
+				target = scope:target 
+			}
+			add_political_influence = -10
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+appoint_to_senate = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {
+			NOT = { has_character_modifier = foreign_citizen }
+			employer = scope:actor
+			is_alive = yes
+			is_male = yes
+			is_mercenary = no
+			prisoner = no
+			
+			NOT = { has_variable = cursus_honorum }
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_adult = yes
+		}
+		scope:actor = {
+			political_influence >= 2
+		}
+	}
+	
+	effect = {
+		scope:target = {		
+			set_variable = {
+				name = cursus_honorum
+				value = 1
+			}
+			add_popularity = subtract_popularity_small
+			remove_character_modifier = cursus_honorum_never_a_senator
+		}
+		scope:actor = {
+			add_tyranny = 2
+			add_to_variable_list = {
+				name = senators_list
+				target = scope:target
+			}
+			add_political_influence = -2
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+
+appoint_magister_equitum = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	needs_senate_approval = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Unique/sfx_ui_character_appoint_dictator"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {
+			employer = scope:actor
+			is_alive = yes
+			is_mercenary = no
+			is_female = no
+			is_ruler = no # Can't make yourself your own Magister Equitum
+			NOT = { var:cursus_honorum_extraordinary_office = 2 }
+			var:cursus_honorum >= 1 # At least a senator
+		}
+		hidden:scope:actor = {
+			is_republic = yes
+			has_variable = dictatorship_enabled
+			# NOT = {
+				# any_character = {
+					# var:cursus_honorum_extraordinary_office = 2 # Magister Equitum
+				# }
+			# }
+		}
+	}
+	
+	effect = {
+		scope:actor = {
+			every_character = {
+				limit = { var:cursus_honorum_extraordinary_office = 2 }
+				remove_variable = cursus_honorum_extraordinary_office
+			}
+			clear_variable_list = magister_equitum_list
+			add_to_variable_list = {
+				name = magister_equitum_list
+				target = scope:target
+			}
+		}
+		scope:target = {
+			set_variable = {
+				name = cursus_honorum_extraordinary_office
+				value = 2
+			}
+			if = {
+				limit = { has_variable = served_as_magister_equitum }
+				change_variable = {
+					name = served_as_magister_equitum
+					add = 1
+				}
+			}
+			else = {
+				set_variable = {
+					name = served_as_magister_equitum
+					value = 1
+				}
+			}
+		}
+		scope:actor = { set_as_coruler = scope:target }
+		custom_tooltip = "appoint_magister_equitum_effect_tooltip"
+	}
+	
+}	
+
+grant_age_dispensation = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {
+			NOT = { has_character_modifier = foreign_citizen }
+			employer = scope:actor
+			is_alive = yes
+			is_male = yes
+			is_mercenary = no
+			prisoner = no
+			NOT = { has_variable = cursus_honorum_age_dispensation }
+			# Does it make any sense?
+			OR = {
+				var:cursus_honorum >= 1
+				age < 30
+			}
+			OR = {
+				var:cursus_honorum >= 2
+				age < 39
+			}
+			age < 42
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_adult = yes
+		}
+		scope:actor = {
+			political_influence >= 5
+		}
+	}
+	
+	effect = {
+		scope:target = {		
+			set_variable = {
+				name = cursus_honorum_age_dispensation
+				days = 365
+			}
+		}
+		custom_tooltip = grant_age_dispensation_effect_tooltip
+		scope:actor = {
+			add_political_influence = -5
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+
+grant_gap_dispensation = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+		}
+		hidden:scope:target = {
+			NOT = { has_character_modifier = foreign_citizen }
+			employer = scope:actor
+			is_alive = yes
+			is_male = yes
+			is_mercenary = no
+			prisoner = no
+			OR = {
+				has_variable = recently_elected_consul
+				has_variable = recently_elected_censor
+				has_variable = recently_elected_praetor
+				has_variable = recently_elected_aedile
+				# has_variable = recently_elected_tribune # Not a hard limit
+			}
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			is_adult = yes
+		}
+		scope:actor = {
+			political_influence >= 5
+		}
+	}
+	
+	effect = {
+		scope:target = {		
+			remove_variable = recently_elected_consul
+			remove_variable = recently_elected_censor
+			remove_variable = recently_elected_praetor
+			remove_variable = recently_elected_aedile
+		}
+		custom_tooltip = grant_gap_dispensation_effect_tooltip
+		scope:target = {
+			if = {
+				limit = {
+					OR = {
+						is_ruler = yes
+						is_co_ruler = yes
+					}
+				}
+				scope:actor = {
+					add_tyranny = 10 # if you do this to yourself it's tyranny
+					add_political_influence = -5
+				}		
+			}
+			else = {
+				scope:actor = {
+					add_political_influence = -5
+				}	
+			}
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+
+### TODO:
+# Age special dispensation - allow character to candidate for Consul earlier
+# Appoint Centurions to Senate - bulk create ~10 new questors if you have loyal cohorts
+# Allow to ignore Consulate-Gap
+
+strip_of_office = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+			OR = {
+				has_law = princeps_civitatis # Princeps during Principate
+				AND = { # Consul during Senatus Consultum Ultimum
+					has_law = senatus_consultum_ultimum
+					is_target_in_variable_list = {
+						name = consuls_list 
+						target = scope:actor.current_ruler 
+					}
+				}
+				is_target_in_variable_list = { # Dictator
+					name = dictator_list 
+					target = scope:actor.current_ruler 
+				}
+			}
+			trigger_if = { # Under Senatus Consultum Ultimum one Consul can't depose another
+				limit = { 
+					has_law = senatus_consultum_ultimum
+					is_target_in_variable_list = { # Is a Consul
+						name = consuls_list 
+						target = scope:actor.current_ruler 
+					}
+					NOT = {
+						is_target_in_variable_list = { # Isn't a Dictator
+							name = dictator_list 
+							target = scope:actor.current_ruler 
+						}
+					}
+				}
+				NOT = {
+					is_target_in_variable_list = { 
+						name = consuls_list 
+						target = scope:target 
+					}
+				}
+			}
+			NOT = { # He has his own decision. To change him you just have to appoint another one.
+				is_target_in_variable_list = { 
+					name = magister_equitum_list 
+					target = scope:target 
+				}
+			}
+		}
+		hidden:scope:target = {
+			NOT = { has_character_modifier = foreign_citizen }
+			is_ruler = no
+			employer = scope:actor
+			is_alive = yes
+			is_mercenary = no
+			prisoner = no
+			OR = {
+				has_variable = cursus_honorum_active_office
+				is_co_ruler = yes # Consul Suffectus
+			}
+		}
+	}
+	
+	allowed_trigger = {
+		scope:actor = {
+			trigger_if = {
+				limit = { has_law = princeps_civitatis }
+				political_influence >= 5
+			}
+			trigger_else_if = {
+				limit = {
+					OR = {
+						is_target_in_variable_list = { 
+							name = tribune_of_the_plebs_list 
+							target = scope:target 
+						}
+						is_target_in_variable_list = { 
+							name = consuls_list 
+							target = scope:target 
+						}
+					}
+				}
+				political_influence >= 20
+			}
+			trigger_else = {
+				political_influence >= 10				
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = strip_of_office_effect_tooltip
+		scope:actor = {
+			if = {
+				limit = { 
+					is_target_in_variable_list = { 
+						name = tribune_of_the_plebs_list 
+						target = scope:target 
+					}
+				}
+				custom_tooltip = strip_of_office_effect_tooltip_tribune
+			}
+			if = {
+				limit = { has_law = princeps_civitatis }
+				add_political_influence = -5
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_target_in_variable_list = { 
+							name = tribune_of_the_plebs_list 
+							target = scope:target 
+						}
+						is_target_in_variable_list = { 
+							name = consuls_list 
+							target = scope:target 
+						}
+					}
+				}
+				add_political_influence = -20
+			}
+			else = {
+				add_political_influence = -10				
+			}
+			add_tyranny = calc_strip_of_office_tyranny
+			current_ruler = { add_popularity = calc_strip_of_office_popularity }
+			# Remove from variable lists
+			remove_target_from_ordinary_offices = { TARGET = scope:target }
+			if = { # Replace him in co-ruler spot with another character if possible
+				limit = { 
+					scope:target = { is_co_ruler = yes } 
+					AND = {
+						has_variable_list = consuls_list
+						variable_list_size = {
+							name = consuls_list
+							value >= 1
+						}
+					}
+				}
+				random_in_list = {
+					variable = consuls_list
+					scope:actor = { set_as_coruler = PREV }
+				}
+			}
+		}
+		scope:target = {
+			remove_trait = princeps_senatus
+			remove_trait = censor
+			remove_trait = consul
+			remove_trait = praetor
+			remove_trait = aedile
+			remove_trait = tribune_of_the_plebs
+			remove_trait = questor
+			if = {			
+				limit = { has_any_office = yes }
+				remove_all_offices = yes	
+				scope:actor = { trigger_event = { id = res_publica.3 } }
+			}
+		}
+	}
+}
+
+unilaterally_appoint_consul = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:actor = {
+			tag = ROM
+			OR = {
+				has_law = princeps_civitatis # Princeps during Principate
+				AND = { # Consul during Senatus Consultum Ultimum
+					has_law = senatus_consultum_ultimum
+					is_target_in_variable_list = {
+						name = consuls_list 
+						target = scope:actor.current_ruler 
+					}
+				}
+				is_target_in_variable_list = { # Dictator
+					name = dictator_list 
+					target = scope:actor.current_ruler 
+				}
+			}
+			OR = {
+				NOT = { has_variable_list = consuls_list }
+				AND = {
+					has_variable_list = consuls_list
+					variable_list_size = {
+						name = consuls_list
+						value < number_of_elected_consuls_svalue
+					}
+				}
+			}
+			NOT = {
+				is_target_in_variable_list = { # Isn't a Consul already
+					name = consuls_list 
+					target = scope:target
+				}
+			}
+		}
+		hidden:scope:target = {
+			within_pomerium_trigger = yes	
+			var:cursus_honorum >= 2 # Was a Praetor
+		}
+	}
+	
+	allowed_trigger = {
+		scope:actor = {
+			trigger_if = {
+				limit = { has_law = princeps_civitatis }
+				political_influence >= 5
+			}
+			trigger_else = {
+				political_influence >= 20
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = unilaterally_appoint_consul_effect_tooltip
+		scope:actor = {
+			if = {
+				limit = { has_law = princeps_civitatis }
+				add_political_influence = -5
+			}
+			else = {
+				add_political_influence = -20				
+			}
+			if = { # Weird construction for the tooltip
+				limit = { 
+					NOT = { has_law = princeps_civitatis }
+					scope:target = {
+						age < 42
+						has_variable = recently_elected_consul
+					} 
+				}
+				custom_tooltip = unilaterally_appoint_consul_effect_tooltip_age_and_gap
+				add_tyranny = 10
+			}
+			else_if = {
+				limit = { 
+					NOT = { has_law = princeps_civitatis }
+					scope:target.age < 42 
+				}
+				custom_tooltip = unilaterally_appoint_consul_effect_tooltip_age
+				add_tyranny = 5
+			}
+			else_if = {
+				limit = { 
+					NOT = { has_law = princeps_civitatis }
+					scope:target = {
+						has_variable = recently_elected_consul
+					}
+				}
+				custom_tooltip = unilaterally_appoint_consul_effect_tooltip_gap
+				add_tyranny = 5
+			}
+			remove_target_from_ordinary_offices = { TARGET = scope:target }
+			add_to_variable_list = {
+				name = consuls_list
+				target = scope:target
+			}
+			add_to_variable_list = {
+				name = former_consuls_list
+				target = scope:target
+			}
+			remove_list_variable = { 
+				name = former_praetors_list 
+				target = scope:target 
+			}
+			remove_list_variable = { 
+				name = senators_list 
+				target = scope:target 
+			}
+			if = {
+				limit = { 
+					OR = {
+						AND = { # Co-Ruler isn't qualified to be a Co-Ruler
+							NOT = { # Not a Consul
+								is_target_in_variable_list = {
+									name = consuls_list 
+									target = scope:actor.current_co_ruler 
+								} 
+							} 
+							NOT = { # Not a Magister Equitum
+								is_target_in_variable_list = {
+									name = magister_equitum_list 
+									target = scope:actor.current_co_ruler 
+								} 
+							} 
+						}
+						current_ruler = scope:actor.current_co_ruler
+					}
+				}
+				set_as_coruler = scope:target
+			}
+		}
+		scope:target = {
+			add_trait = consul
+			set_variable = {
+				name = recently_elected_consul # Lex Genuciae
+				days = 3651
+			}
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 5 # Consul
+				days = 364
+			}
+			set_variable = {
+				name = cursus_honorum
+				value = 3
+			}
+			add_consulship_score = yes
+		} 
+	}
+}
+	

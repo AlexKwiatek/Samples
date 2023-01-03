@@ -1,0 +1,2815 @@
+types MoreBGsTypes {
+		type cpt_button = margin_widget {
+			block "Size" { size = { 100 150 } }
+
+			background = {
+				name = "Shadow"
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+				margin_left = 4
+				margin_bottom = 4
+				alpha = 0.5
+				size = { 100% 100% }
+
+				block "Drop_shadow"
+				{
+					# If this is not a button/unclickable, set this visible to no.
+					visible = yes
+				}
+			}
+
+			background = {
+				name = "HighlightShadow"
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+				margin = { 5 5 }
+				alpha = 0.5
+				size = { 100% 100% }
+				color = { 1 1 0 1 }
+				block "HighlightShadow"
+				{
+					# If this is not a button/unclickable, set this visible to no.
+					visible = no
+				}
+			}
+
+			icon = {
+				name= "Base"
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = flat_background_white
+				spriteType = Corneredtiled
+				size = { 100% 100% }
+			}
+
+			icon = {
+				name = "Button_Outline"
+				using = button_tiled_texture
+				spriteType = Corneredtiled
+				spriteborder = { 200 200 }
+				size = { 100% 100% }
+				framesize = { 200 200 }
+			}
+
+			block "Context" {} #this is inherited, you don't need to use the blockoverride
+
+			margin_widget = {
+				size = { 100% 100% }
+				block "Margin" { margin = { 3 3 } }
+				visible = "[Character.IsValid]"
+
+				portrait_button = {
+					using = pt_button
+					parentanchor = top
+					position = { 0 0 }
+					using = tooltip_es_portrait
+					pop_out = no
+					block "Background" {
+						 background_texture = "[GetCharacterBackgroundIcon( Character.Self, Character.GetLocation.GetTerrain )]"
+					}
+					block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+					block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+
+				}
+
+				margin_widget = {
+				    size = { 100% 100% }
+				    scissor = yes
+				    margin_top = -2
+
+				    textbox = {
+				        text = "[Character.Custom('character_bg')]"
+				        fontsize = 8
+						size = { 100% 100% }
+				    }
+					icon = {
+						size = { 100% 100% }
+						texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]"
+					}
+				}
+
+				portrait_button = {
+				    using = pt_button
+				    parentanchor = top
+				    using = tooltip_es_portrait
+				    pop_out = no
+				    block "Background" {
+				        background_texture = "gfx/interface/transparent.dds"
+				    }
+				    block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				    block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				}
+
+				# PORTRAIT BACKGROUNDS
+				# portrait background for Alexandria
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)516'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_alexandria.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Babylon
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)918'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_babylon.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Memphis
+				# portrait_button = {
+				# 	visible = "[And( Or(EqualTo_int32(Character.GetLocation.GetId, '(int32)536'), EqualTo_int32(Character.GetLocation.GetId, '(int32)500')), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_memphis.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Athens
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)416'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_athens.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for the argead Palace
+				# portrait_button = {
+				# 	visible = "[And( Or(EqualTo_int32(Character.GetLocation.GetId, '(int32)428'), EqualTo_int32(Character.GetLocation.GetId, '(int32)379')), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_pella.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Rome
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)1'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_republic_rome.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Seleucia Magna
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)911'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_seleukid.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Lysimacheia
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)350'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_thrace.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Antiochia
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)790'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_antigonid.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Sparta
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)427'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_sparta.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Argos
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)440'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_argos.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Olympia
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)439'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_olympia.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Korinthos
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)418'), Character.IsAlive)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_korinth.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Carthage
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)3256'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_republic_carthage.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Rhodes
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)266'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_rhodes_yesstatue.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Artemis
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)290'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_artemis_temple.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Mausoleum
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)1981'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_mausoleum.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Jerusalem
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)687'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_jeruselum.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Stonehenge
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)2012'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_city_stonehenge.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait background for Maurya Capital
+				# portrait_button = {
+				# 	visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)4440'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_maurya_capital.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # PORTRAIT WARTENT BACKGROUNDS
+				# # portrait wartent background generic for Monarchy
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, Player.GetGovernment.IsMonarchy)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_generic.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background generic for Tribal
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, Player.GetGovernment.IsTribal)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_tribal_wartent_generic.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background generic for Republics
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, Player.GetGovernment.IsRepublic)]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_republic_wartent_generic.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Antigonids tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'PRY'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_antigonids.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Rome Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'ROM'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_republic_wartent_roman.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Egypt Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'EGY'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_egypt.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Macedon Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'MAC'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_macedon.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Thrace Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'TRE'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_thrace.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Seleukid  Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'SEL'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_seleucid.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Maurya Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'MRY'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_maurya.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait wartent background for Carthage Tag
+				# portrait_button = {
+				# 	visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'CAR'))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_republic_wartent_carthage.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # PORTRAIT SPECIFIC INDOORS BACKGROUNDS
+				# # portrait specific indoor background for rome tag Ruler
+				# portrait_button = {
+				# 	visible = "[And( And( Character.IsRuler, EqualTo_string(Character.GetEmployer.GetTag, 'ROM')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_republic_rome.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait specific indoor background for rome tag Co-Ruler
+				# portrait_button = {
+				# 	visible = "[And( And( Character.IsCoRuler, EqualTo_string(Character.GetEmployer.GetTag, 'ROM')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 		 background_texture = "gfx/interface/portrait/background_ruler_republic_rome.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait specific indoor background for Parthia tag Ruler
+				# portrait_button = {
+				# 	visible = "[And( And( Character.IsRuler, EqualTo_string(Character.GetEmployer.GetTag, 'PAR')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 			background_texture = "gfx/interface/portrait/background_ruler_monarchy_parthia.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+				# # portrait specific indoor background for Parthia tag Consort
+				# portrait_button = {
+				# 	visible = "[And( And( Character.IsConsort, EqualTo_string(Character.GetEmployer.GetTag, 'PAR')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+				# 	using = pt_button
+				# 	parentanchor = top
+				# 	using = tooltip_es_portrait
+				# 	pop_out = no
+				# 	block "Background" {
+				# 			background_texture = "gfx/interface/portrait/background_ruler_monarchy_parthia.dds"
+				# 	}
+				# 	block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				# 	block "PortraitTexture" { portrait_texture = "[Character.GetPortrait('default', 'default')]" }
+				# }
+			}
+
+			margin_widget = {
+				size = { 100% 100% }
+				visible = "[Not( Character.IsValid )]"
+				#margin = { 3 3 }
+				background = {
+					shaderfile = "gfx/FX/pdxgui_default.shader"
+					texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
+					spriteType = Corneredtiled
+
+					#modify_texture = {
+					#	name = "Alpha"
+					#	texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					#	blend_mode = alphamultiply
+					#	spriteType = Corneredtiled
+					#	spriteborder = { 60 60 }
+					#}
+				}
+				margin_widget = {
+					size = { 100% 100% }
+					margin = { 4 4 }
+					background = {
+						shaderfile = "gfx/FX/pdxgui_default.shader"
+						using = flat_background_white
+						spriteType = Corneredtiled
+						alpha = 0.7
+
+						modify_texture = {
+							name = "Alpha"
+							texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+							blend_mode = alphamultiply
+							spriteType = Corneredtiled
+							spriteborder = { 60 60 }
+						}
+					}
+					icon = {
+						name = "beige_not_clickable_portrait"
+						size = { 80% 50% }
+						using = beige_background
+						parentanchor = center
+						maximumsize = { 50 50 }
+
+						modify_texture = {
+								texture = "gfx/interface/base_parts/idea_mark.dds"
+								blend_mode = alphamultiply
+						}
+					}
+				}
+			}
+
+			icon = { #family color
+				texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+				size = { 45% 32% }
+				position = { -2 2 }
+				color = "[Character.GetFamily.GetBackgroundColor]"
+				visible = "[And( And( Character.IsValid, Not( Character.GetFamily.IsMinor )), Not( Character.IsHeadOfFamily ) )]"
+				alpha = 0.8
+				parentanchor = top|right
+				datacontext = "[Character]"
+				tooltip = "MEMBER_OF_FAMILY_PORTRAIT_TOOLTIP"
+				alwaystransparent = yes
+				
+				## Res Publica Color Overrides
+				##############################
+				
+				# Vanilla colors
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.44 0.74 0.78 1 } # Vanilla blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)1')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.84 0.70 0.38 1 } # Vanilla Fabii yellow
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)2')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.81 0.34 0.25 1 } # Vanilla red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)3')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.38 0.79 0.47 1 } # Vanilla green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)4')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.78 0.40 0.66 1 } # Vanilla light violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)5')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.0 0.65 0.65 1.0 } # Vanilla teal
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)6')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.89 0.26 0.20 1.0 } # Vanilla vermillion
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)7')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1.0 0.75 0.0 1.0 } # Vanilla amber
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)8')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.85 0.0 1 } # Vanilla chartreuse
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)9')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.0 1.0 1.0 } # Vanilla dark violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)10')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Historia Civilis special colors
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.4 0.1 0.25 1 } # Historia Civilis Lepidus' dark red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)11')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.78 0 0 1 } # Historia Civilis Caesar's iconic red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)12')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.59 0 0 1 } # Historia Civilis Clodius' bloody red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)13')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					# color = { 0.13 0.27 0.68 1 } # Historia Civilis Scipio's dark blue
+					color = { 0.27 0.22 0.39 1 } # Historia Civilis Scipio's dark blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)14')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.16 0.5 1 } # Historia Civilis Antonius' pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)15')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.52 0.42 0.69 1 } # Historia Civilis Octavius' purple
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)16')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.27 0.63 0.58 1 } # Historia Civilis Hortensia's green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)17')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.16 0.50 1 1 } # Historia Civilis Brutus' blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)18')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.64 0.73 1 1 } # Historia Civilis Porcia's light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)19')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.37 0.55 0 1 } # Historia Civilis Cicero's deep green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)20')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Second Batch
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.91 0.47 0.64 1 } # Historia Civilis Lucius Antonius' deep pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)21')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.17 0.35 0.62 1 } # Historia Civilis Sextus Pompey's deep blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)22')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.39 0.02 1 } # Historia Civilis Pompey's orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)23')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.77 0.77 0.77 1 } # Historia Civilis Ahenobarbus' black
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)24')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.16 0.16 0.73 1 } # Historia Civilis Cato's blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)25')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.96 0.64 0.89 1 } # Historia Civilis Decimus' pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)26')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.70 0.50 1 } # Historia Civilis Cassius' orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)27')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.53 0.87 1 } # Historia Civilis Trebonius' violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)28')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.18 0.38 1 } # Historia Civilis Cimber's purple
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)29')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.92 0.69 0.69 1 } # Historia Civilis Casca's beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)30')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.47 0.4 0.13 1 } # Historia Civilis Calpurnia's brown-green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)31')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.79 0.63 0.61 1 } # Historia Civilis Nepos' beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)32')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.62 0.8 1 } # Historia Civilis Lentulus' light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)33')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.56 0.65 0.64 1 } # Historia Civilis Milo's light green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)34')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.9 0.51 1 } # Historia Civilis Labienus' light yellow
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)35')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Third Batch
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.62 0 0.25 1 } # Historia Civilis Fulvia's magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)36')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.63 0.16 0.16 1 } # Historia Civilis Agrippa's carmine
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)37')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.80 0.71 0.38 1 } # Historia Civilis Nero's gold
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)38')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.97 0.78 0 1 } # Historia Civilis Livia's deep gold
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)39')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.66 0.18 1 } # Historia Civilis Tiberius's orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)40')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.93 0.72 0.8 1 } # Historia Civilis Julia's delicate pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)41')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.95 0.84 0.77 1 } # Historia Civilis Tertulla's light beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)42')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.69 0.8 0.67 1 } # Historia Civilis Favonius' delicate green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)43')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.56 0.87 0.9 1 } # Historia Civilis Hirtius and Pansa's light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)44')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.75 0.43 0.56 1 } # Historia Civilis Gaius Antonius' deep magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)45')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.96 0.84 0.84 1 } # Historia Civilis Titedius' light beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)46')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.55 0.71 0.64 1 } # Historia Civilis Bibulus' rotten lime
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)47')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.76 0.87 0.54 1 } # Historia Civilis Dolabella's lime
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)48')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.80 0.57 0.44 1 } # Historia Civilis Crassus' dark beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)49')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.47 0 0 1 } # Historia Civilis Appius Claudius' dark blood
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)50')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				
+				# HC Universal Set
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.66 0.21 0.22 1 } # Historia Civilis Populares red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)51')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.29 0.42 0.89 1 } # Historia Civilis Optimates blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)52')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.63 0.62 0.79 1 } # Historia Civilis Senatorial violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)53')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.49 0.49 1 } # Historia Civilis Clodius' bandit weak red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)54')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.77 0.82 0.80 1 } # Historia Civilis Milo's bandit weak green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)55')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.06 0.43 0.52 1 } # Historia Civilis Candidate's turqoise
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)56')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.51 0.67 0.56 1 } # Historia Civilis Client's green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)57')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.65 0.67 0.50 1 } # Historia Civilis Client's light brown
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)58')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.62 0.47 0.58 1 } # Historia Civilis Client's magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)59')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.51 0.58 0.67 1 } # Historia Civilis Client's steel
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)60')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				
+				
+				# Back to Vanilla
+				modify_texture = {
+					name = "Alpha"
+					texture = "gfx/interface/base_parts/solid_stripe_top_corner.dds"
+					blend_mode = alphamultiply
+				}
+				icon = {
+					size = { 100% 100% }
+					texture = "gfx/interface/base_parts/button_allframes.dds"
+					framesize = { 100 100 }
+					frame = 3
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/sidegradient.dds"
+						blend_mode = alphamultiply
+					}
+				}
+			}
+
+			icon = { #head of family
+				texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+				size = { 95% 32% }
+				position = { 0 3 }
+				color = "[Character.GetFamily.GetBackgroundColor]"
+				visible = "[And( Character.IsValid, Character.IsHeadOfFamily )]"
+				alpha = 0.83
+				parentanchor = top|hcenter
+				datacontext = "[Character]"
+				tooltip = "HEAD_OF_FAMILY_PORTRAIT_TOOLTIP"
+				alwaystransparent = yes
+
+				modify_texture = {
+					name = "Alpha"
+					texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+					blend_mode = alphamultiply
+				}
+				## Res Publica Color Overrides
+				##############################
+				
+				# Vanilla colors
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.44 0.74 0.78 1 } # Vanilla blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)1')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.84 0.70 0.38 1 } # Vanilla Fabii yellow
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)2')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.81 0.34 0.25 1 } # Vanilla red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)3')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.38 0.79 0.47 1 } # Vanilla green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)4')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.78 0.40 0.66 1 } # Vanilla light violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)5')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.0 0.65 0.65 1.0 } # Vanilla teal
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)6')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.89 0.26 0.20 1.0 } # Vanilla vermillion
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)7')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1.0 0.75 0.0 1.0 } # Vanilla amber
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)8')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.85 0.0 1 } # Vanilla chartreuse
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)9')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.0 1.0 1.0 } # Vanilla dark violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)10')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Historia Civilis special colors
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.4 0.1 0.25 1 } # Historia Civilis Lepidus' dark red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)11')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.78 0 0 1 } # Historia Civilis Caesar's iconic red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)12')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.59 0 0 1 } # Historia Civilis Clodius' bloody red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)13')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					# color = { 0.13 0.27 0.68 1 } # Historia Civilis Scipio's dark blue
+					color = { 0.27 0.22 0.39 1 } # Historia Civilis Scipio's dark blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)14')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.16 0.5 1 } # Historia Civilis Antonius' pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)15')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.52 0.42 0.69 1 } # Historia Civilis Octavius' purple
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)16')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.27 0.63 0.58 1 } # Historia Civilis Hortensia's green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)17')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.16 0.50 1 1 } # Historia Civilis Brutus' blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)18')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.64 0.73 1 1 } # Historia Civilis Porcia's light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)19')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Second Batch
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.37 0.55 0 1 } # Historia Civilis Cicero's deep green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)20')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.91 0.47 0.64 1 } # Historia Civilis Lucius Antonius' deep pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)21')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.17 0.35 0.62 1 } # Historia Civilis Sextus Pompey's deep blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)22')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.39 0.02 1 } # Historia Civilis Pompey's orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)23')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.77 0.77 0.77 1 } # Historia Civilis Ahenobarbus' black
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)24')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.16 0.16 0.73 1 } # Historia Civilis Cato's blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)25')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.96 0.64 0.89 1 } # Historia Civilis Decimus' pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)26')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.70 0.50 1 } # Historia Civilis Cassius' orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)27')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.53 0.87 1 } # Historia Civilis Trebonius' violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)28')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.18 0.38 1 } # Historia Civilis Cimber's purple
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)29')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.92 0.69 0.69 1 } # Historia Civilis Casca's beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)30')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.47 0.4 0.13 1 } # Historia Civilis Calpurnia's brown-green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)31')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.79 0.63 0.61 1 } # Historia Civilis Nepos' beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)32')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.5 0.62 0.8 1 } # Historia Civilis Lentulus' light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)33')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.56 0.65 0.64 1 } # Historia Civilis Milo's light green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)34')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.9 0.51 1 } # Historia Civilis Labienus' light yellow
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)35')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				# Third Batch
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.62 0 0.25 1 } # Historia Civilis Fulvia's magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)36')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.63 0.16 0.16 1 } # Historia Civilis Agrippa's carmine
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)37')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.80 0.71 0.38 1 } # Historia Civilis Nero's gold
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)38')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.97 0.78 0 1 } # Historia Civilis Livia's deep gold
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)39')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 1 0.66 0.18 1 } # Historia Civilis Tiberius's orange
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)40')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.93 0.72 0.8 1 } # Historia Civilis Julia's delicate pink
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)41')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.95 0.84 0.77 1 } # Historia Civilis Tertulla's light beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)42')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.69 0.8 0.67 1 } # Historia Civilis Favonius' delicate green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)43')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.56 0.87 0.9 1 } # Historia Civilis Hirtius and Pansa's light blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)44')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.75 0.43 0.56 1 } # Historia Civilis Gaius Antonius' deep magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)45')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.96 0.84 0.84 1 } # Historia Civilis Titedius' light beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)46')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.55 0.71 0.64 1 } # Historia Civilis Bibulus' rotten lime
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)47')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.76 0.87 0.54 1 } # Historia Civilis Dolabella's lime
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)48')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.80 0.57 0.44 1 } # Historia Civilis Crassus' dark beige
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)49')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.47 0 0 1 } # Historia Civilis Appius Claudius' dark blood
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)50')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				
+				# HC Universal Set
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.66 0.21 0.22 1 } # Historia Civilis Populares red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)51')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.29 0.42 0.89 1 } # Historia Civilis Optimates blue
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)52')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.63 0.62 0.79 1 } # Historia Civilis Senatorial violet
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)53')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.67 0.49 0.49 1 } # Historia Civilis Clodius' bandit weak red
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)54')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.77 0.82 0.80 1 } # Historia Civilis Milo's bandit weak green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)55')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.06 0.43 0.52 1 } # Historia Civilis Candidate's turqoise
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)56')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.51 0.67 0.56 1 } # Historia Civilis Client's green
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)57')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.65 0.67 0.50 1 } # Historia Civilis Client's light brown
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)58')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.62 0.47 0.58 1 } # Historia Civilis Client's magenta
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)59')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				icon = {
+					size = { 100% 100% }					
+					texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+					datacontext = "[Character]"
+					color = { 0.51 0.58 0.67 1 } # Historia Civilis Client's steel
+					visible = "[EqualTo_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)60')]"
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/solid_family_stripe.dds"
+						blend_mode = alphamultiply
+					}
+				}
+				
+				## Back to Vanilla
+				icon = {
+					size = { 100% 100% }
+					texture = "gfx/interface/base_parts/button_allframes.dds"
+					framesize = { 100 100 }
+					frame = 3
+					modify_texture = {
+						name = "Alpha"
+						texture = "gfx/interface/base_parts/sidegradientfamilythicker.dds"
+						blend_mode = alphamultiply
+					}
+				}
+			}
+
+			widget = {
+				name = "party_icon_widget"
+				size = { 39% 26% }
+				parentanchor = bottom|left
+				maximumsize = { 40 40 }
+				icon = {
+					name = "party_icon_background"
+					size = { 100% 100% }
+					position = { 3 -3 }
+					tooltip = "CHARACTER_FACTION"
+					texture = "gfx/interface/base_parts/left_stripe_bottom_corner.dds"
+					alpha = 0.75
+					visible = "[Character.ShowParty]"
+				}
+				icon = {
+					name = "party_icon"
+					size = { 100% 100% }
+					position = { 1 -1 }
+					tooltip = "CHARACTER_FACTION"
+					texture = "[GetPartyIcon(Character.GetParty)]"
+					visible = "[Character.ShowParty]"
+				}
+				block "ShowIcons" {}
+			}
+
+			widget = {
+				name = "player_overlay_widget"
+				size = { 39% 26% }
+				maximumsize = { 40 40 }
+				parentanchor = bottom|hcenter
+				icon = {
+					size = { 100% 100% }
+					name = "player_overlay"
+					alwaystransparent = yes
+					texture = gfx/portraits/portrait_player_glow.dds
+					visible = "[Character.IsOtherPlayerRuler]"
+				}
+				block "ShowIcons" {}
+			}
+
+			widget = {
+				name = "ruler_icon_widget"
+				size = { 39% 26% }
+				maximumsize = { 40 40 }
+				parentanchor = bottom|right
+				icon = {
+					name = "ruler_icon"
+					size = { 100% 100% }
+					using = icon_leader
+					datacontext = "[Character]"
+					tooltip = OUR_RULER_AS_PLAYER
+					visible = "[Character.IsLocalPlayerRuler]"
+				}
+				block "ShowIcons" {}
+			}
+		}
+
+	type cpt_button_large = margin_widget {
+		block "Size" { size = { 604 256 } }
+
+		#icon = {
+		#	name= "Base"
+		#	shaderfile = "gfx/FX/pdxgui_default.shader"
+		#	using = flat_background_white
+		#	spriteType = Corneredtiled
+		#	size = { 100% 100% }
+		#}
+
+		block "Context" {} #this is inherited, you don't need to use the blockoverride
+
+		icon = {
+			name = "background"
+			texture = "[GetCharacterBackgroundIconHuge( Character.Self, Character.GetLocation.GetTerrain )]"
+			spriteType = Corneredtiled
+			#parentanchor = bottom
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+
+			icon = {
+				block "BackgroundTint" { texture = "[GetCharacterBackgroundIconTint( Character.Self, Character.GetLocation.GetTerrain )]" }
+				size = { 100% 100% }
+			}
+		}
+
+
+
+		# HUGE BACKGROUNDS
+		# huge background for Babylon
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_babylon_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)918'), Character.IsAlive)]"
+		}
+		# huge background for Alexandria
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_alexandria_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)516'), Character.IsAlive)]"
+		}
+		# huge background for Memphis
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_memphis_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( Or(EqualTo_int32(Character.GetLocation.GetId, '(int32)536'), EqualTo_int32(Character.GetLocation.GetId, '(int32)500')), Character.IsAlive)]"
+		}
+		# huge background for Athens
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_athens_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)416'), Character.IsAlive)]"
+		}
+		# huge background for the Argead Palace
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_pella_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( Or(EqualTo_int32(Character.GetLocation.GetId, '(int32)428'), EqualTo_int32(Character.GetLocation.GetId, '(int32)379')), Character.IsAlive)]"
+		}
+		# huge background for Rome
+		icon = {
+			texture = "gfx/interface/portrait/background_city_republic_rome_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)1'), Character.IsAlive)]"
+		}
+		# huge background for Seleucia Magna
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_seleukid_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)911'), Character.IsAlive)]"
+		}
+		# huge background for Lysimacheia
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_thrace_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)350'), Character.IsAlive)]"
+		}
+		# huge background for Antiochia
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_antigonid_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)790'), Character.IsAlive)]"
+		}
+		# huge background for Sparta
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_sparta_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)427'), Character.IsAlive)]"
+		}
+		# huge background for Argos
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_argos_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)440'), Character.IsAlive)]"
+		}
+		# huge background for Olympia
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_olympia_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)439'), Character.IsAlive)]"
+		}
+		# huge background for Korinthos
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_korinth_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)418'), Character.IsAlive)]"
+		}
+		# huge background for Carthage
+		icon = {
+			texture = "gfx/interface/portrait/background_city_republic_carthage_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)3256'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Rhodes
+		icon = {
+			texture = "gfx/interface/portrait/background_city_rhodes_yesstatue_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)266'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Artemis
+		icon = {
+			texture = "gfx/interface/portrait/background_city_artemis_temple_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)290'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Mausoleum
+		icon = {
+			texture = "gfx/interface/portrait/background_city_mausoleum_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)1981'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Jerusalem
+		icon = {
+			texture = "gfx/interface/portrait/background_city_jerusalum_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)687'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Stonehenge
+		icon = {
+			texture = "gfx/interface/portrait/background_city_stonehenge_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)2012'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# huge background for Maurya Capital
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_maurya_capital_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( EqualTo_int32(Character.GetLocation.GetId, '(int32)4440'), And( Not(Character.HasArmy), Character.IsAlive )))]"
+		}
+		# HUGE WARTENT BACKGROUNDS
+		# huge wartent background generic Monarchy
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_generic_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, Player.GetGovernment.IsMonarchy)]"
+		}
+		# huge wartent background generic Tribal
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_tribal_wartent_generic_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, Player.GetGovernment.IsTribal)]"
+		}
+		# huge wartent background generic Republic
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_republic_wartent_generic_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, Player.GetGovernment.IsRepublic)]"
+		}
+		# huge wartent background for Antigonids tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_antigonids_huge_.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'PRY'))]"
+		}
+		# huge wartent background for Rome tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_republic_wartent_roman_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'ROM'))]"
+		}
+		# huge wartent background for Egypt tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_egypt_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'EGY'))]"
+		}
+		# huge wartent background for Macedon tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_macedon_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'MAC'))]"
+		}
+		# huge wartent background for Thrace tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_thrace_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'TRE'))]"
+		}
+		# huge wartent background for Seleukid tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_seleucid_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'SEL'))]"
+		}
+		# huge wartent background for Maurya tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_wartent_maurya_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'MRY'))]"
+		}
+		# huge wartent background for Carthage tag
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_republic_wartent_carthage_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And(Character.HasArmy, EqualTo_string(Character.GetEmployer.GetTag, 'CAR'))]"
+		}
+		# HUGE SPECIFIC INDOORS BACKGROUNDS
+		# huge specific indoor background for rome tag Ruler
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_republic_rome_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( And( Character.IsRuler, EqualTo_string(Character.GetEmployer.GetTag, 'ROM')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+		}
+		# huge specific indoor background for rome tag Co-Ruler
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_republic_rome_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( And( Character.IsCoRuler, EqualTo_string(Character.GetEmployer.GetTag, 'ROM')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+		}
+		# huge specific indoor background for Parthia tag Ruler
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_parthia_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( And( Character.IsRuler, EqualTo_string(Character.GetEmployer.GetTag, 'PAR')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+		}
+		# huge specific indoor background for Parthia tag Consort
+		icon = {
+			texture = "gfx/interface/portrait/background_ruler_monarchy_parthia_huge.dds"
+			spriteType = Corneredtiled
+			size = { 100% 100% }
+			modify_texture = {
+				name = "Alpha"
+				block "AlphaTexture" { texture = "gfx/interface/base_parts/portrait_x32y32bd_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+			}
+			visible = "[And( And( Character.IsConsort, EqualTo_string(Character.GetEmployer.GetTag, 'PAR')), And( Not(Character.HasArmy), Not(Character.HasNavy)))]"
+		}
+		scissor = yes
+
+		margin_widget = {
+			block "BottomPortraitSize" { size = { 200 300 } }
+			block "Margin" { margin = { 3 3 } }
+			visible = "[And( Character.IsValid, GreaterThan_int32( Character.GetAge, '(int32)4' ))]"
+			parentanchor = bottom
+			block "BottomPortraitPosition" { position = { -10 24 } }
+			portrait_button = {
+				using = pt_button_large
+				pop_out = yes
+			}
+		}
+
+		margin_widget = {
+			block "BottomPortraitSize" { size = { 150 225 } }
+			block "Margin" { margin = { 3 3 } }
+			visible = "[And( Character.IsValid, LessThanOrEqualTo_int32( Character.GetAge, '(int32)4' ))]"
+			parentanchor = bottom
+			block "BottomPortraitPosition" {  }
+			position = { 36 18 }
+			portrait_button = {
+				using = pt_button_baby
+			}
+		}
+
+
+
+		margin_widget = {
+			block "BottomPortraitSize" { size = { 100% 100% } }
+			margin = { 3 3 }
+			visible = "[Not( Character.IsValid )]"
+
+			icon = {
+				texture = "gfx/interface/portrait/background_imprisoned_normal_tint.dds"
+				size = { 100% 100% }
+				icon = {
+					texture = "gfx/interface/base_parts/idea_mark.dds"
+					parentanchor = center
+				}
+			}
+
+		}
+
+		widget = {
+			parentanchor = bottom|hcenter
+			size = { 100% 24 }
+			block "ShowIcons" {}
+			hbox = {
+				position = { -1 -2 }
+				alwaystransparent = no
+				ignoreinvisible = no
+				widget = {
+					size = { 24 26 }
+					icon = {
+						size = { 30 30 }
+						parentanchor = vcenter
+						tooltip = "CHARACTER_FACTION"
+						texture = "[GetPartyIcon(Character.GetParty)]"
+					}
+					visible = "[Character.ShowParty]"
+				}
+				widget = {
+					size = { 24 26 }
+
+					icon = {
+						name = "player_overlay"
+						size = { 26 26 }
+						alwaystransparent = yes
+						texture = gfx/portraits/portrait_player_glow.dds
+						position = { 3 0 }
+						parentanchor = vcenter
+						visible = "[Character.IsOtherPlayerRuler]"
+					}
+
+				}
+				widget = {
+					size = { 24 26 }
+					icon = {
+						size = { 30 30 }
+						using = icon_leader
+						datacontext = "[Character]"
+						tooltip = OUR_RULER_AS_PLAYER
+						visible = "[Character.IsLocalPlayerRuler]"
+						parentanchor = vcenter
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+﻿# Current offices
+
+# Low Magistrates
+questor = {
+	type = status
+	monthly_character_experience = 0.25
+}
+aedile = {
+	type = status
+	prominence = 5
+	monthly_character_fam_prestige = 0.1
+	monthly_character_popularity = 0.02
+	monthly_character_prominence = 0.05
+	monthly_character_experience = 0.25
+}
+tribune_of_the_plebs = {
+	type = status
+	senate_influence = 0.25 # Ability to veto
+	disallow_command = yes # Forbidden from exiting Pomerium
+	monthly_character_popularity = 0.01
+	monthly_character_experience = 0.25
+}
+
+# High Magistrates
+praetor = {
+	type = status
+	senate_influence = 0.25
+	monthly_character_popularity = 0.01
+	monthly_character_prominence = 0.05
+	monthly_character_experience = 0.35
+	monthly_character_fam_prestige = 0.1
+	prominence = 10
+}
+consul = {
+	type = status
+	senate_influence = 1
+	prominence = 30
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.25
+	monthly_character_experience = 0.4
+}
+censor = {
+	type = status
+	senate_influence = 0.5
+	prominence = 30
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.25
+	monthly_character_experience = 0.4
+}
+princeps_senatus = {
+	type = status
+	senate_influence = 1 # Third to speak in the Senate
+	prominence = 30
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.25
+	monthly_character_experience = 0.4
+}
+# Religious Offices
+pontifex_maximus = {
+	type = status
+	# Always in office
+	senate_influence = 0.5 # Outranking consuls religiously
+	prominence = 30
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.25
+	monthly_character_experience = 0.4
+}
+pontiff = {
+	type = status
+	# Always in office
+	prominence = 5
+	senate_influence = 0.1 
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.05
+	monthly_character_experience = 0.25
+}
+augur = {
+	type = status
+	# Always in office
+	prominence = 5
+	senate_influence = 0.1 
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.05
+	monthly_character_experience = 0.25
+}
+vestal_virgin = {
+	type = status
+	# Always in office
+	fertility = -10 # A substitute for forbid_marriage = yes that is not present in Imperator as far as i know
+	prominence = 5
+	monthly_character_fam_prestige = 0.1
+	monthly_character_prominence = 0.05
+	monthly_character_experience = 0.25
+}

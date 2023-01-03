@@ -1,0 +1,85 @@
+rp_count_senators = {
+	value = 0
+	every_character = {
+		limit = { var:cursus_honorum >= 1 }
+		add = 1
+	}
+}
+rp_count_propraetor = {
+	value = 0
+	every_character = {
+		limit = { var:cursus_honorum >= 2 }
+		add = 1
+	}
+}
+rp_count_proconsul = {
+	value = 0
+	every_character = {
+		limit = { var:cursus_honorum >= 3 }
+		add = 1
+	}
+}
+rp_count_citizens = {
+	value = 0
+	every_character = {
+		limit = { 
+			NOT = { has_character_modifier = foreign_citizen }
+			is_male = yes
+			is_adult = yes
+			prisoner = no
+			is_mercenary = no	
+		}
+		add = 1
+	}
+}
+
+## Calc promagistrates
+number_of_proquestors_svalue = {
+	value = 0
+	every_character = {
+		limit = {
+			var:cursus_honorum = 1
+		}
+		add = 1
+	}
+}
+number_of_propraetors_svalue = {
+	value = 0
+	every_character = {
+		limit = {
+			var:cursus_honorum = 2
+		}
+		add = 1
+	}
+}
+number_of_proconsuls_svalue = {
+	value = 0
+	every_character = {
+		limit = {
+			var:cursus_honorum = 3
+		}
+		add = 1
+	}
+}
+
+# Values for needed promagistrates
+needed_high_tier_magistrates_svalue = { # Offices requiring Imperium minus characters who can have Imperium
+	value = 0
+	add = number_of_elected_governors_svalue
+	add = number_of_elected_censors_svalue
+	add = number_of_elected_princeps_senatus_svalue
+	add = number_of_elected_consuls_svalue
+}
+needed_low_tier_magistrates_svalue = { # Offices requiring senatorship minus characters who are senators that can't have Imperium
+	value = 0 
+	add = number_of_elected_tribunes_svalue
+	add = number_of_elected_aediles_svalue
+	add = number_of_elected_praetors_svalue
+	multiply = 3 # Just to be safe...
+	add = number_of_elected_legates_svalue
+}
+needed_proconsuls = {
+	value = 0
+	add = number_of_elected_censors_svalue
+	add = number_of_elected_princeps_senatus_svalue
+}

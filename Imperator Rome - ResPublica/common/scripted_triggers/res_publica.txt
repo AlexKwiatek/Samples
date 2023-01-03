@@ -1,0 +1,76 @@
+﻿within_pomerium_trigger = {
+	# is_courtier = yes
+	not_active_commander_trigger = yes
+	prisoner = no
+	is_mercenary = no
+	health >= 30 # Healthy enough to be in office
+	NOT = { has_character_modifier = house_arrest_charmod }
+	NOT = { has_character_modifier = indisposed_charmod }
+	NOT = { has_character_modifier = visiting_foreign_citizen }
+	NOT = { has_character_modifier = barred_from_office }
+	NOT = { has_character_modifier = pyrrhus_travelling }
+}
+is_willing_to_candidate_trigger = {
+	# How does it works:
+	# Normal character (no content, no ambitious, no content, no party leader, no prominent) will settle down after second consulship
+	# For traits Ambitious and Prominent and being a Party Leader you get one extra consulship until you'll give up
+	# Content characters get -1 to consulship till they're fine with their careers
+	# Ambitious and Prominent Party Leader (like Marius) will not stop, calc_true_if will always result in 4 or more.
+	OR = {
+		has_character_modifier = character_modifier_ambitious_politician 
+		calc_true_if = {
+			amount >= 4
+			has_trait = ambitious
+			has_trait = prominent 
+			NOT = { has_trait = content }
+			is_party_leader = yes
+			NOT = { has_variable = served_as_consul }
+			OR = {
+				var:served_as_consul <= 1
+				NOT = { has_variable = served_as_consul }
+			}
+			OR = {
+				var:served_as_consul <= 2
+				NOT = { has_variable = served_as_consul }
+			}
+			OR = {
+				var:served_as_consul <= 3
+				NOT = { has_variable = served_as_consul }
+			}
+		}
+	}
+}
+citizen_of_roma_trigger = {
+	NOT = { has_character_modifier = foreign_citizen }
+	is_male = yes
+	is_adult = yes
+	OR = {	
+		culture = {
+			any_in_list = { # Any culture that has Citizen or Noble status
+				list = rp_citizen_rights_list 
+				is_culture = PREV
+			}
+		}
+		culture = THIS.employer.culture 
+	}
+}
+not_active_commander_trigger = {
+	in_command = no
+	is_general = no
+	is_admiral = no
+	is_governor = no
+	has_legion_trigger = no
+}
+not_active_magistrate_trigger = {	# Checks if character is used in some spot to avoid miss
+	NOR = { 
+		is_ruler = yes # Consul
+		is_co_ruler = yes # Consul
+		has_any_office = yes
+		has_tech_office = yes
+	}
+}
+not_having_another_office = {
+	NOT = { has_variable = cursus_honorum_active_office }
+	is_ruler = no
+	is_co_ruler = no
+}

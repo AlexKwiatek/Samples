@@ -1,0 +1,244 @@
+﻿show_religious_offices_tab = {
+    scope = country
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		always = yes
+	}
+	is_shown = {
+		always = yes
+	}
+    effect = {
+		set_variable = {
+			name = chosen_election_category
+			value = 3
+			days = 365
+		}
+		if = { 
+			limit = { NOT = { has_variable = last_update_religious_offices_ranking } }
+			clear_variable_list = augur_election_lead
+			clear_variable_list = augur_election_candidates
+			clear_variable_list = pontiff_election_lead
+			clear_variable_list = pontiff_election_candidates
+			clear_variable_list = pontifex_maximus_election_lead
+			clear_variable_list = pontifex_maximus_election_candidates
+			clear_variable_list = vestal_virgin_election_lead
+			clear_variable_list = vestal_virgin_election_candidates
+			clear_variable_list = vestalis_maxima_election_lead
+			clear_variable_list = vestalis_maxima_election_candidates
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_character = {
+					limit = { 
+						eligible_for_pontiff = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_pontiff_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = pontiff_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 6
+				ordered_character = {
+					limit = { 
+						eligible_for_pontiff = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_pontiff_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = pontiff_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_character = {
+					limit = { 
+						eligible_for_augur = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_augur_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = augur_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 6
+				ordered_character = {
+					limit = { 
+						eligible_for_augur = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_augur_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = augur_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_in_list = {
+					variable = pontiffs_list
+					limit = { 
+						eligible_for_pontifex_maximus = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_pontifex_maximus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = pontifex_maximus_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 6
+				ordered_in_list = {
+					variable = pontiffs_list
+					limit = { 
+						eligible_for_pontifex_maximus = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_pontifex_maximus_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = pontifex_maximus_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 3
+				ordered_character = {
+					limit = { 
+						eligible_for_vestal_virgin = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_vestal_virgin_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = vestal_virgin_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 6
+				ordered_character = {
+					limit = { 
+						eligible_for_vestal_virgin = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_vestal_virgin_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = vestal_virgin_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 1
+				ordered_in_list = {
+					variable = vestal_virgins_list
+					limit = { 
+						eligible_for_vestalis_maxima = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_vestalis_maxima_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = vestalis_maxima_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 5
+				ordered_in_list = {
+					variable = vestal_virgins_list
+					limit = { 
+						eligible_for_vestalis_maxima = yes
+						NOT = { has_variable = already_counted_election }
+					}
+					order_by = rp_calc_vestalis_maxima_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = vestalis_maxima_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			set_variable = {
+				name = last_update_religious_offices_ranking
+				days = 7
+			}
+		}
+    }
+}

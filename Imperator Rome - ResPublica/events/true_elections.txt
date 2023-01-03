@@ -1,0 +1,1624 @@
+namespace = res_publica
+
+res_publica.1 = { # ROMAN ELECTIONS!
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		tag = ROM 
+		is_republic = yes
+		# TODO: Add Principate-Like ways to influence offices
+		# Like SuperTerms, direct appointment to offices and such
+	}
+	
+	immediate = {
+		# office_censor - Censor (Charisma)
+		# office_praetor - Princeps Senatus (Zeal)
+		# office_tribune_of_the_soldiers - Praetor (Martial)
+		# office_augur - Augur (Zeal)
+		# office_pontifex - Pontifex Maximus (Zeal)
+		# office_vestalis_maxima - Vestalis Maxima (Zeal)
+		# office_plebeian_aedile - Aedile (Finesse)
+		# office_curule_aedile - Aedile (Finesse)
+		# office_tribune_of_the_plebs - Tribune of the Plebs
+		# office_republic_physician - Questor
+		# office_tribune_of_the_treasury - Questor
+		
+		### Cursus Honorum Values:
+		# 1 - Questor
+		# 2 - Praetor
+		# 3 - Consul 
+		
+		# Options:
+		# It seems that you can't add "potential" parameter for offices like in other PDX games, else you could add modifier to x characters a year and force player to choose one of them
+		# How to prevent player/AI from immediately dismissing characters?
+		
+		
+		# trigger_event = { # Exclude Aediles day before next election
+			# id = res_publica.6
+			# days = 364
+		# }
+		
+		if = {
+			limit = { is_ai = yes }
+			if = {
+				limit = { civic_tech >= 12 }
+				if = {
+					limit = { NOT = { has_law = magistrate_law_sulla } }
+					change_law = magistrate_law_sulla
+				}				
+			}
+			else_if = {
+				limit = { any_governorships = { count >= 8 always = yes } }
+				if = {
+					limit = { NOT = { has_law = magistrate_law_provincial } }
+					change_law = magistrate_law_provincial
+				}
+			}
+			else_if = {
+				limit = { any_governorships = { count >= 3 always = yes } }
+				if = {
+					limit = { NOT = { has_law = magistrate_law_sicily } }
+					change_law = magistrate_law_sicily
+				}
+			}
+		}
+		every_character = { # -100% fertility should do the trick but just to be safe, little clearer
+			limit = {
+				OR = {
+					var:cursus_honorum_religious_office = 4 # Vestalis Maxima
+					var:cursus_honorum_religious_office = 1 # Vestal Virgin
+				}
+			}
+			if = {
+				limit = { is_married = yes }
+				spouse = { divorce_character = PREV }
+			}
+			# if = {
+				# limit = { is_pregnant = yes }
+				# end_pregnancy = yes
+			# }
+		}
+		##
+		## Remove older offices
+		##
+		every_character = { # Clean offices tab
+			limit = { has_any_office = yes }
+			remove_all_offices = yes
+		}
+		# Yearly Offices
+		every_character = { 
+			limit = {
+				OR = {
+					has_trait = questor
+					has_trait = tribune_of_the_plebs
+					has_trait = aedile
+					has_trait = praetor
+					has_trait = consul
+				}
+			}
+			remove_trait = questor
+			remove_trait = tribune_of_the_plebs
+			remove_trait = aedile
+			remove_trait = praetor
+			remove_trait = consul
+		}
+		every_character = { 
+			limit = {
+				OR = {
+					var:cursus_honorum_active_office = 1 # Questor
+					var:cursus_honorum_active_office = 2 # Tribune of the Plebs
+					var:cursus_honorum_active_office = 3 # Aedile
+					var:cursus_honorum_active_office = 4 # Praetor
+					var:cursus_honorum_active_office = 5 # Consul
+					var:cursus_honorum_active_office = 6 # Praefectus Urbanus
+				}
+			}
+			remove_variable = cursus_honorum_active_office
+		}	
+		# High Offices
+		clear_variable_list = praefectus_urbanus_list
+		clear_variable_list = consuls_list
+		clear_variable_list = praetors_list
+		# Low Offices
+		clear_variable_list = aediles_list
+		clear_variable_list = tribune_of_the_plebs_list
+		clear_variable_list = questor_list
+		# Censor and Princeps Senatus terms, they are chosen each five years. If one resigns his post, suffectus is chosen for the remainder of the term
+		if = {
+			limit = { 
+				NOT = { has_variable = censor_term }
+			}
+			clear_variable_list = princeps_senatus_list
+			clear_variable_list = censors_list
+			every_character = { 
+				limit = {
+					OR = {
+						has_trait = censor
+						has_trait = princeps_senatus
+					}
+				}
+				remove_trait = censor
+				remove_trait = princeps_senatus
+			}
+			every_character = { 
+				limit = {
+					OR = {
+						var:cursus_honorum_active_office = 7 # Censor
+						var:cursus_honorum_active_office = 8 # Princeps Senatus
+					}
+				}
+				remove_variable = cursus_honorum_active_office
+			}
+			set_variable = {
+				name = censor_term
+				days = 1824 # 5 years
+			}
+		}
+		# Vestal Virgins terms, the term is tied to a character, not to an election date like with ordinary offices
+		every_character = { 
+			limit = {
+				has_trait = vestal_virgin
+				NOT = { var:cursus_honorum_religious_office = 1 } # 30 year term has ended
+				NOT = { var:cursus_honorum_religious_office = 4 } # Not became Vestalis Maxima
+			}
+			remove_trait = vestal_virgin
+			ROOT = { 
+				remove_list_variable = { 
+					name = vestal_virgins_list 
+					target = PREV 
+				}
+			}
+		}
+		# Governor terms
+		every_governorships = {
+			limit = {
+				NOT = {
+					any_governorship_state = {
+						is_capital_state = yes
+					}
+				}
+				governor = { 
+					NOT = { has_character_modifier = governor_term } 
+					#Special conditions to represent Caesar Case, TODO: add some notification
+					OR = {
+						ROOT = { NOT = { towards_civil_war = yes } }
+						loyalty > 33
+					}
+				}
+			}
+			governor = {
+				remove_as_governor = yes
+			}
+			set_variable = governor_change
+			legion = { # Legates go away with Governor too
+				save_scope_as = legion_scope
+				every_legion_commander = {
+					save_scope_as = legion_commander_scope
+					scope:legion_scope = { remove_commander = scope:legion_commander_scope }
+				}
+				every_legion_unit = { 
+					commander = { remove_command = yes }
+				}
+			}
+		}
+		
+		# In this part of code, all governors and legates should be back at capital 
+		
+		# Refresh list of cultures with citizen rights
+		every_country_culture = {
+			limit = {
+				OR = {
+					has_pop_type_right = nobles
+					has_pop_type_right = citizen
+				}
+			}
+			add_to_list = rp_citizen_rights_list
+		}
+		every_country_culture = {
+			limit = {
+				NOR = {
+					has_pop_type_right = nobles
+					has_pop_type_right = citizen
+				}
+			}
+			remove_from_list = rp_citizen_rights_list
+		}
+		
+		##
+		## Elections block
+		##
+		
+		# Ensure consul suffectus' still get their Cursus Honorum rank
+		current_ruler = { # Consul 
+			if = {
+				limit = { 
+					NOT = { has_variable = cursus_honorum_extraordinary_office }
+				}
+				set_variable = { 
+					name = cursus_honorum 
+					value = 3 
+				}
+			}
+		}
+		current_co_ruler = { # Co-consul 
+			if = {
+				limit = { 
+					NOT = { has_variable = cursus_honorum_extraordinary_office }
+				}
+				set_variable = { 
+					name = cursus_honorum 
+					value = 3 
+				}
+			}
+		}
+		# Choose new consuls 
+		republic_choose_consul = yes
+		# Refresh Censors and Princeps Senatus lists if Consul is found belonging to one 
+		every_character = {
+			limit = { 
+				var:cursus_honorum_active_office = 5 
+				ROOT = {
+					OR = {
+						is_target_in_variable_list = { 
+							name = princeps_senatus_list 
+							target = PREV 
+						}
+						is_target_in_variable_list = { 
+							name = censors_list 
+							target = PREV 
+						}
+					}
+				}
+			}
+			remove_trait = censor
+			remove_trait = princeps_senatus
+			ROOT = { remove_list_variable = { name = princeps_senatus_list target = PREV } }
+			ROOT = { remove_list_variable = { name = censors_list target = PREV } }
+		}
+		# Two Censors
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_censors_svalue 
+					var:cursus_honorum_active_office = 7
+				}
+			}
+			count = number_of_elected_censors_svalue # Cap for performance
+			republic_choose_censor = yes
+		}
+		# Do listing early, so Princeps Senatus can be properly calculated. Consider doing listing inside election effects
+		every_character = {
+			limit = { var:cursus_honorum_active_office = 7 }
+			save_scope_as = listed_office
+			ROOT = {
+				add_to_variable_list = {
+					name = censors_list
+					target = scope:listed_office
+				}
+			}
+		}
+		# Princeps Senatus
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_princeps_senatus_svalue 
+					var:cursus_honorum_active_office = 8
+				}
+			}
+			count = number_of_elected_princeps_senatus_svalue # Cap for performance
+			republic_choose_princeps_senatus = yes
+		}
+		# Praefectus Urbanus
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_praefectus_urbanus_svalue 
+					var:cursus_honorum_active_office = 6
+				}
+			}
+			count = number_of_elected_praefectus_urbanus_svalue # Cap for performance
+			republic_choose_praefectus_urbanus = yes
+		}
+		# Preators 
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_praetors_svalue 
+					var:cursus_honorum_active_office = 4
+				}
+			}
+			count = number_of_elected_praetors_svalue # Cap for performance
+			republic_choose_praetor = yes
+		}
+		# Aediles 
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_aediles_svalue 
+					var:cursus_honorum_active_office = 3
+				}
+			}
+			count = number_of_elected_aediles_svalue # Cap for performance
+			republic_choose_aedile = yes
+		}		
+		# Tribunes of the Plebs
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_tribunes_svalue 
+					var:cursus_honorum_active_office = 2
+				}
+			}
+			count = number_of_elected_tribunes_svalue # Cap for performance
+			republic_choose_tribune = yes
+		}				
+		# Questors
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_questors_svalue 
+					var:cursus_honorum_active_office = 1
+				}
+			}
+			count = number_of_elected_questors_svalue # Cap for performance
+			republic_choose_questor = yes
+		}		
+		# Pontifex Maximus and College of Pontiffs
+		while = {
+			limit = { # Pontifex Maximus is chosen first so script sees an open spot for Pontiffs once one is moved from Pontiff to Pontifex Maximus
+				any_character = {
+					count < number_of_elected_pontifex_maximus_svalue
+					var:cursus_honorum_religious_office = 5
+				}
+			}
+			count = number_of_elected_pontifex_maximus_svalue # Cap for performance
+			republic_choose_pontifex_maximus = yes 
+		}
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_pontiffs_svalue
+					var:cursus_honorum_religious_office = 3
+				}
+			}
+			count = number_of_elected_pontiffs_svalue # Cap for performance
+			republic_choose_pontiff = yes 
+		}
+		# College of Augurs
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_augurs_svalue
+					var:cursus_honorum_religious_office = 2
+				}
+			}
+			count = number_of_elected_augurs_svalue # Cap for performance
+			republic_choose_augur = yes 
+		}
+		# Vestalis Maxima and Vestal Virgins
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_vestalis_maxima_svalue
+					var:cursus_honorum_religious_office = 4
+				}
+			}
+			count = number_of_elected_vestalis_maxima_svalue # Cap for performance
+			republic_choose_vestalis_maxima = yes 
+		}
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_vestal_virgins_svalue
+					var:cursus_honorum_religious_office = 1
+				}
+			}
+			count = number_of_elected_vestal_virgins_svalue # Cap for performance
+			republic_choose_vestal_virgin = yes 
+		}
+		
+		# Evaluate imperium (for now only check if character have at least been a senator)
+		refresh_cursus_honorum_modifiers = yes
+		
+		#### Add characters to state offices
+		####################################
+		
+		appoint_best_princeps_senatus = yes
+		appoint_best_censor = yes
+		appoint_best_praefectus_urbanus = yes
+		appoint_best_praetor = yes
+		appoint_best_aedile = yes
+		appoint_best_tribune_of_the_plebs = yes
+		
+		### 
+		### Set up governors!
+		### 
+		while = {
+			limit = {
+				any_governorships = {
+					NOT = { exists = governor_or_ruler  }	
+				}
+			}
+			count = 100 # Just in case something goes very wrong
+			ordered_governorships = { # Select Province
+				limit = {
+					NOT = { exists = governor_or_ruler  }
+				}
+				order_by = {
+					#value = 0
+					every_governorship_state = {
+						every_state_province = {
+							add = total_population
+						}
+					}
+					legion = {
+						add = any_legion_unit
+					}
+				}
+				save_scope_as = province_to_distribute
+			}
+			ordered_character = { # Select Governor
+				limit = {
+					is_courtier = yes
+					within_pomerium_trigger = yes
+					var:cursus_honorum >= 2 # Pro-Preator
+					NOT = { has_variable = cursus_honorum_active_office } # Special exclusion for Consul during Dictatorship
+				}
+				order_by = res_publica_calc_governor_quality
+				remove_variable = consular_province
+				remove_variable = praetorian_province
+				add_as_governor = scope:province_to_distribute
+				# Calculate 
+				if = {
+					limit = { has_law = magistrate_law_ceasar } # Ceasar fixed terms for governors to 1 year for Propraetors and 2 years for Proconsuls
+					if = {
+						limit = { var:cursus_honorum = 3 }
+						add_character_modifier = {
+							name = governor_term
+							duration = 729 # Two years
+						}
+						set_variable = {
+							name = provincial_governor_of
+							value = scope:province_to_distribute
+							days = 729
+						}
+					}
+					else = {
+						add_character_modifier = {
+							name = governor_term
+							duration = 364 # A year 
+						}
+						set_variable = {
+							name = provincial_governor_of
+							value = scope:province_to_distribute
+							days = 364
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = { 
+							power_base >= 40 # I'm afraid i can't check senate influence directly
+							# character_party = { # Still needs some testing
+								# has_power_percentage >= 50 # Character's party is holding power
+							# }
+						}
+						add_character_modifier = {
+							name = governor_term
+							duration = 1824 # Five year term!
+						}
+						set_variable = {
+							name = long_governorship
+							days = 1824
+						}
+						set_variable = {
+							name = provincial_governor_of
+							value = scope:province_to_distribute
+							days = 1824
+						}
+					}
+					else = {
+						# Standard term
+						add_character_modifier = {
+							name = governor_term
+							duration = 364 # A year 
+						}
+						set_variable = {
+							name = provincial_governor_of
+							value = scope:province_to_distribute
+							days = 364
+						}
+					}
+				}
+			}
+		}
+		
+		
+		
+		# Ending statement
+		every_character = { # Consul 
+			limit = { var:cursus_honorum_active_office = 5 }
+			set_variable = consular_province
+		}
+		every_character = { # Preators 
+			limit = { var:cursus_honorum_active_office = 4 }
+			set_variable = praetorian_province
+		}
+		
+		# Generate historical characters that were Questors at approximately this moment
+		# generate_historical_characters = yes # DISABLED UNTIL READY
+		
+		# Fill in some Questors to ensure there is enough people for Aediles and Tribunes
+		while = {
+			limit = {
+				any_character = { # Not if there is already maxed amount of Questors for that year
+					count < number_of_elected_questors_svalue
+					var:cursus_honorum_active_office = 1
+				}
+				# OR = { # Has a valid reason
+					# any_character = { # Don't have enough magistrates to fill all positions
+						# count < needed_low_tier_magistrates_svalue
+						# var:cursus_honorum = 1
+					# }
+					# any_character = { # Don't have enough questors to fill their offices
+						# count < 2 
+						# var:cursus_honorum_active_office = 1
+					# }
+				# }
+			} # If not, creates more questors 
+			create_character = {
+				age = new_senator_age_range
+				female = no
+				culture = root.culture
+				religion = root.religion
+				save_scope_as = additional_questor
+			}
+			scope:additional_questor = {
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor 
+				}
+				add_corruption = new_senator_corruption_range
+				
+				add_trait = questor	
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 1 # Questor
+					days = 364
+				}
+				add_character_experience = -100 # These are new guys, they shouldn't have 50% statesmanship
+				trigger_event = { id = res_publica.10 years = 5 } # Kill them off if they don't achieve anything interesting in the next 10 years
+			}
+			add_to_variable_list = {
+				name = questor_list
+				target = scope:additional_questor 
+			}
+			add_to_variable_list = {
+				name = senators_list
+				target = scope:additional_questor 
+			}
+		}	
+		# Appoint questor after questor-list is filled with new ones
+		appoint_best_questor = yes
+		
+		###
+		### Set up Legates
+		### 
+		every_governorships = {
+			limit = { 
+				has_variable = governor_change 
+				legion = { unit_count >= 1 }
+			}
+			remove_variable = governor_change
+			legion = {
+				while = {
+					limit = { can_add_commander = yes }
+					count = 20 # Safecheck for performance
+					ROOT = {
+						random_character = {
+							limit = { # Senator without an office
+								is_courtier = yes
+								within_pomerium_trigger = yes
+								has_variable = cursus_honorum # Only Senators are eligible to be Legates
+							}
+							#order_by = martial
+							#max = 4
+							weight = { 
+								modifier = { factor = res_publica_calc_legate_skill } 
+							}
+							save_scope_as = legion_commander
+						}
+					}
+					add_commander = scope:legion_commander
+					random_legion_unit = { 
+						limit = { NOT = { exists = commander } }
+						set_as_commander = scope:legion_commander 
+					}
+				}
+			}
+		}
+		
+		#### Add characters to religious offices
+		########################################
+		appoint_best_pontifex_maximus = yes
+		appoint_best_augur = yes
+		appoint_best_vestalis_maxima = yes
+		
+		
+		## Set up Cursus Honorum status modifiers
+		refresh_cursus_honorum_modifiers = yes
+		if = {
+			limit = { is_ai = yes }
+			every_character = {
+				limit = { 
+					NOT = { has_character_modifier = cursus_honorum_ai_office_blocker } 
+					is_ruler = no 
+					is_co_ruler = no
+				}
+				add_triggered_character_modifier = { name = cursus_honorum_ai_office_blocker }
+			}
+		}
+		else = {
+			every_character = {
+				limit = { has_character_modifier = cursus_honorum_ai_office_blocker }
+				remove_triggered_character_modifier = cursus_honorum_ai_office_blocker
+			}
+		}
+		
+		## Add colors to new families
+		if = {
+			limit = {
+				any_family = {
+					NOT = { has_variable = family_colour_override }
+				}
+			}
+			assign_prescribed_family_color = yes
+			every_family = { 
+				limit = { NOT = { has_variable = family_colour_override } }
+				assign_unused_family_color = yes
+			}
+		}
+	}
+}
+
+res_publica.3 = { # AI is reminded about who is really who
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		tag = ROM 
+		is_republic = yes
+	}
+	immediate = {
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = princeps_senatus_list
+							target = job_holder:office_praetor
+						}
+					}
+					office_is_empty = office_praetor
+				}
+			}
+			appoint_best_princeps_senatus = yes
+		}
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = censors_list
+							target = job_holder:office_censor
+						}
+					}
+					office_is_empty = office_censor
+				}
+			}
+			appoint_best_censor = yes
+		}
+		if = {
+			limit = {  
+				OR = { 
+					NOT = {
+						is_target_in_variable_list = {
+							name = praefectus_urbanus_list
+							target = job_holder:office_praefectus_urbanus
+						}
+					}
+					office_is_empty = office_praefectus_urbanus
+				}
+			}
+			appoint_best_praefectus_urbanus = yes
+		}
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = praetors_list
+							target = job_holder:office_tribune_of_the_soldiers
+						}
+					}
+					office_is_empty = office_tribune_of_the_soldiers
+				}
+			}
+			appoint_best_praetor = yes
+		}
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = aediles_list
+							target = job_holder:office_curule_aedile
+						}
+					}
+					NOT = {
+						is_target_in_variable_list = {
+							name = aediles_list
+							target = job_holder:office_plebeian_aedile
+						}
+					}
+					office_is_empty = office_curule_aedile
+					office_is_empty = office_plebeian_aedile
+				}
+			}
+			appoint_best_aedile = yes
+		}
+		# Tribunes
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = tribune_of_the_plebs_list
+							target = job_holder:office_tribune_of_the_plebs
+						}
+					}
+					office_is_empty = office_tribune_of_the_plebs
+				}
+			}
+			appoint_best_tribune_of_the_plebs = yes
+		}
+		# Questor
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = questor_list
+							target = job_holder:office_republic_physician
+						}
+					}
+					NOT = {
+						is_target_in_variable_list = {
+							name = questor_list
+							target = job_holder:office_tribune_of_the_treasury
+						}
+					}
+					office_is_empty = office_republic_physician
+					office_is_empty = office_tribune_of_the_treasury
+				}
+			}
+			appoint_best_questor = yes
+		}
+		### Religious Offices go last since they can be held by characters who have ordinary offices
+		
+		# Augur
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = augurs_list
+							target = job_holder:office_augur
+						}
+					}
+					office_is_empty = office_augur
+				}
+			}
+			appoint_best_augur = yes
+		}
+		# Pontifex Maximus
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = pontiffs_list
+							target = job_holder:office_pontifex
+						}
+					}
+					office_is_empty = office_pontifex
+				}
+			}
+			appoint_best_pontifex_maximus = yes
+		}
+		# Vestalis Maxima
+		if = {
+			limit = {  
+				OR = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = vestal_virgins_list
+							target = job_holder:office_vestalis_maxima
+						}
+					}
+					office_is_empty = office_vestalis_maxima
+				}
+			}
+			appoint_best_vestalis_maxima = yes
+		}
+		## Governors block
+		every_governorships = {
+			limit = {
+				NOT = { any_governorship_state = { is_capital_state = yes } }
+				governor = { 
+					NOT = {
+						var:provincial_governor_of = PREV
+					}
+				}
+			}
+			save_scope_as = suspicious_governorship
+			ROOT = {
+				every_character = {
+					limit = { 
+						var:provincial_governor_of = scope:suspicious_governorship
+					}
+					add_as_governor = scope:suspicious_governorship # If he is indisposable somehow leave suffectus alone
+					# TODO: Add provincial questors as substitute?
+				}
+			}
+		}
+	}
+}
+
+res_publica.4 = { # First setup 
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		tag = ROM
+	}
+	immediate = {
+		set_variable = {
+			name = roman_res_publica
+			value = 753
+		}		
+		current_ruler = { # Consul 
+			add_trait = consul
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 5 # Consul
+				days = 364
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = consuls_list
+					target = PREV
+				}
+			}		
+		}
+		current_co_ruler = { # Consul
+			add_trait = consul
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 5 # Consul
+				days = 364
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = consuls_list
+					target = PREV
+				}
+			}			
+		}
+		job_holder:office_tribune_of_the_soldiers = {
+			add_trait = praetor
+			set_variable = {
+				name = cursus_honorum
+				value = 2 # Praetor 
+			}
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 4 # Praetor
+				days = 364
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = praetors_list
+					target = PREV
+				}
+			}			
+		}
+		job_holder:office_plebeian_aedile = {
+			add_trait = aedile
+			set_variable = {
+				name = cursus_honorum
+				value = 1 # Questor
+			}
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 3 # Aedile
+				days = 364
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = aediles_list
+					target = PREV
+				}
+			}			
+		}
+		job_holder:office_curule_aedile = {
+			add_trait = aedile
+			set_variable = {
+				name = cursus_honorum
+				value = 1 # Questor
+			}
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 3 # Aedile
+				days = 364
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = aediles_list
+					target = PREV
+				}
+			}			
+		}
+		# Assign all variables, must be after Aediles and Praetors to avoid downgrading their cursus honorum
+		assign_former_consuls = yes
+		assign_former_praetors = yes
+		assign_former_senators = yes
+		job_holder:office_censor = {
+			add_trait = censor
+			set_variable = {
+				name = cursus_honorum
+				value = 3 # Consul
+			}
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 7 # Censor
+				days = 1824
+			}
+			set_variable = {
+				name = recently_elected_censor
+				days = 3650
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = censors_list
+					target = PREV
+				}
+			}			
+		}
+		char:284 = { # Publius Decius Mus
+			add_trait = censor
+			set_variable = { 
+				name = cursus_honorum_active_office 
+				value = 7 # Censor
+				days = 1824
+			}
+			set_variable = {
+				name = recently_elected_censor
+				days = 3650
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = censors_list
+					target = PREV
+				}
+			}			
+		}
+		job_holder:office_pontifex = { # Publius Cornelius Scipio Barbatus 
+			add_trait = pontifex_maximus
+			set_variable = { 
+				name = cursus_honorum_religious_office
+				value = 5 # Pontifex Maximus
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = pontifex_maximus_list
+					target = PREV
+				}
+				add_to_variable_list = {
+					name = pontiffs_list
+					target = PREV
+				}
+			}			
+		}
+		# College of Pontiffs
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_pontiffs_svalue
+					var:cursus_honorum_religious_office = 3
+				}
+			}
+			count = number_of_elected_pontiffs_svalue # Cap for performance
+			republic_choose_pontiff = yes 
+		}
+		# Assign Former Consuls List
+		every_character = {
+			limit = { var:cursus_honorum = 3 }
+			ROOT = {
+				add_to_variable_list = {
+					name = former_consuls_list
+					target = PREV
+				}
+			}
+		}
+		# Princeps Senatus
+		republic_choose_princeps_senatus = yes
+		appoint_best_princeps_senatus = yes
+		# Praefectus Urbanus 
+		republic_choose_praefectus_urbanus = yes
+		appoint_best_praefectus_urbanus = yes
+		# Correction for Pontifex Maximus
+		appoint_best_pontifex_maximus = yes
+		# College of Augurs
+		job_holder:office_augur = { 
+			add_trait = augur
+			set_variable = { 
+				name = cursus_honorum_religious_office
+				value = 2 # Augur
+			}
+			ROOT = {
+				add_to_variable_list = {
+					name = augurs_list
+					target = PREV
+				}
+			}			
+		}
+		while = {
+			limit = {
+				any_character = {
+					count < number_of_elected_augurs_svalue
+					var:cursus_honorum_religious_office = 2
+				}
+			}
+			count = number_of_elected_augurs_svalue # Cap for performance
+			republic_choose_augur = yes 
+		}
+		# Vestal Virgins
+		while = {
+			limit = {
+				any_character = {
+					count < 5
+					var:cursus_honorum_religious_office = 1
+				}
+			} # If not, creates more Vestals 
+			create_character = {
+				age = new_vestal_age_range 
+				female = yes
+				culture = root.culture
+				religion = root.religion
+				save_scope_as = additional_vestal
+			}
+			scope:additional_vestal = {				
+				add_trait = vestal_virgin
+				set_variable = { 
+					name = cursus_honorum_religious_office 
+					value = 1 # Vestal Virgin
+					days = calc_initial_vestal_term
+				}			
+				ROOT = {
+					random_family = { # Add her to some big family
+						scope:additional_vestal = {
+							set_family = PREV
+							adapt_family_name = yes
+						}
+					}
+					add_to_variable_list = {
+						name = vestal_virgins_list
+						target = PREV
+					}	
+				}
+			}
+		}
+		create_character = {
+			age = new_senator_age_range 
+			female = yes
+			culture = root.culture
+			religion = root.religion
+			save_scope_as = additional_vestal
+		}
+		scope:additional_vestal = {				
+			add_trait = vestal_virgin
+			set_variable = { 
+				name = cursus_honorum_religious_office 
+				value = 1 # Vestal Virgin
+				days = calc_initial_vestal_term
+			}			
+			add_zeal = 6
+			ROOT = {
+				random_family = { # Add her to some big family
+					scope:additional_vestal = {
+						set_family = PREV
+						adapt_family_name = yes
+					}
+				}
+				add_to_variable_list = {
+					name = vestal_virgins_list
+					target = PREV
+				}
+			}		
+		}
+		republic_choose_vestalis_maxima = yes # Choose Vestalis Maxima from among the Vestals
+		appoint_best_vestalis_maxima = yes
+		
+		# Tribunes
+		job_holder:office_tribune_of_the_plebs = {
+			if = {
+				limit = { 
+					OR = {
+						is_minor_character = no 
+						var:cursus_honorum >= 2
+					}
+				}
+				remove_all_offices = yes
+			}
+			else = {
+				add_trait = tribune_of_the_plebs
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor
+				}
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 2 # Tribune of the Plebs
+					days = 364
+				}
+				ROOT = {
+					add_to_variable_list = {
+						name = tribune_of_the_plebs_list
+						target = PREV
+					}
+				}			
+			}
+		}
+		while = {
+			limit = {
+				any_character = {
+					count < 10
+					var:cursus_honorum_active_office = 2
+				}
+			} # If not, creates more tribunes 
+			create_character = {
+				age = new_senator_age_range
+				female = no
+				culture = root.culture
+				religion = root.religion
+				save_scope_as = additional_tribune
+			}
+			scope:additional_tribune = {
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor 
+				}
+				add_corruption = new_senator_corruption_range
+				
+				add_trait = tribune_of_the_plebs	
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 2 # Tribune of the Plebs
+					days = 364
+				}			
+				ROOT = {
+					add_to_variable_list = {
+						name = tribune_of_the_plebs_list
+						target = PREV
+					}
+				}				
+			}
+		}	
+		appoint_best_tribune_of_the_plebs = yes
+		
+		# Fill in some Senators 
+		# while = { # Temporarily disabled (or not, haven't decided yet). With expanded character pool it is no longer needed
+			# count = 20
+			# create_character = {
+				# age = new_senator_age_range
+				# female = no
+				# culture = root.culture
+				# religion = root.religion
+				# save_scope_as = additional_senator
+			# }
+			# scope:additional_senator = {
+				# set_variable = {
+					# name = cursus_honorum
+					# value = 1 # Questor 
+				# }				
+				# add_corruption = new_senator_corruption_range
+			# }	
+		# }
+		# Questors
+		job_holder:office_republic_physician = {
+			if = {
+				limit = { has_variable = cursus_honorum }
+				remove_all_offices = yes
+			}
+			else = {
+				add_trait = questor
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor
+				}
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 1 # Questor
+					days = 364
+				}
+				ROOT = {
+					add_to_variable_list = {
+						name = questor_list
+						target = PREV
+					}
+				}
+			}
+		}		
+		job_holder:office_tribune_of_the_treasury = {
+			if = {
+				limit = { has_variable = cursus_honorum }
+				remove_all_offices = yes
+			}
+			else = {
+				add_trait = questor
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor
+				}
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 1 # Questor
+					days = 364
+				}
+				ROOT = {
+					add_to_variable_list = {
+						name = questor_list
+						target = PREV
+					}
+				}
+			}
+		}		
+		while = {
+			limit = {
+				any_character = {
+					count < 4
+					var:cursus_honorum_active_office = 1
+				}
+			} # If not, creates more Questors 
+			create_character = {
+				age = new_senator_age_range
+				female = no
+				culture = root.culture
+				religion = root.religion
+				save_scope_as = additional_questor
+			}
+			scope:additional_questor = {
+				set_variable = {
+					name = cursus_honorum
+					value = 1 # Questor 
+				}
+				add_corruption = new_senator_corruption_range
+				
+				add_trait = questor
+				set_variable = { 
+					name = cursus_honorum_active_office 
+					value = 1 # Questor
+					days = 364
+				}	
+				ROOT = {
+					add_to_variable_list = {
+						name = questor_list
+						target = PREV
+					}
+				}			
+			}
+		}	
+		appoint_best_questor = yes
+		# Add modifiers 
+		refresh_cursus_honorum_modifiers = yes
+		# Select Governor
+		every_governorships = {
+			limit = {
+				NOT = { governor = { var:cursus_honorum >= 2 } }
+				NOT = {
+					any_governorship_state = {
+						is_capital_state = yes # Italia
+					}
+				}
+			}
+			governor = { remove_as_governor = yes }
+			save_scope_as = province_to_distribute
+		}
+		random_character = {
+			limit = {
+				within_pomerium_trigger = yes	
+				has_job = no
+				not_active_magistrate_trigger = yes
+				var:cursus_honorum >= 2 # Pro-Preator
+				NOT = { has_variable = cursus_honorum_active_office }
+			}
+			add_as_governor = scope:province_to_distribute
+			set_variable = {
+				name = provincial_governor_of
+				value = scope:province_to_distribute
+				days = 364
+			}
+			# Standard term
+			add_character_modifier = {
+				name = governor_term
+				duration = 364 # A year 
+			}
+		}
+		set_variable = {
+			name = censor_term
+			days = 1460 # 4 years
+		}
+		# Assign colors to patrician families
+		assign_starting_family_color = yes
+		if = {
+			limit = { is_ai = yes }
+			every_character = {
+				limit = { 
+					NOT = { has_character_modifier = cursus_honorum_ai_office_blocker } 
+					is_ruler = no 
+					is_co_ruler = no
+				}
+				add_triggered_character_modifier = { name = cursus_honorum_ai_office_blocker }
+			}
+		}
+		# Add Cursus Honorum lists
+		every_character = {
+			limit = { var:cursus_honorum = 1 }
+			ROOT = {
+				add_to_variable_list = {
+					name = senators_list
+					target = PREV
+				}
+			}
+		}
+		every_character = {
+			limit = { var:cursus_honorum = 2 }
+			ROOT = {
+				add_to_variable_list = {
+					name = former_praetors_list
+					target = PREV
+				}
+			}
+		}
+	}
+}
+
+res_publica.6 = { # Put upstarts back in their place...
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		tag = ROM 
+		is_republic = yes
+		# Trigger to check if Dictatorship is in place 
+	}
+	immediate = {
+		every_character = {
+			limit = {
+				OR = {
+					NOT = { var:cursus_honorum >= 2 } # Not even a Praetor 
+					age < 42 # Not even old enough
+					has_variable = recently_elected_consul
+				}
+			}
+			add_character_modifier = {
+				name = cursus_honorum_never_a_praetor # Exclude them from election!
+				duration = -1
+			}
+		}
+		recalc_succession = yes
+		every_character = {
+			remove_character_modifier = cursus_honorum_never_a_praetor
+		}
+	}
+}
+
+### Dictatorship case
+############################################################
+res_publica.7 = { # Correct Ruler on Dictatorship's end
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		tag = ROM 
+		is_republic = yes 
+	}
+	immediate = {
+		current_ruler = { remove_variable = cursus_honorum_extraordinary_office }
+		current_co_ruler = { remove_variable = cursus_honorum_extraordinary_office }
+		# Bring last chosen consuls to power
+		ordered_character = {
+			limit = { var:cursus_honorum_active_office = 5 }
+			order_by = rp_calc_consul_supp
+			save_scope_as = first_consul
+		}
+		set_as_ruler = scope:first_consul
+		random_character = {
+			limit = { 
+				var:cursus_honorum_active_office = 5 
+				is_ruler = no
+			}
+			save_scope_as = second_consul
+		}
+		set_as_coruler = scope:second_consul 
+		remove_variable = roman_dictatorship
+		clear_variable_list = dictator_list
+		clear_variable_list = magister_equitum_list	
+	}
+}
+
+res_publica.10 = { # Cull unsuccessful politicians
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_alive = yes
+		NOR = {
+			popularity >= 75
+			character_experience >= 75 
+			martial >= 10
+			charisma >= 10
+			finesse >= 10
+			zeal >= 10
+			var:cursus_honorum >= 2 # Never been a praetor
+			has_variable = former_tribune_of_the_plebs
+			has_variable = recently_elected_aedile
+			is_minor_character = no # Adopted by some family
+		}
+		# Isn't used by player
+		is_ruler = no
+		is_co_ruler = no
+		not_having_another_office = yes
+		not_active_commander_trigger = yes
+		has_tech_office = no
+		is_married = no
+	}
+	immediate = {		
+		death = {
+			death_reason = death_obscurity 
+		}
+	}
+}
+	
+res_publica.13 = { 
+	type = country_event
+	hidden = yes
+	
+	immediate = {
+		random_character = {
+			limit = { is_minor_character = yes }
+			ROOT = { create_family = PREV }
+		}
+	}
+}
+res_publica.14 = { # Dead Char, remove from lists
+	type = character_event
+	hidden = yes
+	
+	trigger = { country = { tag = ROM } }
+	
+	immediate = {
+		if = {
+			limit = { # Consul dies, add Suffectus to the list
+				country = {
+					is_target_in_variable_list = {
+						name = consuls_list 
+						target = ROOT 
+					}
+				}
+				is_ruler = yes
+			}
+			country = { 
+				primary_heir = { # Most popular person in the Senate
+					country = { 
+						remove_target_from_ordinary_offices = { TARGET = ROOT.country.primary_heir }
+						add_to_variable_list = { name = consuls_list target = PREV }
+					}
+					add_consulship_score = yes
+				} 
+				set_as_ruler = ROOT.country.primary_heir
+			}
+		}
+		if = {
+			limit = { # Consul dies, add Suffectus to the list 
+				country = {
+					is_target_in_variable_list = {
+						name = consuls_list 
+						target = ROOT 
+					}
+				} 
+				is_co_ruler = yes
+			}
+			country = { 
+				primary_heir = { # Most popular person in the Senate 
+					country = { 
+						remove_target_from_ordinary_offices = { TARGET = ROOT.country.primary_heir }
+						add_to_variable_list = { name = consuls_list target = PREV }
+					}
+					add_consulship_score = yes
+				} 
+				set_as_coruler = ROOT.country.primary_heir
+			}
+		}
+		if = { # Magister Equitum dies - replace him with Consul
+			limit = {
+				country = {
+					is_target_in_variable_list = {
+						name = magister_equitum_list 
+						target = ROOT 
+					}
+				}
+				is_co_ruler = yes
+			}
+			country = {
+				ordered_in_list = {
+					variable = consuls_list
+					order_by = character_experience
+					ROOT.country = { set_as_coruler = PREV }
+				}
+			}
+		}
+		country = {
+			# Senate Seats
+			remove_list_variable = { name = senators_list target = ROOT }
+			remove_list_variable = { name = former_praetors_list target = ROOT }
+			remove_list_variable = { name = former_consuls_list target = ROOT }
+			# Religious Offices
+			remove_list_variable = { name = vestal_virgins_list target = ROOT }
+			remove_list_variable = { name = augurs_list target = ROOT }
+			remove_list_variable = { name = pontiffs_list target = ROOT }
+			remove_list_variable = { name = vestalis_maxima_list target = ROOT }
+			remove_list_variable = { name = pontifex_maximus_list target = ROOT }
+			# Ordinary Offices
+			remove_target_from_ordinary_offices = { TARGET = ROOT }
+			# Extraordinary Offices
+			remove_list_variable = { name = dictator_list target = ROOT }
+			remove_list_variable = { name = magister_equitum_list target = ROOT }
+			if = {
+				limit = { ROOT = { has_any_office = yes } }
+				trigger_event = { # Recalc best offices for AI
+					id = res_publica.3 
+					days = 1
+				}
+			}
+		}
+	}
+}
+	
+res_publica.15 = { # Once in a 10 years clean senate lists of dead chars
+	type = country_event
+	hidden = yes
+	
+	trigger = { tag = ROM }
+	
+	immediate = {
+		every_in_list = {
+			variable = former_consuls_list
+			limit = { is_alive = no }
+			ROOT = { remove_list_variable = { name = former_consuls_list target = PREV } }
+		}
+		every_in_list = {
+			variable = former_praetors_list
+			limit = { is_alive = no }
+			ROOT = { remove_list_variable = { name = former_praetors_list target = PREV } }
+		}
+		every_in_list = {
+			variable = senators_list
+			limit = { is_alive = no }
+			ROOT = { remove_list_variable = { name = senators_list target = PREV } }
+		}
+	}
+}
+	

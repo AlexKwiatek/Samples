@@ -1,0 +1,521 @@
+assign_starting_family_color = {
+	c:ROM.fam:Fabii = {
+		set_variable = {
+			name = family_colour_override
+			value = 2 # Vanilla yellow
+		}
+	}
+	c:ROM.fam:Valerii = {
+		set_variable = {
+			name = family_colour_override
+			value = 6 # Vanilla teal
+		}
+	}
+	c:ROM.fam:Papirii = {
+		set_variable = {
+			name = family_colour_override
+			value = 7 # Vanilla vermilion
+		}
+	}
+	c:ROM.fam:Sulpicii = {
+		set_variable = {
+			name = family_colour_override
+			value = 5 # Vanilla light violet
+		}
+	}
+	c:ROM.fam:Aemilii = {
+		set_variable = {
+			name = family_colour_override
+			value = 11 # Historia Civilis Lepidus' dark red
+		}
+	}
+	c:ROM.fam:Julii = {
+		set_variable = {
+			name = family_colour_override
+			value = 12 # Historia Civilis Ceasar's iconic red
+			# value = 41 # Historia Civilis Julia's delicate pink
+		}
+	}
+	c:ROM.fam:Claudii = {
+		set_variable = {
+			name = family_colour_override
+			value = 50 # Historia Civilis Appius Claudius' dark blood
+			# value = 13 # Historia Civilis Clodius' bloody red
+			# value = 33 # Historia Civilis Lentulus' light blue
+			# value = 38 # Historia Civilis Nero's gold
+			# value = 39 # Historia Civilis Livia's deep gold
+			# value = 40 # Historia Civilis Tiberius's orange
+		}
+	}
+	c:ROM.fam:Cornelii = {
+		set_variable = {
+			name = family_colour_override
+			value = 14 # Historia Civilis Scipio's dark blue
+			# value = 48 # Historia Civilis Dolabella's lime
+		}
+	}
+	c:ROM.fam:Junii = {
+		set_variable = {
+			name = family_colour_override
+			value = 18 # Historia Civilis Brutus' blue
+			# value = 26 # Historia Civilis Decimus' pink
+			# value = 42 # Historia Civilis Tertulla's light beige
+		}
+	}
+	c:ROM.fam:Servilii = {
+		set_variable = {
+			name = family_colour_override
+			value = 30 # Historia Civilis Casca's beige
+			# value = 46 # Historia Civilis Titedius' light beige
+		}
+	}
+	
+	### EXTRA HOUSES
+	c:ROM.fam:Manlii = {
+		set_variable = {
+			name = family_colour_override
+			value = 9 # Vanilla chartreuse
+		}
+	}
+	c:ROM.fam:Quinctii = {
+		set_variable = {
+			name = family_colour_override
+			value = 4 # Vanilla green
+		}
+	}
+	c:ROM.fam:Sempronii = {
+		set_variable = {
+			name = family_colour_override
+			value = 10 # Vanilla violet
+		}
+	}
+	c:ROM.fam:Furii = {
+		set_variable = {
+			name = family_colour_override
+			value = 8 # Vanilla amber
+		}
+	}
+	c:ROM.fam:Postumii = {
+		set_variable = {
+			name = family_colour_override
+			value = 1 # Vanilla blue
+		}
+	}
+	###
+	# Candidates:
+	# Marcia - Vanilla Red?
+	# Atilia - some kind of yellow maybe?
+	# Tullia - just to use Cicero's
+}
+
+assign_prescribed_family_color = {
+	if = {
+		limit = { 
+			c:ROM.fam:Antonii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Antonii = {
+			set_variable = {
+				name = family_colour_override
+				value = 15 # Historia Civilis Antonius' pink 
+				# value = 21 # Historia Civilis Lucius Antonius' deep pink 
+				# value = 45 # Historia Civilis Gaius Antonius' deep magenta
+			}
+		}
+	}
+	if = {
+		limit = {  
+			c:ROM.fam:Octavii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			}
+		}
+		c:ROM.fam:Octavii = {
+			set_variable = {
+				name = family_colour_override
+				value = 16 # Historia Civilis Octavius' purple
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Hortensii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Hortensii = {
+			set_variable = {
+				name = family_colour_override
+				value = 17 # Historia Civilis Hortensia's green
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Tullii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Tullii = {
+			set_variable = {
+				name = family_colour_override
+				value = 20 # Historia Civilis Cicero's deep green
+				# value = 29 # Historia Civilis Cimber's purple
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Pompeii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Pompeii = {
+			set_variable = {
+				name = family_colour_override
+				value = 23 # Historia Civilis Pompey's orange
+				# value = 22 # Historia Civilis Sextus Pompey's deep blue
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Domitii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Domitii = {
+			set_variable = {
+				name = family_colour_override
+				value = 24 # Historia Civilis Ahenobarbus' black
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Porcii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Porcii = {
+			set_variable = {
+				name = family_colour_override
+				value = 25 # Historia Civilis Cato's blue
+				# value = 19 # Historia Civilis Porcia's blue
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Cassii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Cassii = {
+			set_variable = {
+				name = family_colour_override
+				value = 27 # Historia Civilis Cassius' orange
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Trebonii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Trebonii = {
+			set_variable = {
+				name = family_colour_override
+				value = 28 # Historia Civilis Trebonius' violet
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Calpurnii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Calpurnii = {
+			set_variable = {
+				name = family_colour_override
+				# value = 31 # Historia Civilis Calpurnia's brown-green
+				value = 47 # Historia Civilis Bibulus' rotten lime
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Caecilii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Caecilii = {
+			set_variable = {
+				name = family_colour_override
+				value = 32 # Historia Civilis Nepos' beige
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Anni = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Anni = {
+			set_variable = {
+				name = family_colour_override
+				value = 34 # Historia Civilis Milo's light green
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Labienii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Labienii = {
+			set_variable = {
+				name = family_colour_override
+				value = 35 # Historia Civilis Labienus' light yellow
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Fulvii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Fulvii = {
+			set_variable = {
+				name = family_colour_override
+				value = 36 # Historia Civilis Fulvia's magenta
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Vipsanii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Vipsanii = {
+			set_variable = {
+				name = family_colour_override
+				value = 37 # Historia Civilis Agrippa's carmine
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Favonii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Favonii = {
+			set_variable = {
+				name = family_colour_override
+				value = 43 # Historia Civilis Favonius' delicate green
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Appuleii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Appuleii = {
+			set_variable = {
+				name = family_colour_override
+				value = 44 # Historia Civilis Hirtius and Pansa's light blue
+			}
+		}
+	}
+	if = {
+		limit = { 
+			c:ROM.fam:Licinii = { 
+				always = yes 
+				NOT = { has_variable = family_colour_override }
+			} 
+		}
+		c:ROM.fam:Licinii = {
+			set_variable = {
+				name = family_colour_override
+				value = 49 # Historia Civilis Crassus' dark beige
+			}
+		}
+	}
+}
+assign_unused_family_color = {
+	random_list = {
+		# Vanilla Colors
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 1 } } } }
+			set_variable = { name = family_colour_override value = 1 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 2 } } } }
+			set_variable = { name = family_colour_override value = 2 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 3 } } } }
+			set_variable = { name = family_colour_override value = 3 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 4 } } } }
+			set_variable = { name = family_colour_override value = 4 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 5 } } } }
+			set_variable = { name = family_colour_override value = 5 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 6 } } } }
+			set_variable = { name = family_colour_override value = 6 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 7 } } } }
+			set_variable = { name = family_colour_override value = 7 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 8 } } } }
+			set_variable = { name = family_colour_override value = 8 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 9 } } } }
+			set_variable = { name = family_colour_override value = 9 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 10 } } } }
+			set_variable = { name = family_colour_override value = 10 }
+		}
+		# Alternative Special Character Colors:
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 13 } } } } # Claudius' Bloody Red
+			set_variable = { name = family_colour_override value = 13 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 19 } } } } # Porcia's Blue
+			set_variable = { name = family_colour_override value = 19 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 21 } } } } # Lucius Antonius' Deep Pink
+			set_variable = { name = family_colour_override value = 21 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 22 } } } } # Sextus Pompey's Deep Blue
+			set_variable = { name = family_colour_override value = 22 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 26 } } } } # Decimus' Pink
+			set_variable = { name = family_colour_override value = 26 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 29 } } } } # Cimber's Purple
+			set_variable = { name = family_colour_override value = 29 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 31 } } } } # Historia Civilis Calpurnia's brown-green
+			set_variable = { name = family_colour_override value = 31 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 33 } } } } # Lentulus' Light Blue
+			set_variable = { name = family_colour_override value = 33 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 38 } } } } # Historia Civilis Nero's gold
+			set_variable = { name = family_colour_override value = 38 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 39 } } } } # Historia Civilis Livia's deep gold
+			set_variable = { name = family_colour_override value = 39 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 40 } } } } # Historia Civilis Tiberius's orange
+			set_variable = { name = family_colour_override value = 40 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 41 } } } } # Historia Civilis Julia's delicate pink
+			set_variable = { name = family_colour_override value = 41 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 42 } } } } # Historia Civilis Tertulla's light beige
+			set_variable = { name = family_colour_override value = 42 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 45 } } } } # Historia Civilis Gaius Antonius' deep magenta
+			set_variable = { name = family_colour_override value = 45 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 46 } } } } # Historia Civilis Titedius' light beige
+			set_variable = { name = family_colour_override value = 46 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 48 } } } } # Historia Civilis Dolabella's lime
+			set_variable = { name = family_colour_override value = 48 }
+		}
+		# HC Random Pool
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 51 } } } }
+			set_variable = { name = family_colour_override value = 51 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 52 } } } }
+			set_variable = { name = family_colour_override value = 52 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 53 } } } }
+			set_variable = { name = family_colour_override value = 53 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 54 } } } }
+			set_variable = { name = family_colour_override value = 54 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 55 } } } }
+			set_variable = { name = family_colour_override value = 55 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 56 } } } }
+			set_variable = { name = family_colour_override value = 56 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 57 } } } }
+			set_variable = { name = family_colour_override value = 57 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 58 } } } }
+			set_variable = { name = family_colour_override value = 58 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 59 } } } }
+			set_variable = { name = family_colour_override value = 59 }
+		}
+		1 = {
+			trigger = { NOT = { ROOT = { any_family = { var:family_colour_override = 60 } } } }
+			set_variable = { name = family_colour_override value = 60 }
+		}
+	}
+}

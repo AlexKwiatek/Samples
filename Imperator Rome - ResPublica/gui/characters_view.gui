@@ -1,0 +1,1840 @@
+base_window = {
+	gfxtype = windowgfx
+	name = "characters_view"
+	size = { 1200 900 }
+	using = main_window_template
+	### Audio ###
+	state = {
+		name = _show
+		start_sound = {
+			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
+		}
+	}
+	state = {
+		name = _hide
+		start_sound = {
+			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
+		}
+	}
+	#state = {
+	#	name = _hide
+	#	on_start = "[PdxGuiTriggerAllAnimations('characters_view_closed')]"
+	#}
+	
+	#Here because highglight field
+	
+	flowcontainer = {
+		position = { 22 174 }
+		visible = "[Not( CharactersView.IsShowFamily )]"
+		spacing = 6
+		
+		text_button_sort = {
+			size = { 56 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_NAME_TOOLTIP
+			
+			blockoverride "Button_text" { text = "A_Z" }
+			blockoverride "Icon" { 
+				visible = no
+			}
+			blockoverride "On_click" { onclick = "[CharactersView.Sort('name')]" }
+			blockoverride "DownState" { down = "[CharactersView.IsSorted('name')]" }
+		}
+		
+		flowcontainer = {
+			spacing = 4
+			text_button_sort = {
+				size = { 70 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_MARTIAL_TOOLTIP
+				
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_military
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('martial')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('martial')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_FINESS_TOOLTIP
+				
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_civic
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('finesse')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('finesse')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_CHARISMA_TOOLTIP
+				
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_oratory
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('charisma')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('charisma')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_ZEAL_TOOLTIP
+				
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_religious
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('zeal')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('zeal')]" }
+			}
+		
+		}
+		#widget = { size = { 2 2 } }
+		#text_button_sort = {
+		#	size = { 100 0 }
+		#	tooltip = CHARACTER_VIEW_SORT_BY_PARTY_TOOLTIP
+		#	visible = "[CharactersView.GetSelectedCountry.HasParties]"
+		#	blockoverride "Button_text" { visible = no }
+		#	blockoverride "Icon" { 
+		#		texture = "gfx/interface/icons/shared_icons/political_parties.dds"
+		#	}
+		#	blockoverride "On_click" { onclick = "[CharactersView.Sort('party')]" }
+		#	blockoverride "DownState" { down = "[CharactersView.IsSorted('party')]" }
+		#}
+		#widget = { size = { 2 2 } }
+		widget = { size = { 82 0 } }
+		flowcontainer = {
+			spacing = 4
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_POWER_BASE_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_power_base
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('power_base')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('power_base')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_POPULARITY_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_popularity
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('popularity')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('popularity')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_LOYALTY_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_loyalty
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('loyalty')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('loyalty')]" }
+			}
+			
+			text_button_sort = {
+				size = { 76 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_CORRUPTION_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_corruption
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('corruption')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('corruption')]" }
+			}
+		}
+		widget = { size = { 6 2 } }
+		flowcontainer = {
+			spacing = 4
+			
+			text_button_sort = {
+				size = { 86 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_AGE_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_age
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('age')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('age')]" }
+			}
+			
+			text_button_sort = {
+				size = { 86 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_HEALTH_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					texture = "gfx/interface/icons/modifiers/health.dds"
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('health')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('health')]" }
+			}
+			
+			text_button_sort = {
+				size = { 86 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_WEALTH_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				blockoverride "Icon" { 
+					using = icon_treasury
+					size = { 34 34 }
+				}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('wealth')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('wealth')]" }
+			}
+			
+			text_button_sort = {
+				size = { 72 0 }
+				tooltip = CHARACTER_VIEW_SORT_BY_SUCCESSION_TOOLTIP
+				blockoverride "Button_text" { visible = no }
+				#blockoverride "Icon" { 
+				#	#texture = "gfx/interface/icons/"
+				#	#size = { 34 34 }
+				#}
+				blockoverride "On_click" { onclick = "[CharactersView.Sort('succession_score')]" }
+				blockoverride "DownState" { down = "[CharactersView.IsSorted('succession_score')]" }
+			}
+			
+		}
+	}
+	##### SELECTED ROW BEIGE HIGHLIGHT
+	flowcontainer = {
+		position = { 46 210 }
+		visible = "[Not( CharactersView.IsShowFamily )]"
+		spacing = 4
+		
+		widget = {
+			size = { 38 0 }
+		}
+		
+		flowcontainer = {
+			spacing = 4
+			widget = {
+				size = { 66 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('martial')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('finesse')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('charisma')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('zeal')]"
+			}
+		}
+		#widget = { size = { 2 2 } }
+		#text_button_sort = {
+		#	size = { 100 0 }
+		#	tooltip = CHARACTER_VIEW_SORT_BY_PARTY_TOOLTIP
+		#	visible = "[CharactersView.GetSelectedCountry.HasParties]"
+		#	blockoverride "Button_text" { visible = no }
+		#	blockoverride "Icon" { 
+		#		texture = "gfx/interface/icons/shared_icons/political_parties.dds"
+		#	}
+		#	blockoverride "On_click" { onclick = "[CharactersView.Sort('party')]" }
+		#	blockoverride "DownState" { down = "[CharactersView.IsSorted('party')]" }
+		#}
+		#widget = { size = { 2 2 } }
+		widget = { size = { 86 0 } }
+		flowcontainer = {
+			spacing = 4
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 6
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('power_base')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 6
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('popularity')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 6
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('loyalty')]"
+			}
+			
+			widget = {
+				size = { 76 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 6
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('corruption')]"
+			}
+		}
+		widget = { size = { 12 0 } }
+		flowcontainer = {
+			spacing = 4
+			
+			widget = {
+				size = { 84 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('age')]"
+			}
+			
+			widget = {
+				size = { 84 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('health')]"
+			}
+			
+			widget = {
+				size = { 88 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('wealth')]"
+			}
+			
+			widget = {
+				size = { 70 680 }
+				using = NoninteractableBG
+				blockoverride "Margins" {
+					margin_left = 4
+					margin_right = 6
+					margin_top = 9
+				}
+				visible = "[CharactersView.IsSorted('succession_score')]"
+			}
+		}
+	}
+	
+	vbox = {
+		using = MainWindowHeaderBox
+
+		blockoverride "FlagOrIcon"
+		{
+			icon = {
+				texture = "gfx/interface/base_parts/yellow_button_color_200fs.dds"
+				framesize = { 100 100 }
+				frame = 6
+				position = { -2 -2 }
+				size = { 32 32 }
+				modify_texture = {
+					texture = "gfx/interface/icons/menu_buttons/menu_character.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		
+		blockoverride "Title_text" { text = "CHARACTERS_MENU_HEADER" }
+		
+		blockoverride "White_buttons"
+		{
+			button_back = {
+				shortcut = "previous_window"
+				onclick = "[CharactersView.OnClose]"
+				tooltip = "PREVIOUS_CHARACTER_VIEW"
+			}
+			button_close = {
+				onclick = "[CharactersView.OnClose]"
+				tooltip = "CLOSE"
+				shortcut = "close_window"
+			}
+		}
+		
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			
+			margin_widget = {
+				size = { 0 40 }
+				layoutpolicy_horizontal = expanding
+				hbox = {
+					layoutpolicy_vertical = preferred
+					layoutpolicy_horizontal = expanding
+					spacing = 2
+					margin_top = 4
+					@mincategorybuttonwidth = 260
+					@maxcategorybuttonwidth = 320
+					@mincategorybuttonheight = 28 
+					@maxcategorybuttonheight = 34
+					
+					margin_left = 22
+					
+					category_tab = {
+						name = "characters_tab"
+						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
+						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
+						blockoverride "MinVisible" { visible = "[CharactersView.IsShowFamily]" }
+						blockoverride "MaxVisible" { visible = "[Not( CharactersView.IsShowFamily )]" }
+						######## Shared Overrides
+						datacontext = "[CharactersView]"
+						blockoverride "Center_text" { text = "CHARACTERS_LIST" }
+						blockoverride "Icon" { visible = no }
+						######## Small Button Overrides
+						blockoverride "ClickFunction"
+						{
+							onclick = "[CharactersView.ShowCharacters]"
+						}
+					}   
+					
+					category_tab = {
+						name = "families_tab"
+						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
+						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
+						blockoverride "MinVisible" { visible = "[Not( CharactersView.IsShowFamily )]" }
+						blockoverride "MaxVisible" { visible = "[CharactersView.IsShowFamily]" }
+						######## Shared Overrides
+						blockoverride "Center_text" { 
+							text = "FAMILY_LIST" 
+						}
+						blockoverride "Icon" { visible = no }
+						######## Small Button Overrides
+						blockoverride "ClickFunction"
+						{
+							onclick = "[CharactersView.ShowFamily]"
+						}
+					} 
+					hbox = {
+						layoutpolicy_horizontal = expanding
+					}
+					
+					margin_widget = {
+						size = { 460 40 }
+						using = inputfield
+						margin_right = 80
+						margin_left = 22
+						visible = "[Not( CharactersView.IsShowFamily )]"
+						textbox = {
+							using = BaseFontM
+							using = Black_FontColor
+							text = "SEARCH_FIELD"
+							autoresize = yes
+							align = right
+							position = { 0 8 }
+							#maxcharacters = 26
+							widgetanchor = right
+						}
+						editbox = {
+							position = { 12 0 }
+							size = { 260 34 }
+							name = "find_text"
+							text = ""
+							using = BaseFontM
+							using = Black_FontColor
+							fontsize = 20
+							maxcharacters = 46
+							focuspolicy = all
+							alwaystransparent = no
+							multiline = no
+							onreturnpressed = "[CharactersView.OnFindTextChanged]"
+						}
+					}
+				}
+			}
+			#### CHARACTERS 
+			vbox = {
+				name = "Characterslist"
+				#layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				visible = "[Not( CharactersView.IsShowFamily )]"
+				
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					margin_widget = {
+						@filterfontsize = 16
+						@filtertagmaxwidth = 84
+						margin_top = -0
+						size = { 0 56 }
+						layoutpolicy_horizontal = expanding
+						flowcontainer = {
+							spacing = 20
+							position = { 23 -0 }
+							#parentanchor = vcenter
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('imprison')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('imprison')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('imprison')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_IMPRISONED" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_IMPRISONED_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('gender')]" }
+								blockoverride "YesFrame"
+								{
+									texture = "gfx/interface/icons/icon_alpha/male.dds"
+									framesize = { 26 26 }
+								}
+								blockoverride "NoFrame"
+								{
+									texture = "gfx/interface/icons/icon_alpha/female.dds"
+									framesize = { 26 26 }
+								}
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('gender')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('gender')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_GENDER" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_GENDER_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('employed')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('employed')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('employed')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_EMPLOYMENT" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_EMPLOYMENT_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('ruler')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('ruler')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('ruler')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_RULER" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_RULER_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('major')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('major')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('major')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_MAJOR"
+									fontsize = @filterfontsize 
+									max_width = 88
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_MAJOR_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('commander')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('commander')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('commander')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_COMMANDER" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_COMMANDER_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('governor')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('governor')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('governor')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_GOVERNOR" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_GOVERNOR_TOOLTIP"
+							}
+							
+							check_cross_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.Filter('adult')]" }
+								blockoverride "FilterYes" { visible = "[CharactersView.IsFilterYes('adult')]" }
+								blockoverride "FilterNo" { visible = "[CharactersView.IsFilterNo('adult')]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_ADULT" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_ADULT_TOOLTIP"
+							}
+							
+							check_filter = {
+								blockoverride "On_click" { onclick = "[CharactersView.ToggleShowOwnNation]" }
+								blockoverride "Frame" { frame = "[BoolTo1And2( CharactersView.IsShowOwnNation )]" }
+								blockoverride "TagText" 
+								{ 
+									text = "CHARACTER_VIEW_FILTER_BY_OWN_NATION" 
+									fontsize = @filterfontsize
+									max_width = @filtertagmaxwidth
+								}
+								tooltip = "CHARACTER_VIEW_FILTER_BY_OWN_NATION_TOOLTIP"
+							}
+						}
+					}
+				}
+				
+				vbox = {
+					layoutpolicy_vertical = expanding
+					layoutpolicy_horizontal = expanding
+					
+					container = {
+						visible = "[Not(CharactersView.IsShowFamily)]"
+						
+						scrollarea = {
+							position = { -2 20 }
+							size = { 1154 680 }
+							scrollbarpolicy_horizontal = always_off
+							using = VerticalScrollAreaCutOff
+							scrollbar_vertical = {
+								using = VerticalScrollBar
+							}
+							
+							scrollwidget = {
+								fixedgridbox = {
+									name = "characters_grid"
+									addcolumn = 1140
+									addrow = 94
+									maxhorizontalslots = 1
+									datamodel = "[CharactersView.GetCharacters]"
+									
+									item = {
+										widget = {
+											size = { 1140 88 }
+											container = {
+												list_entry = { 
+													size = { 100% 88 }
+													position = { 10 0 }
+													parentanchor = top
+													datacontext = "[CharacterGlue.GetCharacter]"
+													visible = "[And( EqualTo_int32( CharacterGlue.GetCharacter.GetCountry.GetId, CharacterGlue.GetCharacter.GetEmployer.GetId ), Not( CharacterGlue.GetCharacter.GetFamily.IsMinor ) )]" 
+													blockoverride "FamilyColor" { color = "[CharacterGlue.GetCharacter.GetFamily.GetBackgroundColor]" }
+												}
+												
+												list_entry = { 
+													size = { 100% 88 }
+													position = { 10 0 }
+													parentanchor = top
+													datacontext = "[CharacterGlue.GetCharacter]"
+													visible = "[Or( Not( EqualTo_int32( CharacterGlue.GetCharacter.GetCountry.GetId, CharacterGlue.GetCharacter.GetEmployer.GetId )), CharacterGlue.GetCharacter.GetFamily.IsMinor)]" 
+													blockoverride "FamilyColor" { color = { 1 1 1 1 } }
+												}
+												
+												cpt_button = {
+													size = { 56 84 }
+													blockoverride "Context" { datacontext = "[CharacterGlue.GetCharacter]" }
+													blockoverride "ShowIcons" { visible = no }
+													parentanchor = vcenter
+												}
+												@lineoneheight = 4
+												flowcontainer = {
+													position = { 66 @lineoneheight }
+													ignoreinvisible = yes
+													
+													flowcontainer = {
+														direction = vertical
+														spacing = 2
+														ignoreinvisible = yes
+														flowcontainer = { # Special Roman naming convention
+															ignoreinvisible = yes
+															direction = horizontal
+															spacing = 40
+															visible = "[EqualTo_string(CharacterGlue.GetCharacter.GetEmployer.GetTag, 'ROM')]"
+															textbox = {
+																text = "[CharacterGlue.GetCharacter.GetPraenomen] [CharacterGlue.GetCharacter.GetFamilyDisplayName] [CharacterGlue.GetCharacter.GetNickName]"
+																autoresize = yes
+																using = BaseFontS
+																using = Black_FontColor
+																visible = "[Not(CharacterGlue.GetCharacter.IsFemale)]"
+															}
+															textbox = {
+																text = "[CharacterGlue.GetCharacter.GetNameWithNoTooltip]"
+																autoresize = yes
+																using = BaseFontS
+																using = Black_FontColor
+																visible = "[CharacterGlue.GetCharacter.IsFemale]"
+															}
+														} 
+														flowcontainer = {
+															ignoreinvisible = yes
+															direction = horizontal
+															spacing = 4
+															visible = "[Not(EqualTo_string(CharacterGlue.GetCharacter.GetEmployer.GetTag, 'ROM'))]"
+															textbox = {
+																text = "[CharacterGlue.GetCharacter.GetNameWithNoTooltip]"
+																autoresize = yes
+																using = BaseFontS
+																using = Black_FontColor
+																visible = "[CharacterGlue.GetCharacter.GetFamily.IsMinor]"
+															}
+															
+															textbox = {
+																text = "[CharacterGlue.GetCharacter.GetPraenomen] [CharacterGlue.GetCharacter.GetNickName]"
+																autoresize = yes
+																using = BaseFontS
+																using = Black_FontColor
+																visible = "[Not( CharacterGlue.GetCharacter.GetFamily.IsMinor )]"
+															}
+
+															flowcontainer = {
+																ignoreinvisible = yes
+																spacing = 4
+																visible = "[Not( CharacterGlue.GetCharacter.GetFamily.IsMinor )]"
+																textbox = {
+																	text = "OF_THE_REPUBLIC_FAMILY"
+																	autoresize = yes
+																	using = BaseFontS
+																	using = Black_FontColor
+																	visible = "[CharacterGlue.GetCharacter.GetEmployer.GetGovernment.IsRepublic]"
+																}
+																textbox = {
+																	text = "OF_THE_MONARCHY_FAMILY"
+																	autoresize = yes
+																	using = BaseFontS
+																	using = Black_FontColor
+																	visible = "[CharacterGlue.GetCharacter.GetEmployer.GetGovernment.IsMonarchy]"
+																}
+																textbox = {
+																	text = "OF_THE_TRIBAL_FAMILY"
+																	autoresize = yes
+																	using = BaseFontS
+																	using = Black_FontColor
+																	visible = "[CharacterGlue.GetCharacter.GetEmployer.GetGovernment.IsTribal]"
+																}
+															}
+														}
+
+														tag_dark = {
+															size = { 200 0 }
+															datacontext = "[CharacterGlue.GetCharacter]"
+															visible = "[Or(CharacterGlue.GetCharacter.HasTitle,Or(Or(Or(GreaterThanOrEqualTo_int32(FixedPointToInt(CharacterGlue.GetCharacter.MakeScope.Var('cursus_honorum').GetValue), '(int32)1'), GreaterThanOrEqualTo_int32(FixedPointToInt(CharacterGlue.GetCharacter.MakeScope.Var('cursus_honorum_active_office').GetValue), '(int32)1')), Or(CharacterGlue.GetCharacter.IsCoRuler, CharacterGlue.GetCharacter.IsGovernor)), Or(Or(CharacterGlue.GetCharacter.HasUnit, GreaterThanOrEqualTo_int32(FixedPointToInt(CharacterGlue.GetCharacter.MakeScope.Var('cursus_honorum_religious_office').GetValue), '(int32)1')), GreaterThanOrEqualTo_int32(FixedPointToInt(CharacterGlue.GetCharacter.MakeScope.Var('cursus_honorum_extraordinary_office').GetValue), '(int32)1'))))]"
+															text = "CURSUSHONORUM_VALUE"
+															blockoverride "Align" { align = left|nobaseline }
+															minimumsize = { 50 0 }
+														}
+													}						
+												}
+												
+												icon = {
+													framesize = { 50 50 }
+													size = { 23 23 }
+													texture = "gfx/interface/icons/shared_icons/star.dds"
+													frame = "[BoolTo1And2( CharacterGlue.IsFavorite )]" 
+													visible = "[CharacterGlue.IsFavorite]"
+													position = { 3 3 }
+												}
+												
+												flowcontainer = {
+													position = { 62 52 }
+													spacing = 6
+													icon_and_text_dark = {
+														name = "Martial"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetMartialToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/military.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetMartial]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Finesse"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetFinesseToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/civic.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetFinesse]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Charisma"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetCharismaToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/oratory.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetCharisma]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Zeal"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetZealToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/religious.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetZeal]" }
+													}
+												}
+												
+												icon_card = {
+													position = { 404 46 }
+													size = { 40 40 }
+													visible = "[CharacterGlue.GetCharacter.ShowParty]"
+													blockoverride "Icon"
+													{
+														texture = "[GetPartyIcon(CharacterGlue.GetCharacter.GetParty)]"
+														size = { 32 32 }
+													}				
+													tooltip = "[CharacterGlue.GetCharacter.GetPartyTooltip]"
+												}
+												
+												country_flag = {
+													position = { 402 44 }
+													datacontext = "[CharacterGlue.GetCharacter]"
+													visible = "[Not( EqualTo_int32( CharacterGlue.GetCharacter.GetCountry.GetId, CharacterGlue.GetCharacter.GetEmployer.GetId ) )]"
+																
+													blockoverride "flag"
+													{
+														
+														texture = "[CharacterGlue.GetCharacter.GetCountry.AccessCoatOfArms.GetTexture('(int32)64','(int32)64')]"
+														frame = "[CharacterGlue.GetCharacter.GetCountry.AccessCoatOfArms.GetFrame('(int32)64','(int32)64'))]"
+														framesize = { 64 64 }
+													}
+													
+													blockoverride "size"
+													{
+														size = { 43 43 }
+													}
+													
+													blockoverride "click"
+													{
+														onclick = "[OpenDiplomacy(CharacterGlue.GetCharacter.GetCountry)]"
+													}
+													
+													tooltip = "FOREIGN_CHARACTER_BLURB"
+													
+												}
+												icon = {
+													position = { 646 8 }
+													size = { 36 36 }
+													visible = "[CharacterGlue.GetCharacter.IsPretender]"
+													texture = "gfx/interface/icons/shared_icons/leader_pretender.dds"
+													tooltip = "PRETENDER_TOOLTIP"
+												}
+												flowcontainer = {
+													position = { 468 52 }
+													spacing = 8
+													icon_and_text_dark = {
+														name = "Powerbase"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetPowerBaseInfo]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/power_base.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetPowerBase|0]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Popularity"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetPopularityToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/popularity.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetPopularity|0]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Loyalty"
+														size = { 73 0 }
+														
+														datacontext = "[CharacterGlue.GetCharacter]"
+														tooltipwidget = { using = character_loyalty_tooltip }
+														# tooltip = "[CharacterGlue.GetCharacter.GetLoyaltyToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/loyalty.dds" }
+														blockoverride "Text" { text = "[Character.GetLoyalty|0]" }
+													}
+													
+													icon_and_text_dark = {
+														name = "Corruption"
+														size = { 72 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetCorruptionToolTip]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/corruption.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetCorruption|0]" }
+													}
+												}
+												
+												flowcontainer = {
+													position = { 800 52 }
+													spacing = 4
+													
+													icon_and_text_dark = {
+														name = "Age"
+														size = { 84 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetAgeOnDeathOrBirthDate]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/age.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetAge|0]" }
+													}
+													
+													textbox = {
+														datacontext = "[CharacterGlue.GetCharacter]"
+														using = BaseFontM
+														using = Black_FontColor
+														text = "HEALTH_VALUE"
+														parentanchor = vcenter
+														align = center
+														#position = { 38 -2 }
+														size = { 84 34 }
+														elide = right
+														fontsize_min = 12
+													}
+													
+													icon_and_text_dark = {
+														name = "Wealth"
+														size = { 85 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetWealthInformation]"
+														
+														blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetWealth|0]" }
+													}
+													icon_and_text_dark = {
+														name = "SuccessionScore"
+														size = { 77 0 }
+														tooltip = "[CharacterGlue.GetCharacter.GetSuccessionScoreInfo]"
+														
+														#blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
+														blockoverride "Text" { text = "[CharacterGlue.GetCharacter.GetSuccessionScore|0]" }
+													}
+												}
+												
+												fixedgridbox = {
+													name = "traits_grid"
+													flipdirection = yes
+													#using = NoninteractableBG
+
+													size = { 572 36 }
+													datamodel_wrap = 15
+													addrow = 36
+													addcolumn = 36
+													datamodel = "[CharacterGlue.GetTraitItems]"
+
+													position = { 0 6 }
+													parentanchor = right
+													
+													
+													item = {
+														icon = {
+															size = { 36 36 }
+															texture = "[TraitItem.GetIcon]"
+															tooltip = "[TraitItem.GetTooltip]"
+														}
+													}
+													#icon = {
+													#	texture = "gfx/interface/base_parts/brown_underline_x60bd.dds"
+													#	spriteType = Corneredtiled
+													#	spriteborder = { 30 0 }
+													#	size = { 100% 4 }
+													#	color = { 0.5 0.3 0.1 0.6 }
+													#	parentanchor = bottom|hcenter
+													#}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#### FAMILIES
+			vbox = {
+				name = "Families"
+				#layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				visible = "[CharactersView.IsShowFamily]"
+				vbox = {
+					margin_widget = {
+						size = { 0 20 }
+						name = "sort_buttons"
+						layoutpolicy_horizontal = expanding
+						flowcontainer = {	
+							parentanchor = bottom
+							spacing = 4
+							text_button_sort = {
+								size = { 80 0 }
+								tooltip = CHARACTER_VIEW_SORT_BY_NAME_TOOLTIP
+								
+								blockoverride "Button_text" { text = "A_Z" }
+								blockoverride "Icon" { 
+									visible = no
+								}
+								blockoverride "On_click" { onclick = "[CharactersView.SortFamily('name')]" }
+								blockoverride "DownState" { down = "[CharactersView.IsFamilySorted('name')]" }
+							}
+							text_button_sort = {
+								size = { 80 0 }
+								tooltip = CHARACTER_VIEW_SORT_BY_SIZE_TOOLTIP
+								
+								blockoverride "Button_text" { visible = no }
+								blockoverride "Icon" { 
+									texture = "gfx/interface/icons/shared_icons/family_size.dds"
+								}
+								blockoverride "On_click" { onclick = "[CharactersView.SortFamily('size')]" }
+								blockoverride "DownState" { down = "[CharactersView.IsFamilySorted('size')]" }
+							} 
+						}
+						flowcontainer = {
+							parentanchor = bottom|right
+							position = { -16 0 }
+							spacing = 4
+							text_button_sort = {
+								size = { 100 0 }
+								tooltip = CHARACTER_VIEW_SORT_BY_POWER_BASE_TOOLTIP
+								blockoverride "Button_text" { visible = no }
+								blockoverride "Icon" { 
+									using = icon_power_base
+									size = { 36 36 }
+								}
+								blockoverride "On_click" { onclick = "[CharactersView.SortFamily('powerbase')]" }
+								blockoverride "DownState" { down = "[CharactersView.IsFamilySorted('powerbase')]" }
+							}
+							
+							text_button_sort = {
+								size = { 100 0 }
+								tooltip = CHARACTER_VIEW_SORT_BY_WAGE_TOOLTIP
+								
+								blockoverride "Button_text" { visible = no }
+								blockoverride "Icon" { 
+									texture = "gfx/interface/icons/shared_icons/office.dds"
+								}
+								blockoverride "On_click" { onclick = "[CharactersView.SortFamily('wage')]" }
+								blockoverride "DownState" { down = "[CharactersView.IsFamilySorted('wage')]" }
+							}
+							
+							text_button_sort = {
+								size = { 100 0 }
+								tooltip = CHARACTER_VIEW_SORT_BY_PRESTIGE_TOOLTIP
+								
+								blockoverride "Button_text" { visible = no }
+								blockoverride "Icon" { 
+									texture = "gfx/interface/icons/modifiers/monthly_character_fam_prestige.dds"
+								}
+								blockoverride "On_click" { onclick = "[CharactersView.SortFamily('prestige')]" }
+								blockoverride "DownState" { down = "[CharactersView.IsFamilySorted('prestige')]" }
+							}
+						}
+					}
+					
+					scrollarea = {
+						size = { 1156 730 }
+						scrollbarpolicy_horizontal = always_off
+						scrollbar_vertical = {
+							using = VerticalScrollBar
+						}
+						
+						scrollwidget = {
+							dynamicgridbox = {
+								name = "families_grid"
+								datamodel = "[CharactersView.GetFamilies]"
+								
+								item = {
+									container = {
+										flowcontainer = {
+											position = { 0 10 }
+											container = {
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }
+													texture = "gfx/interface/tiles/family_tile.dds"
+													color = "[FamilyGlue.GetFamily.GetBackgroundColor]"
+													visible = "[LessThan_int32(FixedPointToInt(Character.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)1')]"
+													alpha = 0.5
+													#shaderfile = "gfx/FX/pdxgui_default.shader"
+													
+												}
+												## Res Publica Color Overrides
+												##############################
+												
+												# Vanilla colors
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }					
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.44 0.74 0.78 1 } # Vanilla blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)1')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }		
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.84 0.70 0.38 1 } # Vanilla Fabii yellow
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)2')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.81 0.34 0.25 1 } # Vanilla red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)3')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.38 0.79 0.47 1 } # Vanilla green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)4')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.78 0.40 0.66 1 } # Vanilla light violet
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)5')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.0 0.65 0.65 1.0 } # Vanilla teal
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)6')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.89 0.26 0.20 1.0 } # Vanilla vermillion
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)7')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1.0 0.75 0.0 1.0 } # Vanilla amber
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)8')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.5 0.85 0.0 1 } # Vanilla chartreuse
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)9')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.5 0.0 1.0 1.0 } # Vanilla dark violet
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)10')]"
+													alpha = 0.5
+												}
+												# Historia Civilis special colors
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.4 0.1 0.25 1 } # Historia Civilis Lepidus' dark red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)11')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }					
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.78 0 0 1 } # Historia Civilis Caesar's iconic red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)12')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.59 0 0 1 } # Historia Civilis Clodius' bloody red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)13')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													# color = { 0.13 0.27 0.68 1 } # Historia Civilis Scipio's dark blue
+													color = { 0.27 0.22 0.39 1 } # Historia Civilis Scipio's dark blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)14')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1 0.16 0.5 1 } # Historia Civilis Antonius' pink
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)15')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.52 0.42 0.69 1 } # Historia Civilis Octavius' purple
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)16')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.27 0.63 0.58 1 } # Historia Civilis Hortensia's green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)17')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.16 0.50 1 1 } # Historia Civilis Brutus' blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)18')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.64 0.73 1 1 } # Historia Civilis Porcia's light blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)19')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.37 0.55 0 1 } # Historia Civilis Cicero's deep green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)20')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.91 0.47 0.64 1 } # Historia Civilis Lucius Antonius' deep pink
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)21')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.17 0.35 0.62 1 } # Historia Civilis Sextus Pompey's deep blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)22')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1 0.39 0.02 1 } # Historia Civilis Pompey's orange
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)23')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.77 0.77 0.77 1 } # Historia Civilis Ahenobarbus' black
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)24')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.16 0.16 0.73 1 } # Historia Civilis Cato's blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)25')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.96 0.64 0.89 1 } # Historia Civilis Decimus' pink
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)26')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1 0.70 0.50 1 } # Historia Civilis Cassius' orange
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)27')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.67 0.53 0.87 1 } # Historia Civilis Trebonius' violet
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)28')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.67 0.18 0.38 1 } # Historia Civilis Cimber's purple
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)29')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.92 0.69 0.69 1 } # Historia Civilis Casca's beige
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)30')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.47 0.4 0.13 1 } # Historia Civilis Calpurnia's brown-green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)31')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.79 0.63 0.61 1 } # Historia Civilis Nepos' beige
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)32')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.5 0.62 0.8 1 } # Historia Civilis Lentulus' light blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)33')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.56 0.65 0.64 1 } # Historia Civilis Milo's light green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)34')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1 0.9 0.51 1 } # Historia Civilis Labienus' light yellow
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)35')]"
+													alpha = 0.5
+												}
+												# Third Batch
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.62 0 0.25 1 } # Historia Civilis Fulvia's magenta
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)36')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.63 0.16 0.16 1 } # Historia Civilis Agrippa's carmine
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)37')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.80 0.71 0.38 1 } # Historia Civilis Nero's gold
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)38')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.97 0.78 0 1 } # Historia Civilis Livia's deep gold
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)39')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 1 0.66 0.18 1 } # Historia Civilis Tiberius's orange
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)40')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.93 0.72 0.8 1 } # Historia Civilis Julia's delicate pink
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)41')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.95 0.84 0.77 1 } # Historia Civilis Tertulla's light beige
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)42')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.69 0.8 0.67 1 } # Historia Civilis Favonius' delicate green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)43')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.56 0.87 0.9 1 } # Historia Civilis Hirtius and Pansa's light blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)44')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.75 0.43 0.56 1 } # Historia Civilis Gaius Antonius' deep magenta
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)45')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.96 0.84 0.84 1 } # Historia Civilis Titedius' light beige
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)46')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.55 0.71 0.64 1 } # Historia Civilis Bibulus' rotten lime
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)47')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.76 0.87 0.54 1 } # Historia Civilis Dolabella's lime
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)48')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.80 0.57 0.44 1 } # Historia Civilis Crassus' dark beige
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)49')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.47 0 0 1 } # Historia Civilis Appius Claudius' dark blood
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)50')]"
+													alpha = 0.5
+												}
+				
+												# HC Universal Set
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.66 0.21 0.22 1 } # Historia Civilis Populares red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)51')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.29 0.42 0.89 1 } # Historia Civilis Optimates blue
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)52')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.63 0.62 0.79 1 } # Historia Civilis Senatorial violet
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)53')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.67 0.49 0.49 1 } # Historia Civilis Clodius' bandit weak red
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)54')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.77 0.82 0.80 1 } # Historia Civilis Milo's bandit weak green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)55')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.06 0.43 0.52 1 } # Historia Civilis Candidate's turqoise
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)56')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.51 0.67 0.56 1 } # Historia Civilis Client's green
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)57')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.65 0.67 0.50 1 } # Historia Civilis Client's light brown
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)58')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.62 0.47 0.58 1 } # Historia Civilis Client's magenta
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)59')]"
+													alpha = 0.5
+												}
+												icon = {
+													size = { 400 32 }
+													parentanchor = right
+													position = { 340 0 }						
+													texture = "gfx/interface/tiles/family_tile.dds"
+													datacontext = "[FamilyGlue]"
+													color = { 0.51 0.58 0.67 1 } # Historia Civilis Client's steel
+													visible = "[EqualTo_int32(FixedPointToInt(FamilyGlue.GetFamily.MakeScope.Var('family_colour_override').GetValue), '(int32)60')]"
+													alpha = 0.5
+												}
+												sub_header = {
+													size = { 820 24 }
+													
+													blockoverride "Title_text"
+													{
+														text = "[FamilyGlue.GetFamily.GetName]"
+													}
+												}
+											}
+											
+											container = {
+												flowcontainer = {
+													position = { 16 -2 }
+													spacing = 26
+													
+													#background = {
+													#	texture = "gfx/interface/tiles/family_tile.dds"
+													#	color = "[FamilyGlue.GetFamily.GetBackgroundColor]"
+													#	alpha = 0.4
+													#	shaderfile = "gfx/FX/pdxgui_default.shader"
+													#}
+													
+													icon_and_text = {
+														size = { 82 0 }
+														tooltip = "[FamilyGlue.GetFamily.GetPowerBaseInfo]"
+														blockoverride "Icon" { using = icon_power_base }
+														blockoverride "Text" { text = "[FamilyGlue.GetFamily.GetPowerBase|0]" }
+													}	
+
+													icon_and_text = {
+														size = { 82 0 }
+														tooltip = [FamilyGlue.GetFamily.GetWageTooltip]
+														blockoverride "Icon" 
+														{ 
+															texture = "gfx/interface/icons/shared_icons/tick_cross.dds"
+															frame = "[Select_int32(FamilyGlue.GetFamily.IsScorned,'(int32)1','(int32)2'))]"
+															size = { 22 22 }
+															framesize = { 25 25 }
+														}
+														blockoverride "Text" { text = "[FamilyGlue.GetFamily.GetNumberOfJobs] / [FamilyGlue.GetFamily.GetNumberOfExpectedJobs]" }
+													}
+													
+													icon_and_text = {
+														size = { 82 0 }
+														tooltip = "[FamilyGlue.GetFamily.GetPrestigeTooltip]"
+														blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/monthly_character_fam_prestige.dds" }
+														blockoverride "Text" { text = "[FamilyGlue.GetFamily.GetPrestige|0]" }
+													}
+												}
+											}
+										}
+										overlappingitembox = {
+											position = { 4 44 }
+											name = "family_grid_small"
+											datamodel = "[FamilyGlue.GetCharacters]"
+											size = { 1136 96 }  
+											item = {
+												flowcontainer = {
+													cpt_button = {
+														size = { 60 90 }
+														blockoverride "Context" { datacontext = "[FamilyMember.GetCharacter]" }
+													}
+													widget = {
+														name = "spacererer"
+														size = { 3 0 }
+													}
+												}
+											}
+										}	
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	country_flag = {
+		position = { 1134 68 }
+		datacontext = "[CharactersView.GetSelectedCountry]"
+		visible = "[Not(CharactersView.IsShowFamily)]"
+		
+					
+		blockoverride "flag"
+		{
+			
+			texture = "[CharactersView.GetSelectedCountry.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
+			frame = "[CharactersView.GetSelectedCountry.AccessCoatOfArms.GetFrame('(int32)120','(int32)120'))]"
+			framesize = { 120 120 }
+		}
+		
+		blockoverride "size"
+		{
+			size = { 38 38 }
+		}
+		
+		blockoverride "click"
+		{
+			onclick = "[CharactersView.ResetCountry]"
+		}
+		
+		tooltip = "RESET_CVIEW"
+	
+		
+	}
+}
+

@@ -1,0 +1,184 @@
+eligible_for_princeps_senatus = {	
+	within_pomerium_trigger = yes			
+	# Is eligible for office?
+	var:cursus_honorum >= 3 # Was a Consul
+	is_minor_character = no
+}
+eligible_for_praefectus_urbanus = {	
+	within_pomerium_trigger = yes			
+	# Is eligible for office?
+	var:cursus_honorum >= 3 # Was a Consul
+	is_minor_character = no
+}
+eligible_for_censorship = {
+	within_pomerium_trigger = yes	
+	var:cursus_honorum >= 3 # Was a Consul
+	NOT = { has_variable = recently_elected_censor }
+}
+eligible_for_consulship = {
+	within_pomerium_trigger = yes	
+	var:cursus_honorum >= 2 # Was a Praetor
+	OR = {
+		age >= 42
+		AND = {
+			has_variable = cursus_honorum_age_dispensation
+			age >= 37
+		}
+	}
+	NOT = { has_variable = recently_elected_consul }
+	is_willing_to_candidate_trigger = yes # Check if character is ambitious enough to pursue another consulship
+}
+eligible_for_praetorship = {
+	within_pomerium_trigger = yes	
+	var:cursus_honorum >= 1 # Was a Questor 
+	var:cursus_honorum < 3 # Wasn't a consul!
+	# Actually Publius Sempronius Sophus went to be Praetor despite being former consul so maybe change that exclusion to chance-lowerer?
+	OR = {
+		age >= 39
+		AND = {
+			has_variable = cursus_honorum_age_dispensation
+			age >= 34
+		}
+	}
+	NOT = { has_variable = recently_elected_praetor }
+}
+eligible_for_aedileship = {
+	within_pomerium_trigger = yes	
+	var:cursus_honorum = 1 # Was a Questor 
+	OR = {
+		age >= 35
+		AND = {
+			has_variable = cursus_honorum_age_dispensation
+			age >= 30
+		}
+	}
+	NOT = { has_variable = recently_elected_aedile }
+}
+eligible_for_plebeian_tribuneship = {
+	within_pomerium_trigger = yes				
+	is_minor_character = yes
+	var:cursus_honorum >= 1 # Was a Questor 
+	var:cursus_honorum < 3 # Wasn't a consul!
+}
+eligible_for_questorship = {	
+	within_pomerium_trigger = yes				
+	citizen_of_roma_trigger = yes
+	NOT = { has_variable = cursus_honorum }
+	OR = {
+		age >= 30
+		AND = {
+			has_variable = cursus_honorum_age_dispensation
+			age >= 25
+		}
+	}
+}
+eligible_for_pontifex_maximus = {
+	within_pomerium_trigger = yes	
+	#religion = THIS.employer.religion 
+	trigger_if = {
+		limit = { 
+			NOR = { # Lex Ogulnia allowed plebeians to apply for religious offices
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		is_minor_character = no
+	}
+	var:cursus_honorum_religious_office = 3
+	age >= 30
+}
+eligible_for_vestalis_maxima = {
+	within_pomerium_trigger = yes	
+	#religion = THIS.employer.religion 
+	trigger_if = {
+		limit = { 
+			NOR = { # Lex Ogulnia allowed plebeians to apply for religious offices
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		is_minor_character = no
+	}
+	var:cursus_honorum_religious_office = 1
+	age >= 30
+}
+eligible_for_pontiff = {
+	citizen_of_roma_trigger = yes
+	within_pomerium_trigger = yes	
+	#religion = THIS.employer.religion 
+	trigger_if = {
+		limit = { 
+			NOR = { # Lex Ogulnia allowed plebeians to apply for religious offices
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		is_minor_character = no
+	}
+	NOT = { has_variable = cursus_honorum_religious_office }
+}
+eligible_for_augur = {
+	citizen_of_roma_trigger = yes
+	within_pomerium_trigger = yes	
+	#religion = THIS.employer.religion 
+	trigger_if = {
+		limit = { 
+			NOR = { # Lex Ogulnia allowed plebeians to apply for religious offices
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		is_minor_character = no
+	}
+	NOT = { has_variable = cursus_honorum_religious_office }
+}
+eligible_for_vestal_virgin = {
+	# # Both parents need to be alive and Roman; Disabled for now, Imperator often adds characters without their parents
+	# father = { citizen_of_roma_trigger = yes }
+	# mother = { exists = yes } 
+	is_male = no
+	is_married = no
+	age >= 6
+	age <= 30 # For gameplay reasons upped it from 16 to 30, TODO: find a solution
+	within_pomerium_trigger = yes	
+	# Citizen of Roma woman variant:
+	NOT = { has_character_modifier = foreign_citizen }
+	
+	# Try to target at least 2 apprentices and at least 2 teachers
+	# OR = { # If there are less than 2 apprentices, target young girls
+		# age <= 16
+		# employer = {
+			# any_character = {
+				# count >= 2
+				# var:cursus_honorum_religious_office = 1 # Disabled for being faulty
+				# age <= 16
+			# }
+		# }
+	# }
+	NOT = { any_child = { exists = yes } }
+	OR = {	
+		culture = {
+			any_in_list = { # Any culture that has Citizen or Noble status
+				list = rp_citizen_rights_list 
+				is_culture = PREV
+			}
+		}
+		culture = THIS.employer.culture 
+	}
+	#religion = THIS.employer.religion 
+	trigger_if = {
+		limit = { 
+			NOR = { # Lex Ogulnia allowed plebeians to apply for religious offices
+				has_law = lex_ogulnia 
+				has_law = lex_aelia_et_fufia  
+				has_law = lex_domitia_de_sacerdotiis  
+			}
+		}
+		is_minor_character = no
+	}
+	NOT = { has_variable = cursus_honorum_religious_office }
+}

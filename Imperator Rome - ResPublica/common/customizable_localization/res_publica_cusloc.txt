@@ -1,0 +1,196 @@
+﻿cursus_honorum_svalue = {
+	type = character
+	
+	text = {
+		localization_key = cursus_honorum_foreign
+		trigger = { NOT = { employer = { tag = ROM } } }
+	}
+	text = {
+		localization_key = cursus_honorum_dictator
+		trigger = { var:cursus_honorum_extraordinary_office = 3 }
+	}
+	text = {
+		localization_key = cursus_honorum_princeps
+		trigger = { 
+			is_ruler = yes
+			country = { has_law = princeps_civitatis } 
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_magister_equitum
+		trigger = { var:cursus_honorum_extraordinary_office = 2 }
+	}
+	text = {
+		localization_key = cursus_honorum_consul
+		trigger = { var:cursus_honorum_active_office = 5 }
+	}
+	text = {
+		localization_key = cursus_honorum_consul_suffectus
+		trigger = {
+			OR = {
+				is_ruler = yes
+				is_co_ruler  = yes
+			}
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_princeps_senatus
+		trigger = { var:cursus_honorum_active_office = 8 }
+	}
+	text = {
+		localization_key = cursus_honorum_censor
+		trigger = { var:cursus_honorum_active_office = 7 }
+	}
+	text = {
+		localization_key = cursus_honorum_praefectus_urbanus
+		trigger = { var:cursus_honorum_active_office = 6 }
+	}
+	text = {
+		localization_key = cursus_honorum_proconsul_active_prov
+		trigger = {
+			is_governor = yes
+			var:cursus_honorum = 3
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_proconsul_active
+		trigger = {
+			OR = {
+				is_governor = yes
+				in_command = yes
+				is_general = yes
+				is_admiral = yes
+				has_legion_trigger = yes
+			}
+			var:cursus_honorum = 3
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_pontifex_maximus
+		trigger = { var:cursus_honorum_religious_office = 5 }
+	}
+	text = {
+		localization_key = cursus_honorum_vestalis_maxima
+		trigger = { var:cursus_honorum_religious_office = 4 }
+	}
+	text = {
+		localization_key = cursus_honorum_proconsul
+		trigger = { var:cursus_honorum = 3 }
+	}
+	text = {
+		localization_key = cursus_honorum_praetor
+		trigger = { var:cursus_honorum_active_office = 4 }
+	}
+	text = {
+		localization_key = cursus_honorum_propraetor_active_prov
+		trigger = {
+			is_governor = yes
+			var:cursus_honorum = 2
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_propraetor_active
+		trigger = {
+			OR = {
+				is_governor = yes
+				in_command = yes
+				is_general = yes
+				is_admiral = yes
+				has_legion_trigger = yes
+			}
+			var:cursus_honorum = 2
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_aedile
+		trigger = { var:cursus_honorum_active_office = 3 }
+	}
+	text = {
+		localization_key = cursus_honorum_plebeian_tribune
+		trigger = { var:cursus_honorum_active_office = 2 }
+	}
+	text = {
+		localization_key = cursus_honorum_propraetor
+		trigger = { var:cursus_honorum = 2 }
+	}
+	text = {
+		localization_key = cursus_honorum_questor
+		trigger = { var:cursus_honorum_active_office = 1 }
+	}
+	text = {
+		localization_key = cursus_honorum_naval_praefect
+		trigger = {
+			is_admiral = yes
+			var:cursus_honorum = 1
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_legate_prov
+		trigger = {
+			is_governor = yes
+			var:cursus_honorum = 1
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_legate
+		trigger = {
+			OR = {
+				is_governor = yes
+				in_command = yes
+				is_general = yes
+				is_admiral = yes
+				has_legion_trigger = yes
+			}
+			var:cursus_honorum = 1
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_senator
+		trigger = { var:cursus_honorum = 1 }
+	}
+	text = {
+		localization_key = cursus_honorum_pontiff
+		trigger = { var:cursus_honorum_religious_office = 3 }
+	}
+	text = {
+		localization_key = cursus_honorum_augur
+		trigger = { var:cursus_honorum_religious_office = 2 }
+	}
+	text = {
+		localization_key = cursus_honorum_vestal_virgin
+		trigger = { var:cursus_honorum_religious_office = 1 }
+	}
+	text = {
+		localization_key = cursus_honorum_mercenary
+		trigger = {
+			NOT = { culture = employer.culture }
+			OR = {
+				is_governor = yes
+				in_command = yes
+				is_general = yes
+				is_admiral = yes
+				has_legion_trigger = yes
+			}
+		}
+	}
+	text = {
+		localization_key = cursus_honorum_tribune
+		trigger = {
+			OR = {
+				is_governor = yes
+				in_command = yes
+				is_general = yes
+				is_admiral = yes
+				has_legion_trigger = yes
+			}
+		}
+	}
+	text = { # Just for researchers assigned at the start of the game. Later not player nor AI will be able to make non-senators into researchers
+		localization_key = cursus_honorum_decemvir
+		trigger = { has_tech_office = yes }
+	}
+	text = {
+		localization_key = cursus_honorum_nobody
+		trigger = { always = yes }
+	}
+}

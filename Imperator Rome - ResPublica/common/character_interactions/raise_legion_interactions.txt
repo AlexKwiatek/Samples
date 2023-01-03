@@ -1,0 +1,251 @@
+rp_raise_legion = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			var:cursus_honorum >= 2 # Only character with Imperium
+			OR = {
+				is_courtier = yes
+				is_co_ruler = yes
+			}
+			NOT = { var:cursus_honorum_active_office = 5 } # They will use Raise Consular Army instead
+			NOT = { is_ruler = yes } # Dictator and Primary Consul raise capital region
+			NOT = { is_governor = yes } # Governors raise their provinces
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			NOT = { in_command = yes }
+		}
+		scope:actor = {
+			trigger_if = {
+				limit = { has_law = marian_reforms }
+				manpower >= 12
+			}
+			trigger_else = {
+				manpower >= 10				
+			}
+			war = yes
+		}
+	}
+	
+	effect = {
+		custom_tooltip = rp_raise_legion_effect_tooltip
+	# }
+	# hidden_effect = {
+		scope:actor = {
+			if = { # Marian Legion
+				limit = { has_law = marian_reforms }
+				create_unit = {
+					location = scope:actor.capital_scope 
+					save_scope_as = new_legion
+					commander = scope:target
+					sub_unit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = engineer_cohort  
+					add_subunit = supply_train 
+				}
+				add_manpower = -12
+			}
+			else = { # Polybian Legion
+				create_unit = {
+					location = scope:actor.capital_scope 
+					save_scope_as = new_legion
+					commander = scope:target
+					sub_unit = light_infantry # 1200 Velites
+					add_subunit = light_infantry 
+					add_subunit = heavy_infantry # 2400 Hastati and Principes
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = spearmen # 600 Triarii
+					add_subunit = light_cavalry # 600 Cavalry
+					add_subunit = supply_train # Fill the last cohort with them
+				}
+				add_manpower = -10
+			}
+			scope:new_legion = {
+				every_sub_unit = {
+					random = {
+						chance = 50
+						set_personal_loyalty = scope:target
+					}
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}
+rp_raise_consular_army = {
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_politics"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			var:cursus_honorum_active_office = 5 # Only Consuls
+		}
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			NOT = { in_command = yes }
+		}
+		scope:actor = {
+			trigger_if = {
+				limit = { has_law = marian_reforms }
+				manpower >= 48
+			}
+			trigger_else = {
+				manpower >= 40
+			}
+			war = yes
+		}
+	}
+	
+	effect = {
+		custom_tooltip = rp_raise_consular_army_effect_tooltip
+	# }
+	# hidden_effect = {
+		scope:actor = {
+			while = {
+				count = 3
+				ordered_character = {
+					limit = {
+						is_courtier = yes
+						in_command = no
+						NOT = { var:cursus_honorum_active_office = 2 } # Tribunes are forbidden from leading troops
+						var:cursus_honorum >= 1 # Is a senator
+					}
+					order_by = res_publica_calc_legatus_quality
+					save_scope_as = legatus_legionis
+				}
+				if = { # Marian Legion
+					limit = { has_law = marian_reforms }
+					create_unit = {
+						location = scope:actor.capital_scope 
+						save_scope_as = new_legion
+						commander = scope:legatus_legionis
+						sub_unit = heavy_infantry
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry
+						add_subunit = heavy_infantry
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = engineer_cohort  
+						add_subunit = supply_train 
+					}
+					add_manpower = -12
+				}
+				else = { # Polybian Legion
+					create_unit = {
+						location = scope:actor.capital_scope 
+						save_scope_as = new_legion
+						commander = scope:legatus_legionis
+						sub_unit = light_infantry # 1200 Velites
+						add_subunit = light_infantry 
+						add_subunit = heavy_infantry # 2400 Hastati and Principes
+						add_subunit = heavy_infantry
+						add_subunit = heavy_infantry
+						add_subunit = heavy_infantry 
+						add_subunit = heavy_infantry 
+						add_subunit = spearmen # 600 Triarii
+						add_subunit = light_cavalry # 600 Cavalry
+						add_subunit = supply_train # Fill the last cohort with them
+					}
+					add_manpower = -10
+				}
+				scope:new_legion = {
+					every_sub_unit = {
+						random_list = {
+							25 = {
+								set_personal_loyalty = scope:legatus_legionis
+							}
+							50 = {
+								set_personal_loyalty = scope:target
+							}
+							25 = { }
+						}
+					}
+				}
+			}
+			if = { # Marian Legion
+				limit = { has_law = marian_reforms }
+				create_unit = {
+					location = scope:actor.capital_scope 
+					save_scope_as = new_legion
+					commander = scope:target
+					sub_unit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = engineer_cohort  
+					add_subunit = supply_train 
+				}
+				add_manpower = -12
+			}
+			else = { # Polybian Legion
+				create_unit = {
+					location = scope:actor.capital_scope 
+					save_scope_as = new_legion
+					commander = scope:target
+					sub_unit = light_infantry # 1200 Velites
+					add_subunit = light_infantry 
+					add_subunit = heavy_infantry # 2400 Hastati and Principes
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry
+					add_subunit = heavy_infantry 
+					add_subunit = heavy_infantry 
+					add_subunit = spearmen # 600 Triarii
+					add_subunit = light_cavalry # 600 Cavalry
+					add_subunit = supply_train # Fill the last cohort with them
+				}
+				add_manpower = -10
+			}
+			scope:new_legion = {	
+				set_as_commander = scope:target
+				every_sub_unit = {
+					random = {
+						chance = 50
+						set_personal_loyalty = scope:target
+					}
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		base = 0 # TODO : AI
+	}
+}

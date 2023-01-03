@@ -1,0 +1,37 @@
+cursus_honorum_never_a_senator = {
+	disallow_job = yes
+	disallow_office = yes
+	disallow_command = yes
+	senate_influence = -0.25
+}
+cursus_honorum_never_a_praetor = {
+	disallow_job = yes
+	disallow_office = yes
+	disallow_command = yes
+}
+governor_term = { }
+cursus_honorum_former_praetor = { 
+	senate_influence = 0.25
+}
+cursus_honorum_former_consul = { 
+	senate_influence = 0.5
+}
+cursus_honorum_senator = { 
+	senate_influence = 0.1
+}
+cursus_honorum_ai_office_blocker = {
+	disallow_office = yes
+	cancellation_trigger = {
+		employer = {
+			is_ai = no
+		}
+	}
+}
+cursus_honorum_imperium_called = { }
+
+## Job - Governor, Tech Office, Office
+## Office - Office
+## Command - Command
+## 
+## No place to move i'm afraid. You could move Questors into tech offices, but then aediles and tribunes couldn't be offices
+## Can't use disallow command either as Legates didn't need Imperium

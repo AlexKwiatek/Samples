@@ -1,0 +1,40 @@
+
+texticon = {
+    icon = military_icon_s
+    iconsize = {
+        texture = "gfx/interface/icons/font_icons/font_icon_military.dds"
+        size = { 20 20 }
+        offset = { 0 4 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = oratory_icon_s
+    iconsize = {
+        texture = "gfx/interface/icons/font_icons/font_icon_oratory.dds"
+        size = { 20 20 }
+        offset = { 0 4 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = religious_icon_s
+    iconsize = {
+        texture = "gfx/interface/icons/font_icons/font_icon_religious.dds"
+        size = { 20 20 }
+        offset = { 0 4 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = civic_icon_s
+    iconsize = {
+        texture = "gfx/interface/icons/font_icons/font_icon_civic.dds"
+        size = { 20 20 }
+        offset = { 0 4 }
+        fontsize = 16
+    }
+}

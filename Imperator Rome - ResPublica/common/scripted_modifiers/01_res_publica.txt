@@ -1,0 +1,29 @@
+
+vote_modifier_comitia_centuriata = {
+	modifier = {
+		trigger = {
+			is_minor_character = no
+		}
+		add = {
+			value = 200 # Value being added
+		}
+	}
+	modifier = {
+		trigger = {
+			is_head_of_family = yes
+		}
+		add = {
+			value = 200 # Value being added
+		}
+	}
+	modifier = {
+		add = {
+			value = THIS.prominence
+		}
+	}
+	modifier = {
+		add = {
+			value = THIS.family.prestige
+		}
+	}
+}

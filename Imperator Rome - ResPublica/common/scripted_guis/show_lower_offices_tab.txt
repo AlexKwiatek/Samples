@@ -1,0 +1,160 @@
+﻿show_lower_offices_tab = {
+    scope = country
+	ai_is_valid = {
+		always = no
+	}
+    effect = {
+		set_variable = {
+			name = chosen_election_category
+			value = 2
+			days = 365
+		}
+		if = { 
+			limit = { NOT = { has_variable = last_update_lower_offices_ranking } }
+			clear_variable_list = aedile_election_lead
+			clear_variable_list = aedile_election_candidates
+			clear_variable_list = plebeian_tribune_election_lead
+			clear_variable_list = plebeian_tribune_election_candidates
+			clear_variable_list = questor_election_lead
+			clear_variable_list = questor_election_candidates
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 4
+				ordered_in_list = {
+					variable = senators_list # Aediles
+					limit = { 
+						eligible_for_aedileship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_aedile_supp > 0
+					}
+					order_by = rp_calc_aedile_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = aedile_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 12
+				ordered_in_list = {
+					variable = senators_list
+					limit = { 
+						eligible_for_aedileship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_aedile_supp > 0
+					}
+					order_by = rp_calc_aedile_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = aedile_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 6
+				ordered_in_list = {
+					variable = senators_list
+					limit = { 
+						eligible_for_plebeian_tribuneship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_plebeian_tribune_supp > 0
+					}
+					order_by = rp_calc_plebeian_tribune_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = plebeian_tribune_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 24
+				ordered_in_list = {
+					variable = senators_list
+					limit = { 
+						eligible_for_plebeian_tribuneship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_plebeian_tribune_supp > 0
+					}
+					order_by = rp_calc_plebeian_tribune_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = plebeian_tribune_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			while = {
+				count = 12
+				ordered_character = {
+					limit = { 
+						eligible_for_questorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_questor_supp > 0
+					}
+					order_by = rp_calc_questor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = questor_election_lead
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			while = {
+				count = 36
+				ordered_character = {
+					limit = { 
+						eligible_for_questorship = yes
+						NOT = { has_variable = already_counted_election }
+						THIS.rp_calc_questor_supp > 0
+					}
+					order_by = rp_calc_questor_supp 
+					save_scope_as = listed_candidate
+					ROOT = {
+						add_to_variable_list = {
+							name = questor_election_candidates
+							target = scope:listed_candidate
+						}
+					}
+					set_variable = already_counted_election
+				}
+			}
+			every_character = {
+				limit = { has_variable = already_counted_election }
+				remove_variable = already_counted_election
+			}
+			set_variable = {
+				name = last_update_lower_offices_ranking
+				days = 7
+			}
+		}
+    }
+}
