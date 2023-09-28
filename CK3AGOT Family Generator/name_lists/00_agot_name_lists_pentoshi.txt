@@ -1,0 +1,88 @@
+﻿name_list_pentoshi = {
+
+	cadet_dynasty_names = {
+		"dynn_Bopatis"
+		"dynn_Draz"
+		"dynn_Estatis"
+		"dynn_Haratis"
+		"dynn_Malanon"
+		"dynn_Mopatis"
+		"dynn_Myrakis"
+		"dynn_Narratys"
+		"dynn_Quaranis"
+		"dynn_Sentanis"
+	}
+
+	dynasty_names = {
+		"dynn_Bopatis"
+		"dynn_Draz"
+		"dynn_Estatis"
+		"dynn_Haratis"
+		"dynn_Malanon"
+		"dynn_Mopatis"
+		"dynn_Myrakis"
+		"dynn_Narratys"
+		"dynn_Quaranis"
+		"dynn_Sentanis"
+	}
+
+	male_names = {
+		Adelmo Adenio Agreo Alario Aldareo Allorano Allynio Andrio Argo Arneo
+		Balarro Benarro Briggio Brono
+		Dadano Demio Denelo Dinisio Dokkello Dorseo Durio Durso Dylo
+		Elyo Errio
+		Falyrio Faro Favario Fenio Fenneso Ferrio Fillio Fornio Fotio Fredo
+		Geralio Gerinello Gerio Gerolo Gessio Getho Gono Gorgo Gosto Groleo
+		Helidono Hercleo Herrio Hevio Hukko Hyllio
+		Idario Illyrio
+		Jaharo Jakko Jepeo Jeremo Jonos Jorio Joro Joronelo Jorso Joso Jospo Josto Jotho
+		Kallio Kasporio Korvio Kossio Kyano Kysollo
+		Ladono Leferio Lereo Lokasso Lorenio Luco Lukkio Lyppio
+		Majoreo Malko Mandino Manfario Manolo Marello Massio Matheo Mavario Medeo Mekko Melio Mennio Merensio Mero Morgonio Morlano Morro Murso Myrio Myrmello Myro Mytio
+		Nenio Nerrio Nevario Nevio Norysio
+		Oddio Oppo Ordello Orsio Orsyllio
+		Palennio Palysio Pandeto Parmello Parnio Plaso Prellio Progonio Pulenio Pyrisio Pytho
+		Ranfaro Reggio Rego Remio Rennio Rofo Rogaro Roggerio Rolano Rollo Rovarro Runello Rykario
+		Sanno Sarnello Sarvato Savario Savolio Setimio Silvario Stanio Stevano Syssilio
+		Tenesio Teppo Ternio Terrio Tesilio Tessario Tevio Thorio Toveo Trellio Trigo Tritio Tyrenzo Tysio Tythio
+		Valerio Vatho Veranio Visario
+		Yansilo Yollo Yonno Yorko Yoro Yossio Yotho Yovonio
+		Zyllio
+	}
+	female_names = {
+		Adana Adyssa Albana Aldarea Alia Allana Alyrrah Alyssa Alyssia Andyria Aniya Annara Arana Armidora Arrella
+		Calla
+		Danara Delyna Dessa Domenia Dorela Dorina
+		Elora Elynara Emyria
+		Fadrana Faloria Farana Ferria Fillia Firanna Fornella
+		Galyssane Genia Gentyana Grana
+		Herria
+		Ilyanna Irea Irenia Irilia Irrikah Iryanna
+		Jenara Jeyne Jorone Josana Jyana
+		Laressa Larrane Lenalle Lenera Lianna
+		Marra Melane Monsola Myana Mylla Myria Myria
+		Narha Nerria Nevia
+		Orria Orsyllia
+		Palonna
+		Ralla Rohanne
+		Sadella Sarria Sellia Senerra Serala Serena Shana Susenia Syrella
+		Tregia Trifyssa Tyanna Tyrilla
+		Yalla Yolla Yonna
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}

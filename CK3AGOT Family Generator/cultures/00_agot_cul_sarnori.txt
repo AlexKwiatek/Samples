@@ -1,0 +1,123 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+tall_man = {
+	color = { 0.96 0.70 0.42 }
+
+	ethos = ethos_egalitarian
+	heritage = heritage_sarnori
+	language = language_sarnori
+	martial_custom = martial_custom_equal
+
+	traditions = { tradition_eye_for_an_eye }
+
+	name_list = name_list_sarnori
+
+	coa_gfx = { sarnori_coa_gfx }
+	building_gfx = { sarnori_building_gfx }
+	clothing_gfx = { sarnori_clothing_gfx }
+	unit_gfx = { sarnori_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+omberi = {
+	color = { 0.81 0.60 0.39 }
+
+	ethos = ethos_communal
+	heritage = heritage_sarnori
+	language = language_sarnori
+	martial_custom = martial_custom_equal
+
+	
+
+	name_list = name_list_sarnori
+
+	coa_gfx = { sarnori_coa_gfx }
+	building_gfx = { sarnori_building_gfx }
+	clothing_gfx = { sarnori_clothing_gfx }
+	unit_gfx = { sarnori_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { tall_man }
+	created = 2000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+cymmeri = {
+	color = { 0.82 0.53 0.13 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_sarnori
+	language = language_sarnori
+	martial_custom = martial_custom_equal
+
+	
+
+	name_list = name_list_sarnori
+
+	coa_gfx = { sarnori_coa_gfx }
+	building_gfx = { sarnori_building_gfx }
+	clothing_gfx = { sarnori_clothing_gfx }
+	unit_gfx = { sarnori_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+zoqora = {
+	color = { 0.99 0.60 0.19 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_sarnori
+	language = language_sarnori
+	martial_custom = martial_custom_equal
+
+	
+
+	name_list = name_list_sarnori
+
+	coa_gfx = { sarnori_coa_gfx }
+	building_gfx = { sarnori_building_gfx }
+	clothing_gfx = { sarnori_clothing_gfx }
+	unit_gfx = { sarnori_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+gipps = {
+	color = { 0.88 0.63 0.30 }
+
+	ethos = ethos_stoic
+	heritage = heritage_sarnori
+	language = language_sarnori
+	martial_custom = martial_custom_equal
+
+	
+
+	name_list = name_list_sarnori
+
+	coa_gfx = { sarnori_coa_gfx }
+	building_gfx = { sarnori_building_gfx }
+	clothing_gfx = { sarnori_clothing_gfx }
+	unit_gfx = { sarnori_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}

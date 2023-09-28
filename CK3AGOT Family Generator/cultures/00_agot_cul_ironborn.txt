@@ -1,0 +1,92 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+ironborn = {
+	color = { 0.46 0.44 0.40 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_ironborn
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_warriors_by_merit
+		tradition_eye_for_an_eye
+		tradition_seafaring
+		agot_tradition_ironborn
+	}
+
+	dlc_tradition = {
+		trait = tradition_fp1_performative_honour
+		requires_dlc_flag = the_northern_lords
+		fallback = tradition_hird
+	}
+
+	name_list = name_list_ironborn
+
+	coa_gfx = {
+		ironborn_coa_gfx
+	}
+	building_gfx = {
+		ironborn_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		ironborn_clothing_gfx
+		fp1_norse_clothing_gfx
+		northern_clothing_gfx
+	}
+	unit_gfx = {
+		ironborn_unit_gfx
+		norse_unit_gfx
+	}
+
+	ethnicities = { 10 = caucasian }
+
+	parents = { first_man }
+	created = 100.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+greenborn = {
+	color = { 0.43 0.48 0.44 }
+
+	ethos = ethos_stoic
+	heritage = heritage_ironborn
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_warriors_by_merit
+		tradition_eye_for_an_eye
+		tradition_seafaring
+		tradition_storytellers
+		agot_tradition_greenborn
+	}
+
+	name_list = name_list_ironborn
+
+	coa_gfx = {
+		ironborn_coa_gfx
+	}
+	building_gfx = {
+		greenborn_building_gfx
+		ironborn_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		greenborn_clothing_gfx
+		ironborn_clothing_gfx
+		fp1_norse_clothing_gfx
+		northern_clothing_gfx
+	}
+	unit_gfx = {
+		greenborn_unit_gfx
+		northern_unit_gfx
+	}
+
+	ethnicities = { 10 = caucasian }
+
+	parents = { ironborn }
+
+	created = 5600.1.1
+}

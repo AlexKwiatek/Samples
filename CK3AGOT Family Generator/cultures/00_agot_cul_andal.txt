@@ -1,0 +1,1147 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+andal = {
+	color = { 1.00 0.95 0.80 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_andal
+	language = language_andalic
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_chivalry
+		tradition_seafaring
+		tradition_ruling_caste
+		tradition_metal_craftsmanship
+		agot_tradition_andal
+	}
+
+	name_list = name_list_andal
+
+	coa_gfx = { andal_coa_gfx }
+	building_gfx = { andal_building_gfx western_building_gfx }
+	clothing_gfx = { andal_clothing_gfx western_clothing_gfx }
+	unit_gfx = { andal_unit_gfx western_unit_gfx }
+
+	ethnicities = {
+		1 = Andal_1
+		1 = Andal_2
+		1 = Andal_3
+		1 = Andal_4
+		1 = Andal_5
+		1 = Andal_6
+		1 = Andal_7
+		1 = Andal_8
+		1 = Andal_9
+		1 = Andal_10
+		1 = Andal_11
+		1 = Andal_12
+		1 = Andal_13
+		1 = Andal_14
+		1 = Andal_15
+		1 = Andal_16
+		1 = Andal_17
+		1 = Andal_18
+		1 = Andal_19
+		1 = Andal_20
+		1 = Andal_21
+
+	}
+
+
+
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+crownlander = {
+	color = { 0.69 0.30 0.47 }
+
+	ethos = ethos_courtly
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_city_keepers
+		tradition_parochialism
+		tradition_loyal_soldiers
+		tradition_artisans
+		agot_tradition_crownlander
+	}
+
+	name_list = name_list_crownlander
+
+	coa_gfx = {
+		crownlander_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		crownlander_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		crownlander_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		crownlander_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Crownlander_1
+		1 = Crownlander_2
+		1 = Crownlander_3
+		1 = Crownlander_4
+		1 = Crownlander_5
+		1 = Crownlander_6
+		1 = Crownlander_7
+		1 = Crownlander_8
+		1 = Crownlander_9
+		1 = Crownlander_10
+		1 = Crownlander_11
+		1 = Crownlander_12
+		1 = Crownlander_13
+		1 = Crownlander_14
+		1 = Crownlander_15
+		1 = Crownlander_16
+		1 = Crownlander_17
+		1 = Crownlander_18
+		1 = Crownlander_19
+		1 = Crownlander_20
+		1 = Crownlander_21
+
+	}
+
+	parents = {
+		riverlander
+		stormlander
+	}
+	created = 8050.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+fingerman = {
+	color = { 0.46 0.69 0.76 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		agot_tradition_insular_marriage
+		tradition_stalwart_defenders
+		tradition_pastoralists
+		tradition_modest
+		agot_tradition_fingerman
+	}
+
+	name_list = name_list_valeman
+
+	coa_gfx = {
+		valeman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		valeman_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		valeman_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		valeman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Valemen_1
+		1 = Valemen_2
+		1 = Valemen_3
+		1 = Valemen_4
+		1 = Valemen_5
+		1 = Valemen_6
+		1 = Valemen_7
+		1 = Valemen_8
+		1 = Valemen_9
+		1 = Valemen_10
+		1 = Valemen_11
+		1 = Valemen_12
+		1 = Valemen_13
+		1 = Valemen_14
+		1 = Valemen_15
+		1 = Valemen_16
+		1 = Valemen_17
+		1 = Valemen_18
+		1 = Valemen_19
+		1 = Valemen_20
+		1 = Valemen_21
+
+	}
+
+	parents = { valeman }
+	created = 4600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+harborman = {
+	color = { 0.66 0.78 0.69 }
+
+	ethos = ethos_courtly
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_culinary_art
+		tradition_fishermen
+		tradition_maritime_mercantilism
+		tradition_esteemed_hospitality
+		agot_tradition_harborman
+	}
+
+	name_list = name_list_harborman
+
+	coa_gfx = {
+		reachman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		harborman_building_gfx
+		norse_building_gfx
+	}
+	clothing_gfx = {
+		harborman_clothing_gfx
+		reachman_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		harborman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Reachmen_1
+		1 = Reachmen_2
+		1 = Reachmen_3
+		1 = Reachmen_4
+		1 = Reachmen_5
+		1 = Reachmen_6
+		1 = Reachmen_7
+		1 = Reachmen_8
+		1 = Reachmen_9
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+		10 = Northmen_1
+		10 = Northmen_2
+		10 = Northmen_3
+		10 = Northmen_4
+		10 = Northmen_5
+		10 = Northmen_6
+		10 = Northmen_7
+		10 = Northmen_8
+		10 = Northmen_9
+		10 = Northmen_10
+		10 = Northmen_11
+		10 = Northmen_12
+		10 = Northmen_13
+		10 = Northmen_14
+		10 = Northmen_15
+		10 = Northmen_16
+		10 = Northmen_17
+		10 = Northmen_18
+		10 = Northmen_19
+		10 = Northmen_20
+		10 = Northmen_21
+
+	}
+
+	parents = { reachman northman }
+	created = 7300.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+honeywiner = {
+	color = { 0.50 0.72 0.23 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_astute_diplomats
+		tradition_parochialism
+		tradition_maritime_mercantilism
+		tradition_forbearing
+		agot_tradition_honeywiner
+	}
+
+	name_list = name_list_reachman
+
+	coa_gfx = {
+		reachman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		honeywiner_building_gfx
+		reachman_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		honeywiner_clothing_gfx
+		reachman_clothing_gfx
+		iberian_christian_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		honeywiner_unit_gfx
+		reachman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Reachmen_1
+		1 = Reachmen_2
+		1 = Reachmen_3
+		1 = Reachmen_4
+		1 = Reachmen_5
+		1 = Reachmen_6
+		1 = Reachmen_7
+		1 = Reachmen_8
+		1 = Reachmen_9
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+
+	}
+
+	parents = { reachman }
+	created = 6710.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+marcher = {
+	color = { 0.85 0.75 0.40 }
+
+	ethos = ethos_stoic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_stalwart_defenders
+		tradition_hill_dwellers
+		tradition_stand_and_fight
+		tradition_eye_for_an_eye
+		agot_tradition_marcher
+	}
+
+	name_list = name_list_marcher
+
+	coa_gfx = {
+		andal_coa_gfx
+	}
+	building_gfx = {
+		mediterranean_building_gfx
+		andal_building_gfx
+	}
+	clothing_gfx = {
+		marcher_clothing_gfx
+		stormlander_clothing_gfx
+		iberian_christian_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		iberian_christian_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Stormlander_1
+		1 = Stormlander_2
+		1 = Stormlander_3
+		1 = Stormlander_4
+		1 = Stormlander_5
+		1 = Stormlander_6
+		1 = Stormlander_7
+		1 = Stormlander_8
+		1 = Stormlander_9
+		1 = Stormlander_10
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+
+	}
+
+	parents = {
+		reachman
+		stormlander
+	}
+	created = 7650.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+moonman = {
+	color = { 0.26 0.61 0.73 }
+
+	ethos = ethos_stoic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_metal_craftsmanship
+		tradition_hill_dwellers
+		tradition_mountain_homes
+		tradition_mountaineers
+		agot_tradition_moonman
+	}
+
+	name_list = name_list_valeman
+
+	coa_gfx = {
+		valeman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		moonman_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		moonman_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		moonman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Valemen_1
+		1 = Valemen_2
+		1 = Valemen_3
+		1 = Valemen_4
+		1 = Valemen_5
+		1 = Valemen_6
+		1 = Valemen_7
+		1 = Valemen_8
+		1 = Valemen_9
+		1 = Valemen_10
+		1 = Valemen_11
+		1 = Valemen_12
+		1 = Valemen_13
+		1 = Valemen_14
+		1 = Valemen_15
+		1 = Valemen_16
+		1 = Valemen_17
+		1 = Valemen_18
+		1 = Valemen_19
+		1 = Valemen_20
+		1 = Valemen_21
+
+	}
+
+	parents = { valeman }
+	created = 4700.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+reachman = {
+	color = { 0.46 0.63 0.26 }
+
+	ethos = ethos_courtly
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_agrarian
+		tradition_esteemed_hospitality
+		tradition_strength_in_numbers
+		tradition_chivalry
+		agot_tradition_reachman
+	}
+
+	name_list = name_list_reachman
+
+	coa_gfx = {
+		reachman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		reachman_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		reachman_clothing_gfx
+		iberian_christian_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		reachman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Reachmen_1
+		1 = Reachmen_2
+		1 = Reachmen_3
+		1 = Reachmen_4
+		1 = Reachmen_5
+		1 = Reachmen_6
+		1 = Reachmen_7
+		1 = Reachmen_8
+		1 = Reachmen_9
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+
+	}
+
+	parents = { andal }
+	created = 6700.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+riverlander = {
+	color = { 0.16 0.51 0.81 }
+
+	ethos = ethos_festive
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_family_entrepreneurship
+		tradition_hit_and_run
+		tradition_life_is_just_a_joke
+		tradition_zealous_people
+		agot_tradition_riverlander
+	}
+
+	name_list = name_list_riverlander
+
+	coa_gfx = {
+		riverlander_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		riverlander_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		riverlander_clothing_gfx
+		western_clothing_gfx
+	}
+	unit_gfx = {
+		riverlander_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Rivermen_1
+		1 = Rivermen_2
+		1 = Rivermen_3
+		1 = Rivermen_4
+		1 = Rivermen_5
+		1 = Rivermen_6
+		1 = Rivermen_7
+		1 = Rivermen_8
+		1 = Rivermen_9
+		1 = Rivermen_10
+		1 = Rivermen_11
+		1 = Rivermen_12
+		1 = Rivermen_13
+		1 = Rivermen_14
+		1 = Rivermen_15
+		1 = Rivermen_16
+		1 = Rivermen_17
+		1 = Rivermen_18
+		1 = Rivermen_19
+		1 = Rivermen_20
+		1 = Rivermen_21
+
+	}
+
+	parents = { andal }
+	created = 4800.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+shieldman = {
+	color = { 0.49 0.59 0.35 }
+
+	ethos = ethos_stoic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		agot_tradition_insular_marriage
+		tradition_stalwart_defenders
+		tradition_equitable
+		tradition_martial_admiration
+		agot_tradition_shieldman
+	}
+
+	name_list = name_list_shieldman
+
+	coa_gfx = {
+		reachman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		shieldman_building_gfx
+		reachman_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		shieldman_clothing_gfx
+		reachman_clothing_gfx
+		iberian_christian_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		shieldman_unit_gfx
+		reachman_unit_gfx
+		iberian_christian_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Reachmen_1
+		1 = Reachmen_2
+		1 = Reachmen_3
+		1 = Reachmen_4
+		1 = Reachmen_5
+		1 = Reachmen_6
+		1 = Reachmen_7
+		1 = Reachmen_8
+		1 = Reachmen_9
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+
+	}
+
+	parents = { reachman }
+	created = 6710.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+stone_dornish = {
+	color = { 0.88 0.69 0.35 }
+
+	ethos = ethos_stoic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_hit_and_run
+		tradition_eye_for_an_eye
+		tradition_mountaineers
+		tradition_staunch_traditionalists
+		agot_tradition_stone_dornish
+	}
+
+	name_list = name_list_stone_dornish
+
+	coa_gfx = {
+		stone_dornish_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		stone_dornish_building_gfx
+		iberian_building_gfx
+	}
+	clothing_gfx = {
+		stone_dornish_clothing_gfx
+		iberian_muslim_clothing_gfx
+		mena_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		stone_dornish_unit_gfx
+		iberian_muslim_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Stone_Dornish_1
+		1 = Stone_Dornish_2
+		1 = Stone_Dornish_3
+		1 = Stone_Dornish_4
+		1 = Stone_Dornish_5
+		1 = Stone_Dornish_6
+		1 = Stone_Dornish_7
+		1 = Stone_Dornish_8
+		1 = Stone_Dornish_9
+		1 = Stone_Dornish_10
+		1 = Stone_Dornish_11
+		1 = Stone_Dornish_12
+		1 = Stone_Dornish_13
+		1 = Stone_Dornish_14
+		1 = Stone_Dornish_15
+		1 = Andal_11
+		1 = Andal_12
+		1 = Andal_13
+		1 = Andal_14
+		1 = Andal_15
+		1 = Andal_16
+		1 = Andal_17
+		1 = Andal_18
+		1 = Andal_19
+		1 = Andal_20
+		1 = Andal_21
+
+	}
+
+	parents = {
+		andal
+		rhoynish
+	}
+	created = 7600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+stormlander = {
+	color = { 0.89 0.76 0.13 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_staunch_traditionalists
+		tradition_forest_fighters
+		tradition_only_the_strong
+		tradition_martial_admiration
+		agot_tradition_stormlander
+	}
+
+	name_list = name_list_stormlander
+
+	coa_gfx = {
+		stormlander_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		stormlander_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		stormlander_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		stormlander_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Stormlander_1
+		1 = Stormlander_2
+		1 = Stormlander_3
+		1 = Stormlander_4
+		1 = Stormlander_5
+		1 = Stormlander_6
+		1 = Stormlander_7
+		1 = Stormlander_8
+		1 = Stormlander_9
+		1 = Stormlander_10
+		1 = Stormlander_11
+		1 = Stormlander_12
+		1 = Stormlander_13
+		1 = Stormlander_14
+		1 = Stormlander_15
+		1 = Stormlander_16
+		1 = Stormlander_17
+		1 = Stormlander_18
+		1 = Stormlander_19
+		1 = Stormlander_20
+		1 = Stormlander_21
+
+	}
+
+	parents = { andal }
+	created = 5500.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+valeman = {
+	color = { 0.31 0.71 0.84 }
+
+	ethos = ethos_courtly
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_agrarian
+		tradition_chivalry
+		tradition_zealous_people
+		tradition_stalwart_defenders
+		agot_tradition_valeman
+	}
+
+	name_list = name_list_valeman
+
+	coa_gfx = {
+		valeman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		valeman_building_gfx
+		western_building_gfx
+	}
+	clothing_gfx = {
+		valeman_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		valeman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Valemen_1
+		1 = Valemen_2
+		1 = Valemen_3
+		1 = Valemen_4
+		1 = Valemen_5
+		1 = Valemen_6
+		1 = Valemen_7
+		1 = Valemen_8
+		1 = Valemen_9
+		1 = Valemen_10
+		1 = Valemen_11
+		1 = Valemen_12
+		1 = Valemen_13
+		1 = Valemen_14
+		1 = Valemen_15
+		1 = Valemen_16
+		1 = Valemen_17
+		1 = Valemen_18
+		1 = Valemen_19
+		1 = Valemen_20
+		1 = Valemen_21
+
+	}
+
+	parents = { andal }
+	created = 4700.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+vineman = {
+	color = { 0.53 0.76 0.37 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_seafaring
+		tradition_family_entrepreneurship
+		tradition_maritime_mercantilism
+		tradition_welcoming
+		agot_tradition_vineman
+	}
+
+	name_list = name_list_reachman
+
+	coa_gfx = {
+		reachman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		vineman_building_gfx
+		reachman_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		vineman_clothing_gfx
+		reachman_clothing_gfx
+		iberian_christian_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		vineman_unit_gfx
+		reachman_unit_gfx
+		iberian_christian_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Reachmen_1
+		1 = Reachmen_2
+		1 = Reachmen_3
+		1 = Reachmen_4
+		1 = Reachmen_5
+		1 = Reachmen_6
+		1 = Reachmen_7
+		1 = Reachmen_8
+		1 = Reachmen_9
+		1 = Reachmen_10
+		1 = Reachmen_11
+		1 = Reachmen_12
+		1 = Reachmen_13
+		1 = Reachmen_14
+		1 = Reachmen_15
+		1 = Reachmen_16
+		1 = Reachmen_17
+		1 = Reachmen_18
+		1 = Reachmen_19
+		1 = Reachmen_20
+		1 = Reachmen_21
+
+	}
+
+	parents = { reachman }
+	created = 6710.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+westerman = {
+	color = { 0.82 0.30 0.25 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_andal
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_metal_craftsmanship
+		tradition_hill_dwellers
+		tradition_legalistic
+		tradition_formation_fighting
+		agot_tradition_westerman
+	}
+
+	name_list = name_list_westerman
+
+	coa_gfx = {
+		westerman_coa_gfx
+		andal_coa_gfx
+	}
+	building_gfx = {
+		westerman_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		westerman_clothing_gfx
+		western_clothing_gfx
+		andal_clothing_gfx
+	}
+	unit_gfx = {
+		westerman_unit_gfx
+		western_unit_gfx
+	}
+
+	ethnicities = {
+		1 = Westermen_1
+		1 = Westermen_2
+		1 = Westermen_3
+		1 = Westermen_4
+		1 = Westermen_5
+		1 = Westermen_6
+		1 = Westermen_7
+		1 = Westermen_8
+		1 = Westermen_9
+		1 = Westermen_10
+		1 = Westermen_11
+		1 = Westermen_12
+		1 = Westermen_13
+		1 = Westermen_14
+		1 = Westermen_15
+		1 = Westermen_16
+		1 = Westermen_17
+		1 = Westermen_18
+		1 = Westermen_19
+		1 = Westermen_20
+		1 = Westermen_21
+
+	}
+	parents = { andal }
+	created = 5000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+andalosi = {
+	color = { 1.00 0.95 0.80 }
+
+	ethos = ethos_communal
+	heritage = heritage_andal
+	language = language_andalic
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_chivalry
+		tradition_loyal_soldiers
+		tradition_language_scholars
+		tradition_staunch_traditionalists
+	}
+
+	name_list = name_list_andal
+
+	coa_gfx = { andal_coa_gfx }
+	building_gfx = { andal_building_gfx western_building_gfx }
+	clothing_gfx = { andal_clothing_gfx western_clothing_gfx }
+	unit_gfx = { andal_unit_gfx western_unit_gfx }
+
+
+	ethnicities = {
+		1 = Andal_1
+		1 = Andal_2
+		1 = Andal_3
+		1 = Andal_4
+		1 = Andal_5
+		1 = Andal_6
+		1 = Andal_7
+		1 = Andal_8
+		1 = Andal_9
+		1 = Andal_10
+		1 = Andal_11
+		1 = Andal_12
+		1 = Andal_13
+		1 = Andal_14
+		1 = Andal_15
+		1 = Andal_16
+		1 = Andal_17
+		1 = Andal_18
+		1 = Andal_19
+		1 = Andal_20
+		1 = Andal_21
+
+	}
+
+	parents = { andal }
+	created = 6600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+axeman = {
+	color = { 0.86 0.78 0.54 }
+
+	ethos = ethos_stoic
+	heritage = heritage_andal
+	language = language_andalic
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_chivalry
+		tradition_stand_and_fight
+		tradition_zealous_people
+		tradition_wedding_ceremonies
+	}
+
+	name_list = name_list_andal
+
+	coa_gfx = { andal_coa_gfx }
+	building_gfx = { andal_building_gfx western_building_gfx }
+	clothing_gfx = { andal_clothing_gfx western_clothing_gfx }
+	unit_gfx = { andal_unit_gfx western_unit_gfx }
+
+	ethnicities = {
+		1 = Andal_1
+		1 = Andal_2
+		1 = Andal_3
+		1 = Andal_4
+		1 = Andal_5
+		1 = Andal_6
+		1 = Andal_7
+		1 = Andal_8
+		1 = Andal_9
+		1 = Andal_10
+		1 = Andal_11
+		1 = Andal_12
+		1 = Andal_13
+		1 = Andal_14
+		1 = Andal_15
+		1 = Andal_16
+		1 = Andal_17
+		1 = Andal_18
+		1 = Andal_19
+		1 = Andal_20
+		1 = Andal_21
+
+	}
+
+	parents = { andal }
+	created = 6600.1.1
+}

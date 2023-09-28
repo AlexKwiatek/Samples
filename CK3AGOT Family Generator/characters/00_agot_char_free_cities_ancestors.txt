@@ -1,0 +1,308 @@
+﻿####################################################
+####				LYS							####
+####################################################
+
+###### HOUSE ROGARE (id = dynn_Rogare)
+############################
+###
+###
+Rogare_1 = {
+	name = Lysono # non-canon, father of Lysandro and Drazenko
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	trait = education_stewardship_3
+
+	8056.1.1 = { birth = yes }
+	8078.1.1 = { add_spouse = Rogare_p_1 }
+	8109.1.1 = { death = yes }
+}
+Rogare_p_1 = {
+	name = Lysara # placeholder wife
+	female = yes
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	8056.1.1 = { birth = yes }
+	8110.1.1 = { death = yes }
+}
+
+### Issue of Lysono
+Rogare_2 = {
+	name = Lysandro # Canon, Lysandro the Magnificent Magister for Life
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_1
+	mother = Rogare_p_1
+
+	trait = intellect_good_2
+	trait = education_stewardship_3
+	trait = ambitious
+	trait = arrogant
+
+	8080.1.1 = { birth = yes }
+	8100.1.1 = { add_spouse = Rogare_p_2 }
+	8110.1.1 = {
+		give_nickname = nick_the_magnificent
+	}
+	8135.4.2 = { death = { death_reason = death_accident } }
+}
+Rogare_3 = {
+	name = Drazenko # Canon, consort of Aliandra of Dorne
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_1
+	mother = Rogare_p_1
+
+	trait = education_diplomacy_3
+	trait = ambitious
+	trait = gregarious
+
+	8089.1.1 = { birth = yes }
+	8127.1.1 = { effect = { set_employer = title:k_dorne.holder } } # ambassador in Dorne
+	8135.4.1 = { death = { death_reason = death_accident } }
+}
+Rogare_p_2 = {
+	name = Lysara # placeholder wife
+	female = yes
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	8080.1.1 = { birth = yes }
+	8136.1.1 = { death = yes }
+}
+
+### Issue of Lysandro
+Rogare_4 = {
+	name = Lysaro # Canon, heir of Lysandro, brother of Larra
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_2
+	trait = ambitious
+	trait = greedy
+	trait = arbitrary
+
+	8100.1.1 = { birth = yes }
+	8135.12.1 = {
+		trait = wounded_1 # scourged
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+Rogare_5 = {
+	name = Lysara # Canon, daughter of Lysandro
+	dynasty = dynn_Rogare
+	female = yes
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_2
+	trait = arbitrary
+	trait = craven
+
+	8101.1.1 = { birth = yes }
+	8140.1.1 = { death = yes }
+}
+Rogare_6 = {
+	name = Fredo # Canon, second son of Lysandro
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_1
+	trait = greedy
+	trait = craven
+
+	8103.1.1 = { birth = yes }
+	8145.1.1 = { death = yes }
+}
+Rogare_7 = {
+	name = Drako # Canon, third son of Lysandro
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_3
+	trait = ambitious
+	trait = callous
+
+	8105.1.1 = { birth = yes }
+	#8135.6.1 = { effect = { set_employer = title:k_volantis.holder } }
+	8160.1.1 = { death = yes }
+}
+Rogare_8 = {
+	name = Marra # Canon, daughter of Lysandro
+	dynasty = dynn_Rogare
+	female = yes
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_learning_3
+
+	8107.1.1 = { birth = yes }
+	8160.1.1 = { death = yes }
+}
+Rogare_9 = {
+	name = Moredo # Canon, fourth son of Lysandro
+	dynasty = dynn_Rogare
+
+	religion = rhllor # placeholder
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = physique_good_2
+	trait = ambitious
+	trait = brave
+	trait = arrogant
+	trait = authoritative
+
+	8110.1.1 = { birth = yes }
+	8126.1.1 = { trait = education_martial_2 }
+	8134.1.1 = { employer = Targaryen_78 } # Aegon III Targaryen
+	#8135.6.1 = { effect = { set_employer = title:k_braavos.holder } }
+	8170.1.1 = { death = yes }
+}
+Rogare_10 = {
+	name = Lotho # Canon, son of Lysandro
+	dynasty = dynn_Rogare
+
+	religion = rhllor
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_3
+	trait = diligent
+	trait = ambitious
+	trait = generous
+
+	8111.1.1 = { birth = yes }
+	8134.1.1 = { employer = Targaryen_78 } # Aegon III Targaryen
+	8136.4.1 = { trait = one_handed }
+	8136.6.1 = { employer = Hightower_102 } # founded bank of Oldtown under Samantha Tarly
+	8139.1.1 = { add_spouse = Rogare_p_3 }
+	8167.1.1 = { death = yes }
+}
+Rogare_11 = {
+	name = Roggerio # Canon, son of Lysandro
+	dynasty = dynn_Rogare
+
+	religion = rhllor
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = education_stewardship_3
+	trait = diligent
+	trait = lustful
+	trait = arrogant
+
+	8113.1.1 = { birth = yes }
+	8134.1.1 = { employer = Targaryen_78 } # Aegon III Targaryen
+	#8136.6.1 = { effect = { set_employer = title:k_lys.holder } }
+	8165.1.1 = { death = yes }
+}
+Rogare_12 = {
+	name = Larra # Canon, youngest daughter of Lysandro, wife of Viserys II
+	dynasty = dynn_Rogare
+	female = yes
+
+	religion = rhllor
+	culture = lyseni
+
+	father = Rogare_2
+	mother = Rogare_p_2
+
+	trait = beauty_good_2
+	trait = education_diplomacy_3
+	trait = ambitious
+	trait = arrogant
+	trait = zealous
+	trait = generous
+
+	8115.1.1 = { birth = yes }
+	#8139.6.1 = { effect = { set_employer = title:k_lys.holder } }
+	8145.1.1 = { death = yes }
+}
+
+### TODO 16 bastard children of Lysandro
+
+### TODO daughters of Lysaro
+
+### TODO daughters of Fredo
+
+### Issue of Lotho
+Rogare_p_3 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	8115.1.1 = { birth = yes }
+	8170.1.1 = { death = yes }
+}
+Rogare_13 = {
+	name = Lyonel # modcanon, son of Lotho in Oldtown
+	dynasty = dynn_Rogare
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	father = Rogare_10
+	mother = Rogare_p_3
+
+	8140.1.1 = { birth = yes }
+	8190.1.1 = { death = yes }
+}
+Rogare_14 = {
+	name = Samantha # modcanon, daughter of Lotho in Oldtown
+	dynasty = dynn_Rogare
+	female = yes
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	father = Rogare_10
+	mother = Rogare_p_3
+
+	8142.1.1 = { birth = yes }
+	8200.1.1 = { death = yes }
+}

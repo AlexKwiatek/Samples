@@ -1,0 +1,14 @@
+Mercer_1 = {
+	name = Archibald # a lord
+	dynasty = dynn_Mercer
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+#	father =
+#	mother =
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Mercer_rs_1 }
+}

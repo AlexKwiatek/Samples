@@ -1,0 +1,86 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+ibbenese = {
+	color = { 0.25 0.75 0.67 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_ibbenese
+	language = language_ibbenese
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_seafaring
+		tradition_fishermen
+		tradition_hunters
+		tradition_fp1_coastal_warriors
+	}
+
+	name_list = name_list_asabhadi
+
+	coa_gfx = { ibbenese_coa_gfx }
+	building_gfx = { ibbenese_building_gfx }
+	clothing_gfx = { ibbenese_clothing_gfx }
+	unit_gfx = { ibbenese_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+ib_sarese = {
+	color = { 0.37 0.88 0.80 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_ibbenese
+	language = language_ibbenese
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_seafaring
+		tradition_warrior_culture
+		tradition_swords_for_hire
+	}
+
+	name_list = name_list_asabhadi
+
+	coa_gfx = { ibbenese_coa_gfx }
+	building_gfx = { ibbenese_building_gfx }
+	clothing_gfx = { ibbenese_clothing_gfx }
+	unit_gfx = { ibbenese_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { ibbenese }
+	created = 4000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+ibatese = {
+	color = { 0.48 0.76 0.72 }
+
+	ethos = ethos_stoic
+	heritage = heritage_ibbenese
+	language = language_ibbenese
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_isolationist
+		tradition_mountain_homes
+		tradition_hunters
+	}
+
+	name_list = name_list_asabhadi
+
+	coa_gfx = { ibbenese_coa_gfx }
+	building_gfx = { ibbenese_building_gfx }
+	clothing_gfx = { ibbenese_clothing_gfx }
+	unit_gfx = { ibbenese_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { ibbenese }
+	created = 2000.1.1
+}

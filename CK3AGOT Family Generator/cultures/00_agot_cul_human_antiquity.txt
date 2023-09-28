@@ -1,0 +1,35 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+mazemaker = {
+	color = { 0.94 0.94 0.94 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_human_antiquity
+	language = language_mazemaker
+	martial_custom = martial_custom_male_only
+
+	
+
+	name_list = name_list_andal
+
+	coa_gfx = {
+		mazemaker_coa_gfx
+		human_antiquity_coa_gfx
+	}
+	building_gfx = {
+		mazemaker_building_gfx
+		human_antiquity_building_gfx
+	}
+	clothing_gfx = {
+		mazemaker_clothing_gfx
+		human_antiquity_clothing_gfx
+	}
+	unit_gfx = {
+		mazemaker_unit_gfx
+		human_antiquity_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}

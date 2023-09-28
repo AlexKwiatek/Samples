@@ -1,0 +1,763 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+high_valyrian = {
+	color = { 0.71 0.37 0.60 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_ruling_caste
+		tradition_diasporic
+		tradition_culture_blending
+		tradition_republican_legacy
+		agot_tradition_valyrian
+	}
+
+	name_list = name_list_high_valyrian
+
+	coa_gfx = {
+		valyrian_coa_gfx
+	}
+	building_gfx = {
+		high_valyrian_building_gfx
+		valyrian_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		high_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+		western_clothing_gfx
+	}
+	unit_gfx = {
+		high_valyrian_unit_gfx
+		valyrian_unit_gfx
+		eastern_unit_gfx
+	}
+
+	ethnicities = {
+	10 = high_valyrian_ethnicity_01
+	10 = high_valyrian_ethnicity_02
+	10 = high_valyrian_ethnicity_03
+	10 = high_valyrian_ethnicity_04
+	10 = high_valyrian_ethnicity_05
+	10 = high_valyrian_ethnicity_06
+	10 = high_valyrian_ethnicity_07
+	10 = high_valyrian_ethnicity_08
+	10 = high_valyrian_ethnicity_09
+	10 = high_valyrian_ethnicity_10
+	10 = high_valyrian_ethnicity_11
+	10 = high_valyrian_ethnicity_12
+	10 = high_valyrian_ethnicity_13
+	10 = high_valyrian_ethnicity_14
+	10 = high_valyrian_ethnicity_15
+	10 = high_valyrian_ethnicity_16
+	10 = high_valyrian_ethnicity_17
+	10 = high_valyrian_ethnicity_18
+	10 = high_valyrian_ethnicity_19
+	10 = high_valyrian_ethnicity_20
+}
+
+
+
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+westerosi_valyrian = {
+	color = { 0.78 0.29 0.46 }
+
+	ethos = ethos_courtly
+	heritage = heritage_valyrian
+	language = language_common
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_martial_admiration
+		tradition_maritime_mercantilism
+		tradition_city_keepers
+		tradition_hard_working
+		agot_tradition_westeros_valyrian
+	}
+
+	name_list = name_list_westerosi_valyrian
+
+	coa_gfx = {
+		valyrian_coa_gfx
+	}
+	building_gfx = {
+		westerosi_valyrian_building_gfx
+		valyrian_building_gfx
+		mediterranean_building_gfx
+	}
+	clothing_gfx = {
+		westerosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		western_clothing_gfx
+	}
+	unit_gfx = {
+		westerosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+		eastern_unit_gfx
+	}
+
+	ethnicities = {
+	10 = Westerosi_valyrian_1
+	10 = Westerosi_valyrian_2
+	10 = Westerosi_valyrian_3
+	10 = Westerosi_valyrian_4
+	10 = Westerosi_valyrian_5
+	10 = Westerosi_valyrian_6
+	10 = Westerosi_valyrian_7
+	10 = Westerosi_valyrian_8
+	10 = Westerosi_valyrian_9
+	10 = Westerosi_valyrian_10
+	10 = Westerosi_valyrian_11
+	10 = Westerosi_valyrian_12
+	10 = Westerosi_valyrian_13
+	10 = Westerosi_valyrian_14
+	10 = Westerosi_valyrian_15
+	10 = Westerosi_valyrian_16
+	10 = Westerosi_valyrian_17
+	10 = Westerosi_valyrian_18
+	10 = Westerosi_valyrian_19
+	10 = Westerosi_valyrian_20
+}
+
+	parents = {
+		high_valyrian
+		andal
+	}
+	created = 7700.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+essosi_valyrian = {
+	color = { 0.64 0.18 0.31 }
+
+	ethos = ethos_bureaucratic #/communal
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = { valyrian_building_gfx }
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+	parents = { high_valyrian }
+	created = 7700.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+braavosi = {
+	color = { 0.76 0.24 0.33 }
+
+	ethos = ethos_egalitarian
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_seafaring
+		tradition_astute_diplomats
+		tradition_parochialism
+		tradition_religion_blending
+	}
+
+	name_list = name_list_braavosi
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		braavosi_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		narrow_sea_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+
+	created = 7400.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+gogossosi = {
+	color = { 0.74 0.34 0.55 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = { valyrian_building_gfx }
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+	parents = {
+		high_valyrian
+		old_ghiscari
+	}
+	created = 3500.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+mantaryan = {
+	color = { 0.95 0.35 0.65 }
+
+	ethos = ethos_communal
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_eye_for_an_eye
+		tradition_staunch_traditionalists
+		tradition_reverence_for_veterans
+	}
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = { valyrian_building_gfx }
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+	parents = { high_valyrian }
+	created = 7900.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+toloryan = {
+	color = { 0.69 0.19 0.44 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_land_of_the_bow
+		tradition_esteemed_hospitality
+		tradition_maritime_mercantilism
+	}
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = { valyrian_building_gfx }
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+	parents = { high_valyrian }
+	created = 7000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+volantene = {
+	color = { 0.50 0.18 0.34 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_ruling_caste
+		tradition_city_keepers
+		tradition_parochialism
+		tradition_formation_fighting
+	}
+
+	name_list = name_list_volantene
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		volantene_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = {
+		10 = essosi_valyrian_ethnicity
+		10 = mediterranean
+	}
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+painted_clansman = {
+	color = { 0.46 0.24 0.35 }
+
+	ethos = ethos_stoic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_staunch_traditionalists
+		tradition_zealous_people
+		tradition_tribe_unity
+	}
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		painted_clansman_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		painted_clansmen_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		painted_clansmen_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = valyrian_ethnicity }
+
+	parents = { high_valyrian }
+	created = 7900.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+essarian = {
+	color = { 0.41 0.29 0.35 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+
+
+	name_list = name_list_eastern_valyrian
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = { valyrian_building_gfx }
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = essosi_valyrian_ethnicity }
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+lorathi = {
+	color = { 0.45 0.06 0.25 }
+
+	ethos = ethos_mystic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_fishermen
+		tradition_religion_blending
+		tradition_isolationist
+		tradition_poetry
+	}
+
+	name_list = name_list_lorathi
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		lorathi_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		lorathi_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		high_valyrian
+		andal
+	}
+	created = 6600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+lyseni = {
+	color = { 0.63 0.47 0.55 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_welcoming
+		tradition_swords_for_hire
+		tradition_religion_blending
+		tradition_parochialism
+		agot_tradition_lyseni
+	}
+
+	name_list = name_list_lysene
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		lyseni_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = lyseni_ethnicity }
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+myrish = {
+	color = { 0.34 0.01 0.18 }
+
+	ethos = ethos_methodical
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		agot_tradition_myrish
+		tradition_hard_working
+		tradition_artisans
+		tradition_metal_craftsmanship
+		tradition_swords_for_hire
+	}
+
+	name_list = name_list_myrman
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		myrish_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		narrow_sea_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		high_valyrian
+		rhoynish
+	}
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+armsman = {
+	color = { 0.99 0.30 0.64 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_swords_for_hire
+		tradition_battlefield_looters
+		tradition_reverence_for_veterans
+		tradition_culture_blending
+		agot_tradition_armsman
+	}
+
+	name_list = name_list_myrman
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		armsman_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		narrow_sea_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { high_valyrian }
+	created = 7920.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+norvoshi = {
+	color = { 0.97 0.58 0.78 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_zealous_people
+		tradition_by_the_sword
+		tradition_fervent_temple_builders
+		tradition_monastic_communities
+		tradition_warrior_monks
+	}
+
+	name_list = name_list_norvoshi
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		norvoshi_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		norvoshi_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+pentoshi = {
+	color = { 0.67 0.25 0.46 }
+
+	ethos = ethos_courtly
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_charitable
+		tradition_life_is_just_a_joke
+		tradition_festivities
+		tradition_republican_legacy
+		agot_tradition_pentoshi
+	}
+
+	name_list = name_list_pentoshi
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		pentoshi_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		narrow_sea_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		high_valyrian
+		andal
+	}
+	created = 7000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+qohorik = {
+	color = { 0.79 0.62 0.71 }
+
+	ethos = ethos_mystic
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_artisans
+		tradition_zealous_people
+		tradition_hunters
+		tradition_sorcerous_metallurgy
+		agot_tradition_qohorik
+	}
+
+	name_list = name_list_qohorik
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		qohorik_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		essosi_valyrian_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+tyroshi = {
+	color = { 0.87 0.72 0.80 }
+
+	ethos = ethos_festive
+	heritage = heritage_valyrian
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		tradition_swords_for_hire
+		tradition_seafaring
+		tradition_fishermen
+		tradition_battlefield_looters
+		agot_tradition_tyroshi
+	}
+
+	name_list = name_list_tyroshi
+
+	coa_gfx = { valyrian_coa_gfx }
+	building_gfx = {
+		tyroshi_building_gfx
+		valyrian_building_gfx
+	}
+	clothing_gfx = {
+		narrow_sea_clothing_gfx
+		valyrian_clothing_gfx
+		byzantine_clothing_gfx
+	}
+	unit_gfx = {
+		essosi_valyrian_unit_gfx
+		valyrian_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { high_valyrian }
+	created = 3600.1.1
+}

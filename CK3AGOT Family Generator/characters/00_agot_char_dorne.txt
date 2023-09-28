@@ -1,0 +1,6578 @@
+﻿####################################################
+####				SALTY DORNISH				####
+####################################################
+
+###### HOUSE MARTELL (id = dynn_Martell)
+############################
+### Unbowed, Unbent, Unbroken
+###
+Martell_1 = {
+	name = Loreza # Mentioned, a lord, Doran's Mother
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_1
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_86
+
+	trait = education_diplomacy_4
+	trait = compassionate
+	trait = just
+
+	8230.1.1 = { birth = yes }
+	8244.1.1 = {
+		add_matrilineal_spouse = Jordayne_60 # Lewyn Jordayne
+	}
+	8275.1.1 = { trait = widowed }
+	8280.1.1 = { death = yes } #after betrothing Elia to Rhaegar
+}
+Martell_3 = {
+	name = Maron
+	dynasty_house = house_Martell
+	# AGOT TODO dna = Martell_3
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_86
+
+	8231.1.1 = { birth = yes }
+	8255.1.1 = { add_spouse = Uller_2 } # Mellei Uller
+	8272.1.1 = { death = yes }
+}
+Martell_2 = {
+	name = Lewyn # Canon, a Kingsguard
+	dynasty_house = house_Martell
+	dna = Martell_2
+
+	martial = 9
+	diplomacy = 8
+	intrigue = 8
+	stewardship = 4
+	learning = 5
+	prowess = 8
+
+	religion = the_seven_main
+	culture = salt_dornish
+	sexuality = heterosexual
+
+	father = Martell_86
+
+	trait = education_martial_2
+	trait = education_martial_prowess_3
+	trait = lustful
+	trait = arrogant
+	trait = brave
+	trait = compassionate
+	trait = family_first
+
+	disallow_random_traits = yes
+
+	8233.1.1 = { birth = yes }
+	8249.1.1 = { trait = knight }
+	8264.1.1 = {
+		employer = Targaryen_3 # Rhaegar Targaryen
+		effect = { add_character_flag = agot_is_kingsguard_member }
+		create_character_memory = {
+			type = agot_kingsguard_memory
+			participants = {
+				king = character:Targaryen_1
+			}
+		}
+	}
+	8283.3.1 = {
+		trait = kingsguard
+		trait = wounded_3
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Corbray_3 # Lyn Corbray
+		}
+	}
+}
+### Issue of Loreza
+Martell_4 = {
+	name = Doran # Canon, a lord, THE Doran Martell
+	dynasty_house = house_Martell
+	dna = Martell_4
+
+	religion = the_seven_main
+	culture = salt_dornish
+	sexuality = heterosexual
+
+	martial = 6
+	diplomacy = 9
+	intrigue = 10
+	stewardship = 10
+	learning = 9
+	prowess = 1
+
+	mother = Martell_1
+	father = Jordayne_60
+
+	trait = education_intrigue_4
+	trait = intellect_good_2
+
+	disallow_random_traits = yes
+
+	8248.1.1 = {
+		birth = yes
+		effect = {
+			vassal_contract_set_obligation_level = { #Palatinate for Prince title
+				type = special_contract
+				level = 3
+			}
+		}
+	}
+	8257.1.1 = {
+		#trait = squire # AGOT TODO trait
+		effect = { set_relation_guardian = character:Gargalen_1 } # Tremond Gargalen
+	}
+	8264.1.1 = {
+		trait = deceitful
+		trait = calm
+		trait = patient
+	}
+	8264.8.4 = {
+		#remove_trait = squire # AGOT TODO trait
+		effect = { remove_relation_guardian = character:Gargalen_1 } # Tremond Gargalen
+		trait = knight
+	}
+	8268.1.1 = { trait = diligent }
+	#8270.1.1 = { add_spouse = 8001 } # AGOT TODO Reenable once Essos added
+	# 8284.1.1 = { # Crowned Stag
+		# effect = { # AGOT TODO
+			# if = {
+				# limit = { NOT = { year = 8299 } }
+				# character_event = { id = roberts_rebellion.17 }
+			# }
+		# }
+	# }
+	8295.1.1 = {
+		trait = gout_ridden
+		health = 8 #stop gout insta murking him
+	}
+	8299.2.11 = {
+		# effect = {
+			# 14 = { give_minor_title = title_commander } #Lord Fowler
+			# 12 = { give_minor_title = title_commander } #Anders Yronwood
+		# }
+	}
+	# 8300.3.1 = { #AFFC
+		# effect = {
+			# character_event = { id = feast_for_crows.14 days = 50 random = 30 }
+		# }
+	# }
+}
+
+Martell_Doran_Wife = {
+	name = Mellario # Canon, Doran's Wife
+	female = yes
+	dna = Martell_Doran_Wife
+
+	religion = the_seven_main
+	culture = norvoshi
+
+	trait = education_diplomacy_2
+	trait = beauty_good_2
+	trait = gregarious
+	trait = honest
+	trait = compassionate
+
+	8251.1.1 = { birth = yes }
+	8270.1.1 = {add_spouse=Martell_4}
+}
+
+Martell_5 = {
+	name = Mors # Canon
+	dynasty_house = house_Martell
+	# AGOT TODO dna = Martell_5
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Martell_1
+	father = Jordayne_60
+
+	trait = sickly
+
+	8249.1.1 = { birth = yes }
+	8250.1.1 = { death = { death_reason = death_sickly } }
+}
+Martell_6 = {
+	name = Olyvar # Canon
+	dynasty_house = house_Martell
+	# AGOT TODO dna = agot_dna_Martell_6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Martell_1
+	father = Jordayne_60
+
+	trait = sickly
+
+	8250.1.1 = { birth = yes }
+	8251.1.1 = { death = { death_reason = death_sickly } }
+}
+Martell_7 = {
+	name = Elia # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_7
+
+	diplomacy = 3
+	martial = 1
+	stewardship = 3
+	intrigue = 2
+	learning = 4
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Martell_1
+	father = Jordayne_60
+
+	trait = education_diplomacy_4
+	trait = beauty_good_1
+	trait = intellect_good_1
+	trait = physique_bad_3
+	trait = humble
+	trait = compassionate
+	trait = chaste
+	trait = gregarious
+
+	disallow_random_traits = yes
+
+	8257.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	8271.1.1 = {
+		effect = {
+			set_relation_friend = character:Martell_8 # Oberyn Martell
+		}
+	}
+	8282.1.1 = { trait = infertile } # Complications from Aegon's birth
+	8283.6.1 = {
+		death = {
+			death_reason = death_murder_known # Sack of King's Landing
+			killer = Clegane_3 # Gregor Clegane
+		}
+	}
+}
+Martell_8 = {
+	name = Oberyn # Canon, Oberyn Martell AKA Red Viper
+	dynasty_house = house_Martell
+	dna = Martell_8
+
+	martial = 9
+	diplomacy = 4
+	intrigue = 14
+	stewardship = 9
+	learning = 10
+	prowess = 8
+
+	religion = the_seven_main
+	culture = salt_dornish
+	sexuality = bisexual
+
+	mother = Martell_1
+	father = Jordayne_60
+
+	trait = education_intrigue_4
+	trait = beauty_good_2
+
+	disallow_random_traits = yes
+
+	8258.1.1 = { birth = yes }
+	8269.3.7 = {
+		trait = arrogant
+		trait = athletic
+		trait = vengeful
+		#trait = squire # AGOT TODO trait
+	}
+	8271.1.1 = {
+		effect = {
+			set_relation_friend = character:Martell_4 # Doran Martell
+		}
+	}
+	8274.1.1 = {
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+		trait = education_martial_prowess_4
+		trait = lustful
+		trait = brave
+	}
+	8274.1.9 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		trait = refusing_marriage
+	}
+	8276.1.23 = { # When he's caught with Yronwood's Paramour.
+		trait = lifestyle_reveler
+	}
+	8276.2.6 = {  # The day Ormond died
+		give_nickname = nick_the_red_viper
+		effect = {
+			set_variable = {
+				name = signature_weapon
+				value = flag:spear
+				}
+			}
+		}
+	8282.9.15 = {
+		effect = {
+			trigger_event = { id = agot_dorne.0001 days = 1000 }
+		}
+	}
+	8283.6.1 = { #Elia's Death
+		effect = {
+			set_relation_rival = character:Clegane_3 # Gregor Clegane
+			set_relation_rival = character:Lannister_1 # Tywin Lannister
+		}
+	}
+	8285.1.1 = {
+		effect = { set_relation_lover = character:Uller_6 } # Ellaria Sand
+		effect = { set_relation_paramour = character:Uller_6 } # Ellaria Sand
+	}
+	8299.12.3 = {
+		employer = Baratheon_5	# Joffrey Baratheon
+		#give_council_position = councillor_advisor # AGOT TODO
+	}
+	8300.1.1 = { employer = Baratheon_7 } # Tommen Baratheon
+	8300.1.17 = {
+		death = {
+			death_reason = death_duel # Trial by Combat
+			killer = Clegane_3 # Gregor Clegane
+		}
+	}
+}
+### Issue of Doran
+Martell_9 = {
+	name = Arianne # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_9
+
+	martial = 5
+	diplomacy = 9
+	intrigue = 8
+	stewardship = 7
+	learning = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_intrigue_3
+	trait = beauty_good_2
+
+	disallow_random_traits = yes
+
+	father = Martell_4
+	mother = Martell_Doran_Wife # REDO once Essos added
+
+	8276.6.1 = { birth = yes }
+	8281.1.1 = {
+		trait = charming
+		trait = arrogant
+	}
+	8284.1.1 = {
+		effect = {
+			set_relation_friend = character:Martell_14 # Tyene Sand
+			set_relation_friend = character:Santagar_3 # Sylva Santagar
+		}
+	}
+	8292.1.1 = {
+		trait = lustful # Daemon Sand took her maidenhead
+		trait = brave
+	}
+	8294.4.1 = { trait = seducer }
+	8298.11.7 = { trait = ambitious }
+}
+Martell_10 = {
+	name = Quentyn # Canon
+	dynasty_house = house_Martell
+	dna = Martell_10
+
+	martial = 5
+	diplomacy = 4
+	intrigue = 4
+	stewardship = 10
+	learning = 8
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_4
+	mother = Martell_Doran_Wife # REDO once Essos added
+
+	trait = education_diplomacy_3
+	trait = curious
+
+	disallow_random_traits = yes
+
+	8281.3.1 = { birth = yes }
+	8288.1.1 = {
+		effect = { set_relation_guardian = character:Yronwood_2 } # Anders Yronwood
+	}
+	#8291.1.1 = {
+	#	trait = squire # AGOT TODO trait
+	#}
+	8294.1.1 = {
+		trait = temperate #later replaced by Ambitious
+		trait = scholar
+		trait = diligent
+	}
+	8295.2.9 = {
+		trait = patient #later replaced by Brave
+		trait = chaste #half his chapters are thinking of how girls scare him
+	}
+	8295.6.4 = {
+		effect = {
+			set_relation_friend = character:Yronwood_7 # Archibald Yronwood
+			set_relation_friend = character:Yronwood_5 # Cletus Yronwood
+			set_relation_friend = character:Drinkwater_5 # Gerris Drinkwater
+		}
+	}
+	8297.3.1 = {
+		trait = knight
+		#remove_trait = squire # AGOT TODO trait
+		effect = { remove_relation_guardian = character:Yronwood_2 }
+		remove_trait = patient
+		trait = brave
+		effect = { add_character_flag = flag_later_title }
+	}
+	8300.1.1 = {
+		#trait = wikid # AGOT TODO trait
+		#trait = forbid_marriage # AGOT TODO trait
+		# employer = 147174371 # Malaquo Maegyr # AGOT TODO
+		# effect = {
+			# character_event = { id = feast_for_crows.65 days = 1000 } #Failsafe
+		# }
+	}
+	8300.4.2 = {
+		#remove_trait = forbid_marriage # AGOT TODO trait
+		death = {
+			death_reason = death_burned # rip bozo
+			# killer = 77990027 # Rhaegal # AGOT TODO
+		}
+	}
+}
+Martell_11 = {
+	name = Trystane # Canon
+	dynasty_house = house_Martell
+	dna = Martell_11
+
+	martial = 9
+	diplomacy = 8
+	intrigue = 12
+	stewardship = 8
+	learning = 7
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_4
+	mother = Martell_Doran_Wife # REDO once Essos added
+
+	8287.1.1 = { birth = yes }
+}
+### Issue of Oberyn
+Martell_12 = {
+	name = Obara # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_12
+
+	martial = 4
+	diplomacy = 4
+	intrigue = 5
+	stewardship = 3
+	learning = 4
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+
+	trait = education_martial_2
+	trait = bastard
+	give_nickname = nick_sand
+
+	disallow_random_traits = yes
+
+	8272.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = arrogant
+		trait = wrathful
+		trait = rowdy
+	}
+	8285.1.1 = {
+		trait = brave
+		trait = ambitious
+		trait = deceitful
+	}
+	8288.1.1 = { trait = lifestyle_blademaster }
+}
+Martell_13 = {
+	name = Nymeria # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_13
+
+	martial = 4
+	diplomacy = 3
+	intrigue = 5
+	stewardship = 4
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+	sexuality = homosexual
+
+	father = Martell_8
+	#mother = 146174397 # Random Volantene noble # AGOT TODO Reenable once Essos added
+
+	trait = education_intrigue_4
+	trait = beauty_good_2
+	trait = intellect_good_1
+	trait = bastard
+	give_nickname = nick_sand
+
+	disallow_random_traits = yes
+
+	8275.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = brave
+		trait = charming
+	}
+	8286.1.1 = {
+		trait = wrathful
+		trait = deceitful
+	}
+	8288.1.1 = { trait = lustful }
+	8291.1.1 = {
+		trait = ambitious
+		trait = arrogant
+	}
+	8295.1.1 = {
+		effect = {
+			set_relation_lover = character:Fowler_2 # Jeyne Fowler
+			set_relation_lover = character:Fowler_3 # Jennelyn Fowler
+		}
+	}
+}
+Martell_14 = {
+	name = Tyene # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_14
+
+	martial = 3
+	diplomacy = 7
+	intrigue = 6
+	stewardship = 3
+	learning = 9
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+
+	trait = education_diplomacy_4
+	trait = beauty_good_1
+	trait = bastard
+	give_nickname = nick_sand
+
+	disallow_random_traits = yes
+
+	8277.1.1 = {
+		birth = yes
+		add_character_flag = no_dna
+	}
+	8282.1.1 = {
+		trait = charming
+		trait = zealous
+		trait = gregarious
+	}
+	8287.1.1 = {
+		trait = deceitful
+		trait = brave
+		trait = ambitious
+	}
+	8288.1.1 = { trait = arrogant }
+}
+Martell_15 = {
+	name = Sarella # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_15
+
+	martial = 3
+	intrigue = 4
+	learning = 6
+	diplomacy = 3
+	stewardship = 4
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+
+	trait = education_intrigue_4
+	trait = beauty_good_1
+	trait = deceitful
+	trait = ambitious
+	trait = intellect_good_2
+	trait = bastard
+	give_nickname = nick_sand
+	trait = curious
+
+	disallow_random_traits = yes
+
+	8281.1.1 = { birth = yes }
+	8297.1.1 = { trait = scholar }
+}
+Martell_16 = {
+	name = Elia # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_16
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	father = Martell_8
+	mother = Uller_6 # Ellaria Sand
+
+	trait = stubborn
+	trait = brave
+
+	8286.1.1 = { birth = yes }
+	8298.1.1 = { trait = lifestyle_blademaster }
+}
+Martell_17 = {
+	name = Dorea # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_17
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+	mother = Uller_6 # Ellaria Sand
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8292.1.1 = { birth = yes }
+	8300.3.1 = { employer = Uller_4 } # Harmen Uller
+}
+Martell_18 = {
+	name = Obella # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_18
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+	mother = Uller_6 # Ellaria Sand
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8288.1.1 = { birth = yes }
+	8300.3.1 = {
+		effect = { set_relation_guardian = character:Martell_rs_1 } # Wife of Manfrey Martell
+	}
+}
+Martell_19 = {
+	name = Loreza # Canon
+	dynasty_house = house_Martell
+	female = yes
+	dna = Martell_19
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_8
+	mother = Uller_6 # Ellaria Sand
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8294.1.1 = { birth = yes }
+	8300.3.1 = { employer = Uller_4 } # Harmen Uller
+}
+### Issue of Maron, cousins to Doran
+Martell_20 = {
+	name = Manfrey # Canon
+	dynasty_house = house_Martell
+	dna = Martell_20
+
+	martial = 4
+	diplomacy = 5
+	intrigue = 4
+	stewardship = 8
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_3
+	mother = Uller_2
+
+	trait = education_martial_2
+	trait = diligent
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = {
+		employer = Martell_1
+		trait = knight
+		give_council_position = councillor_chancellor # Castellan of Sunspear
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	8284.1.1 = {
+		add_spouse = Martell_rs_1
+	}
+}
+Martell_rs_1 = {
+	name = Allyria # Mentioned
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8264.1.1 = { birth = yes }
+}
+### Household
+Martell_hh_1 = {
+	name = Caleotte # Canon
+	#dna = "bbeiksbfaal"
+
+	learning = 7
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_learning_3
+	trait = arrogant
+	trait = greedy
+
+	8235.1.1 = { birth = yes }
+	8262.1.1 = {
+		employer = Martell_1 # Loreza Martell
+		trait = maester
+		trait = lifestyle_physician
+		#effect = {
+			#add_character_flag = serving_with_lord # AGOT TODO
+		#	title:b_water_gardens.holder = {
+		#		appoint_court_position = {
+		#			recipient = ROOT
+		#			court_position = maester_court_position # Maester of Water Gardens
+		#		}
+		#	}
+		#}
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+}
+Martell_hh_2 = {
+	name = Ricasso # Canon
+
+	martial = 1
+	diplomacy = 6
+	intrigue = 7
+	stewardship = 11
+	learning = 7
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_stewardship_3
+	trait = content
+
+	8232.1.1 = { birth = yes }
+	8262.1.1 = {
+		employer = Martell_1 # Loreza Martell
+		effect = {
+			title:c_sunspear.holder = {
+				appoint_court_position = {
+					recipient = ROOT
+					court_position = seneschal_court_position # Seneschal of Sunspear
+				}
+			}
+		}
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	8290.1.1 = { trait = aged }
+}
+Martell_hh_3 = {
+	name = Myles # Canon
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_learning_3
+	trait = gluttonous
+
+	learning = 10
+
+	8268.1.1 = { birth = yes }
+	8288.1.1 = {
+		employer = Martell_4 # Doran Martell
+		trait = maester
+		trait = lifestyle_physician
+		#effect = { add_character_flag = serving_with_lord } # AGOT TODO
+		#effect = {
+		#	title:c_sunspear.holder = {
+		#		appoint_court_position = {
+		#			recipient = ROOT
+		#			court_position = maester_court_position # Maester of Sunspear.
+		#		}
+		#	}
+		#}
+	}
+}
+Martell_hh_4 = {
+	name = Gascoyne # Canon, Trystane's sworn shield
+	# Gascoyne of the Greenblood
+
+	martial = 3
+	diplomacy = 2
+	intrigue = 3
+	stewardship = 1
+	learning = 1
+	prowess = 6
+
+	religion = mother_rhoyne
+	culture = greenblood
+
+	trait = education_martial_2
+	trait = diligent
+	trait = brave
+
+	8275.1.1 = { birth = yes }
+	8279.1.1 = { employer = Martell_1 } # Loreza Martell
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	8291.1.1 = { trait = knight }
+}
+Martell_hh_5 = {
+	name = Cyranne # Mentioned, mother of Garin of the Greenblood
+	female = yes
+
+	martial = 2
+	diplomacy = 2
+	intrigue = 1
+	stewardship = 2
+	learning = 1
+
+	religion = mother_rhoyne
+	culture = greenblood
+
+	trait = education_intrigue_2
+
+	8256.6.1 = { birth = yes }
+	8279.1.1 = { employer = Martell_1 } # Loreza Martell
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	8292.6.1 = { death = yes }
+}
+Martell_hh_6 = {
+	name = Garin # Canon
+	# Garin of the Greenblood
+
+	martial = 2
+	diplomacy = 4
+	intrigue = 3
+	stewardship = 2
+	learning = 2
+	prowess = 3
+
+	religion = mother_rhoyne
+	culture = greenblood
+
+	mother = Martell_hh_5
+
+	trait = education_intrigue_2
+	trait = deceitful
+	trait = just
+
+	8276.6.1 = { birth = yes }
+	8279.1.1 = { employer = Martell_1 } # Loreza Martell
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	8284.1.1 = {
+		effect = { set_relation_friend = character:Martell_9 } # Arianne Martell
+	}
+}
+Martell_hh_7 = {
+	name = Areo # Canon
+	dynasty = dynn_Hotah
+
+	martial = 3
+	diplomacy = 3
+	intrigue = 3
+	stewardship = 1
+	learning = 2
+	prowess = 12
+
+	#religion = bearded_priests
+	religion = princely_arbiter
+	culture = norvoshi
+
+	trait = education_martial_1
+	trait = education_martial_prowess_4
+	trait = strong
+	trait = content
+	trait = diligent
+	trait = patient
+	trait = brave
+
+	disallow_random_traits = yes
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = { trait = order_member } # Bearded Priest
+	8270.1.1 = { employer = Martell_1 } # Loreza Martell
+	8280.1.1 = {
+		employer = Martell_4 # Doran Martell
+		effect = {
+			title:c_sunspear.holder = {
+				appoint_court_position = {
+					recipient = ROOT
+					court_position = household_guard_court_position # Captain of the Guard at Sunspear
+				}
+			}
+		}
+	}
+}
+Martell_hh_8 = {
+	name = Bors # Canon
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = patient
+	trait = diligent
+
+	8272.1.1 = {
+		birth = yes
+		employer = Martell_1 # Loreza Martell
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+}
+Martell_hh_9 = {
+	name = Tomoth # Canon
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = arrogant
+	trait = diligent
+
+	8270.1.1 = {
+		birth = yes
+		employer = Martell_1 # Loreza Martell
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+}
+Martell_hh_10 = {
+	name = Belandra # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = patient
+	trait = diligent
+
+	8251.1.1 = {
+		birth = yes
+		employer = Martell_1 # Loreza Martell
+	}
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+}
+Martell_hh_11 = {
+	name = Cedra # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = compassionate
+	trait = trusting
+	trait = beauty_good_1
+
+	8281.1.1 = {
+		birth = yes
+		employer = Martell_4 # Doran Martell
+	}
+	8296.1.1 = {
+		effect = {
+			add_opinion = {
+				target = character:Martell_hh_6 # Garin of the Greenblood
+				modifier = love_opinion #opinion_infatuated
+				opinion = 20
+			}
+		}
+	}
+}
+Martell_hh_12 = {
+	name = Ryon
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8258.1.1 = { birth = yes }
+	8278.1.1 = { add_spouse = Martell_hh_13 }
+}
+Martell_hh_13 = {
+	name = Erin
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8262.1.1 = { birth = yes }
+}
+Martell_hh_14 = {
+	name = Morra # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_hh_12
+	mother = Martell_hh_13
+
+	trait = patient
+	trait = diligent
+
+	8280.1.1 = {
+		birth = yes
+		employer = Martell_4 # Doran Martell
+	}
+}
+Martell_hh_15 = {
+	name = Mellei # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Martell_hh_12
+	mother = Martell_hh_13
+
+	trait = patient
+	trait = diligent
+
+	8283.1.1 = {
+		birth = yes
+		employer = Martell_4 # Doran Martell
+	}
+}
+Martell_hh_16 = {
+	name = Nate # Canon, AKA Feathers
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_learning_2
+	trait = loyal
+	trait = diligent
+
+	8276.1.1 = {
+		birth = yes
+		employer = Martell_1 # Loreza Martell
+	}
+	8289.1.1 = { trait = lustful }
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+}
+# AGOT TODO: Add third child that Doran favors in Water Gardens - girl from Orphans
+
+###### HOUSE SANTAGAR (id = dynn_Santagar)
+############################
+###
+###
+Santagar_1 = {
+	name = Sylva # a lord
+	dynasty = dynn_Santagar
+	female = yes
+	dna = Santagar_1
+
+	father = Santagar_59
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8218.1.1 = { birth = yes }
+	8234.1.1 = { add_matrilineal_spouse = Brook_17 } # Jantos Brook
+	8280.1.1 = { death = yes }
+}
+Santagar_2 = {
+	name = Symon # Canon, a lord
+	dynasty = dynn_Santagar
+	dna = Santagar_2
+
+	prowess = 3
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Santagar_1
+	father = Brook_17
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { add_spouse = Shells_21 } # Lucinda Shells
+	8274.1.5 = { trait = knight }
+}
+Santagar_6 = {
+	name = Aron # Canon, Master-at-arms at the Red Keep
+	dynasty = dynn_Santagar
+	dna = Santagar_6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	martial = 7
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	learning = 5
+	prowess = 12
+
+	mother = Santagar_1
+	father = Brook_17
+
+	trait = education_martial_2
+	trait = honorable
+	trait = arrogant
+	trait = honest
+	trait = fashionable
+
+	disallow_random_traits = yes
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = knight
+		employer = Targaryen_1 # Aerys II Targaryen
+	}
+	8284.1.1 = { employer = Baratheon_2 } # Robert Baratheon
+	8298.10.28 = { employer = Baratheon_5 } # Joffrey Baratheon
+	8299.5.1 = {
+		death = { death_reason = death_beaten_by_mob } # Killed in the King's Landing riots
+	}
+}
+Santagar_7 = {
+	name = Ulrick
+	dynasty = dynn_Santagar
+	dna = Santagar_7
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Santagar_1
+	father = Brook_17
+
+	8265.1.1 = { birth = yes }
+}
+### Issue of Symon
+Santagar_3 = {
+	name = Sylva # Canon, AKA Spotted Sylva, married Eldon Estermont
+	dynasty = dynn_Santagar
+	female = yes
+	dna = Santagar_3
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Santagar_2
+	mother = Shells_21
+
+	8277.1.1 = { birth = yes }
+	8287.1.1 = { give_nickname = nick_the_spotted } # AGOT TODO Make it prefix
+}
+Santagar_4 = {
+	name = Senara
+	dynasty = dynn_Santagar
+	female = yes
+	dna = Santagar_4
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Santagar_2
+	mother = Shells_21
+
+	8280.1.1 = { birth = yes }
+}
+Santagar_5 = {
+	name = Rhialta
+	dynasty = dynn_Santagar
+	female = yes
+	dna = Santagar_5
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Santagar_2
+	mother = Shells_21
+
+	8282.1.1 = { birth = yes }
+}
+
+###### HOUSE DALT (id = dynn_Dalt)
+############################
+###
+###
+Dalt_1 = {
+	name = Sybelle # a lord
+	dynasty = dynn_Dalt
+	female = yes
+	dna = Dalt_1
+
+	father = Dalt_50
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8245.1.1 = { birth = yes }
+	8261.2.1 = { add_matrilineal_spouse = Hull_6 } # Laurent Hull
+	8291.4.5 = { death = { death_reason = death_accident } }
+}
+### Issue of Sybelle
+Dalt_2 = {
+	name = Deziel # Canon, a lord
+	dynasty = dynn_Dalt
+	dna = Dalt_2
+
+	martial = 7
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Dalt_1
+	father = Hull_6
+
+	trait = education_martial_2
+
+	8272.3.12 = { birth = yes }
+	#8283.3.9 = {
+	#	trait = squire # AGOT TODO trait
+	#}
+	8288.2.11 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8294.5.9 = { add_spouse = Manwoody_6 } # Jeyne Manwoody
+}
+Dalt_3 = {
+	name = Andrey # Canon, joined Arianne in her plot
+	dynasty = dynn_Dalt
+	dna = Dalt_3
+
+	martial = 8
+	diplomacy = 6
+	intrigue = 8
+	stewardship = 4
+	learning = 4
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	mother = Dalt_1
+	father = Hull_6
+
+	trait = education_martial_2
+
+	8275.1.15 = { birth = yes }
+	8285.2.9 = {
+		#trait = squire # AGOT TODO trait
+		effect = { set_relation_friend = character:Martell_9 } # Arianne Martell
+	}
+	8291.7.15 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8291.9.2 = { trait = deceitful }
+	8299.2.12 = { trait = ambitious }
+}
+### Issue of Tystene, second cousins once-removed to Deziel
+Dalt_52 = {
+	name = Arron
+	dynasty = dynn_Dalt
+	dna = Dalt_52
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Dalt_51
+	mother = Dalt_rs_8
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+	8278.1.1 = { add_spouse = Briar_18 } # Liane Briar
+	8280.1.1 = { employer = Martell_4 } # Doran Martell
+	#8283.4.7 = { death = { death_reason = death_battle } }
+}
+Dalt_53 = {
+	name = Jeyne # married Perwyn Gargalen
+	dynasty = dynn_Dalt
+	female = yes
+	dna = Dalt_53
+
+	father = Dalt_51
+	mother = Dalt_rs_8
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8261.1.1 = { birth = yes }
+}
+### Issue of Arron, third cousins to Deziel
+Dalt_4 = {
+	name = Garin # Mentioned
+	dynasty = dynn_Dalt
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Dalt_52
+	mother = Briar_18
+
+	8293.3.5 = { birth = yes }
+	8298.1.1 = {
+		effect = { set_relation_guardian = character:Martell_4 } # Doran Martell
+	}
+}
+Dalt_78 = {
+	name = Nerissa # Modcannon, Added by Chris
+	dynasty = dynn_Dalt
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_6
+	mother = Dalt_1
+
+	8273.5.24 = { birth = yes }
+	8335.2.17 = { death = yes }
+}
+Dalt_79 = {
+	name = Elyas # Modcannon, Added by Chris
+	dynasty = dynn_Dalt
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_6
+	mother = Dalt_1
+
+	8276.9.12 = { birth = yes }
+	8333.8.29 = { death = yes }
+}
+
+###### HOUSE GARGALEN (id = dynn_Gargalen)
+############################
+###
+###
+Gargalen_1 = {
+	name = Tremond # Canon
+	dynasty = dynn_Gargalen
+	dna = Gargalen_1
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_49
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = brave
+	trait = vengeful
+
+	disallow_random_traits = yes
+
+	8237.1.1 = { birth = yes } # Made older so he is able to have Doran squire for him.
+	#8248.1.1 = { trait = squire } # AGOT TODO trait
+	8253.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8258.1.1 = { add_spouse = Briar_21 } # Dancia Briar
+}
+### Issue of Tremond
+Gargalen_2 = {
+	name = Perwyn
+	dynasty = dynn_Gargalen
+	dna = Gargalen_2
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_1
+	mother = Briar_21
+
+	8261.4.6 = { birth = yes }
+	8278.6.19 = { add_spouse = Dalt_53 } # Jeyne Dalt
+}
+Gargalen_3 = {
+	name = Raymund
+	dynasty = dynn_Gargalen
+	dna = Gargalen_3
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_1
+	mother = Briar_21
+
+	8266.1.9 = { birth = yes }
+}
+Gargalen_4 = {
+	name = Adela # married Daeron Vaith
+	dynasty = dynn_Gargalen
+	female = yes
+	dna = Gargalen_4
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_1
+	mother = Briar_21
+
+	8268.11.3 = { birth = yes }
+}
+### Issue of Perwyn
+Gargalen_5 = {
+	name = Tremond
+	dynasty = dynn_Gargalen
+	dna = Gargalen_5
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_2
+	mother = Dalt_53
+
+	8279.5.7 = { birth = yes }
+}
+Gargalen_6 = {
+	name = Dynica
+	dynasty = dynn_Gargalen
+	female = yes
+	dna = Gargalen_6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_2
+	mother = Dalt_53
+
+	8281.8.19 = { birth = yes }
+}
+Gargalen_64 = {
+	name = Ynna # Modcannon, Added by Chris, Daughter of Tremond Gargalen
+	dynasty = dynn_Gargalen
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_1
+	mother = Briar_21
+
+	8270.10.30 = { birth = yes }
+	8333.3.19 = { death = yes }
+}
+Gargalen_65 = {
+	name = Fallon # Modcannon, Added by Chris, Daughter of Tremond Gargalen
+	dynasty = dynn_Gargalen
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Gargalen_1
+	mother = Briar_21
+
+	8271.1.17 = { birth = yes }
+	8325.3.2 = { death = yes }
+}
+
+
+###### HOUSE SHELLS (id = dynn_Shells)
+############################
+###
+###
+Shells_1 = {
+	name = Andrey # a lord
+	dynasty = dynn_Shells
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_rs_4
+	mother = Shells_20
+
+	8225.1.1 = { birth = yes }
+	8243.1.1 = { add_spouse = Shells_rs_1 }
+	8288.1.1 = { death = yes }
+}
+Shells_rs_1 = {
+	name = Senelle
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8225.1.1 = { birth = yes }
+	8288.1.1 = { death = yes }
+}
+### Issue of Andrey
+Shells_2 = {
+	name = Quentyn
+	dynasty = dynn_Shells
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_1
+	mother = Shells_rs_1
+
+	8253.1.1 = { birth = yes }
+	8271.1.1 = { add_spouse = Brook_7 } # Tanselle Brook
+	8280.1.1 = { death = yes }
+}
+Shells_3 = {
+	name = Beldecar
+	dynasty = dynn_Shells
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_1
+	mother = Shells_rs_1
+
+	8256.1.1 = { birth = yes }
+}
+Shells_21 = {
+	name = Lucinda # married Symon Santagar
+	dynasty = dynn_Shells
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_1
+	mother = Shells_rs_1
+
+	8258.1.1 = { birth = yes }
+}
+### Issue of Quentyn
+Shells_4 = {
+	name = Daeron # a lord
+	dynasty = dynn_Shells
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_2
+	mother = Brook_7
+
+	8277.1.1 = { birth = yes }
+}
+Shells_5 = {
+	name = Garibald # Canon, Arianne sworn shield
+	dynasty = dynn_Shells
+
+	martial = 3
+	diplomacy = 3
+	intrigue = 2
+	stewardship = 1
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shells_2
+	mother = Brook_7
+
+	trait = education_martial_1
+	trait = rowdy #AGOT PLACEHOLDER AGAINST ERRORS, REPLACE IF NEEDED
+
+
+	disallow_random_traits = yes
+
+	8279.1.1 = { birth = yes }
+	8285.1.1 = {
+		trait = rowdy
+		trait = shy
+	}
+	8295.1.1 = {
+		trait = knight
+		trait = authoritative
+		trait = arrogant
+		trait = honorable
+		employer = Martell_4 # Doran Martell
+	}
+}
+
+###### HOUSE TOLAND (id = dynn_Toland)
+############################
+###
+###
+Toland_1 = {
+	name = Nymella # Canon, a lord
+	dynasty = dynn_Toland
+	female = yes
+	dna = Toland_1
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Toland_52
+	mother = Drinkwater_34
+
+	trait = gregarious
+
+	8256.1.1 = { birth = yes }
+	8279.1.1 = { add_matrilineal_spouse = Shell_Dorne_6 } # Cryston Shell
+}
+Toland_2 = {
+	name = Nymerios
+	dynasty = dynn_Toland
+	dna = Toland_2
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Toland_52
+	mother = Drinkwater_34
+
+	8258.2.7 = { birth = yes }
+	8278.11.6 = { add_spouse = Wells_3 } # Jayena Wells
+}
+Toland_3 = {
+	name = Cryston
+	dynasty = dynn_Toland
+	dna = Toland_3
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Toland_52
+	mother = Drinkwater_34
+
+	8260.9.17 = { birth = yes }
+}
+
+### Issue of Nymella
+Toland_4 = {
+	name = Valena # Canon
+	dynasty = dynn_Toland
+	female = yes
+	dna = Toland_4
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_6
+	mother = Toland_1
+
+	trait = beauty_good_1
+	trait = arrogant
+
+	8280.1.1 = { birth = yes }
+}
+Toland_5 = {
+	name = Teora # Canon
+	dynasty = dynn_Toland
+	female = yes
+	dna = Toland_5
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_6
+	mother = Toland_1
+
+	trait = shy
+	trait = gluttonous
+	trait = lifestyle_mystic
+
+	8289.1.1 = { birth = yes }
+}
+### Issue of Nymerios
+Toland_6 = {
+	name = Maron
+	dynasty = dynn_Toland
+	dna = Toland_6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Toland_2
+	mother = Wells_3
+
+	8280.3.12 = { birth = yes }
+}
+Toland_7 = {
+	name = Nymeria
+	dynasty = dynn_Toland
+	female = yes
+	dna = Toland_7
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Toland_2
+	mother = Wells_3
+
+	8284.7.3 = { birth = yes }
+}
+### Household
+Toland_hh_1 = {
+	name = Toman # Canon
+
+	martial = 2
+	stewardship = 5
+	diplomacy = 4
+	intrigue = 3
+	learning = 6
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_learning_3
+	trait = cynical
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = {
+		trait = maester
+		employer = Toland_52 # Maron Toland
+		# effect = { AGOT TODO - Employee doesn't have employer as liege error, on RR
+		# 	title:c_ghost_hills.holder = {
+		# 		appoint_court_position = {
+		# 			recipient = ROOT
+		# 			court_position = court_physician_court_position # Maester of Ghost Hill
+		# 		}
+		# 	}
+		# }
+	}
+	8279.3.2 = {
+		employer = Toland_1 # Nymella Toland
+	}
+}
+
+###### HOUSE LADYBRIGHT (id = dynn_Ladybright)
+############################
+###
+###
+Ladybright_1 = {
+	name = Myriah # a lord
+	dynasty = dynn_Ladybright
+	female = yes
+
+	father = Ladybright_37
+	mother = Ladybright_rs_10
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8247.1.1 = { birth = yes }
+	8263.1.1 = { add_matrilineal_spouse = Hull_9 } # Wynsten Hull
+}
+### Issue of Myriah
+Ladybright_2 = {
+	name = Alyse # Canon, treasurer of Dorne
+	dynasty = dynn_Ladybright
+	female = yes
+
+	stewardship = 10
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_9
+	mother = Ladybright_1
+
+	trait = education_stewardship_4
+
+	8264.1.2 = { birth = yes }
+	8278.1.9 = {
+		trait = just
+		trait = content
+	}
+	8281.1.4 = {
+		add_matrilineal_spouse = Shell_Dorne_7 # Harman Shell
+		employer = Martell_4 # Doran Martell
+		# give_council_position = councillor_steward AGOT TODO - Not Valid for the position at the moment and throws errors
+	}
+}
+Ladybright_3 = {
+	name = Lyanna # married Rhodry Wells
+	dynasty = dynn_Ladybright
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_9
+	mother = Ladybright_1
+
+	8265.12.7 = { birth = yes }
+}
+Ladybright_4 = {
+	name = Theodan
+	dynasty = dynn_Ladybright
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_9
+	mother = Ladybright_1
+
+	8273.2.9 = { birth = yes }
+}
+### Issue of Alyse
+Ladybright_5 = {
+	name = Quentyn
+	dynasty = dynn_Ladybright
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_7
+	mother = Ladybright_2
+
+	8282.2.19 = { birth = yes }
+	8290.3.18 = {
+		effect = {
+			set_relation_guardian = character:Ladybright_1 # Myriah Ladybright
+		}
+	}
+}
+Ladybright_6 = {
+	name = Jayne # Canon
+	dynasty = dynn_Ladybright
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_7
+	mother = Ladybright_2
+
+	trait = beauty_good_1
+
+	8283.2.19 = { birth = yes }
+	8293.3.18 = {
+		effect = {
+			set_relation_guardian = character:Martell_4 # Doran Martell
+		}
+	}
+}
+Ladybright_7 = {
+	name = Arron
+	dynasty = dynn_Ladybright
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_7
+	mother = Ladybright_2
+
+	8289.1.14 = { birth = yes }
+	8295.2.9 = {
+		effect = {
+			set_relation_guardian = character:Ladybright_1 # Myriah Ladybright
+		}
+	}
+}
+
+###### HOUSE JORDAYNE (id = dynn_Jordayne)
+############################
+### Let it be Written
+###
+Jordayne_59 = {
+	name = Cletus # a lord
+	dynasty = dynn_Jordayne
+	dna = Jordayne_59
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_57
+
+	8229.1.1 = { birth = yes }
+	8245.1.1 = {
+		trait = knight
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8247.1.1 = { add_spouse = Jordayne_rs_11 }
+	8274.1.1 = { death = { death_reason = death_accident } }
+}
+Jordayne_rs_11 = {
+	name = Loreza
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8228.1.1 = { birth = yes }
+	8269.1.1 = { death = { death_reason = death_accident } }
+}
+Jordayne_60 = {
+	name = Lewyn # married Loreza Martell
+	dynasty = dynn_Jordayne
+	dna = Jordayne_60
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_57
+
+	8230.1.1 = { birth = yes }
+	8246.1.1 = { trait = knight }
+	8275.1.1 = { death = yes }
+}
+### Issue of Cletus
+Jordayne_1 = {
+	name = Trebor # Canon, a lord
+	dynasty = dynn_Jordayne
+	dna = Jordayne_1
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_59
+	mother = Jordayne_rs_11
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { add_spouse = Shell_Dorne_9 } # Annara Shell
+	8274.1.2 = { trait = lustful }
+}
+Jordayne_2 = {
+	name = Myria # Canon
+	dynasty = dynn_Jordayne
+	female = yes
+	dna = Jordayne_2
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_1
+	mother = Shell_Dorne_9
+
+	8278.1.1 = { birth = yes }
+}
+### Issue of Mors, cousins to Cletus
+Jordayne_61 = {
+	name = Daemon
+	dynasty = dynn_Jordayne
+	dna = Jordayne_61
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_58
+	mother = Jordayne_rs_10
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = { trait = knight }
+	8264.1.1 = { add_spouse = Jordayne_rs_12 }
+}
+Jordayne_rs_12 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8247.1.1 = { birth = yes }
+}
+Jordayne_62 = {
+	name = Jennelyn # married Willam Wells.
+	dynasty = dynn_Jordayne
+	female = yes
+	dna = Jordayne_62
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_61
+	mother = Jordayne_rs_12
+
+	8272.1.1 = { birth = yes }
+}
+Jordayne_63 = {
+	name = Oberyn
+	dynasty = dynn_Jordayne
+	dna = Jordayne_63
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Jordayne_61
+	mother = Jordayne_rs_12
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = knight }
+}
+
+####################################################
+####				SANDY DORNISH				####
+####################################################
+
+###### HOUSE ALLYRION (id = dynn_Allyrion)
+############################
+### No Foe May Pass
+###
+Allyrion_1 = {
+	name = Delonne # Canon, a lord
+	dynasty = dynn_Allyrion
+	female = yes
+	dna = Allyrion_1
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Allyrion_54
+	father = Allyrion_rs_5
+
+	8240.1.1 = { birth = yes }
+	8258.1.1 = { add_matrilineal_spouse = Allyrion_rs_1 }
+}
+Allyrion_rs_1 = {
+	name = Leslyn
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8242.1.1 = { birth = yes }
+}
+### Issue of Delonne
+Allyrion_2 = {
+	name = Ryon # Canon
+	dynasty = dynn_Allyrion
+	dna = Allyrion_2
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Allyrion_1
+	father = Allyrion_rs_1
+
+	trait = education_martial_2
+
+	8262.1.13 = { birth = yes }
+	#8272.4.3 = { trait = squire } # AGOT TODO trait
+	8278.9.13 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8295.7.8 = { add_spouse = Yronwood_4 } # Ynys Yronwood
+}
+Allyrion_3 = {
+	name = Lewyn
+	dynasty = dynn_Allyrion
+	dna = Allyrion_3
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Allyrion_1
+	father = Allyrion_rs_1
+
+	8269.1.8 = { birth = yes }
+	8293.2.19 = { add_spouse = Manwoody_7 } # Ursyla Manwoody
+}
+Allyrion_4 = {
+	name = Almodis # married Aryon Wyl
+	dynasty = dynn_Allyrion
+	female = yes
+	dna = Allyrion_4
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Allyrion_1
+	father = Allyrion_rs_1
+
+	8270.2.9 = { birth = yes }
+}
+Allyrion_5 = {
+	name = Delonne # married Ronnel Dayne.
+	dynasty = dynn_Allyrion
+	female = yes
+	dna = Allyrion_5
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Allyrion_1
+	father = Allyrion_rs_1
+
+	8273.11.8 = { birth = yes }
+}
+
+### Issue of Ryon
+Allyrion_6 = {
+	name = Daemon # Canon, THE Daemon Sand
+	dynasty = dynn_Allyrion
+	dna = Allyrion_6
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 8
+	stewardship = 5
+	learning = 5
+	prowess = 12
+
+	religion = the_seven_main
+	culture = sand_dornish
+	sexuality = bisexual
+
+	father = Allyrion_2
+
+	trait = education_martial_2
+	trait = beauty_good_2
+	trait = bastard
+	give_nickname = nick_sand
+
+	disallow_random_traits = yes
+
+	8276.1.1 = { birth = yes }
+	8281.1.1 = {
+		trait = bossy
+	}
+	8288.1.1 = {
+		trait = lustful
+		trait = arrogant
+		#trait = squire # AGOT TODO trait
+		effect = { set_relation_guardian = character:Martell_8 } # Oberyn Martell
+	}
+	8290.1.1 = {
+		effect = { set_relation_lover = character:Martell_9 } # Arianne Martell
+	}
+	8292.1.1 = {
+		effect = {
+			remove_relation_lover = character:Martell_9 # Arianne Martell
+			set_relation_friend = character:Martell_8 # Oberyn Martell
+			set_relation_lover = character:Martell_8 # Oberyn Martell
+		}
+		#remove_trait = squire # AGOT TODO trait
+		effect = { remove_relation_guardian = character:Martell_8 } # Oberyn Martell
+		trait = knight
+	}
+}
+Allyrion_7 = {
+	name = Timeon # Mentioned
+	dynasty = dynn_Allyrion
+	dna = Allyrion_7
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Allyrion_2
+	mother = Yronwood_4 #Ynys Yronwood
+
+	8297.1.1 = { birth = yes }
+}
+Allyrion_8 = {
+	name = Elio # Mentioned
+	dynasty = dynn_Allyrion
+	dna = Allyrion_8
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Allyrion_2
+	mother = Yronwood_4 #Ynys Yronwood
+
+	8298.6.1 = { birth = yes }
+}
+
+### Issue of Lewyn
+Allyrion_9 = {
+	name = Andryn
+	dynasty = dynn_Allyrion
+	dna = Allyrion_9
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Manwoody_7
+	father = Allyrion_3
+
+	8294.1.8 = { birth = yes }
+}
+Allyrion_10 = {
+	name = Davon
+	dynasty = dynn_Allyrion
+	dna = Allyrion_10
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Manwoody_7
+	father = Allyrion_3
+
+	8295.5.2 = { birth = yes }
+}
+Allyrion_11 = {
+	name = Delonne
+	dynasty = dynn_Allyrion
+	female = yes
+	dna = Allyrion_11
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Manwoody_7
+	father = Allyrion_3
+
+	8297.3.23 = { birth = yes }
+}
+
+###### HOUSE VAITH (id = dynn_Vaith)
+############################
+###
+###
+Vaith_1 = {
+	name = Taubert
+	dynasty = dynn_Vaith
+	dna = Vaith_1
+
+	father = Vaith_50
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8237.1.1 = { birth = yes }
+	8253.1.1 = { add_spouse = Qorgyle_3 } # Bonne Qorgyle
+	8292.3.5 = { death = yes }
+}
+
+### Issue of Taubert
+Vaith_2 = {
+	name = Ariella
+	dynasty = dynn_Vaith
+	female = yes
+	dna = Vaith_2
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Vaith_1
+	mother = Qorgyle_3
+
+	8267.4.5 = { birth = yes }
+}
+Vaith_3 = {
+	name = Daeron # Canon, a lord
+	dynasty = dynn_Vaith
+	dna = Vaith_3
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Vaith_1
+	mother = Qorgyle_3
+
+	8265.2.6 = { birth = yes }
+	8284.2.7 = { add_spouse = Gargalen_4 } # Adela Gargalen
+}
+
+### Issue of Daeron
+Vaith_4 = {
+	name = Doran
+	dynasty = dynn_Vaith
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Vaith_3
+	mother = Gargalen_4
+
+	8284.12.2 = { birth = yes }
+}
+Vaith_5 = {
+	name = Adrey
+	dynasty = dynn_Vaith
+
+	trait = twin
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Vaith_3
+	mother = Gargalen_4
+
+	8289.6.12 = { birth = yes }
+}
+Vaith_6 = {
+	name = Ariel
+	dynasty = dynn_Vaith
+	female = yes
+
+	trait = twin
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Vaith_3
+	mother = Gargalen_4
+
+	8289.6.12 = { birth = yes }
+}
+
+###### HOUSE ULLER (id = dynn_Uller)
+############################
+###
+###
+Uller_1 = {
+	name = Boran # a lord
+	dynasty = dynn_Uller
+	dna = Uller_1
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_57
+	mother = Yronwood_55
+
+	8226.12.23 = { birth = yes }
+	8240.6.3 = { trait = wrathful }
+	8243.2.9 = { add_spouse = Uller_rs_1 }
+	8276.2.12 = { death = yes }
+}
+Uller_rs_1 = {
+	name = Ellaria
+	female = yes
+	# AGOT TODO dna = agot_dna_Uller_rs_1
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8227.1.7 = { birth = yes }
+	8281.4.2 = { death = yes }
+}
+Uller_2 = {
+	name = Mellei # married Maron Martell
+	dynasty = dynn_Uller
+	female = yes
+	dna = Uller_2
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_57
+	mother = Yronwood_55
+
+	8228.1.1 = { birth = yes }
+	8272.1.1 = { death = yes }
+}
+Uller_3 = {
+	name = Ormond
+	dynasty = dynn_Uller
+	dna = Uller_3
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_57
+	mother = Yronwood_55
+
+	8229.1.27 = { birth = yes }
+	8247.3.2 = { add_spouse = Ladybright_38 } # Ysilla Ladybright
+	8297.4.9 = { death = yes }
+}
+
+### Issue of Boran
+Uller_4 = {
+	name = Harmen # Canon, a lord
+	dynasty = dynn_Uller
+	dna = Uller_4
+
+	martial = 7
+	prowess = 6
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_1
+	mother = Uller_rs_1
+
+	trait = education_martial_2
+
+	8246.1.17 = { birth = yes }
+	#8256.3.9 = { trait = squire } # AGOT TODO trait
+	8259.2.10 = {
+		trait = brave
+		trait = wrathful
+	}
+	8262.1.24 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8265.7.14 = { trait = lustful }
+}
+Uller_5 = {
+	name = Ulwyck # Canon
+	dynasty = dynn_Uller
+	dna = Uller_5
+
+	martial = 7
+	prowess = 6
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_1
+	mother = Uller_rs_1
+
+	trait = education_martial_2
+
+	8266.8.3 = { birth = yes }
+	#8276.12.5 = { trait = squire } # AGOT TODO trait
+	8279.2.9 = { trait = wrathful }
+	8282.8.18 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8282.8.23 = { add_spouse = Wells_38 } # Jonquil Wells
+}
+
+### Issue of Harmen
+Uller_6 = {
+	name = Ellaria # Canon, THE Ellaria Sand
+	dynasty = dynn_Uller
+	female = yes
+	dna = Uller_6
+
+	religion = the_seven_main
+	culture = sand_dornish
+	sexuality = bisexual
+
+	father = Uller_4
+
+	trait = bastard
+	trait = beauty_good_2
+	trait = fashionable
+	trait = patient
+	trait = brave
+	trait = charming
+	trait = refusing_marriage
+	give_nickname = nick_sand
+
+
+	disallow_random_traits = yes
+
+	8267.1.1 = { birth = yes }
+	8281.1.1 = { employer = Martell_4 } # Doran Martell
+	8281.3.1 = {
+		trait = lustful
+		trait = lifestyle_reveler
+	}
+	8283.1.1 = { trait = compassionate }
+	8285.1.1 = { remove_trait = refusing_marriage }
+	8300.3.1 = { employer = Uller_4 } # Harmen Uller
+}
+
+### Issue of Ulwyck
+Uller_7 = {
+	name = Boros
+	dynasty = dynn_Uller
+	# AGOT TODO dna = agot_dna_Uller_7
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_5
+	mother = Wells_38
+
+	8283.7.7 = { birth = yes }
+}
+Uller_8 = {
+	name = Harmen
+	dynasty = dynn_Uller
+	# AGOT TODO dna = agot_dna_Uller_8
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_5
+	mother = Wells_38
+
+	8286.3.19 = { birth = yes }
+}
+Uller_9 = {
+	name = Ellaria
+	dynasty = dynn_Uller
+	female = yes
+	# AGOT TODO dna = agot_dna_Uller_9
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_5
+	mother = Wells_38
+
+	8287.10.2 = { birth = yes }
+}
+
+### Issue of Ormond
+Uller_10 = {
+	name = Alyse
+	dynasty = dynn_Uller
+	female = yes
+	dna = Uller_10
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_3
+	mother = Ladybright_38
+
+	8254.3.17 = { birth = yes }
+}
+Uller_11 = {
+	name = Bedwyck
+	dynasty = dynn_Uller
+	dna = Uller_11
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Uller_3
+	mother = Ladybright_38
+
+	8257.2.1 = { birth = yes }
+}
+
+###### HOUSE QORGYLE (id = dynn_Qorgyle)
+############################
+###
+###
+Qorgyle_1 = {
+	name = Qymors # a lord
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_1
+
+	prowess = 12
+
+	father = Qorgyle_67
+	mother = Qorgyle_rs_7
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8230.1.26 = { birth = yes }
+	8246.2.17 = {
+		trait = knight
+	}
+	8247.10.3 = { add_spouse = Toland_51 } # Toland maid.
+	8259.2.9 = { death = { death_reason = death_battle } }
+}
+Qorgyle_2 = {
+	name = Jantos # Canon, 996th Lord Commander
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_2
+
+	martial = 12
+	stewardship = 12
+	prowess = 12
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_67
+	mother = Qorgyle_rs_7
+
+	trait = education_martial_2
+
+	8232.1.1 = { birth = yes }
+	8248.1.1 = { trait = knight }
+	8251.1.1 = { trait = diligent }
+	8262.1.1 = { trait = nightswatch }
+	8288.1.1 = { death = yes }
+}
+Qorgyle_3 = {
+	name = Bonne # married Taubert Vaith
+	dynasty = dynn_Qorgyle
+	female = yes
+	dna = Qorgyle_3
+
+	father = Qorgyle_67
+	mother = Qorgyle_rs_7
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8231.9.16 = { birth = yes }
+	8268.10.9 = { death = yes }
+}
+
+### Issue of Qymors
+Qorgyle_4 = {
+	name = Quentyn # Canon, a lord
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_4
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_1
+	mother = Toland_51
+
+	8248.1.2 = { birth = yes }
+	8264.2.7 = { add_spouse = Wells_35 } # Donyse Wells
+}
+Qorgyle_5 = {
+	name = Symon
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_5
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_1
+	mother = Toland_51
+
+	8253.6.11 = { birth = yes }
+}
+
+### Issue of Quentyn
+Qorgyle_6 = {
+	name = Gulian # Canon
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_6
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_4
+	mother = Wells_35
+
+	trait = education_martial_2
+
+	8264.1.27 = { birth = yes }
+	#8274.2.1 = { trait = squire } # AGOT TODO trait
+	8280.2.7 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8281.3.19 = { add_spouse = Drinkwater_2 } # Neila Drinkwater
+}
+Qorgyle_7 = {
+	name = Arron # Canon
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_7
+
+	martial = 7
+	prowess = 6
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_4
+	mother = Wells_35
+
+	trait = education_martial_2
+
+	8265.4.2 = { birth = yes }
+	#8276.2.23 = { trait = squire } # AGOT TODO trait
+	8281.7.7 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+}
+
+### Issue of Gulian
+Qorgyle_8 = {
+	name = Jantos
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_8
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_6
+	mother = Drinkwater_2
+
+	8284.2.11 = { birth = yes }
+}
+Qorgyle_9 = {
+	name = Ellaria
+	dynasty = dynn_Qorgyle
+	female = yes
+	dna = Qorgyle_9
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_6
+	mother = Drinkwater_2
+
+	8287.3.18 = { birth = yes }
+}
+### Issue of Armen, first cousins once-removed to Quenton
+Qorgyle_69 = {
+	name = Andrey
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_69
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_68
+	mother = Qorgyle_rs_8
+
+	8244.1.1 = { birth = yes }
+	8260.1.1 = { trait = knight }
+	8262.1.1 = { add_spouse = Brook_19 } # Yolande Brook
+	8283.4.5 = { death = { death_reason = death_battle } }
+}
+### Issue of Andrey, second cousins to Quentyn
+Qorgyle_10 = {
+	name = Cyrenna # married Justyn Wyl
+	dynasty = dynn_Qorgyle
+	female = yes
+	dna = Qorgyle_10
+
+	trait = twin
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_69
+	mother = Brook_19
+
+	8262.1.1 = { birth = yes }
+}
+Qorgyle_11 = {
+	name = Timeon
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_11
+
+	trait = twin
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_69
+	mother = Brook_19
+
+	8262.1.1 = { birth = yes }
+}
+Qorgyle_12 = {
+	name = Daemon
+	dynasty = dynn_Qorgyle
+	dna = Qorgyle_12
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Qorgyle_69
+	mother = Brook_19
+
+	8265.1.1 = { birth = yes }
+}
+
+####################################################
+####				STONY DORNISH				####
+####################################################
+
+###### HOUSE YRONWOOD (id = dynn_Yronwood)
+############################
+### We Guard the Way
+###
+Yronwood_1 = {
+	name = Ormond # Canon, a lord
+	dynasty = dynn_Yronwood
+	dna = Yronwood_1
+
+	father = Yronwood_56
+	mother = Yronwood_rs_5
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8242.1.1 = { birth = yes }
+	8260.1.9 = { add_spouse = Drinkwater_32 } # Sylva Drinkwater
+	8292.1.1 = { death = yes }
+}
+### Issue of Ormond
+Yronwood_2 = {
+	name = Anders # Canon, a lord
+	dynasty = dynn_Yronwood
+	dna = Yronwood_2
+
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_1
+	mother = Drinkwater_32
+
+	8262.1.1 = { birth = yes }
+	8278.4.8 = { trait = knight }
+	8279.1.1 = { add_spouse = Yronwood_rs_1 }
+}
+Yronwood_rs_1 = {
+	name = Baldera
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8259.1.1 = { birth = yes }
+}
+Yronwood_3 = {
+	name = Alaric
+	dynasty = dynn_Yronwood
+	dna = Yronwood_3
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_1
+	mother = Drinkwater_32
+
+	8264.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = Yronwood_rs_2 }
+}
+Yronwood_rs_2 = {
+	name = Mabyl
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	trait = education_diplomacy_1
+
+	8260.1.1 = { birth = yes }
+}
+### Issue of Anders
+Yronwood_4 = {
+	name = Ynys # Canon, married Ryon Allyrion
+	female = yes
+	dynasty = dynn_Yronwood
+	dna = Yronwood_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_2
+	mother = Yronwood_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+Yronwood_5 = {
+	name = Cletus # Canon
+	dynasty = dynn_Yronwood
+	dna = Yronwood_5
+
+	martial = 6
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_2
+	mother = Yronwood_rs_1
+
+	trait = beauty_good_1
+	trait = lustful
+	trait = gregarious
+
+	8283.1.1 = { birth = yes }
+	#8293.1.1 = { trait = squire } # AGOT TODO trait
+	8299.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8300.2.15 = {
+		death = { # Killed by pirates while with Quentyn on his way to Dany
+			death_reason = death_battle
+		}
+	}
+}
+Yronwood_6 = {
+	name = Gwyneth # Canon
+	dynasty = dynn_Yronwood
+	female = yes
+	dna = Yronwood_6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_2
+	mother = Yronwood_rs_1
+
+	trait = intellect_good_1
+
+	8288.1.1 = { birth = yes }
+}
+### Issue of Alaric
+Yronwood_7 = {
+	name = Archibald # Canon, AKA: The Big Man
+	dynasty = dynn_Yronwood
+	dna = Yronwood_7
+
+	martial = 9
+	diplomacy = 4
+	intrigue = 4
+	stewardship = 4
+	learning = 2
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Yronwood_3
+	mother = Yronwood_rs_2
+
+	trait = education_martial_1
+	trait = strong
+	trait = giant
+	trait = rowdy
+
+	disallow_random_traits = yes
+
+	8281.1.1 = { birth = yes }
+	8291.1.1 = {
+		#trait = squire # AGOT TODO trait
+		trait = arrogant
+	}
+	8293.1.1 = {
+		trait = compassionate
+		trait = honest
+		trait = just
+	}
+	8297.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		trait = brave
+	}
+	8297.6.4 = {
+		effect = {
+			set_relation_friend = character:Yronwood_5 # Cletus Yronwood
+			set_relation_friend = character:Drinkwater_5 # Gerris Drinkwater
+		}
+	}
+	8298.1.1 = { give_nickname = nick_the_big_man }
+	8300.1.1 = {
+		#trait = wikid # AGOT TODO trait
+		#effect = { character_event = { id = feast_for_crows.65 days = 1000 } } #Failsafe # AGOT TODO
+	}
+}
+### Household
+Yronwood_hh_1 = {
+	name = Kedry # Canon
+
+	martial = 2
+	diplomacy = 8
+	intrigue = 6
+	stewardship = 6
+	learning = 8
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	trait = education_learning_4
+	trait = diligent
+	trait = ambitious
+
+	8259.1.1 = { birth = yes }
+	8279.1.1 = {
+		trait = maester
+		trait = lifestyle_physician
+		employer = Yronwood_1 # Ormond Yronwood
+		#effect = {
+		#	title:c_yronwood.holder = {
+		#		appoint_court_position = {
+		#			recipient = ROOT
+		#			court_position = maester_court_position # Maester of Yronwood
+		#		}
+		#	}
+		#}
+	}
+	8292.1.1 = { employer = Yronwood_2 } # Anders Yronwood
+	8300.2.15 = {
+		death = { # Killed by pirates while with Quentyn on his way to Dany
+			death_reason = death_battle
+		}
+	}
+}
+
+###### HOUSE MANWOODY (id = dynn_Manwoody)
+############################
+###
+###
+Manwoody_1 = {
+	name = Dymors # a lord
+	dynasty = dynn_Manwoody
+
+	father = Manwoody_53
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8233.1.1 = { birth = yes }
+	8249.1.1 = { add_spouse = Manwoody_rs_1 }
+	8270.1.1 = { death = yes }
+}
+Manwoody_rs_1 = {
+	name = Ursila
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	trait = education_diplomacy_1
+
+	8233.1.1 = { birth = yes }
+	8273.1.1 = { death = yes }
+}
+### Issue of Dymors
+Manwoody_2 = {
+	name = Dagos # Canon, a lord
+	dynasty = dynn_Manwoody
+
+	dna = Manwoody_2
+
+	martial = 8
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Manwoody_1
+	mother = Manwoody_rs_1
+
+	trait = education_martial_2
+
+	8253.1.1 = { birth = yes }
+	8269.1.1 = { add_spouse = Wade_10 } # Emilia Wade
+	8270.1.1 = { trait = knight }
+}
+Manwoody_3 = {
+	name = Myles # Canon
+	dynasty = dynn_Manwoody
+	dna = Manwoody_3
+
+	martial = 7
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Manwoody_1
+	mother = Manwoody_rs_1
+
+	trait = education_martial_2
+
+	8255.6.8 = { birth = yes }
+	8271.9.12 = { trait = knight }
+	8271.11.3 = { add_spouse = Fowler_55 } # Marei Fowler
+}
+### Issue of Dagos
+Manwoody_4 = {
+	name = Mors # Canon
+	dynasty = dynn_Manwoody
+	dna = Manwoody_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Manwoody_2
+	mother = Wade_10
+
+	8273.1.9 = { birth = yes }
+	#8283.1.11 = { trait = squire } # AGOT TODO trait
+	8289.2.7 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+}
+Manwoody_5 = {
+	name = Dickon # Canon
+	dynasty = dynn_Manwoody
+	dna = Manwoody_5
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Manwoody_2
+	mother = Wade_10
+
+	8277.3.12 = { birth = yes }
+	#8289.1.29 = { trait = squire } # AGOT TODO trait
+	8293.4.10 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+}
+### Issue of Myles
+Manwoody_6 = {
+	name = Jeyne # married Deziel Dalt
+	dynasty = dynn_Manwoody
+	female = yes
+
+	dna = Manwoody_6
+
+	father = Manwoody_3
+	mother = Fowler_55
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	trait = twin
+
+	8276.1.3 = { birth = yes }
+}
+Manwoody_7 = {
+	name = Ursyla # married Lewyn Allyrion
+	dynasty = dynn_Manwoody
+	female = yes
+	dna = Manwoody_7
+
+	father = Manwoody_3
+	mother = Fowler_55
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	trait = twin
+
+	8276.1.3 = { birth = yes }
+	8289.1.3 = { trait = lustful }
+}
+Manwoody_8 = {
+	name = Dymors
+	dynasty = dynn_Manwoody
+	dna = Manwoody_8
+
+	father = Manwoody_3
+	mother = Fowler_55
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8280.6.14 = { birth = yes }
+}
+
+###### HOUSE DRINKWATER (id = dynn_Drinkwater)
+############################
+###
+###
+Drinkwater_1 = {
+	name = Deryn # Mentioned, a lord
+	dynasty = dynn_Drinkwater
+
+	father = Drinkwater_33
+	mother = Drinkwater_rs_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8257.1.1 = { birth = yes }
+	8275.7.7 = { add_spouse = Fowler_4 } # Dorea Fowler
+}
+Drinkwater_2 = {
+	name = Neila
+	dynasty = dynn_Drinkwater
+	female = yes
+
+	father = Drinkwater_33
+	mother = Drinkwater_rs_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8262.2.19 = { birth = yes }
+}
+### Issue of Deryn
+Drinkwater_3 = {
+	name = Kyla # Mentioned
+	dynasty = dynn_Drinkwater
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Drinkwater_1
+	mother = Fowler_4
+
+	trait = twin
+
+	8280.3.7 = { birth = yes }
+	8296.3.7 = { trait = lifestyle_hunter }
+}
+Drinkwater_4 = {
+	name = Wyla # Mentioned
+	dynasty = dynn_Drinkwater
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Drinkwater_1
+	mother = Fowler_4
+
+	trait = twin
+
+	8280.3.7 = { birth = yes }
+	8296.3.7 = { trait = lifestyle_hunter }
+}
+Drinkwater_5 = {
+	name = Gerris # Canon, AKA: Drink
+	dynasty = dynn_Drinkwater
+
+	martial = 8
+	diplomacy = 10
+	intrigue = 4
+	stewardship = 2
+	learning = 2
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Drinkwater_1
+	mother = Fowler_4
+
+	trait = education_martial_2
+	trait = beauty_good_3
+
+	disallow_random_traits = yes
+
+	8276.9.27 = { birth = yes }
+	8282.1.1 = { trait = rowdy }
+	#8287.1.12 = { trait = squire } # AGOT TODO trait
+	8289.3.14 = { trait = honest }
+	8293.12.2 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8294.1.4 = {
+		trait = brave
+		trait = arrogant
+	}
+	8300.1.1 = {
+		#trait = wikid # AGOT TODO trait
+		#effect = { character_event = { id = feast_for_crows.65 days = 1000 } } #Failsafe # AGOT TODO
+	}
+}
+
+###### HOUSE WYL (id = dynn_Wyl)
+############################
+###
+###
+Wyl_1 = {
+	name = Edmund # a lord
+	dynasty = dynn_Wyl
+	dna = Wyl_1
+
+	father = Wyl_48
+	mother = Wyl_rs_7
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8224.1.3 = { birth = yes }
+	8245.2.1 = { add_spouse = Dayne_76 } # Alyse Dayne
+}
+### Issue of Edmund
+Wyl_2 = {
+	name = Jeyne
+	dynasty = dynn_Wyl
+	female = yes
+	dna = Wyl_2
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_1
+	mother = Dayne_76
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = { add_matrilineal_spouse = Brook_20 } # Willam Brook
+}
+Wyl_3 = {
+	name = Karyl
+	dynasty = dynn_Wyl
+	dna = Wyl_3
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_1
+	mother = Dayne_76
+
+	8249.1.1 = { birth = yes }
+	8265.1.1 = { add_spouse = Briar_16 } # Ellaria Briar
+}
+Wyl_4 = {
+	name = Colin
+	dynasty = dynn_Wyl
+	dna = Wyl_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_1
+	mother = Dayne_76
+
+	8253.1.1 = { birth = yes }
+}
+### Issue of Jeyne
+Wyl_5 = {
+	name = Aryon
+	dynasty = dynn_Wyl
+	dna = Wyl_5
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	mother = Wyl_2
+	father = Brook_20
+
+	8271.1.3 = { birth = yes }
+	8290.4.12 = { add_spouse = Allyrion_4 } # Almodis Allyrion
+}
+### Issue of Karyl
+Wyl_6 = {
+	name = Justyn
+	dynasty = dynn_Wyl
+
+	dna = Wyl_6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_3
+	mother = Briar_16
+
+	8267.2.8 = { birth = yes }
+	8283.3.27 = { add_spouse = Qorgyle_10 } # Cyrenna Qorgyle
+}
+Wyl_7 = {
+	name = Alys # married Gulian Blackmont
+	dynasty = dynn_Wyl
+	female = yes
+	dna = Wyl_7
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_3
+	mother = Briar_16
+
+	8273.1.1 = { birth = yes }
+}
+Wyl_8 = {
+	name = Obera # married Aron Fowler
+	dynasty = dynn_Wyl
+	female = yes
+
+	dna = Wyl_8
+
+	father = Wyl_3
+	mother = Briar_16
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8275.1.1 = { birth = yes }
+}
+### Issue of Aryon
+Wyl_9 = {
+	name = Delonne
+	dynasty = dynn_Wyl
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_5
+	mother = Allyrion_4
+
+	8291.3.2 = { birth = yes }
+}
+Wyl_10 = {
+	name = Edmynd
+	dynasty = dynn_Wyl
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_5
+	mother = Allyrion_4
+
+	8294.5.21 = { birth = yes }
+}
+### Issue of Justyn
+Wyl_11 = {
+	name = Ederyn
+	dynasty = dynn_Wyl
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_6
+	mother = Qorgyle_10
+
+	8283.4.9 = { birth = yes }
+}
+Wyl_12 = {
+	name = Ranwyle
+	dynasty = dynn_Wyl
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_6
+	mother = Qorgyle_10
+
+	8286.5.19 = { birth = yes }
+}
+Wyl_13 = {
+	name = Perriane
+	dynasty = dynn_Wyl
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Wyl_6
+	mother = Qorgyle_10
+
+	8288.2.1 = { birth = yes }
+}
+
+###### HOUSE FOWLER (id = dynn_Fowler)
+############################
+### Let Me Soar
+###
+
+Fowler_53 = {
+	name = Gerold # a lord
+	dynasty = dynn_Fowler
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_52
+
+	8225.1.1 = { birth = yes }
+	8241.1.1 = { trait = knight }
+	8242.1.1 = { add_spouse = Hull_10 } # Jyanna Hull
+	8261.1.1 = { death = { death_reason = death_accident } }
+}
+Fowler_54 = {
+	name = Ormond
+	dynasty = dynn_Fowler
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_52
+
+	8229.1.1 = { birth = yes }
+	8245.1.1 = { trait = knight }
+	8247.1.1 = { add_spouse = Fowler_rs_9 }
+	8259.2.9 = { death = { death_reason = death_battle } }
+}
+Fowler_rs_9 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8229.1.1 = { birth = yes }
+	8273.1.1 = { death = yes }
+}
+### Issue of Gerold
+Fowler_1 = {
+	name = Franklyn # Canon, a lord, AKA Old Hawk
+	dynasty = dynn_Fowler
+	dna = Fowler_1
+
+	martial = 8
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_53
+	mother = Hull_10
+
+	trait = education_martial_3
+
+	8243.3.24 = { birth = yes }
+	#8253.4.17 = { trait = squire } # AGOT TODO trait
+	8259.2.8 = { trait = brave }
+	8259.4.2 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8259.5.2 = { add_spouse = Fowler_rs_1 }
+	8280.3.24 = { give_nickname = nick_old_hawk }
+}
+Fowler_rs_1 = {
+	name = Malessa
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8243.1.1 = { birth = yes }
+}
+### Issue of Franklyn
+Fowler_2 = {
+	name = Jeyne # Canon
+	dynasty = dynn_Fowler
+	female = yes
+
+	dna = Fowler_2
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+	sexuality = homosexual
+
+	father = Fowler_1
+	mother = Fowler_rs_1
+
+	trait = twin
+	trait = arrogant
+	trait = gregarious
+
+	8272.1.1 = { birth = yes }
+	8285.1.1 = { trait = lustful }
+	8288.1.1 = { trait = lifestyle_hunter }
+}
+Fowler_3 = {
+	name = Jennelyn # Canon
+	dynasty = dynn_Fowler
+	female = yes
+
+	dna = Fowler_3
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+	sexuality = homosexual
+
+	father = Fowler_1
+	mother = Fowler_rs_1
+
+	trait = twin
+	trait = arrogant
+	trait = gregarious
+
+	8272.1.2 = { birth = yes }
+	8285.1.1 = { trait = lustful }
+	8288.1.1 = { trait = lifestyle_hunter }
+}
+### Issue of Ormond
+Fowler_55 = {
+	name = Marei # married Myles Manwoody
+	female = yes
+	dynasty = dynn_Fowler
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_54
+	mother = Fowler_rs_9
+
+	8248.1.1 = { birth = yes }
+	8280.6.14 = { death = { death_reason = death_dungeon } }
+}
+Fowler_56 = {
+	name = Alaric
+	dynasty = dynn_Fowler
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_54
+	mother = Fowler_rs_9
+
+	8250.1.1 = { birth = yes }
+	8266.1.1 = { trait = knight }
+	8268.1.1 = { add_spouse = Fowler_rs_10 }
+	8274.1.1 = { death = yes }
+}
+Fowler_rs_10 = {
+	name = Janyce
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8250.1.1 = { birth = yes }
+	8298.1.1 = { death = yes }
+}
+Fowler_4 = {
+	name = Dorea # married Deryn Drinkwater
+	dynasty = dynn_Fowler
+	female = yes
+	dna = Fowler_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_54
+	mother = Fowler_rs_9
+
+	8254.8.11 = { birth = yes }
+}
+### Issue of Alaric
+Fowler_5 = {
+	name = Aron
+	dynasty = dynn_Fowler
+	dna = Fowler_5
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_56
+	mother = Fowler_rs_10
+
+	8271.12.3 = { birth = yes }
+	8293.3.16 = { add_spouse = Wyl_8 } # Obera Wyl
+}
+Fowler_6 = {
+	name = Allar
+	dynasty = dynn_Fowler
+	dna = Fowler_6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_56
+	mother = Fowler_rs_10
+
+	8273.1.7 = { birth = yes }
+}
+### Issue of Aron
+Fowler_7 = {
+	name = Alyn
+	dynasty = dynn_Fowler
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_5
+	mother = Wyl_8
+
+	8294.12.27 = { birth = yes }
+}
+Fowler_8 = {
+	name = Doreah
+	dynasty = dynn_Fowler
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Fowler_5
+	mother = Wyl_8
+
+	8296.4.7 = { birth = yes }
+}
+
+###### HOUSE DAYNE (id = dynn_Dayne)
+############################
+### Dawn Brings Light (nc)
+###
+
+### Starfall Branch
+############################
+Dayne_1 = {
+	name = Beric # Semi-canon, a lord
+	dynasty = dynn_Dayne
+	dna = Dayne_1
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_73 # Davos Dayne
+	mother = Dayne_11 # Annara Dayne
+
+	8243.1.1 = {
+		birth = yes
+		effect = { add_character_flag = has_scripted_appearance }
+	}
+	8258.1.1 = { add_spouse = Dayne_rs_1 }
+	8284.1.1 = { death = { death_reason = death_accident} }
+}
+Dayne_rs_1 = {
+	name = Narelle
+	female = yes
+	dna = Dayne_rs_1
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8241.1.1 = { birth = yes }
+	8287.1.1 = { death = yes }
+}
+### Issue of Beric
+Dayne_3 = {
+	name = Ulrick # Mentioned, a lord
+	dynasty = dynn_Dayne
+
+	dna = Dayne_3
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_1
+	mother = Dayne_rs_1
+
+	8257.1.5 = {
+		birth = yes
+		effect = { add_character_flag = has_scripted_appearance }
+	}
+	8285.1.9 = { add_spouse = Dayne_rs_3 }
+	8296.1.1 = { death = { death_reason = death_accident} }
+}
+Dayne_rs_3 = {
+	name = Elia
+	female = yes
+	# AGOT TODO dna = agot_dna_Dayne_rs_3
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8266.9.11 = { birth = yes }
+}
+Dayne_5 = {
+	name = Arthur # Canon, a Kingsguard, AKA: The Sword of the Morning
+	dynasty = dynn_Dayne
+	dna = Dayne_5
+
+	martial = 12
+	diplomacy = 7
+	intrigue = 6
+	stewardship = 8
+	learning = 5
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_1
+	mother = Dayne_rs_1
+
+	trait = education_martial_3
+	trait = education_martial_prowess_4
+	trait = strong
+
+	disallow_random_traits = yes
+
+	8258.12.25 = {
+		birth = yes
+		effect = { add_character_flag = has_scripted_appearance }
+	}
+	8270.3.3 = {
+		#trait = squire # AGOT TODO trait
+		trait = just
+		trait = brave
+	}
+	8274.9.3 = {
+		trait = diligent
+		trait = patient
+	}
+	8275.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		effect = { set_relation_friend = character:Targaryen_3 } # Rhaegar Targaryen
+	}
+	8275.2.7 = {
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+	8276.1.1 = {
+		give_nickname = nick_the_sword_of_the_morning
+		effect = {
+			add_character_flag = claimed_dawn
+			add_character_flag = is_sword_of_morning
+		}
+	}
+	8278.1.1 = {
+		effect = { add_character_flag = agot_is_kingsguard_member }
+		create_character_memory = {
+			type = agot_kingsguard_memory
+			participants = {
+				king = character:Targaryen_1
+			}
+		}
+	}
+	8281.1.1 = {
+		create_character_memory = {
+			type = agot_knighted_someone
+			participants = {
+				squire = character:Lannister_7
+			}
+		}
+	}
+	8282.9.15 = { # Robert's Rebellion
+		effect = {
+			add_character_flag = yearly_1010_abductor
+			#trait = wikid # AGOT TODO trait
+			# character_event = { id = tower_of_joy.3 days = 2 }
+		}
+	}
+	8284.1.1 = {
+		trait = kingsguard
+		death = {
+			death_reason = death_duel
+			killer = Reed_1 # Howland Reed
+		}
+		#remove_trait = wikid # AGOT TODO trait
+	}
+}
+Dayne_4 = {
+	name = Ashara # Canon
+	dynasty = dynn_Dayne
+	female = yes
+	dna = Dayne_4
+
+	diplomacy = 7
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_1
+	mother = Dayne_rs_1
+
+	trait = education_intrigue_3
+	trait = beauty_good_3
+	trait = fashionable
+	trait = gregarious
+	trait = compassionate
+	trait = trusting
+
+	disallow_random_traits = yes
+
+	8262.1.1 = {
+		birth = yes
+		add_character_flag = no_dna
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	8276.1.1 = { trait = arrogant }
+	8284.1.1 = {
+		trait = depressed_1
+		# Selmy said she killed herself giving birth to a stillborn.
+		death = { death_reason = death_suicide }
+	}
+}
+Dayne_6 = {
+	name = Allyria # Canon, married Beric Dondarrion
+	dynasty = dynn_Dayne
+	female = yes
+	dna = Dayne_6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_1
+	mother = Dayne_rs_1
+
+	8282.1.1 = {
+		birth = yes
+		effect = { add_character_flag = has_scripted_appearance }
+	}
+	8298.10.28 = { employer = Dondarrion_3 } # Manfred Dondarrion
+}
+### Issue of Ulrick
+Dayne_7 = {
+	name = Edric # Canon, a lord
+	dynasty = dynn_Dayne
+	dna = Dayne_7
+
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_3
+	mother = Dayne_rs_3
+
+	8287.1.1 = { birth = yes }
+	8294.1.1 = {
+		effect = { set_relation_guardian = character:Dondarrion_2 } # Beric Dondarrion
+	}
+	8294.2.9 = { trait = just }
+	8297.1.1 = {
+		#trait = squire # AGOT TODO trait
+		trait = brave
+		trait = honorable
+	}
+	8298.10.29 = { trait = diligent }
+}
+
+### High Hermitage Branch
+############################
+Dayne_2 = {
+	name = Alester # a lord
+	dynasty = dynn_Dayne
+	dna = Dayne_2
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_73 # Davos Dayne
+	mother = Dayne_11 # Annara Dayne
+
+	8245.1.1 = { birth = yes }
+	8261.1.1 = { add_spouse = Dayne_rs_2 }
+	8292.1.1 = { death = yes }
+}
+Dayne_rs_2 = {
+	name = Ariela
+	female = yes
+	dna = Dayne_rs_2
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8237.1.1 = { birth = yes }
+}
+### Issue of Alester
+Dayne_8 = {
+	name = Gerold # Canon, AKA: The Darkstar
+	dynasty = dynn_Dayne
+
+	dna = Dayne_8
+
+	martial = 9
+	diplomacy = 4
+	intrigue = 9
+	stewardship = 2
+	learning = 5
+	prowess = 9
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Dayne_2
+	mother = Dayne_rs_2
+
+	trait = beauty_good_3
+	trait = wrathful
+	trait = sadistic
+	trait = brave
+	disallow_random_traits = yes
+
+	8273.1.1 = {
+		birth = yes
+		effect = { add_character_flag = has_scripted_appearance }
+	}
+	8276.1.1 = { trait = rowdy }
+	8282.1.1 = { give_nickname = nick_darkstar }
+	#8284.1.1 = { trait = squire } # AGOT TODO trait
+	8289.1.1 = {
+		remove_trait = rowdy
+		trait = education_martial_2
+		trait = knight
+		trait = education_martial_prowess_3
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+}
+Dayne_9 = {
+	name = Ronnel
+	dynasty = dynn_Dayne
+
+	dna = Dayne_9
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Dayne_2
+	mother = Dayne_rs_2
+
+	8275.11.16 = {
+		birth = yes
+		effect = { set_culture = culture:stone_dornish }
+	}
+	8294.2.8 = { add_spouse = Allyrion_5 } # Delonne Allyrion
+}
+Dayne_10 = {
+	name = Alyse
+	dynasty = dynn_Dayne
+	female = yes
+
+	dna = Dayne_10
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Dayne_2
+	mother = Dayne_rs_2
+
+	trait = beauty_good_1
+
+	8278.1.1 = {
+		birth = yes
+		effect = { set_culture = culture:stone_dornish }
+	}
+}
+### Issue of Ronnel
+Dayne_12 = {
+	name = Aegon
+	dynasty = dynn_Dayne
+	# AGOT TODO dna = agot_dna_Dayne_12
+
+	trait = beauty_good_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Dayne_9
+	mother = Allyrion_5
+
+	8294.12.8 = {
+		birth = yes
+		effect = { set_culture = culture:stone_dornish }
+	}
+}
+Dayne_13 = {
+	name = Alysanne
+	dynasty = dynn_Dayne
+	female = yes
+	# AGOT TODO dna = agot_dna_Dayne_13
+
+	trait = beauty_good_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Dayne_9
+	mother = Allyrion_5
+
+	8295.11.5 = {
+		birth = yes
+		effect = { set_culture = culture:stone_dornish }
+	}
+}
+Dayne_14 = {
+	name = Daeron
+	dynasty = dynn_Dayne
+	# AGOT TODO dna = agot_dna_Dayne_14
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Dayne_9
+	mother = Allyrion_5
+
+	8297.2.27 = {
+		birth = yes
+		effect = { set_culture = culture:stone_dornish }
+	}
+}
+
+### Household
+Dayne_hh_1 = {
+	name = Wylla # Canon, a wetnurse
+	female = yes
+
+	learning = 2
+	diplomacy = 2
+	martial = 1
+	stewardship = 1
+	intrigue = 2
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	trait = education_diplomacy_1
+	trait = beauty_good_1
+
+	8260.1.1 = {
+		birth = yes
+		employer = Dayne_72 # Gerold Dayne
+	}
+	8265.1.1 = { employer = Dayne_73 } # Davos Dayne
+	8272.1.1 = { employer = Dayne_1 } # Beric Dayne
+	8284.1.1 = { employer = Dayne_3 } # Ulrick Dayne
+	8296.1.1 = { employer = Dayne_7 } # Edric Dayne
+}
+
+###### HOUSE BLACKMONT (id = dynn_Blackmont)
+############################
+###
+###
+Blackmont_1 = {
+	name = Larra # Canon, a lord
+	dynasty = dynn_Blackmont
+	female = yes
+	dna = Blackmont_1
+
+	father = Blackmont_52
+	mother = Blackmont_rs_9
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = { add_matrilineal_spouse = Blackmont_rs_1 }
+}
+Blackmont_rs_1 = {
+	name = Tuprin
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8259.1.1 = { birth = yes }
+}
+Blackmont_2 = {
+	name = Maron
+	dynasty = dynn_Blackmont
+	dna = Blackmont_2
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_52
+	mother = Blackmont_rs_9
+
+	8261.4.1 = { birth = yes }
+	8277.7.7 = { add_spouse = Blackmont_rs_2 }
+}
+Blackmont_rs_2 = {
+	name = Tulysa
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8260.1.1 = { birth = yes }
+}
+### Issue of Larra
+Blackmont_3 = {
+	name = Jynessa # Canon
+	dynasty = dynn_Blackmont
+	female = yes
+	dna = Blackmont_3
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	mother = Blackmont_1
+	father = Blackmont_rs_1
+
+	8280.4.11 = { birth = yes }
+}
+Blackmont_4 = {
+	name = Perros # Canon
+	dynasty = dynn_Blackmont
+	dna = Blackmont_4
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	mother = Blackmont_1
+	father = Blackmont_rs_1
+
+	8285.7.9 = { birth = yes }
+	#8296.3.21 = { trait = squire } # AGOT TODO trait
+}
+Blackmont_53 = {
+	name = Margaid # Mentioned
+	dynasty = dynn_Blackmont
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	mother = Blackmont_1
+	father = Blackmont_rs_1
+
+	8290.1.1 = { birth = yes }
+	8295.1.1 = {
+		effect = { set_relation_guardian = character:Martell_4 } # Doran Martell
+	}
+}
+### Issue of Maron
+Blackmont_5 = {
+	name = Gulian
+	dynasty = dynn_Blackmont
+	dna = Blackmont_5
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_2
+	mother = Blackmont_rs_2
+
+	8278.3.9 = { birth = yes }
+	8294.10.14 = { add_spouse = Wyl_7 } # Alys Wyl
+}
+Blackmont_6 = {
+	name = Lanessa
+	dynasty = dynn_Blackmont
+	female = yes
+	dna = Blackmont_6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_2
+	mother = Blackmont_rs_2
+
+	8280.12.4 = { birth = yes }
+}
+Blackmont_7 = {
+	name = Edrin
+	dynasty = dynn_Blackmont
+	dna = Blackmont_7
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_2
+	mother = Blackmont_rs_2
+
+	8286.9.1 = { birth = yes }
+}
+Blackmont_8 = {
+	name = Adella
+	dynasty = dynn_Blackmont
+	female = yes
+	dna = Blackmont_8
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_2
+	mother = Blackmont_rs_2
+
+	8289.2.10 = { birth = yes }
+}
+### Issue of Gulian
+Blackmont_9 = {
+	name = Doran
+	dynasty = dynn_Blackmont
+	dna = Blackmont_9
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Blackmont_5
+	mother = Wyl_7
+
+	8296.2.10 = { birth = yes }
+}
+
+###### HOUSE WELLS (id = dynn_Wells)
+############################
+###
+###
+Wells_1 = {
+	name = Yassmena # a lord
+	dynasty = dynn_Wells
+	female = yes
+
+	father = Wells_33
+	mother = Wells_rs_9
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8233.1.1 = { birth = yes }
+	8249.1.1 = { add_matrilineal_spouse = Wells_rs_1 }
+}
+Wells_rs_1 = {
+	name = William
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8233.1.1 = { birth = yes }
+}
+### Issue of Yassmena
+Wells_2 = {
+	name = Willam # Canon, companion of Quentyn
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Wells_1
+	father = Wells_rs_1
+
+	8258.1.1 = { birth = yes }
+	#8279.1.1 = { trait = squire } # AGOT TODO trait
+	8284.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8288.6.2 = { add_spouse = Jordayne_62 } # Jennelyn Jordayne
+	8300.2.15 = {
+		death = {
+			death_reason = death_battle # Killed by pirates while with Quentyn on his way to Dany
+		}
+	}
+}
+Wells_3 = {
+	name = Jayena # Married Nymerios Toland
+	dynasty = dynn_Wells
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Wells_1
+	father = Wells_rs_1
+
+	8260.1.1 = { birth = yes }
+}
+Wells_4 = {
+	name = Rhodry
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Wells_1
+	father = Wells_rs_1
+
+	8262.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = Ladybright_3 } # Lyanna Ladybright.
+	8293.1.1 = { trait = just}
+}
+
+### Issue of Willam
+Wells_5 = {
+	name = Lewyn
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_2
+	mother = Jordayne_62
+
+	8290.2.6 = { birth = yes }
+}
+Wells_6 = {
+	name = Yassmena
+	dynasty = dynn_Wells
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_2
+	mother = Jordayne_62
+
+	8293.12.27 = { birth = yes }
+}
+### Issue of Rhodry
+Wells_7 = {
+	name = Jyanna
+	dynasty = dynn_Wells
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_4
+	mother = Ladybright_3
+
+	8282.2.13 = { birth = yes }
+}
+Wells_8 = {
+	name = Mors
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_4
+	mother = Ladybright_3
+
+	8286.9.1 = { birth = yes }
+}
+### Issue of Ulrick, second cousins to Yassmena
+Wells_35 = {
+	name = Donyse # married Quentyn Qorgyle
+	dynasty = dynn_Wells
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_34
+	mother = Wells_rs_10
+
+	8247.1.1 = { birth = yes }
+}
+Wells_36 = {
+	name = Florian
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_34
+	mother = Wells_rs_10
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = { trait = knight }
+	8264.1.1 = { add_spouse = Wells_rs_11 }
+	8291.1.1 = { death = { death_reason = death_accident } }
+}
+Wells_rs_11 = {
+	name = Liane
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8246.1.1 = { birth = yes }
+	8299.1.1 = { death = yes }
+}
+### Issue of Florian
+Wells_37 = {
+	name = Bedwyck
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_36
+	mother = Wells_rs_11
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = knight }
+}
+Wells_38 = {
+	name = Jonquil # married Ulwyck Uller
+	female = yes
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_36
+	mother = Wells_rs_11
+
+	8267.1.1 = { birth = yes }
+}
+Wells_39 = {
+	name = Senelle
+	female = yes
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_36
+	mother = Wells_rs_11
+
+	8269.1.1 = { birth = yes }
+}
+Wells_40 = {
+	name = Trebor
+	dynasty = dynn_Wells
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Wells_36
+	mother = Wells_rs_11
+
+	8271.1.1 = { birth = yes }
+	8287.1.1 = { trait = knight }
+}
+
+###### HOUSE HOOD (id = dynn_Hood)
+############################
+###
+###
+Hood_2 = {
+	name = Harmen # a lord
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_42
+
+	8202.1.1 = { birth = yes }
+	8218.1.1 = { trait = knight }
+	8224.1.1 = { add_spouse = Hood_rs_2 }
+	8261.1.1 = { death = yes }
+}
+Hood_rs_2 = {
+	name = Vanora
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8206.1.1 = { birth = yes }
+	8260.1.1 = { death = yes }
+}
+### Issue of Harmen
+Hood_3 = {
+	name = Jayne # a lord
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_2
+	mother = Hood_rs_2
+
+	8225.1.1 = { birth = yes }
+	8250.1.1 = { add_matrilineal_spouse = Hood_rs_3 }
+	8288.1.1 = { death = yes }
+}
+Hood_rs_3 = {
+	name = Mors
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8224.1.1 = { birth = yes }
+	8240.1.1 = { trait = knight }
+	8280.1.1 = { death = yes }
+}
+Hood_17 = {
+	name = Edmore
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_2
+	mother = Hood_rs_2
+
+	8228.1.1 = { birth = yes }
+	8244.1.1 = { trait = knight }
+	8250.1.1 = { add_spouse = Hood_rs_17 }
+	8269.1.1 = { death = yes }
+}
+Hood_rs_17 = {
+	name = Delonne
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8230.1.1 = { birth = yes }
+	8282.1.1 = { death = yes }
+}
+Hood_24 = {
+	name = Godric
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_2
+	mother = Hood_rs_2
+
+	8232.1.1 = { birth = yes }
+	8248.1.1 = { trait = knight }
+	8258.1.1 = { add_spouse = Hood_rs_24 }
+	8284.1.1 = { death = yes }
+}
+Hood_rs_24 = {
+	name = Lanei
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8238.1.1 = { birth = yes }
+	8282.1.1 = { death = yes }
+}
+### Issue of Jayne
+Hood_4 = {
+	name = Kyla	# a lord
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_3
+	mother = Hood_3
+
+	8251.1.1 = { birth = yes }
+	8270.1.1 = { add_matrilineal_spouse = Hood_rs_4 }
+}
+Hood_rs_4 = {
+	name = Sebaston
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8249.1.1 = { birth = yes }
+	8265.1.1 = { trait = knight }
+	8290.1.1 = { death = yes }
+}
+Hood_9 = {
+	name = Quentyn
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_3
+	mother = Hood_3
+
+	8257.1.1 = { birth = yes }
+	8273.1.1 = { trait = knight }
+	8277.1.1 = { add_spouse = Hood_rs_9 }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+Hood_rs_9 = {
+	name = Ivalla
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8260.1.1 = { birth = yes }
+}
+Hood_12 = {
+	name = Ynys
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_3
+	mother = Hood_3
+
+	8260.1.1 = { birth = yes }
+	8281.1.1 = { add_matrilineal_spouse = Hood_rs_12 }
+}
+Hood_rs_12 = {
+	name = Guerin
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+}
+### Issue of Kyla
+Hood_5 = {
+	name = Myriah
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_4
+	mother = Hood_4
+
+	8273.1.1 = { birth = yes }
+	8292.1.1 = { add_matrilineal_spouse = Hull_5 } # Bors Hull
+}
+Hood_1 = {
+	name = Joss # Canon
+	dynasty = dynn_Hood
+
+	martial = 2
+	diplomacy = 4
+	intrigue = 1
+	stewardship = 2
+	learning = 2
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_4
+	mother = Hood_4
+
+	trait = education_martial_2
+	trait = brave
+	trait = honest
+	trait = wrathful
+
+	8276.1.1 = { birth = yes }
+	8292.1.1 = {
+		trait = knight
+		employer = Martell_4 # Doran Martell
+	}
+}
+Hood_6 = {
+	name = Karyl
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_4
+	mother = Hood_4
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = { trait = knight }
+}
+### Issue of Myriah
+Hood_7 = {
+	name = Ryon
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hull_5
+	mother = Hood_5
+
+	8295.1.1 = { birth = yes }
+}
+Hood_8 = {
+	name = Elia
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hull_5
+	mother = Hood_5
+
+	8297.1.1 = { birth = yes }
+}
+### Issue of Quentyn
+Hood_10 = {
+	name = Morion
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_9
+	mother = Hood_rs_9
+
+	8279.1.1 = { birth = yes }
+	8295.1.1 = { trait = knight }
+	8297.1.1 = { add_spouse = Hood_rs_10 }
+}
+Hood_rs_10 = {
+	name = Glynis
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8280.1.1 = { birth = yes }
+}
+Hood_11 = {
+	name = Una
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_9
+	mother = Hood_rs_9
+
+	8283.1.1 = { birth = yes }
+}
+### Issue of Morion
+Hood_44 = {
+	name = Harmen
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_10
+	mother = Hood_rs_10
+
+	8299.1.1 = { birth = yes }
+}
+### Issue of Ynys
+Hood_13 = {
+	name = Essylt
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_12
+	mother = Hood_12
+
+	8284.1.1 = { birth = yes }
+}
+Hood_14 = {
+	name = Jarwyn
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_12
+	mother = Hood_12
+
+	8286.1.1 = { birth = yes }
+}
+Hood_15 = {
+	name = Doran
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_12
+	mother = Hood_12
+
+	8290.1.1 = { birth = yes }
+}
+Hood_16 = {
+	name = Allyria
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_12
+	mother = Hood_12
+
+	8293.1.1 = { birth = yes }
+}
+### Issue of Edmore
+Hood_18 = {
+	name = Darien
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_17
+	mother = Hood_rs_17
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8277.1.1 = { add_spouse = Hood_rs_18 }
+	8299.1.1 = { death = { death_reason = death_ill } }
+}
+Hood_rs_18 = {
+	name = Sybella
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8260.1.1 = { birth = yes }
+}
+Hood_19 = {
+	name = Amrya
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_17
+	mother = Hood_rs_17
+
+	8260.1.1 = { birth = yes }
+	8281.1.1 = { add_matrilineal_spouse = Hood_rs_19 }
+}
+Hood_rs_19 = {
+	name = Davos
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+### Issue of Darien
+Hood_20 = {
+	name = Moriah
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_18
+	mother = Hood_rs_18
+
+	8279.1.1 = { birth = yes }
+}
+Hood_21 = {
+	name = Caitrin
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_18
+	mother = Hood_rs_18
+
+	8282.1.1 = { birth = yes }
+}
+Hood_22 = {
+	name = Elyas
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_18
+	mother = Hood_rs_18
+
+	8285.1.1 = { birth = yes }
+}
+### Issue of Amrya
+Hood_23 = {
+	name = Astin
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_rs_19
+	mother = Hood_19
+
+	8282.1.1 = { birth = yes }
+}
+### Issue of Godric
+Hood_25 = {
+	name = Lyreon
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_24
+	mother = Hood_rs_24
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+	8280.1.1 = { add_spouse = Hood_rs_25 }
+}
+Hood_rs_25 = {
+	name = Emmeline
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	8264.1.1 = { birth = yes }
+}
+Hood_43 = {
+	name = Orivel
+	dynasty = dynn_Hood
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_24
+	mother = Hood_rs_24
+
+	8265.1.1 = { birth = yes }
+	8281.1.1 = { trait = knight }
+}
+### Issue of Lyreon
+Hood_26 = {
+	name = Vanora
+	dynasty = dynn_Hood
+	female = yes
+
+	religion = the_seven_main
+	culture = stone_dornish
+
+	father = Hood_25
+	mother = Hood_rs_25
+
+	8282.1.1 = { birth = yes }
+	8298.1.1 = { trait = knight }
+}
+
+###### HOUSE BROOK (id = dynn_Brook)
+############################
+###
+###
+Brook_1 = {
+	name = Gwyneth # a lord
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	mother = Brook_33
+
+	8190.1.1 = { birth = yes }
+	8212.1.1 = { add_matrilineal_spouse = Brook_rs_1 }
+	8241.1.1 = { death = yes }
+}
+Brook_rs_1 = {
+	name = Mors
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8188.1.1 = { birth = yes }
+	8204.1.1 = { trait = knight }
+	8235.1.1 = { death = yes }
+}
+### Issue of Gwyneth
+Brook_2 = {
+	name = Josland # a lord
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_1
+	mother = Brook_1
+
+	8214.1.1 = { birth = yes }
+	8235.1.1 = { add_spouse = Brook_rs_2 }
+	8262.1.1 = { death = yes }
+}
+Brook_rs_2 = {
+	name = Erin
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8218.1.1 = { birth = yes }
+	8266.1.1 = { death = yes }
+}
+Brook_17 = {
+	name = Jantos # married Sylva Santagar
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_1
+	mother = Brook_1
+
+	8217.1.1 = { birth = yes }
+	8265.1.1 = { death = yes }
+}
+Brook_18 = {
+	name = Timeon
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_1
+	mother = Brook_1
+
+	8225.1.1 = { birth = yes }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+### Issue of Josland
+Brook_3 = {
+	name = Ganlos
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_2
+	mother = Brook_rs_2
+
+	8238.1.1 = { birth = yes }
+	8254.1.1 = { trait = knight }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+Brook_4 = {
+	name = Gavyn
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_2
+	mother = Brook_rs_2
+
+	8240.1.1 = { birth = yes }
+	8256.1.1 = { trait = knight }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+Brook_5 = {
+	name = Obara # a lord
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_2
+	mother = Brook_rs_2
+
+	8244.1.1 = { birth = yes }
+	8267.1.1 = { add_matrilineal_spouse = Briar_13 } # Jeffory Briar
+	8293.1.1 = { death = yes }
+}
+Brook_6 = {
+	name = Edric
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_2
+	mother = Brook_rs_2
+
+	8247.1.1 = { birth = yes }
+	8263.1.1 = { trait = knight }
+}
+Brook_7 = {
+	name = Tanselle # married Quentyn Shells
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_2
+	mother = Brook_rs_2
+
+	8252.1.1 = { birth = yes }
+}
+### Issue of Obara
+Brook_8 = {
+	name = Willam # a lord
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_13
+	mother = Brook_5
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = { trait = knight }
+	8292.1.1 = { add_spouse = Brook_rs_8 }
+}
+Brook_rs_8 = {
+	name = Serena
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8274.1.1 = { birth = yes }
+}
+Brook_11 = {
+	name = Talia
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_13
+	mother = Brook_5
+
+	8274.1.1 = { birth = yes }
+}
+Brook_12 = {
+	name = Ulwyn
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_13
+	mother = Brook_5
+
+	8277.1.1 = { birth = yes }
+	8293.1.1 = { trait = knight }
+}
+### Issue of Willam
+Brook_9 = {
+	name = Dorea
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_8
+	mother = Brook_rs_8
+
+	8294.1.1 = { birth = yes }
+}
+Brook_10 = {
+	name = Arron
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_8
+	mother = Brook_rs_8
+
+	8296.1.1 = { birth = yes }
+}
+### Issue of Edric
+Brook_13 = {
+	name = Castor
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_6
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8270.1.1 = { birth = yes }
+	8286.1.1 = { trait = knight }
+}
+Brook_14 = {
+	name = Rhodry
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_6
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8274.1.1 = { birth = yes }
+	8290.1.1 = { trait = knight }
+}
+Brook_15 = {
+	name = Dorianne
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_6
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8278.1.1 = { birth = yes }
+}
+### Issue of Castor
+Brook_16 = {
+	name = Sylva
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_13
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8295.1.1 = { birth = yes }
+}
+### Issue of Timeon
+Brook_19 = {
+	name = Yolande # married Andrey Qorgyle
+	dynasty = dynn_Brook
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_18
+
+	8246.1.1 = { birth = yes }
+}
+Brook_20 = {
+	name = Willam # married Jeyne Wyl
+	dynasty = dynn_Brook
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_18
+
+	8247.1.1 = { birth = yes }
+	8263.1.1 = { trait = knight }
+	8294.1.1 = { death = yes }
+}
+
+###### HOUSE BRIAR (id = dynn_Briar)
+############################
+###
+###
+Briar_1 = {
+	name = Mallor # a lord
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_22
+	mother = Brook_rs_22
+
+	8211.1.1 = { birth = yes }
+	8227.1.1 = { trait = knight }
+	8232.1.1 = { add_spouse = Briar_rs_1 }
+	8271.1.1 = { trait = infirm }
+	8283.1.1 = { death = yes }
+}
+Briar_rs_1 = {
+	name = Cedra
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8212.1.1 = { birth = yes }
+	8251.1.1 = { death = yes }
+}
+Briar_2 = {
+	name = Benedict
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_22
+	mother = Brook_rs_22
+
+	8214.1.1 = { birth = yes }
+	8230.1.1 = { trait = knight }
+	8240.1.1 = { add_spouse = Briar_rs_2 }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+Briar_rs_2 = {
+	name = Alyx
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8223.1.1 = { birth = yes }
+	8271.1.1 = { death = yes }
+}
+### Issue of Mallor
+Briar_3 = {
+	name = Myles
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_1
+	mother = Briar_rs_1
+
+	8233.1.1 = { birth = yes }
+	8249.1.1 = { trait = knight }
+	8253.1.1 = { add_spouse = Briar_rs_3 }
+	8278.1.1 = { death = yes }
+}
+Briar_rs_3 = {
+	name = Enora
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8232.1.1 = { birth = yes }
+	8282.1.1 = { death = yes }
+}
+Briar_12 = {
+	name = Theodan
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_1
+	mother = Briar_rs_1
+
+	8236.1.1 = { birth = yes }
+	8252.1.1 = { trait = knight }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+Briar_21 = {
+	name = Dancia # married Tremond Gargalen
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_1
+	mother = Briar_rs_1
+
+	8239.1.1 = { birth = yes }
+}
+Briar_13 = {
+	name = Jeffory # married Obara Brook
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_1
+	mother = Briar_rs_1
+
+	8240.1.1 = { birth = yes }
+	8256.1.1 = { trait = knight }
+}
+### Issue of Myles
+Briar_4 = {
+	name = Ravenna # a lord
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_3
+	mother = Briar_rs_3
+
+	8255.1.1 = { birth = yes }
+	8276.1.1 = { add_matrilineal_spouse = Brook_rs_4 }
+}
+Brook_rs_4 = {
+	name = Gascoyne
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8251.1.1 = { birth = yes }
+}
+Briar_5 = {
+	name = Qyle # a lord
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_3
+	mother = Briar_rs_3
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = { trait = knight }
+	8280.1.1 = { add_spouse = Shell_Dorne_10 } # Jeyne Shell
+}
+### Issue of Ravenna
+Briar_6 = {
+	name = Lucifer
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_4
+	mother = Briar_4
+
+	8278.1.1 = { birth = yes }
+	8294.1.1 = { trait = knight }
+}
+Briar_7 = {
+	name = Danelle
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_4
+	mother = Briar_4
+
+	8280.1.1 = { birth = yes }
+}
+Briar_8 = {
+	name = Tyene
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_4
+	mother = Briar_4
+
+	8284.1.1 = { birth = yes }
+}
+Briar_9 = {
+	name = Gascoyne
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Brook_rs_4
+	mother = Briar_4
+
+	8284.1.1 = { birth = yes }
+	8300.1.1 = { trait = knight }
+}
+### Issue of Qyle
+Briar_10 = {
+	name = Castor
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_5
+	mother = Shell_Dorne_10
+
+	8282.1.1 = { birth = yes }
+	8298.1.1 = { trait = knight }
+}
+Briar_11 = {
+	name = Verona
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_5
+	mother = Shell_Dorne_10
+
+	8286.1.1 = { birth = yes }
+}
+### Issue of Theodan
+Briar_14 = {
+	name = Beldecar
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_12
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { trait = knight }
+}
+### Issue of Benedict
+Briar_15 = {
+	name = Gulian
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_2
+	mother = Briar_rs_2
+
+	8242.1.1 = { birth = yes }
+	8258.1.1 = { trait = knight }
+	8260.1.1 = { add_spouse = Brook_rs_15 }
+	8288.1.1 = { death = yes }
+}
+Brook_rs_15 = {
+	name = Nessa
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8243.1.1 = { birth = yes }
+	8269.1.1 = { death = yes }
+}
+Briar_16 = {
+	name = Ellaria # married Karyl Wyl
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_2
+	mother = Briar_rs_2
+
+	8249.1.1 = { birth = yes }
+}
+Briar_17 = {
+	name = Caswald
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_2
+	mother = Briar_rs_2
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8274.1.1 = { add_spouse = Brook_rs_17 }
+}
+Brook_rs_17 = {
+	name = Gwyneth
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8256.1.1 = { birth = yes }
+}
+### Issue of Gulian
+Briar_18 = {
+	name = Liane # married Arron Dalt
+	dynasty = dynn_Briar
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_15
+	mother = Brook_rs_15
+
+	8263.1.1 = { birth = yes }
+}
+Briar_19 = {
+	name = Rhys
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_15
+	mother = Brook_rs_15
+
+	8266.1.1 = { birth = yes }
+	8282.1.1 = { trait = knight }
+	8286.1.1 = { add_spouse = Brook_rs_19 }
+}
+Brook_rs_19 = {
+	name = Obella
+	female = yes
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	8268.1.1 = { birth = yes }
+}
+Briar_23 = {
+	name = Serion
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_15
+
+	trait = bastard
+	give_nickname = nick_sand
+
+	8271.1.1 = { birth = yes }
+	8287.1.1 = { trait = knight }
+}
+### Issue of Caswald
+Briar_20 = {
+	name = Ganlos
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_17
+	mother = Brook_rs_17
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = knight }
+}
+### Issue of Rhys
+Briar_24 = {
+	name = Ryon
+	dynasty = dynn_Briar
+
+	religion = the_seven_main
+	culture = sand_dornish
+
+	father = Briar_19
+	mother = Brook_rs_19
+
+	8287.1.1 = { birth = yes }
+}
+
+###### HOUSE HULL (id = dynn_Hull)
+############################
+###
+###
+Hull_1 = {
+	name = Garibald # a lord
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_27
+	mother = Hull_rs_27
+
+	8219.1.1 = { birth = yes }
+	8235.1.1 = { trait = knight }
+	8239.1.1 = { add_spouse = Hull_rs_1 }
+	8270.1.1 = { death = yes }
+}
+Hull_rs_1 = {
+	name = Deneza
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8222.1.1 = { birth = yes }
+	8285.1.1 = { death = yes }
+}
+Hull_10 = {
+	name = Jyanna # married Gerold Fowler
+	dynasty = dynn_Hull
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_27
+	mother = Hull_rs_27
+
+	8224.1.1 = { birth = yes }
+	8257.1.1 = { death = yes }
+}
+### Issue of Garibald
+Hull_2 = {
+	name = Nymella # a lord
+	dynasty = dynn_Hull
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_1
+	mother = Hull_rs_1
+
+	8241.1.1 = { birth = yes }
+	8263.1.1 = { add_spouse = Hull_rs_2 }
+	8294.1.1 = { death = yes }
+}
+Hull_rs_2 = {
+	name = Timoth
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8244.1.1 = { birth = yes }
+	8260.1.1 = { trait = knight }
+	8290.1.1 = { death = yes }
+}
+Hull_6 = {
+	name = Laurent # married Sybelle Dalt
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_1
+	mother = Hull_rs_1
+
+	8245.1.1 = { birth = yes }
+	8261.1.1 = { trait = knight }
+	8293.1.1 = { death = yes }
+}
+Hull_9 = {
+	name = Wynsten # married Myriah Ladybright
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_1
+	mother = Hull_rs_1
+
+	8247.1.1 = { birth = yes }
+	8263.1.1 = { trait = knight }
+}
+### Issue of Nymella
+Hull_3 = {
+	name = Galeran # a lord
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_rs_2
+	mother = Hull_2
+
+	8265.1.1 = { birth = yes }
+	8281.1.1 = { trait = knight }
+	8287.1.1 = { add_spouse = Hull_rs_3 }
+}
+Hull_rs_3 = {
+	name = Richelle
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8266.1.1 = { birth = yes }
+}
+Hull_4 = {
+	name = Aliandra
+	dynasty = dynn_Hull
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_rs_2
+	mother = Hull_2
+
+	8268.1.1 = { birth = yes }
+}
+Hull_5 = {
+	name = Bors # married Myriah Hood
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_rs_2
+	mother = Hull_2
+
+	8270.1.1 = { birth = yes }
+	8286.1.1 = { trait = knight }
+}
+### Issue of Galeran
+Hull_7 = {
+	name = Lewyn
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_3
+	mother = Hull_rs_3
+
+	8289.1.1 = { birth = yes }
+}
+Hull_8 = {
+	name = Darcia
+	dynasty = dynn_Hull
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_3
+	mother = Hull_rs_3
+
+	8292.1.1 = { birth = yes }
+}
+Hull_11 = {
+	name = Emrys
+	dynasty = dynn_Hull
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Hull_3
+	mother = Hull_rs_3
+
+	8296.1.1 = { birth = yes }
+}
+
+###### HOUSE WADE (id = dynn_Wade)
+############################
+###
+###
+Wade_1 = {
+	name = Morgan # a lord
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_36
+
+	8204.1.1 = { birth = yes }
+	8220.1.1 = { trait = knight }
+	8224.1.1 = { add_spouse = Wade_rs_1 }
+	8255.1.1 = { death = yes }
+}
+Wade_rs_1 = {
+	name = Malia
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8205.1.1 = { birth = yes }
+	8256.1.1 = { death = yes }
+}
+### Issue of Morgan
+Wade_2 = {
+	name = Aron # a lord
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_1
+	mother = Wade_rs_1
+
+	8226.1.1 = { birth = yes }
+	8242.1.1 = { trait = knight }
+	8255.1.1 = { add_spouse = Wade_rs_2 }
+	8278.1.1 = { death = yes }
+}
+Wade_rs_2 = {
+	name = Dorea
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8233.1.1 = { birth = yes }
+	8277.1.1 = { death = yes }
+}
+Wade_3 = {
+	name = Andrey
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_1
+	mother = Wade_rs_1
+
+	8229.1.1 = { birth = yes }
+	8245.1.1 = { trait = knight }
+	8250.1.1 = { add_spouse = Wade_rs_3 }
+	8259.3.8 = { death = { death_reason = death_battle } } # War of the Ninepenny Kings
+}
+Wade_rs_3 = {
+	name = Myria
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8232.1.1 = { birth = yes }
+	8285.1.1 = { death = yes }
+}
+Wade_4 = {
+	name = Owen
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_1
+	mother = Wade_rs_1
+
+	8234.1.1 = { birth = yes }
+	8250.1.1 = { trait = knight }
+	8258.1.1 = { add_spouse = Wade_rs_4 }
+	8289.1.1 = { death = yes }
+}
+Wade_rs_4 = {
+	name = Una
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8238.1.1 = { birth = yes }
+	8290.1.1 = { death = yes }
+}
+Wade_5 = {
+	name = Warryn
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_1
+	mother = Wade_rs_1
+
+	8236.1.1 = { birth = yes }
+	8252.1.1 = { trait = knight }
+	8258.1.1 = { add_spouse = Wade_rs_5 }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+Wade_rs_5 = {
+	name = Sylvenna
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8237.1.1 = { birth = yes }
+	8289.1.1 = { death = yes }
+}
+### Issue of Aron
+Wade_6 = {
+	name = Myron # a lord
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_2
+	mother = Wade_rs_2
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = { trait = knight }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+Wade_7 = {
+	name = Alesia # a lord
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_2
+	mother = Wade_rs_2
+
+	8262.1.1 = { birth = yes }
+	8285.1.1 = { add_matrilineal_spouse = Wade_rs_7 }
+}
+Wade_rs_7 = {
+	name = Darryn
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+### Issue of Alesia
+Wade_8 = {
+	name = Sarella
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_rs_7
+	mother = Wade_7
+
+	8286.1.1 = { birth = yes }
+}
+Wade_9 = {
+	name = Lewyn
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_rs_7
+	mother = Wade_7
+
+	8289.1.1 = { birth = yes }
+}
+### Issue of Andrey
+Wade_11 = {
+	name = Olyvar
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_3
+	mother = Wade_rs_3
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8275.1.1 = { add_spouse = Wade_rs_11 }
+}
+Wade_rs_11 = {
+	name = Eselle
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8253.1.1 = { birth = yes }
+	8289.1.1 = { death = yes }
+}
+Wade_10 = {
+	name = Emilia # married Dagos Manwoody
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_3
+	mother = Wade_rs_3
+
+	8253.1.1 = { birth = yes }
+}
+### Issue of Olyvar
+Wade_12 = {
+	name = Trebor
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_11
+	mother = Wade_rs_11
+
+	8277.1.1 = { birth = yes }
+	8293.1.1 = { trait = knight }
+	8295.1.1 = { add_spouse = Wade_rs_12 }
+}
+Wade_rs_12 = {
+	name = Danella
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8278.1.1 = { birth = yes }
+}
+Wade_13 = {
+	name = Garibald
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_11
+	mother = Wade_rs_11
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = { trait = knight }
+}
+### Issue of Trebor
+Wade_14 = {
+	name = Claire
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_12
+	mother = Wade_rs_12
+
+	8296.1.1 = { birth = yes }
+}
+### Issue of Owen
+Wade_15 = {
+	name = Laryn
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_4
+	mother = Wade_rs_4
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+Wade_16 = {
+	name = Andrey
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_4
+	mother = Wade_rs_4
+
+	8263.1.1 = { birth = yes }
+	8279.1.1 = { trait = knight }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+### Issue of Warryn
+Wade_17 = {
+	name = Warryn
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_5
+	mother = Wade_rs_5
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = { trait = knight }
+	8283.3.1 = {
+		death = {
+			death_reason = death_battle # Battle of Trident
+			killer = Baratheon_2 # Robert Baratheon
+		}
+	}
+}
+Wade_18 = {
+	name = Nymeria
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_5
+	mother = Wade_rs_5
+
+	8264.1.1 = { birth = yes }
+	8285.1.1 = { add_matrilineal_spouse = Wade_rs_18 }
+}
+Wade_rs_18 = {
+	name = Ryon
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = { trait = knight }
+}
+### Issue of Nymeria
+Wade_19 = {
+	name = Walter
+	dynasty = dynn_Wade
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_rs_18
+	mother = Wade_18
+
+	8286.1.1 = { birth = yes }
+}
+Wade_20 = {
+	name = Meria
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_rs_18
+	mother = Wade_18
+
+	8288.1.1 = { birth = yes }
+}
+Wade_21 = {
+	name = Lia
+	dynasty = dynn_Wade
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Wade_rs_18
+	mother = Wade_18
+
+	8290.1.1 = { birth = yes }
+}
+
+###### HOUSE SHELL (id = 881803)
+############################
+###
+###
+Shell_Dorne_1 = {
+	name = Malia # a lord
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_11
+	mother = Shell_Dorne_rs_11
+
+	8233.1.1 = { birth = yes }
+	8253.1.1 = { add_matrilineal_spouse = Shell_Dorne_rs_1 }
+}
+Shell_Dorne_rs_1 = {
+	name = Franklyn
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8230.1.1 = { birth = yes }
+	8246.1.1 = { trait = knight }
+	8279.1.1 = { death = yes }
+}
+Shell_Dorne_8 = {
+	name = Mallor
+	dynasty = dynn_Shell_Dorne
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_11
+	mother = Shell_Dorne_rs_11
+
+	8235.1.1 = { birth = yes }
+	8251.1.1 = { trait = knight }
+	8254.1.1 = { add_spouse = Shell_Dorne_rs_8 }
+	8281.1.1 = { death = yes }
+}
+Shell_Dorne_rs_8 = {
+	name = Arianne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8236.1.1 = { birth = yes }
+	8289.1.1 = { death = yes }
+}
+### Issue of Malia
+Shell_Dorne_2 = {
+	name = Deria
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_1
+	mother = Shell_Dorne_1
+
+	8255.1.1 = { birth = yes }
+	8276.1.1 = { add_matrilineal_spouse = Shell_Dorne_rs_2 }
+}
+Shell_Dorne_rs_2 = {
+	name = Laryn
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = { trait = knight }
+}
+Shell_Dorne_6 = {
+	name = Cryston # married Nymella Toland
+	dynasty = dynn_Shell_Dorne
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_1
+	mother = Shell_Dorne_1
+
+	8256.1.1 = { birth = yes }
+}
+Shell_Dorne_7 = {
+	name = Harman # married Alyse Ladybright
+	dynasty = dynn_Shell_Dorne
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_1
+	mother = Shell_Dorne_1
+
+	8260.1.8 = { birth = yes }
+}
+### Issue of Deria
+Shell_Dorne_3 = {
+	name = Armand
+	dynasty = dynn_Shell_Dorne
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_2
+	mother = Shell_Dorne_2
+
+	8279.1.1 = { birth = yes }
+}
+Shell_Dorne_4 = {
+	name = Iona
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_2
+	mother = Shell_Dorne_2
+
+	8281.1.1 = { birth = yes }
+}
+Shell_Dorne_5 = {
+	name = Orlyn
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_rs_2
+	mother = Shell_Dorne_2
+
+	8284.1.1 = { birth = yes }
+}
+### Issue of Mallor
+Shell_Dorne_9 = {
+	name = Annara # married Trebor Jordayne
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_8
+	mother = Shell_Dorne_rs_8
+
+	8258.1.1 = { birth = yes }
+}
+Shell_Dorne_10 = {
+	name = Jeyne # married Qyle Briar
+	dynasty = dynn_Shell_Dorne
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Shell_Dorne_8
+	mother = Shell_Dorne_rs_8
+
+	8264.1.1 = { birth = yes }
+}
+###
+###	House Mercer
+###
+Mercer_1 = {
+	name = Archibald # a lord
+	dynasty = dynn_Mercer
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+#	father =
+#	mother =
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Mercer_rs_1 }
+}
+Mercer_rs_1 = {
+	name = Diane
+	female = yes
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	8254.1.1 = { birth = yes }
+}

@@ -1,0 +1,179 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+asabhadi = {
+	color = { 0.80 0.39 0.39 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_female_only
+
+	traditions = {
+		tradition_maritime_mercantilism
+		tradition_jungle_warriors
+		tradition_hard_working
+		tradition_mendicant_mystics
+	}
+
+	name_list = name_list_asabhadi
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+bayasabhadi = {
+	color = { 0.66 0.29 0.29 }
+
+	ethos = ethos_courtly
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_female_only
+
+	traditions = {
+		tradition_martial_admiration
+		tradition_ancient_miners
+		tradition_hill_dwellers
+		tradition_mystical_ancestors
+	}
+
+	name_list = name_list_bayasabhadi
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+kayakayanayi = {
+	color = { 0.75 0.22 0.22 }
+
+	ethos = ethos_stoic
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_female_only
+
+	traditions = {
+		tradition_stalwart_defenders
+		tradition_mountain_homes
+		tradition_mountain_homes
+		tradition_mystical_ancestors
+	}
+
+	name_list = name_list_kayakayanayan
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+samyriani = {
+	color = { 0.62 0.17 0.17 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_female_only
+
+	traditions = {
+		tradition_mountaineers
+		tradition_philosopher_culture
+		tradition_mountain_homes
+		tradition_mystical_ancestors
+	}
+
+	name_list = name_list_samyrianan
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+yinishari = {
+	color = { 0.86 0.27 0.27 }
+
+	ethos = ethos_methodical
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_female_only
+
+	traditions = {
+		tradition_formation_fighting
+		tradition_pastoralists
+		tradition_mountain_homes
+	}
+
+	name_list = name_list_yinishari
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = { samyriani }
+	created = 5000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+zabhadi = {
+	color = { 0.93 0.40 0.40 }
+
+	ethos = ethos_festive
+	heritage = heritage_hyrkooni
+	language = language_hyrkooni
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_maritime_mercantilism
+		tradition_welcoming
+		tradition_esteemed_hospitality
+	}
+
+	name_list = name_list_zabhadi
+
+	coa_gfx = { hyrkooni_coa_gfx }
+	building_gfx = { hyrkooni_building_gfx }
+	clothing_gfx = { hyrkooni_clothing_gfx }
+	unit_gfx = { hyrkooni_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		asabhadi
+		#jaded_man AGOT TODO
+	}
+	created = 7400.1.1
+}

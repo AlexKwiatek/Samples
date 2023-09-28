@@ -1,0 +1,2149 @@
+﻿###
+### THENNS (id = dynn_Thenn)
+###
+###
+174344 = {
+	name = Styr
+	dynasty = dynn_Thenn
+	dna = 174344
+
+	martial = 8
+
+	religion = magnaric
+	culture = thenn
+
+	father = 112344
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_2
+
+	8252.1.1 = { birth = yes }
+	8266.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8299.11.11 = { death = yes }
+}
+
+274344 = {
+	name = Sigorn
+	dynasty = dynn_Thenn
+
+	religion = magnaric
+	culture = thenn
+
+	martial = 6
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+
+	father = 174344
+
+	8272.1.1 = { birth = yes }
+	8286.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = {
+		employer = Stark_7 # Jon Snow
+		dynasty = dynn_ThennNew # House Thenn
+		add_spouse = Karstark_19 #Alys Karstark
+		# effect = {
+			# character_event = { id = feast_for_crows.31 days = 1 } #Thenn choice event
+		# }
+	}
+}
+
+###
+### Tormund Giantsbane
+###
+174345 = {
+	name = Tormund
+	dynasty = dynn_Ruddy_Hall
+
+	religion = old_gods_btw
+	culture = fangman
+
+	dna = 174345
+
+	martial = 8
+
+	trait = gregarious
+	trait = brave
+	trait = generous #great host
+	trait = arrogant
+	trait = strong
+	trait = education_martial_2
+
+	8252.1.1 = { birth = yes }
+	8266.1.1 = {
+		trait = education_martial_prowess_3
+		trait = berserker
+		trait = drunkard
+		effect = {
+			add_trait = lifestyle_reveler # noted duelist
+			add_trait_xp = {
+				trait = lifestyle_reveler
+				value = trait_third_level
+			}
+		}
+	}
+	8279.1.1 = { give_nickname = nick_giantsbane}
+}
+274345 = {
+	name = Toregg
+	dynasty = dynn_Ruddy_Hall
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+	trait = giant
+
+	father = 174345
+
+	8272.1.1 = { birth = yes }
+	8286.1.1 = {
+		trait = education_martial_prowess_2
+		give_nickname = nick_the_tall
+	}
+}
+374345 = {
+	name = Torwynd
+	dynasty = dynn_Ruddy_Hall
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+
+	father = 174345
+
+	8274.1.1 = { birth = yes }
+	8288.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = {
+		death = yes
+	}
+}
+474345 = {
+	name = Dryn
+	dynasty = dynn_Ruddy_Hall
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+
+	father = 174345
+
+	8292.1.1 = { birth = yes }
+	8298.1.1 = {
+		trait = rowdy
+	}
+	8300.1.1 = {
+		trait = education_martial_prowess_1
+	}
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+574345 = {
+	name = Dormund
+	dynasty = dynn_Ruddy_Hall
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+
+	father = 174345
+
+	8277.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = {
+		death = {
+			death_reason = death_battle # Battle of the Wall
+			killer = Horpe_3 # Richard Horpe
+		}
+	}
+}
+574346 = {
+	name = Munda
+	dynasty = dynn_Ruddy_Hall
+	female = yes
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = patient
+	trait = arrogant
+	trait = education_martial_2
+
+	father = 174345
+
+	8278.1.1 = { birth = yes }
+	8292.1.1 = {
+		trait = education_martial_prowess_2
+	}
+}
+
+###
+### Lord of Bones
+###
+574347 = { #Canon, Lord of Bones
+	name = Halgor
+	dynasty = dynn_Skirling_Pass
+
+	martial = 6
+
+	#dna = "blaak0kjg00"
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_2
+	trait = deceitful
+
+	8259.1.1 = { birth = yes }
+	8263.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8279.1.1 = {
+		give_nickname = nick_rattleshirt
+	}
+	8300.2.10 = {
+		employer = Stark_7 #Jon Snow
+	}
+}
+###
+### Gerrick Kingsblood
+###
+Kingsblood_4 = {
+	name = Gerrick # Canon my balls
+	dynasty_house = house_Kingsblood
+	#dna = "cakefzeedaz"
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 9
+	stewardship = 4
+	learning = 5
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+	trait = brave
+	trait = vengeful
+	trait = wrathful
+	trait = arrogant
+	trait = ambitious
+	trait = authoritative
+
+	father = Kingsblood_3
+
+	8256.1.1 = { birth = yes }
+	8272.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+	8300.8.17 = {
+		dynasty = dynn_Redbeard # House Redbeard
+		employer = Baratheon_3 # Stannis Baratheon (Actually Selyse)
+	}
+}
+Kingsblood_5 = {
+	name = Gerris
+	dynasty_house = house_Kingsblood
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+
+	father = Kingsblood_4
+
+	8274.1.1 = { birth = yes }
+	8290.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.8.17 = {
+		dynasty = dynn_Redbeard # House Redbeard
+		employer = Baratheon_3 # Stannis Baratheon (Actually Selyse)
+	}
+}
+Kingsblood_6 = {
+	name = Gerreck
+	dynasty_house = house_Kingsblood
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+	trait = beauty_good_1
+	trait = humble
+
+	father = Kingsblood_4
+
+	8286.1.1 = { birth = yes }
+	8296.1.1 = {
+		trait = education_martial_prowess_1
+	}
+	8300.8.17 = {
+		dynasty = dynn_Redbeard # House Redbeard
+		employer = Stark_7 # Jon Snow
+	}
+}
+Kingsblood_7 = {
+	name = Gerra
+	dynasty_house = house_Kingsblood
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = humble
+	trait = patient
+
+	father = Kingsblood_4
+
+	8283.1.1 = { birth = yes }
+	8300.8.17 = {
+		dynasty = dynn_Redbeard # House Redbeard
+		employer = Baratheon_3 # Stannis Baratheon (Actually Selyse)
+	}
+}
+Kingsblood_8 = {
+	name = Grisel
+	dynasty_house = house_Kingsblood
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = Kingsblood_4
+
+	trait = beauty_good_1
+	trait = content
+
+	8286.1.1 = { birth = yes }
+	8300.8.17 = {
+		dynasty = dynn_Redbeard # House Redbeard
+		employer = Baratheon_3 # Stannis Baratheon (Actually Selyse)
+	}
+}
+
+###
+### Mance Rayder
+###
+Rayder_1 = { #THE Mance
+	name = Mance
+	dynasty = 174347
+
+	# dna = Rayder_1
+
+	religion = old_gods_south
+	culture = northman
+
+	martial = 10
+	diplomacy = 4
+	stewardship = 3
+	intrigue = 7
+	learning = 4
+	prowess = 10
+
+	trait = education_diplomacy_4
+	trait = education_martial_prowess_4
+	trait = intellect_good_2
+	trait = strong
+	trait = poet
+	trait = gregarious
+	trait = arrogant
+	trait = ambitious
+	#trait = inspiring_leader # AGOT TODO trait
+	#trait = trickster # AGOT TODO trait
+
+	8256.1.1 = {
+		birth = yes
+		#effect = {
+		#	if = {
+		#		limit = {
+		#			NOT = { trait = wildling } # AGOT TODO trait
+		#			is_ruler = no
+		#		}
+		#		set_employer = title:k_the_wall.holder
+		#	}
+		#}
+	}
+
+	8282.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8292.1.1 = {
+		remove_trait = nightswatch
+		trait = deserter
+		religion = old_gods_btw
+		culture = fangman
+		#trait = wildling # AGOT TODO trait
+		employer = 0
+		#effect = {
+		#	remove_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+
+	8295.1.1 = { add_spouse = 57000 } #Dalla
+
+	# 8299.2.1 = {
+		# effect = {
+			# if = {
+				# limit = {
+					# NOT = { year = 8300 }
+					# NOT = { month = 10 }
+				# }
+				# add_character_flag = giants_hired
+				# spawn_army = {
+					# province = 3 #Northern Frostfangs
+					# scaled_by_biggest_garrison = 2
+					# owner = ROOT
+					# leader = 174347 #Tormund Giantsbane
+					# troops = {
+						# archers = { 5 5 }
+						# heavy_infantry = { 15 15 }
+						# skirmishers = { 45 45 }
+						# light_cavalry = { 2 2 }
+					# }
+					# attrition = 1.0
+				# }
+			# }
+		# }
+	# }
+	8300.2.10 = {
+		employer = Baratheon_3
+		effect = {
+			#add_pressed_claim = title:k_beyond_wall # AGOT TODO
+			# clr_character_flag = giants_hired
+			character:Baratheon_3 = { # Stannis Baratheon
+				imprison = {
+					target = ROOT
+					type = dungeon
+				}
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				modifier = treachery_opinion
+			}
+		}
+	}
+}
+57000 = {
+	name = Dalla
+	female = yes
+
+	# AGOT TODO dna = 57000
+
+	diplomacy = 17
+
+	religion = old_gods_btw
+	culture = fangman
+
+	father = 57002
+
+	#dna = "adbgc0igab0"
+
+	trait = beauty_good_2
+	trait = brave
+
+	8279.1.1 = { birth = yes }
+	8300.2.10 = {
+		death = {
+			death_reason = death_childbirth
+		}
+	}
+}
+57001 = {
+	name = Val
+	female = yes
+
+	dna = 57001
+
+	diplomacy = 9
+	martial = 6
+	stewardship = 9
+	intrigue = 7
+	learning = 6
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = beauty_good_3
+	trait = brave
+	#trait = wildling # AGOT TODO trait
+	trait = diligent
+	trait = arrogant
+	trait = honest
+
+	father = 57002
+
+	8279.1.1 = {
+		birth = yes
+		#employer = 119559122 # Get her out of the Vale # AGOT TODO Is this still needed?
+		# effect = {
+			# set_graphical_culture = valeman #to get the right portrait
+		# }
+	}
+	8292.1.1 = {
+		trait = lustful
+		trait = education_martial_prowess_3
+		trait = education_diplomacy_3
+	}
+	8300.2.10 = {
+		employer = Baratheon_3
+		effect = {
+			character:Baratheon_3 = { # Stannis Baratheon
+				imprison = {
+					target = ROOT
+					type = dungeon
+				}
+			}
+			#add_character_flag = val_wildling # AGOT TODO
+		}
+	}
+}
+Rayder_2 = {
+	name = Aemon
+	dynasty = 174347
+
+	religion = old_gods_btw
+	culture = fangman
+
+	father = Rayder_1
+	mother = 57000
+
+	#trait = wildling # AGOT TODO trait
+	trait = strong
+
+	8300.2.10 = {
+		birth = yes
+		employer = Baratheon_3
+		effect = {
+			#add_pressed_claim = title:k_beyond_wall # AGOT TODO
+			character:Baratheon_3 = { # Stannis Baratheon
+				imprison = {
+					target = ROOT
+					type = dungeon
+				}
+			}
+		}
+	}
+}
+57002 = {
+	name = Jarl #not this Jarl, random father to connect sisters
+
+	religion = old_gods_btw
+	culture = forestman
+
+	8256.1.1 = { birth = yes }
+	8295.3.11 = { death = yes }
+}
+
+574348 = { #Canon, Val's lover
+	name = Jarl
+
+	#dna = "behhf0dhg00"
+
+	martial = 7
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = brave
+	trait = diligent
+	trait = education_martial_2
+
+	8273.1.1 = {
+		birth = yes
+		#employer = 157004 AGOT TODO Employer isn't landed
+	}
+	8286.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8299.11.11 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+
+###
+###Harma Dogshead
+###
+57003 = {
+	name = Harma
+	father = 570003
+	female = yes
+	dna = 57003
+
+	martial = 7
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_2
+	trait = deceitful
+
+	8270.1.1 = {
+		birth = yes
+	}
+	8282.1.1 = {
+		employer = 157001
+	}
+	8286.1.1 = {
+		trait = education_martial_prowess_2
+		give_nickname = nick_the_dogshead
+	}
+	8299.11.11 = { employer = Rayder_1 }
+	8300.2.10 = {
+		death = {
+			death_reason = death_battle # Battle of the Wall
+			killer = Baratheon_3 # Stannis Baratheon
+		}
+	}
+}
+57004 = {
+	name = Halleck
+	father = 570003
+
+	martial = 7
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_2
+	trait = deceitful
+
+	8272.1.1 = {
+		birth = yes
+	}
+	8282.1.1 = {
+		employer = 157001
+	}
+	8288.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8299.11.11 = { employer = Rayder_1 }
+	8300.2.10 = { employer = Stark_7 }
+}
+570003 = {
+	name = Hallis
+
+	martial = 7
+
+	religion = old_gods_btw
+	culture = fangman
+
+	8252.1.1 = { birth = yes }
+	8274.11.11 = { death = yes }
+}
+
+###
+### Varamyr Sixskins
+###
+157000 = {
+	name = Varamyr
+
+	dna = 157000
+
+	religion = old_gods_btw
+	culture = forestman
+
+	martial = 1
+
+	trait = arrogant
+	trait = ambitious
+	trait = sickly
+
+	mother = 103174349
+	father = 102174349
+
+	8256.1.1 = {
+		birth = yes
+		effect = {
+			change_first_name = Lump
+		}
+	}
+	8260.1.1 = {
+		remove_trait = sickly
+	}
+	8266.1.1 = {
+		effect = {
+			change_first_name = Varamyr
+		}
+	}
+	8272.1.1 = {
+		give_nickname = nick_sixskins
+		dynasty = dynn_Mossfoot
+		trait = education_martial_prowess_2
+		trait = education_martial_2
+		#trait = shadowcat # AGOT TODO trait
+		#trait = snowbear # AGOT TODO trait
+		#trait = wolf # AGOT TODO trait
+	}
+	#8299.10.10 = {
+	#	trait = eagle #takes orell's eagle # AGOT TODO trait
+	#}
+	#8300.2.10 = {
+	#	remove_trait = eagle #burned by mellisandre # AGOT TODO trait
+	#}
+	8300.2.13 = {
+		death = {
+			death_reason = death_vanished
+		}
+	}
+}
+101174349 = {
+	name = Vayon
+	dynasty = dynn_Mossfoot
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157000
+
+	8289.1.1 = {
+		birth = yes
+	}
+	8300.8.17 = {
+		employer = Stark_7 # Jon Snow
+	}
+}
+#father and siblings
+102174349 = {
+	name = Kyleg
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = wrathful
+	trait = arrogant
+	trait = family_first
+
+	8232.1.1 = {
+		birth = yes
+	}
+	8248.1.1 = {
+		trait = education_martial_prowess_2
+		trait = education_martial_2
+		add_spouse = 103174349
+	}
+	8284.1.1 = {
+		death = yes
+	}
+}
+103174349 = {
+	name = Munda
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	8232.1.1 = {
+		birth = yes
+	}
+	8284.1.1 = {
+		death = yes
+	}
+}
+104174349 = {
+	name = Bump
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = strong
+
+	mother = 103174349
+	father = 102174349
+
+	8260.1.1 = {
+		birth = yes
+	}
+	8262.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = 157000 # Varamyr Sixskins
+		}
+	}
+}
+105174349 = {
+	name = Meha
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	mother = 103174349
+	father = 102174349
+
+	8251.1.1 = {
+		birth = yes
+	}
+	8298.1.1 = {
+		death = yes
+	}
+}
+
+###
+### The Weeper
+###
+157001 = {
+	name = Gendel	#Canon, The Weeping Man
+	dynasty = dynn_Warriormane
+
+	martial = 6
+
+	dna = 157001
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_3
+	trait = deceitful
+	#trait = callous # AGOT TODO opposite trait to sadistic
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = education_martial_prowess_3
+	}
+	8279.1.1 = { give_nickname = nick_the_weeper }
+	# 8300.2.10 = {
+		# effect = {
+			# spawn_army = {
+				# province = 15 #The Gorge
+				# scaled_by_biggest_garrison = 2
+				# owner = ROOT
+				# leader = 157001 #The Weeping Man
+				# troops = {
+					# archers = { 5 5 }
+					# heavy_infantry = { 15 15 }
+					# skirmishers = { 45 45 }
+					# light_cavalry = { 2 2 }
+				# }
+				# attrition = 1.0
+			# }
+		# }
+	# }
+}
+
+###
+### Devyn Sealskinner
+###
+157002 = {
+	name = Devyn	#Canon, Devyn Sealskinner
+	dynasty = 174352
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 9
+	stewardship = 4
+	learning = 5
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	trait = education_martial_2
+	trait = brave
+	trait = diligent
+	trait = arrogant
+
+	8256.1.1 = { birth = yes }
+	8271.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8279.1.1 = { give_nickname = nick_sealskinner}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+1570021 = {
+	name = Rory
+	dynasty = 174352
+
+	martial = 8
+	diplomacy = 8
+	intrigue = 4
+	stewardship = 6
+	learning = 6
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	father = 157002
+
+	trait = twin
+	trait = brave
+
+	8285.1.1 = { birth = yes }
+	8299.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = { employer = 174345 }
+}
+1570022 = {
+	name = Cory
+	dynasty = 174352
+
+	martial = 8
+	diplomacy = 8
+	intrigue = 4
+	stewardship = 6
+	learning = 6
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	father = 157002
+
+	trait = twin
+	trait = brave
+
+	8289.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+###
+### Morna White-Mask
+###
+157003 = {
+	name = Morna	#Canon, Morna White Mask
+	dynasty = dynn_Whitemask
+	female = yes
+	#dna = "clfddfgbgaz"
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 9
+	stewardship = 4
+	learning = 5
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+	trait = authoritative
+	trait = arrogant
+
+	8256.1.1 = { birth = yes }
+	8272.1.1 = { trait = education_martial_prowess_3 }
+	8280.1.1 = { trait = lifestyle_mystic }
+	8279.1.1 = { give_nickname = nick_white_mask }
+}
+157153 = {
+	name = Soren
+	dynasty = dynn_Whitemask
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+
+	mother = 157003
+
+	8289.1.1 = { birth = yes }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+###
+### Alfyn Crowkiller
+###
+157004 = {
+	name = Alfyn	#Canon, Alfyn Crowkiller
+	dynasty = 174351
+
+	martial = 6
+
+	#dna = "bljkejkagau"
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_2
+	trait = deceitful
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8279.1.1 = { give_nickname = nick_crowkiller }
+	8299.6.1 = {
+		death = {
+			death_reason = death_battle
+			killer = 121005 #Qhorin Halfhand
+		}
+	}
+}
+
+# Bear told me to do it
+# 1570041 = {
+# 	name = Gariss
+# 	dynasty = 174351
+
+# 	martial = 6
+
+# 	#dna = "ifjkejoagau"
+
+# 	religion = old_gods_btw
+# 	culture = forestman
+
+# 	father = 157004
+
+# 	trait = arrogant
+
+# 	8287.1.1 = { birth = yes }
+# 	8299.1.1 = {
+# 		trait = education_martial_prowess_2
+# 	}
+# 	8300.2.10 = { employer = 174345 }
+# 	8300.8.17 = { employer = Stark_7 }	#Three of Alfyn's son became hostages
+# }
+
+1570042 = {
+	name = Bran
+	dynasty = 174351
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157004
+
+	8290.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 }	#Three of Alfyn's son became hostages
+}
+1570043 = {
+	name = Darkund
+	dynasty = 174351
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157004
+
+	8292.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 }	#Three of Alfyn's son became hostages
+}
+1570044 = {
+	name = Joseth
+	dynasty = 174351
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157004
+
+	8295.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+}
+
+###
+### Minor Wildlings
+###
+574349 = {
+	name = Ygritte # Canon
+	female = yes
+
+	dna = 574349
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = education_diplomacy_2
+	trait = diligent
+	trait = brave
+	trait = zealous
+
+	8280.1.1 = {
+		birth = yes
+		#employer = 157004 AGOT TODO Employer isn't landed
+	}
+	8293.1.1 = { trait = lustful }
+	8294.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8299.1.1 = {
+		effect = { set_relation_lover = character:Stark_7 } # Jon Snow
+	}
+	8299.11.11 = { death = yes }
+}
+157005 = {
+	name = Ryk	#Canon, Ryk Longspear
+
+	#dna = "behhf0dhg00"
+
+	martial = 7
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = brave
+	trait = diligent
+	trait = education_martial_2
+
+	8273.1.1 = {
+		birth = yes
+	}
+	8280.11.11 = { employer = 174345 }
+	8282.1.1 = { give_nickname = nick_longspear }
+	8289.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8299.6.1 = { add_spouse = 574346 }
+	8300.2.10 = { employer = 174345 }
+}
+157006 = {
+	name = Borroq	#Canon, Borroq (Skinchanger with a boar)
+
+	martial = 3
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = brave
+	trait = education_martial_2
+	#trait = boar # AGOT TODO trait
+
+	8260.1.1 = {
+		birth = yes
+	}
+	8280.11.11 = { employer = 174345 }
+	8300.8.17 = {
+		employer = 157009 #Soren Shieldbreaker
+	}
+}
+157007 = {
+	name = Orell	#Canon, Orell (Skinchanger with an eagle)
+	dna = 157007
+
+	martial = 4
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = brave
+	trait = education_martial_2
+	#trait = eagle # AGOT TODO trait
+
+	8265.1.1 = {
+		birth = yes
+	}
+	8280.11.11 = {
+		# employer = 574347 AGOT TODO Employer isn't employed
+	}
+	8299.10.10 = {
+		death = {
+			death_reason = death_duel
+			killer = Stark_7 # Jon Snow
+		}
+	}
+}
+
+###
+### Kyleg of the Wooden Ear
+###
+157008 = {
+	name = Kyleg	#Canon, Kyleg of the Wooden Ear
+	dynasty = dynn_Wooden_Ear
+
+	martial = 6
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = arrogant
+	trait = education_martial_2
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8288.1.1 = { add_spouse = 40559143 }
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+157018 = {
+	name = Lorn
+	dynasty = dynn_Wooden_Ear
+
+	martial = 6
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = beauty_good_1
+
+	father = 157008
+	mother = 40559143
+
+	8289.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+###
+### Soren Shieldbreaker
+###
+157009 = {
+	name = Soren	#Canon, Soren Shieldbreaker
+	dynasty = dynn_Shivers
+
+	religion = old_gods_btw
+	culture = lakeman
+
+	martial = 8
+
+	trait = arrogant
+	trait = education_martial_2
+
+	8252.1.1 = { birth = yes }
+	8278.1.1 = { trait = education_martial_prowess_3 }
+	8279.1.1 = { give_nickname = nick_shieldbreaker }
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+157059 = {
+	name = Stiv
+	dynasty = dynn_Shivers
+
+	religion = old_gods_btw
+	culture = lakeman
+
+	father = 157009
+
+	trait = arrogant
+	trait = education_martial_2
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = education_martial_prowess_2 }
+	8300.2.10 = { employer = 174345 }
+}
+
+###
+###Harle the Huntsman and Harle the Handsome
+###
+#Parents to connect brothers
+157100 = {
+	name = Harle
+	martial = 4
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = education_martial_2
+
+	8240.1.1 = {
+		birth = yes
+	}
+	8256.1.1 = {
+		trait = education_martial_prowess_2
+		add_spouse = 157101
+	}
+	8295.1.1 = {
+		death = yes
+	}
+}
+157101 = {
+	name = Ygritte
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	8240.1.1 = {
+		birth = yes
+	}
+	8295.1.1 = {
+		death = yes
+	}
+}
+
+157010 = {
+	name = Harle	#Canon, Harle the Handsome
+
+	martial = 4
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = brave
+	trait = education_martial_2
+	trait = beauty_good_2
+	trait = greedy
+	trait = wrathful
+
+	father = 157100
+	mother = 157101
+
+	8265.1.1 = {
+		birth = yes
+	}
+	8279.1.1 = { give_nickname = nick_the_handsome}
+	8280.11.11 = {
+		trait = education_martial_prowess_2
+	}
+	8283.1.1 = {
+		employer = 157009
+	}
+	8286.1.1 = {
+		effect = {
+			set_relation_rival = character:157011 # Harle the Huntsman
+		}
+	}
+	8300.2.10 = { employer = 174345 }
+}
+157011 = {
+	name = Harle	#Canon, Harle the Huntsman
+
+	martial = 4
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = brave
+	trait = arrogant
+	trait = vengeful
+	trait = education_martial_2
+
+	father = 157100
+	mother = 157101
+
+	8266.1.1 = {
+		birth = yes
+	}
+	8279.1.1 = { give_nickname = nick_the_huntsman }
+	8280.11.11 = {
+		trait = education_martial_prowess_2
+		effect = {
+			add_trait = lifestyle_hunter # noted duelist
+			add_trait_xp = {
+				trait = lifestyle_hunter
+				track = hunter
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8283.1.1 = {
+		employer = 157009
+	}
+	8300.2.10 = { employer = 174345 }
+}
+157102 = { #women they both had a son by
+	name = Holly
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	trait = lustful
+	trait = beauty_good_2
+	trait = arrogant
+	trait = authoritative
+
+	8267.1.1 = {
+		birth = yes
+	}
+	8283.1.1 = {
+		employer = 157009
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = { employer = 174345 }
+}
+#sons
+157103 = {
+	name = Harlon
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157010
+	mother = 157102
+
+	trait = beauty_good_1
+
+	8285.1.1 = {
+		birth = yes
+	}
+	8299.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+157104 = {
+	name = Harleg
+
+	religion = old_gods_btw
+	culture = forestman
+
+	father = 157011
+	mother = 157102
+
+	8286.1.1 = {
+		birth = yes
+	}
+	8299.1.1 = {
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+###
+### Great Walrus
+###
+174404 = {
+	name = Walrus	#Canon, Great Walrus
+	dynasty = 174404
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	martial = 8
+
+	trait = arrogant
+	trait = education_martial_2
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = education_martial_prowess_3 }
+	8279.1.1 = { give_nickname = nick_the_great }
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+1744041 = {
+	name = Little_Fox
+	female = yes
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	intrigue = 8
+
+	trait = arrogant
+	trait = education_martial_1
+
+	8268.1.1 = { birth = yes }
+	8284.1.1 = { trait = education_martial_prowess_2 }
+	8300.2.10 = { employer = 174345 }
+}
+1744042 = {
+	name = Young_Walrus
+	dynasty = 174404
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	father = 174404
+	mother = 1744041
+
+	martial = 8
+
+	trait = brave
+	trait = education_martial_3
+
+	8284.1.1 = { birth = yes }
+	8299.1.1 = { trait = education_martial_prowess_3 }
+	8300.2.10 = { employer = 174345 }
+}
+1744043 = {
+	name = Ice_Cat
+	female = yes
+	dynasty = 174404
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	father = 174404
+	mother = 1744041
+
+	martial = 6
+
+	trait = diligent
+
+	8285.1.1 = { birth = yes }
+	8299.1.1 = { trait = education_martial_prowess_2 }
+	8300.2.10 = { employer = 174345 }
+}
+1744044 = {
+	name = Little_Walrus
+	dynasty = 174404
+
+	religion = old_gods_frozen_shore
+	culture = frozen_shoreman
+
+	father = 174404
+	mother = 1744041
+
+	martial = 4
+
+	trait = trusting
+	#trait = affectionate # AGOT TODO trait
+	#trait = idolizer # AGOT TODO trait
+	#trait = timid # AGOT TODO trait
+
+	8294.1.1 = { birth = yes }
+	8300.2.10 = { employer = 174345 }
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+###
+### Mother Mole
+###
+157015 = {
+	name = Mother_Mole	#Canon
+	dynasty = 4500016
+	female = yes
+
+	diplomacy = 5
+	intrigue = 9
+	stewardship = 4
+	learning = 5
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = greensight
+	trait = authoritative
+	trait = arrogant
+
+	8243.1.1 = { birth = yes }
+	8251.1.1 = {
+		effect = {
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+}
+###
+### Tormund minor chieftains
+###
+157024 = {
+	name = Brogg # Canon
+	dynasty = dynn_Axebar
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = arrogant
+	trait = honest
+	trait = honorable
+
+	8263.1.1 = { birth = yes }
+	8279.1.1 = {
+		trait = education_martial_2
+		trait = education_martial_prowess_2
+	}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+157023 = {
+	name = Borroq
+
+	religion = old_gods_btw
+	culture = fangman
+
+	father = 157024
+
+	8288.1.1 = { birth = yes }
+	8300.2.10 = {
+		employer = 174345 #Tormund Giantsbane
+	}
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+
+157019 = {
+	name = Howd		#Canon, Howd the Wanderer
+	dynasty = 559108
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = arrogant
+	trait = shy
+	trait = honorable
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = education_martial_2
+		trait = education_martial_prowess_2
+		give_nickname = nick_the_wanderer
+	}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+}
+157022 = {
+	name = Hoag
+	dynasty = 559108
+
+	religion = old_gods_btw
+	culture = fangman
+
+	father = 157019
+
+	8290.1.1 = { birth = yes }
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+	8300.8.17 = {employer = Stark_7 } # Jon Snow
+}
+
+157020 = {
+	name = Doss		#Canon, Blind Doss
+	dynasty = dynn_Skullsmorn
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = arrogant
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = {
+		trait = education_martial_2
+		trait = education_martial_prowess_2
+		give_nickname = nick_the_blind
+	}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+	8300.8.17 = {employer = Stark_7 } # Jon Snow
+}
+157021 = {
+	name = Gavin		#Canon, Gavin the Trader
+
+	religion = old_gods_btw
+	culture = fangman
+
+	trait = arrogant
+
+	8265.1.1 = { birth = yes }
+	8281.1.1 = {
+		trait = education_stewardship_2
+		trait = education_martial_prowess_2
+		give_nickname = nick_the_trader
+	}
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+	8300.8.17 = {employer = Stark_7 } # Jon Snow
+}
+
+###
+### Craster have really big family - he is in btw_craster.txt
+###
+
+###
+### Ygon Oldfather, Jon remarks about his 18 wives and how most of his men are his sons and grandsons
+###
+157017 = {
+	name = Ygon	#Canon, Ygon Oldfather
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	trait = lustful
+	trait = arrogant
+	trait = education_martial_2
+
+	8225.1.1 = { birth = yes }
+	8285.1.1 = { give_nickname = nick_the_oldfather }
+	8300.2.10 = {
+		employer = 174345	#Tormund Giantsbane
+	}
+	8300.8.17 = { employer = Stark_7 } # Jon Snow
+}
+#First son branch
+10559102 = {
+	name = Orell	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8246.1.1 = { birth = yes }
+}
+20559102 = {
+	name = Dormund	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 10559102
+
+	8269.1.1 = { birth = yes }
+}
+21559102 = {
+	name = Stiv	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 20559102
+
+	8289.1.1 = { birth = yes }
+}
+22559102 = {
+	name = Bjormir	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 20559102
+
+	8293.1.1 = { birth = yes }
+}
+23559102 = {
+	name = Munda	#Random great granddaughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 20559102
+
+	8294.1.1 = { birth = yes }
+}
+
+11559102 = {
+	name = Halgor	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 10559102
+
+	8273.1.1 = { birth = yes }
+}
+12559102 = {
+	name = Dryn	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 11559102
+
+	8292.1.1 = { birth = yes }
+}
+13559102 = {
+	name = Gilly	#Random great granddaughter
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 11559102
+
+	8294.1.1 = { birth = yes }
+}
+14559102 = {
+	name = Osha	#Random granddaughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 10559102
+
+	8273.1.1 = { birth = yes }
+}
+15559102 = {
+	name = Mael	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 10559102
+
+	8277.1.1 = { birth = yes }
+}
+16559102 = {
+	name = Ygon	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 15559102
+
+	8298.1.1 = { birth = yes }
+}
+#Second son branch
+30559102 = {
+	name = Ygon	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8253.1.1 = { birth = yes }
+}
+31559102 = {
+	name = Kyleg	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 30559102
+
+	8278.1.1 = { birth = yes }
+}
+33559102 = {
+	name = Tormun	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 31559102
+
+	8298.1.1 = { birth = yes }
+}
+32559102 = {
+	name = Sigorn	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 30559102
+
+	8281.1.1 = { birth = yes }
+}
+34559102 = {
+	name = Kyra	#Random great granddaughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 32559102
+
+	8297.1.1 = { birth = yes }
+}
+35559102 = {
+	name = Ysilla	#Random granddaughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 30559102
+
+	8284.1.1 = { birth = yes }
+}
+36559102 = {
+	name = Quort	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 30559102
+
+	8290.1.1 = { birth = yes }
+}
+#Third son branch
+40559102 = {
+	name = Gorne	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8260.1.1 = { birth = yes }
+}
+41559102 = {
+	name = Ygritte	#Random granddaughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 40559102
+
+	8279.1.1 = { birth = yes }
+}
+42559102 = {
+	name = Orell	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 40559102
+
+	8282.1.1 = { birth = yes }
+}
+43559102 = {
+	name = Esgred	#Random granddaughter
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 40559102
+
+	8285.1.1 = { birth = yes }
+}
+#Fourth son branch
+50559102 = {
+	name = Soren	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8264.1.1 = { birth = yes }
+}
+51559102 = {
+	name = Ygon	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 50559102
+
+	8283.1.1 = { birth = yes }
+}
+52559102 = {
+	name = Brogg	#Random great grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 51559102
+
+	8299.1.1 = { birth = yes }
+}
+53559102 = {
+	name = Frynne	#Random granddaughter
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 50559102
+
+	8286.1.1 = { birth = yes }
+}
+54559102 = {
+	name = Willow	#Random granddaughter
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 50559102
+
+	8291.1.1 = { birth = yes }
+}
+#Fifth son branch
+60559102 = {
+	name = Gorm	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8269.1.1 = { birth = yes }
+}
+61559102 = {
+	name = Vayon	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 60559102
+
+	8290.1.1 = { birth = yes }
+}
+62559102 = {
+	name = Ygon	#Random grandson
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 60559102
+
+	8293.1.1 = { birth = yes }
+}
+#Younger children
+70559102 = {
+	name = Gorne	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8273.1.1 = { birth = yes }
+}
+71559102 = {
+	name = Haggon	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8278.1.1 = { birth = yes }
+}
+72559102 = {
+	name = Frenya	#Random daughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8280.1.1 = { birth = yes }
+}
+73559102 = {
+	name = Grigg	#Random son
+	dynasty = dynn_Boarhell
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8285.1.1 = { birth = yes }
+}
+74559102 = {
+	name = Grisel	#Random daughter
+	dynasty = dynn_Boarhell
+	female = yes
+
+	religion = old_gods_btw
+	culture = hornfoot
+
+	father = 157017
+
+	8291.1.1 = { birth = yes }
+}
+
+###
+### Giants
+###
+157013 = {
+	name = Mag	#Mag the Mighty
+	dynasty = 6660010
+
+	martial = 8
+
+	religion = old_gods_btw
+	culture = giant
+
+	trait = strong
+	trait = physique_good_3
+	trait = giant
+
+	8247.1.1 = { birth = yes }
+	8279.1.1 = { give_nickname = nick_the_mighty}
+	8299.11.11 = {
+		death = {
+			death_reason = death_duel
+			killer = Noye_1 # Donal Noye
+		}
+	}
+}
+157014 = {
+	name = Wun	#Wun Wun
+	dynasty = 6660011
+
+	martial = 8
+
+	religion = old_gods_btw
+	culture = giant
+
+	trait = strong
+	trait = physique_good_3
+	trait = giant
+
+	8264.1.1 = { birth = yes }
+	8298.11.11 = { employer = Rayder_1 }
+	8300.2.10 = { employer = 174345 } #Tormund Giantsbane
+	8300.4.29 = { employer = Stark_7 }	#Jon Snow
+}

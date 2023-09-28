@@ -1,0 +1,244 @@
+﻿name_list_lysene = {
+
+	cadet_dynasty_names = {
+		"dynn_Bazanne"
+		"dynn_Dagareon"
+		"dynn_Erosenes"
+		"dynn_Haen"
+		"dynn_Lashare"
+		"dynn_Lohar"
+		"dynn_Maar"
+		"dynn_Mahr"
+		"dynn_Moraqos"
+		"dynn_Ormollen"
+		"dynn_Orthys"
+		"dynn_Pendaerys"
+		"dynn_Quanis"
+		"dynn_Rogare"
+		"dynn_Saan"
+		"dynn_Sellos"
+		"dynn_Sathmantes"
+		"dynn_Vaar"
+	}
+
+	dynasty_names = {
+		"dynn_Bazanne"
+		"dynn_Dagareon"
+		"dynn_Erosenes"
+		"dynn_Haen"
+		"dynn_Lashare"
+		"dynn_Lohar"
+		"dynn_Maar"
+		"dynn_Mahr"
+		"dynn_Moraqos"
+		"dynn_Ormollen"
+		"dynn_Orthys"
+		"dynn_Pendaerys"
+		"dynn_Quanis"
+		"dynn_Rogare"
+		"dynn_Saan"
+		"dynn_Sellos"
+		"dynn_Sathmantes"
+		"dynn_Vaar"
+	}
+
+	male_names = {
+		Abaso Agreo Amarro Arhane
+		Baderos Bahar Balbano Ballabar Bambarro Bandaro Baranor Basarro Bassiro Baybarso Benkano Bessaro Borso Byan Bylar
+		Danaro Danbaro Danilo Dellono Demio Denano Donalo Dorallos Dorellan Dorseo Dragoso Drako Dranas Drasaro Drasono Drazendro Drazenko
+		Egor Eladon Ellandor Eloros Ergys Errano Erys Ezelio Ezodio
+		Fanendro Fodio Fredo
+		Gaharo Galendro Gamallo Gondo Gorys Gothos Groleo
+		Haego Handallo Harako Harayn Harpalo
+		Kaamaro Kasporio Kasporio Kasso Kendrako Khados Khorane Khosarro
+		Ladono Landro Liomond Logaro Lorayn Losayn Lotharo Lotho Lynorro Lysallos Lysandro Lysanor Lysaro Lysendos Lysenko Lyseno Lyseo Lyserio Lysono Lytheon
+		Malko Malys Manto Mardono Masandro Matteno Mazio Meizo Menio Methyso Moleo Moniro Moredo Morellan Moreo Morgoso Myrio
+		Narbo Nenbarro Nereo Nevio Nisario Novenko
+		Oledo Ormallos
+		Pereno Prendos Pytho
+		Qelaano
+		Rhogarro Roggerio Rogo Rogoso Rovayn
+		Saathor Saathos Salassor Salladhor Salloreon Samarro Sambarro Sambor Samorio Sargoso Sassano Sathandro Sathasor Sazarro Shadir Shaharo Shanaro Sharako Shasavo Shotho Silvario Stamatys Sullathos Sullehman
+		Talandor Terelas Tessario Therono Tigaro Tomarro Torreo Tregar Trellio Trethos Tybarro Tybio
+		Vaario Valdane Valerio Vanio Varandor Varys Vasandro Vasenko Vesillan Visario
+	}
+	female_names = {
+		Allia Alyandra Amana Arana Ashaella Ashera Aya
+		Bazola
+		Calla Candia
+		Danara Doreah
+		Elora Emyria
+		Irea Irogenia
+		Laressa Larra Lianne Lianne Lusana Lynna Lysadora Lysana Lysanora Lysara Lyseah Lysendra
+		Marra Melane Mylla Myrmadora Mysaria
+		Naila Nessaria Noressia
+		Ralla
+		Sathia Senerra Serala Serenei Seria Serra Shana Shiera Soranna Syrella
+		Talia Tennia
+		Ushanora
+		Zabella
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}
+
+name_list_myrman = {
+
+	cadet_dynasty_names = {
+		"dynn_Cravys"
+		"dynn_Drahar"
+		"dynn_Rhegan"
+	}
+
+	dynasty_names = {
+		"dynn_Cravys"
+		"dynn_Drahar"
+		"dynn_Rhegan"
+	}
+
+	male_names = {
+		Abrys Agon Agreo Agrono Alios Amarro Anagros Andrio Anello
+		Balesh Balysho Barghas Bassiro Beldeqo Beldeqo Benkano Beqqo Borso Bosqo Brudo Brudo Bylar
+		Corenno Corso Costos Craghas
+		Denano Dinio Doran Dorseo Drakhos
+		Egar Eladon Eloros Erando Errio
+		Gadros Gaharo Galeran Gamallo Garros Garynos Geras Ghazaro Gheraro Ghilorros Ghirio Ghorgho Ghovan Gondo Gorlas Gothos Gyran
+		Haego Harpalo
+		Ladono Landro Luro
+		Malko Mallor Malo Malys Manto Marono Mavrolo Mazio Menio Moleo Mollos Morgo Morosh
+		Nemarro Nisario
+		Orello
+		Pallio Prendos
+		Qadano Qalavo Qarrash Qasqos Qonane Qos
+		Ragono Rhaskos Rheono Rhesos Rhogarro Rogo Rogosh
+		Sharako Sotros
+		Terelas Thoros Thrasos Tibruso Togosh Trebar Trombo Tymeo Tyros
+		Uravio Urosh
+		Valerio Vanio Visario
+		Yandro
+	}
+	female_names = {
+		Alyandra Amana Arana Ashaella Ashera Aya
+		Bazola Belandra
+		Calla
+		Danara Droselka
+		Elora Emyria
+		Irea
+		Laressa Lianna Lusana
+		Marra Melaen Melane Mylla
+		Naila
+		Rhalla Rylora
+		Serala Seria Shana Shiera Silva Syrella
+		Taela Taena Talia
+		Ushanora
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}
+
+name_list_tyroshi = {
+
+	cadet_dynasty_names = {
+		"dynn_Adarys"
+		"dynn_Caharis"
+		"dynn_Naharis"
+		"dynn_Quaynis"
+		"dynn_Ryndoon"
+		"dynn_Tumitis"
+		"dynn_Uhoris"
+	}
+
+	dynasty_names = {
+		"dynn_Adarys"
+		"dynn_Caharis"
+		"dynn_Naharis"
+		"dynn_Quaynis"
+		"dynn_Ryndoon"
+		"dynn_Tumitis"
+		"dynn_Uhoris"
+	}
+
+	male_names = {
+		Agreo Alanno Alequo Allaro Allo Amarro Anello Aro
+		Bassiro Bello Bencano Beqqo Bessaro Borso Bosqo Bylaro
+		Casuto Clario Collio Collo Cossomo
+		Daallo Daario Dallaro Danilo Dello Dellono Denano Doro Dorseo
+		Eloro Errio Essario Ezelio
+		Fallo Fodio
+		Gaharo Gamallo Ghazaro Gondo Gotho
+		Haego Harpalo
+		Kasporio Kasso
+		Ladono Landro
+		Malo Manto Mardono Mazio Menallio Menario Menio Mero Moleo Moniro Moreo Morgo Moro Myrio
+		Nassario Nello Nisario
+		Ollo Orsillio Orybaso
+		Paro Pellaro Pello
+		Qelaano Quallo
+		Racallio Rallaro Rallo Rhogarro Ricasso Rodo Roggerio Rogo Roro
+		Seqqo Silvario
+		Tello Tibruso Tybio
+		Ullo
+		Vaario Valerio Vanio Vastanio Verallio Visario
+		Yollo Yorro Yosso
+		Zaanio
+	}
+	female_names = {
+		Amana Arana Ashera Aya
+		Bazola
+		Calla
+		Danara
+		Elora Emyria
+		Irea
+		Kiera
+		Laressa Lianne Lusana
+		Melane Mylla
+		Naila
+		Ralla Ricassa Rohanne
+		Senerra Seria Shana Shiera Syrella
+		Talia Tennia
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}

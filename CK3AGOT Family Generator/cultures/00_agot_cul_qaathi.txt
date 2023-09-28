@@ -1,0 +1,23 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+qartheen = {
+	color = { 0.76 0.46 0.76 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_qaathi
+	language = language_qaathi
+	martial_custom = martial_custom_male_only
+
+	
+
+	name_list = name_list_qartheen
+
+	coa_gfx = { qaathi_coa_gfx }
+	building_gfx = { qaathi_building_gfx }
+	clothing_gfx = { qaathi_clothing_gfx }
+	unit_gfx = { qaathi_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}

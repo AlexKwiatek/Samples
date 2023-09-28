@@ -1,0 +1,967 @@
+﻿###############
+### Pirates ###
+###############
+#Pirates of Sunstone
+
+###
+###### HOUSE CITHIEN (id=982367)
+###
+###
+117982367 = {
+	name = Tormo # a lord
+	dynasty = dynn_Cithien
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 116982367
+
+	8234.1.1 = { birth = yes }
+}
+118982367 = {
+	name = Ferrego # not a lord
+	dynasty = dynn_Cithien
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 117982367
+
+	8264.1.1 = { birth = yes }
+}
+
+###
+###### HOUSE SAAN (id=982370)
+###
+###
+118982370 = {
+	name = Samarro # Canon, Ninepenny King
+	dynasty = dynn_Saan
+
+	martial = 12
+	diplomacy = 10
+	intrigue = 8
+	stewardship = 5
+	prowess = 12
+
+	religion = the_seven_main # AGOT TODO religion = rhllor # AGOT TODO# pirate
+	culture = armsman
+
+	#trait = pirate # AGOT TODO trait
+	trait = greedy
+	trait = callous
+	trait = arrogant
+
+	father = 115982370
+
+	8227.1.1 = { birth = yes }
+	8259.1.1 = {
+		give_nickname = nick_the_last_valyrian
+		effect = {
+			add_character_flag = band_of_nine
+			# add_opinion = {
+				# target = liege
+				# modifier = opinion_band_of_nine
+			# }
+		}
+	}
+	8280.1.1 = { death = yes }
+}
+### Salladhor ! A mighty pirate ! ###
+119982370 = {
+	name = Salladhor # Canon
+	dynasty = dynn_Saan
+	#dna = "akhmisffaaq"
+
+	martial = 7
+	diplomacy = 7
+	stewardship = 6
+	intrigue = 5
+	learning = 3
+	prowess = 6
+
+	religion = the_seven_main # AGOT TODO religion = rhllor # AGOT TODO# pirate
+	culture = armsman
+
+	father = 118982370
+
+	trait = arrogant
+	trait = fashionable
+	trait = education_diplomacy_3
+	trait = gregarious
+	trait = lustful
+	trait = greedy
+
+	8259.1.1 = { birth = yes }
+	8284.1.1 = {
+		effect = {
+			add_prestige = 450
+			add_gold = 300
+		}
+	}
+	# His concubines
+	8287.1.1 = {
+		effect = { make_concubine = character:419982370 } # Serala
+	}
+	8292.1.1 = {
+		effect = { make_concubine = character:429982370 } # Narba
+	}
+	8294.1.1 = {
+		effect = { make_concubine = character:439982370 } # Yorka
+	}
+	# 8299.2.11 = {
+		# effect = {
+			###
+			### TODO: Join Stannis wars until AFFC
+			###
+		# }
+	# }
+}
+#concubines
+419982370 = {
+	name = Serala
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8272.1.1 = { birth = yes }
+	8287.1.1 = { employer = 119982370 }
+}
+429982370 = {
+	name = Narba
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8277.1.1 = { birth = yes }
+	8292.1.1 = { employer = 119982370 }
+}
+439982370 = {
+	name = Yorka
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8278.1.1 = { birth = yes }
+	8294.1.1 = { employer = 119982370 }
+}
+120982370 = {
+	name = Lysono
+	dynasty = dynn_Saan
+
+	prowess = 3
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 119982370
+	mother = 419982370
+
+	trait = child_of_concubine_male
+
+	8287.1.1 = { birth = yes }
+}
+121982370 = {
+	name = Mellario
+	female = yes
+	dynasty = dynn_Saan
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 119982370
+	mother = 419982370
+
+	trait = child_of_concubine_female
+
+	8290.1.1 = { birth = yes }
+}
+122982370 = {
+	name = Byan
+	dynasty = dynn_Saan
+
+	prowess = 12
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 119982370
+	mother = 429982370
+
+	trait = child_of_concubine_male
+
+	8293.1.1 = { birth = yes }
+}
+123982370 = {
+	name = Ferrego # not a lord
+	dynasty = dynn_Saan
+
+	prowess = 6
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 119982370
+	mother = 439982370
+
+	trait = child_of_concubine_male
+
+	8295.1.1 = { birth = yes }
+}
+
+###
+###### HOUSE SATHMANTES (id=300546)
+###
+###
+121300546 = {
+	name = Yna # not a lord
+	female = yes
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 118300546
+	mother = 218300546
+
+	8218.1.1 = { birth = yes }
+	8274.1.1 = { death = yes }
+}
+122300546 = {
+	name = Tycho # a lord
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 118300546
+	mother = 218300546
+
+	8220.1.1 = { birth = yes }
+	8274.1.1 = { death = yes }
+}
+123300546 = {
+	name = Ezzere # not a lord
+	female = yes
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 118300546
+	mother = 218300546
+
+	8222.1.1 = { birth = yes }
+	8258.1.1 = { death = yes }
+}
+124300546 = {
+	name = Lanna # not a lord
+	female = yes
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 118300546
+	mother = 218300546
+
+	8225.1.1 = { birth = yes }
+	8294.1.1 = { death = yes }
+}
+125300546 = {
+	name = Khorane # canon
+	dynasty = dynn_Sathmantes
+
+	prowess = 3
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 122300546
+
+	8251.1.1 = { birth = yes }
+	8270.1.1 = { add_spouse = 225300546 }
+}
+225300546 = {
+	name = Nyssa
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8251.1.1 = { birth = yes }
+}
+126300546 = {
+	name = Yorko # not a lord
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 122300546
+
+	8253.1.1 = { birth = yes }
+}
+151300546 = {
+	name = Gyleno # not a lord
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 125300546
+	mother = 225300546
+
+	8276.1.1 = { birth = yes }
+}
+132300546 = {
+	name = Tycho # not a lord
+	dynasty = dynn_Sathmantes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 125300546
+	mother = 225300546
+
+	8280.1.1 = { birth = yes }
+}
+
+###
+###### HOUSE VUNATIS (id=982375)
+###
+###
+10001639 = {
+	name = Roro # a lord
+	dynasty = dynn_Vunatis
+
+	prowess = 12
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 1191639
+	mother = 4191639
+
+	8228.1.1 = { birth = yes }
+	8246.1.1 = { add_spouse = 40001639 }
+	8260.11.11 = {
+		#trait = poison # AGOT TODO trait
+	}
+	8281.1.1 = { death = { death_reason = death_battle } }
+}
+40001639 = {
+	name = Narba
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8228.1.1 = { birth = yes }
+	8281.1.1 = { death = yes }
+}
+1201639 = {
+	name = Sallodhor # not a lord
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 1191639
+	mother = 4191639
+
+	8230.1.1 = { birth = yes }
+	8283.1.1 = { death = yes }
+}
+1211639 = {
+	name = Pynta # not a lord
+	female = yes
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 1191639
+	mother = 4191639
+
+	8231.1.1 = { birth = yes }
+	8280.1.1 = { death = yes }
+}
+10011639 = {
+	name = Lothea # not a lord
+	female = yes
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 10001639
+	mother = 40001639
+
+	8251.1.1 = { birth = yes }
+	8327.1.1 = { death = yes }
+}
+10021639 = {
+	name = Gyleno # a lord
+	dynasty = dynn_Vunatis
+	#dna = blfdepiddfu
+
+	diplomacy = 6
+	martial = 6
+	stewardship = 5
+	intrigue = 5
+	learning = 3
+	prowess = 6
+
+	#religion = pirate
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 10001639
+	mother = 40001639
+
+	trait = beauty_good_2
+	trait = callous
+	trait = brave
+	trait = deceitful
+	trait = gregarious
+	trait = lustful
+	trait = education_martial_2
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		#trait = trickster # AGOT TODO trait
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8280.1.1 = { add_spouse = 40021639 }
+}
+40021639 = {
+	name = Betharios
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8252.1.1 = { birth = yes }
+	8318.1.1 = { death = yes }
+}
+# 10031639 = {
+	# name = Moredo # not a lord
+	# dynasty = dynn_Vunatis
+
+	# religion = weeping_lady # pirate
+	# culture = armsman
+
+	# father = 10001639
+	# mother = 40001639
+
+	# 8254.1.1 = { birth = yes }
+	# 8298.1.1 = { death = yes }
+# }
+# 10041639 = {
+	# name = Jaqen # not a lord
+	# dynasty = dynn_Vunatis
+
+	# religion = weeping_lady # pirate
+	# culture = armsman
+
+	# father = 10001639
+	# mother = 40001639
+
+	# 8255.1.1 = { birth = yes }
+	# 8289.1.1 = { death = yes }
+# }
+10051639 = {
+	name = Gylora # not a lord
+	female = yes
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 10001639
+	mother = 40001639
+
+	8257.1.1 = { birth = yes }
+	8297.1.1 = { death = { death_reason = death_dungeon } }
+}
+10061639 = {
+	name = Tormo # not a lord
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 10021639
+	mother = 40021639
+
+	8289.1.1 = { birth = yes }
+}
+10071639 = {
+	name = Daario # not a lord
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 10021639
+	mother = 40021639
+
+	8292.1.1 = { birth = yes }
+}
+10081639 = {
+	name = Ternesia # not a lord
+	female = yes
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 10021639
+	mother = 40021639
+
+	8296.1.1 = { birth = yes }
+}
+10091639 = {
+	name = Alia # not a lord
+	female = yes
+	dynasty = dynn_Vunatis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	mother = 10051639
+
+	8297.1.1 = { birth = yes }
+}
+
+###
+###### HOUSE QUANIS (id=56821)
+###
+###
+12456821 = {
+	name = Bellegere # not a lord
+	female = yes
+	dynasty = dynn_Quanis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12256821
+	mother = 42256821
+
+	8209.1.1 = { birth = yes }
+	8264.1.1 = { death = yes }
+}
+12556821 = {
+	name = Roro # a lord
+	dynasty = dynn_Quanis
+
+	prowess = 3
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12256821
+	mother = 42256821
+
+	8212.1.1 = { birth = yes }
+	8230.1.1 = { add_spouse = 42556821 }
+	8265.1.1 = { death = yes }
+}
+42556821 = {
+	name = Taena
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8212.1.1 = { birth = yes }
+	8265.1.1 = { death = yes }
+}
+12756821 = {
+	name = Khorane # a lord
+	dynasty = dynn_Quanis
+
+	prowess = 3
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12556821
+	mother = 42556821
+
+	8246.1.1 = { birth = yes }
+	8264.1.1 = { add_spouse = 42756821 }
+}
+42756821 = {
+	name = Cossoma
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8246.1.1 = { birth = yes }
+}
+12856821 = {
+	name = Moredea
+	female = yes
+	dynasty = dynn_Quanis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12556821
+	mother = 42556821
+
+	8249.1.1 = { birth = yes }
+	8276.1.1 = { death = { death_reason = death_murder } }
+}
+12956821 = {
+	name = Myrmello
+	dynasty = dynn_Quanis
+
+	prowess = 3
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12556821
+	mother = 42556821
+
+	8250.1.1 = { birth = yes }
+	8288.1.1 = { death = { death_reason = death_execution } }
+}
+13056821 = {
+	name = Alia # not a lord
+	female = yes
+	dynasty = dynn_Quanis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12756821
+	mother = 42756821
+
+	8275.1.1 = { birth = yes }
+}
+13156821 = {
+	name = Areo # not a lord
+	dynasty = dynn_Quanis
+
+	prowess = 6
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 12756821
+	mother = 42756821
+
+	8278.1.1 = { birth = yes }
+	8296.1.1 = { add_spouse = 43156821 }
+}
+43156821 = {
+	name = Umma
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	8278.1.1 = { birth = yes }
+}
+13256821 = {
+	name = Bellegere
+	female = yes
+	dynasty = dynn_Quanis
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 13156821
+	mother = 43156821
+
+	8298.1.1 = { birth = yes }
+}
+13356821 = {
+	name = Orbela
+	dynasty = dynn_Quanis
+	female = yes
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	father = 13156821
+	mother = 43156821
+
+	8299.1.1 = { birth = yes }
+}
+
+###
+###### HOUSE VYNENOHR (id=300206)
+###
+###
+122300206 = {
+	name = Joss # a lord
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 120300206
+	mother = 420300206
+
+	8219.1.1 = { birth = yes }
+	8237.1.1 = { add_spouse = 422300206 }
+	8291.1.1 = { death = yes }
+}
+422300206 = {
+	name = Taena
+	female = yes
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	8219.1.1 = { birth = yes }
+	8291.1.1 = { death = yes }
+}
+123300206 = {
+	name = Allaquo # not a lord
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 120300206
+	mother = 420300206
+
+	8221.1.1 = { birth = yes }
+	8263.1.1 = { death = yes }
+}
+124300206 = {
+	name = Yna # not a lord
+	female = yes
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 120300206
+	mother = 420300206
+
+	8222.1.1 = { birth = yes }
+	8269.1.1 = { death = yes }
+}
+125300206 = {
+	name = Daario # a lord
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 122300206
+	mother = 422300206
+
+	8253.1.1 = { birth = yes }
+	8271.1.1 = { add_spouse = 425300206 }
+}
+425300206 = {
+	name = Gylora
+	female = yes
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	8253.1.1 = { birth = yes }
+}
+126300206 = {
+	name = Izembaro
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 122300206
+	mother = 422300206
+
+	8256.1.1 = { birth = yes }
+}
+127300206 = {
+	name = Gyloro
+	dynasty = dynn_Vynenohr
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 125300206
+	mother = 425300206
+
+	8281.1.1 = { birth = yes }
+}
+128300206 = {
+	name = Brea
+	dynasty = dynn_Vynenohr
+	female = yes
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = armsman
+
+	father = 125300206
+	mother = 425300206
+
+	8283.1.1 = { birth = yes }
+}
+
+###
+### BAND OF NINE
+###
+###
+600000064 = {
+	name = Old_Mother # Canon, Ninepenny King, Old_Mother pirate queen
+	female = yes
+	dynasty = dynn_Stepstones
+
+	martial = 6
+	diplomacy = 10
+	intrigue = 8
+	stewardship = 5
+	prowess = 12
+
+	religion = weeping_lady # pirate
+	culture = armsman
+
+	#trait = pirate # AGOT TODO trait
+	trait = greedy
+	trait = callous
+	trait = arrogant
+
+	8214.1.1 = { birth = yes }
+	8259.1.1 = {
+		effect = {
+			add_character_flag = band_of_nine
+			# add_opinion = {
+				# target = liege
+				# modifier = opinion_band_of_nine
+			# }
+		}
+	}
+	8270.1.1 = { death = yes }
+}
+600000065 = {
+	name = Tom # Canon, Ninepenny King, Spotted Tom the Butcher, captain of one of the free companies
+	dynasty = dynn_Butcher
+
+	martial = 9
+	intrigue = 4
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = greedy
+	#trait = callous # AGOT TODO opposite trait to sadistic
+	trait = arrogant
+	trait = sadistic
+	trait = deceitful
+
+	8227.1.1 = { birth = yes }
+	8243.1.1 = {
+		give_nickname = nick_spotted_butcher
+	}
+	8259.1.1 = {
+		effect = {
+			add_character_flag = band_of_nine
+			# add_opinion = {
+				# target = liege
+				# modifier = opinion_band_of_nine
+			# }
+		}
+	}
+	8270.1.1 = { death = yes }
+}
+600000066 = {
+	name = Mero # Canon, Ninepenny King, Nine Eyes, captain of Jolly Fellows
+	dynasty = dynn_Nine_Eyes
+
+	religion = rhllor
+	culture = pentoshi
+
+	martial = 10
+	intrigue = 4
+	prowess = 12
+
+	trait = greedy
+	trait = callous
+	trait = arrogant
+	#trait = sadistic # AGOT TODO opposite trait to callous
+
+	8224.1.1 = { birth = yes }
+	8243.1.1 = {
+		give_nickname = nick_nine_eyes
+	}
+	8259.1.1 = {
+		effect = {
+			add_character_flag = band_of_nine
+			# add_opinion = {
+				# target = liege
+				# modifier = opinion_band_of_nine
+			# }
+		}
+	}
+	8266.1.1 = { death = yes }
+}
+600000067 = {
+	name = Liomond # Canon, Ninepenny King, Liamond Lashare the Lord of Battles, captain of one of the free companies
+	dynasty = dynn_Lashare
+
+	martial = 12
+	diplomacy = 5
+	intrigue = 8
+	stewardship = 5
+	prowess = 12
+
+	religion = rhllor
+	culture = myrish
+
+	trait = greedy
+	#trait = callous # AGOT TODO opposite trait to sadistic
+	trait = arrogant
+	trait = sadistic
+
+	8226.1.1 = { birth = yes }
+	8250.1.1 = {
+		give_nickname = nick_lord_of_battles
+	}
+	8259.1.1 = {
+		effect = {
+			add_character_flag = band_of_nine
+			# add_opinion = {
+				# target = liege
+				# modifier = opinion_band_of_nine
+			# }
+		}
+	}
+	8266.1.1 = { death = yes }
+}

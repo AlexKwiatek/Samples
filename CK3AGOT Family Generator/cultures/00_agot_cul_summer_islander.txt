@@ -1,0 +1,160 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+jhalani = {
+	color = { 0.58 0.77 0.49 }
+
+	ethos = ethos_stoic
+	heritage = heritage_summer_islander
+	language = language_summer_tongue
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_mountain_homes
+		tradition_land_of_the_bow
+		tradition_mountaineers
+	}
+
+	name_list = name_list_jhalan
+
+	coa_gfx = { summer_islander_coa_gfx }
+	building_gfx = { summer_islander_building_gfx african_building_gfx }
+	clothing_gfx = { summer_islander_clothing_gfx african_clothing_gfx }
+	unit_gfx = { summer_islander_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+moluuni = {
+	color = { 0.51 0.78 0.38 }
+
+	ethos = ethos_communal
+	heritage = heritage_summer_islander
+	language = language_summer_tongue
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_seafaring
+		tradition_land_of_the_bow
+		tradition_maritime_mercantilism
+	}
+
+	name_list = name_list_jhalan
+
+	coa_gfx = { summer_islander_coa_gfx }
+	building_gfx = { summer_islander_building_gfx african_building_gfx }
+	clothing_gfx = { summer_islander_clothing_gfx african_clothing_gfx }
+	unit_gfx = { summer_islander_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		omboruni
+		jhalani
+	}
+	created = 4000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+naathi = {
+	color = { 0.33 0.71 0.16 }
+
+	ethos = ethos_communal
+	heritage = heritage_summer_islander
+	language = language_naathi
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_pacifism
+		tradition_vegetarianism
+		tradition_isolationist
+	}
+
+	name_list = name_list_jhalan
+
+	coa_gfx = {
+		naathi_coa_gfx
+		summer_islander_coa_gfx
+	}
+	building_gfx = {
+		naathi_building_gfx
+		summer_islander_building_gfx
+		african_building_gfx
+	}
+	clothing_gfx = {
+		naathi_clothing_gfx
+		summer_islander_clothing_gfx
+		african_clothing_gfx
+	}
+	unit_gfx = {
+		naathi_unit_gfx
+		summer_islander_unit_gfx
+	}
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+omboruni = {
+	color = { 0.22 0.53 0.09 }
+
+	ethos = ethos_festive
+	heritage = heritage_summer_islander
+	language = language_summer_tongue
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_jungle_dwellers
+		tradition_land_of_the_bow
+		tradition_swords_for_hire
+	}
+
+	name_list = name_list_ombori
+
+	coa_gfx = { summer_islander_coa_gfx }
+	building_gfx = { summer_islander_building_gfx african_building_gfx }
+	clothing_gfx = { summer_islander_clothing_gfx african_clothing_gfx }
+	unit_gfx = { summer_islander_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+walani = {
+	color = { 0.33 0.53 0.24 }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_summer_islander
+	language = language_summer_tongue
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_jungle_dwellers
+		tradition_land_of_the_bow
+		tradition_maritime_mercantilism
+	}
+
+	name_list = name_list_walanoan
+
+	coa_gfx = { summer_islander_coa_gfx }
+	building_gfx = { summer_islander_building_gfx african_building_gfx }
+	clothing_gfx = { summer_islander_clothing_gfx african_clothing_gfx }
+	unit_gfx = { summer_islander_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	
+	
+}

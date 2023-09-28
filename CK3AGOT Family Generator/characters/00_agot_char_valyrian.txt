@@ -1,0 +1,2919 @@
+﻿####################################################
+####				NARROW SEA					####
+####################################################
+
+###### HOUSE TARGARYEN (id = dynn_Targaryen)
+##############################
+### Fire and Blood
+###
+Targaryen_1 = {
+	name = Aerys # AKA: Aerys II the Mad
+	dynasty = dynn_Targaryen
+	dna = Targaryen_1
+
+	martial = 3
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	learning = 5
+	prowess = 0
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_1 #handsome
+
+	father = Targaryen_127
+	mother = Targaryen_128
+
+	disallow_random_traits = yes
+
+	8243.6.1 = {
+		birth = yes #18 on ascension
+		effect = {
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+			#add_character_flag = aegonIV_crown # will only use crown if title tier above Duchy # AGOT TODO
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8250.1.1 = {
+		trait = lazy
+	}
+	8252.1.1 = {
+		trait = gregarious
+		trait = arrogant #vain and arrogant
+		#trait = squire # AGOT TODO trait
+
+		effect = {
+			set_relation_friend = character:Lannister_1
+		}
+
+		#AGOT DISABLED - causes an error log because PDX bug...(?). Their friendship is set elsewhere.
+		# effect = {
+		# 	if = {
+		# 		limit = { NOT = { game_start_date = 8272.1.1 } }
+		# 		set_relation_friend = character:Lannister_1 #Tywin # AGOT TODO does this even make sense script wise?
+		# 	}
+		# 	set_relation_friend = character:Baratheon_1 #Steffon
+		# }
+	}
+	8253.1.1 = { # Beginning Aerys showed promise (not really)
+		remove_trait = lazy #to keep trait number at 4
+		#trait = fickle #changeable # AGOT TODO opposite trait to stubborn
+		trait = generous #generous
+	}
+	8254.1.1 = {
+		remove_trait = gregarious #to keep trait number at 4
+		trait = lustful # had many lovers
+	}
+	8258.1.1 = {
+		add_spouse = Targaryen_2 # Rhaella Targaryen
+	}
+	8259.6.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		remove_trait = generous #to keep trait number at 4
+
+		#AGOT TODO - Give me a source for this. They weren't lovers.
+		# effect = {
+		# 	set_relation_lover = character:Lannister_17 #Joanna Lannister
+		# }
+
+		trait = knight
+		trait = education_intrigue_2
+		#trait = back_seat_leader # AGOT TODO trait
+		trait = stubborn # Trying to rule his own way, the case of Duskendale proves his stubborness
+	}
+	8262.1.1 = {
+		effect = {
+			add_character_flag = crowned_by_high_septon
+			#character:Lannister_1 = { #Tywin
+			#	remove_all_job_titles = yes
+			#	give_job_title = job_castellan # AGOT TODO
+			#}
+		}
+	}
+	8270.1.1 = {
+		remove_trait = arrogant #to keep trait number at 4
+		trait = paranoid #suspects wife is cheating
+	}
+	8271.1.1 = {
+		effect = {
+			set_relation_ward = character:Connington_4 # JonCon
+		}
+	}
+
+	8273.1.1 = {
+		remove_trait = stubborn #to keep trait number at 4
+		trait = wrathful #becoming erratic and violent
+	}
+	# 8274.1.1 = {
+		#trait = tyrant1 # Ilyn Payne
+		# effect = {
+			# set_variable = { which = "tyrant" value = 5 }
+			# hidden_tooltip = { character_event = { id = maintenance.1 days = 2 } }#tyrant trait
+			#character:Darry_3 = { #Willem darry
+			#	remove_all_job_titles = yes
+			#	give_job_title = job_marshal # AGOT TODO
+			#}
+		# }
+	# }
+	8274.5.1 = { #infant son dies, tortures wet nurse and kin to death, vows chastity
+		remove_trait = lustful
+		remove_trait = fickle #to keep trait number at 4
+		trait = sadistic
+		trait = arbitrary
+	}
+	8276.1.1 = { # Refusal of Rhaegar-Cersei marriage - rivalry starts
+		effect = {
+			remove_relation_friend = character:Lannister_1 # Tywin
+			set_relation_rival = character:Lannister_1 # Aerys II Targaryen
+		}
+	}
+	8277.1.1 = { # Defiance of Duskendale
+		effect = {
+			add_hook = {
+				target = character:Chelsted_1 #Qarlton Chelsted
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Chelsted_1 #Qarlton Chelsted
+				modifier = trust_opinion
+				opinion = 40
+			}
+			add_hook = {
+				target = character:Staunton_1 #Symond Staunton
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Staunton_1 #Symond Staunton
+				modifier = trust_opinion
+				opinion = 40
+			}
+			add_hook = {
+				target = character:Velaryon_1 #Lucerys Velaryon
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Velaryon_1 #Lucerys Velaryon
+				modifier = trust_opinion
+				opinion = 40
+			}
+			remove_relation_ward = character:Connington_4 # JonCon
+		}
+	}
+	8277.10.1 = {
+		effect = {
+			add_tyranny = major_tyranny_gain
+		}
+		trait = lunatic_1
+		trait = inappetetic
+		trait = irritable
+		trait = reclusive
+		trait = uncouth
+		give_nickname = nick_the_mad_king # Madness begins, many of his good qualities go in the wake of Duskendale
+	}
+	8278.1.1 = { # Madness continues and grows worse
+		trait = fire_obsessed
+		effect = {
+			add_hook = {
+				target = character:Pyromancer_1 # Rossart
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Pyromancer_1 # Rossart
+				modifier = trust_opinion
+				opinion = 40
+			}
+		}
+	}
+	8279.1.1 = {
+		effect = {
+			create_alliance = {
+				target = character:Martell_4 # Doran Martell
+				allied_through_owner = character:Targaryen_3 # Rhaegar Targaryen
+				allied_through_target = character:Martell_7 # Elia Martell
+			}
+		}
+	}
+	8281.1.1 = {
+		add_piety = 200
+		effect = { #appoint jaime to kingsguard, tywin resigns
+			reverse_add_opinion = {
+				target = character:Lannister_1 #Tywin
+				modifier = angry_opinion
+				opinion = -40
+			}
+			#character:Lannister_1 = {
+			#	remove_title = job_castellan # AGOT TODO
+			#}
+		}
+	}
+	8282.9.1 = { # Killed Starks in throne room
+		effect = {
+			add_tyranny = massive_tyranny_gain
+		}
+	}
+	8282.9.15 = {
+		effect = {
+			add_hook = {
+				target = character:Redwyne_4 # Paxter Redwyne
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Redwyne_4 # Paxter Redwyne
+				modifier = trust_opinion
+				opinion = 40
+			}
+			add_hook = {
+				target = character:Hightower_5 # Leyton Hightower
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Hightower_5 # Leyton Hightower
+				modifier = trust_opinion
+				opinion = 40
+			}
+			add_hook = {
+				target = character:Tarly_1 # Randyll Tarly
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Tarly_1 # Randyll Tarly
+				modifier = trust_opinion
+				opinion = 40
+			}
+			add_hook = {
+				target = character:Rowan_1 # Mathis Rowan
+				type = loyalty_hook
+			}
+			add_opinion = {
+				target = character:Rowan_1 # Mathis Rowan
+				modifier = trust_opinion
+				opinion = 40
+			}
+			reverse_add_opinion = {
+				target = character:Stark_3 #Eddard Stark
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Stark_4 #Benjen Stark
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Arryn_3 #Jon Arryn
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Arryn_13 #Denys Arryn
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Royce_1 #Bronze Yohn Royce
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_2 #Robert Baratheon
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_3 #Stannis Baratheon
+				modifier = executed_close_family_crime
+			}
+			reverse_add_opinion = {
+				target = character:Mallister_4 #Jason Mallister
+				modifier = executed_close_family_crime
+			}
+		}
+	}
+	8283.6.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_7 # Killed by Jaime
+		}
+	}
+}
+Targaryen_2 = {
+	name = Rhaella
+	female = yes
+	dynasty = dynn_Targaryen
+	dna = Targaryen_2
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Targaryen_127
+	mother = Targaryen_128
+
+	disallow_random_traits = yes
+
+	fertility = 0
+
+	8245.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8251.1.1 = {
+		trait = humble
+	}
+	8253.1.1 = {
+		trait = shy
+	}
+	8255.1.1 = {
+		trait = honorable #mindful of her duty
+	}
+	8257.1.1 = {
+		trait = chaste
+	}
+	8261.1.1 = {
+		trait = education_diplomacy_1
+	}
+	8269.1.1 = {
+		trait = depressed_1
+	}
+	8282.1.1 = {
+		#trait = in_hiding
+		#effect = {
+			# add_character_flag = hidden_from_siege
+		#}
+	}
+	8284.1.1 = {
+		death = {
+			death_reason = death_childbirth
+		}
+	}
+}
+
+##Issue of Aerys II
+Targaryen_3 = {
+	name = Rhaegar # Rhaegar the Bard
+	dynasty = dynn_Targaryen
+	dna = Targaryen_3
+
+	martial = 6
+	diplomacy = 8
+	intrigue = 5
+	stewardship = 9
+	learning = 8
+	prowess = 8
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = intellect_good_2
+	trait = beauty_good_3
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	disallow_random_traits = yes
+
+	8259.6.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+			add_character_flag = potential_targ_lunatic
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	#8262.6.1 = { # AGOT TODO ; should already get implicit claim via game
+	#	add_pressed_claim = title:e_the_iron_throne
+	#	add_pressed_claim = title:d_kings_landing
+	#	add_pressed_claim = title:c_kings_landing
+	#}
+	8265.8.1 = {
+		trait = diligent # from compassionate
+	}
+	8269.6.1 = {
+		trait = poet
+		trait = calm
+		trait = depressed_1
+	}
+	8275.6.1 = {
+		trait = education_learning_3
+		trait = education_martial_prowess_3
+		trait = lifestyle_blademaster #For now until tourney knight in TnT
+		# trait = inspiring_leader # AGOT TODO trait
+		# trait = cavalry_leader # AGOT TODO trait
+		# trait = center_leader #is this even relevant anymore? We don't have 3-level battle commanders anymore, only a single commander # AGOT TODO trait
+		trait = brave
+		effect = {
+			set_relation_friend = character:Connington_4 #Jon Connington
+		}
+	}
+	8277.1.1 = {
+		effect = {
+			set_relation_ward = character:Lonmouth_2 # Richard Lonmouth
+		}
+	}
+	8277.6.1 = {
+		trait = knight
+		trait = ambitious
+		effect = { set_relation_friend = character:Lonmouth_2 } # Richard Lonmouth
+	}
+	8279.1.1 = {
+		add_spouse = Martell_7 # Elia Martel
+	}
+	8282.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		effect = {
+			remove_relation_ward = character:Lonmouth_2 # Richard Lonmouth
+		}
+	}
+	8282.9.15 = {
+		#trait = assign_mission_target #for use in ToJ chain # AGOT TODO trait
+		effect = {
+			# character_event = { id = roberts_rebellion.3 }
+			# add_character_flag = supporting_king
+			# add_character_flag = former_royal_courtier
+			# e_the_iron_throne = {
+				# holder_scope = {
+					# ROOT = {
+						# join_defender_wars = PREV
+						# opinion = {
+							# who = PREV
+						 # modifier = opinion_with_king
+							# years = 100
+						# }
+					# }
+				# }
+			# }
+
+			# reverse_add_opinion = {
+				# target = character:Stark_3 #Eddard Stark
+			 # modifier = vengeance_opinion
+			# }
+			# reverse_add_opinion = {
+				# target = character:Stark_4 #Benjen Stark
+			 # modifier = vengeance_opinion
+			# }
+			# reverse_add_opinion = {
+				# target = character:Baratheon_2 #Robert Baratheon
+			 # modifier = vengeance_opinion
+			# }
+
+			set_relation_rival = character:Baratheon_2 #Robert Baratheon
+
+			#every_child = { add_character_flag = child_of_rhaegar } # AGOT TODO
+		}
+	}
+	8283.3.1 = {
+		death = {
+			death_reason = death_duel #death_duel_battle
+			killer = Baratheon_2 # Smote by Robert on the Trident
+		}
+	}
+}
+Targaryen_4 = {
+	name = Shaena
+	female = yes
+	dynasty = dynn_Targaryen
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_1
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	8267.6.1 = {
+		birth = yes
+		death = { death_reason = death_delivery }
+	}
+}
+Targaryen_5 = {
+	name = Daeron
+	dynasty = dynn_Targaryen
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_1
+	trait = sickly
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	8269.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8269.6.1 = {
+		death = { death_reason = death_sickly }
+	}
+}
+Targaryen_6 = {
+	name = Aegon
+	dynasty = dynn_Targaryen
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = intellect_good_1
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	trait = sickly #premature
+
+	8272.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8273.1.1 = {
+		death = { death_reason = death_sickly }
+	}
+}
+Targaryen_7 = {
+	name = Jaehaerys
+	dynasty = dynn_Targaryen
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	trait = sickly
+
+	8274.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8274.5.1 = {
+		death = { death_reason = death_sickly }
+	}
+}
+Targaryen_8 = {
+	name = Viserys # Viserys the Beggar King
+	dynasty = dynn_Targaryen
+	dna = Targaryen_8
+
+	martial = 2
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 4
+	learning = 5
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	8276.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+		}
+	}
+	8282.1.1 = {
+		trait = callous
+		trait = stubborn
+		#trait = in_hiding
+		#effect = {
+			# add_character_flag = hidden_from_siege
+		#}
+	}
+	8283.1.1 = {
+		trait = lunatic_1
+		trait = wrathful
+		remove_trait = craven
+	}
+	8284.1.1 = {
+		trait = ambitious
+		# employer = 600000041 #Braavos AGOT TODO No Braavos yet
+		effect = {
+			#add_character_flag = exiled_pretender # AGOT TODO
+			#add_character_flag = exiled_royal_family # AGOT TODO
+			#add_character_flag = targaryen # AGOT TODO
+			#remove_trait = in_hiding
+			# remove_character_flag = hidden_from_siege
+			#add_pressed_claim = title:e_the_iron_throne # AGOT TODO ; should already get claim by game
+			#add_pressed_claim = title:d_kings_landing
+			#add_pressed_claim = title:c_kings_landing
+
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Baratheon_2 # Robert Baratheon
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Baratheon_2 # Robert Baratheon
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Baratheon_3 # Stannis Baratheon
+			}
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lannister_1 # Tywin Lannister
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Lannister_1 # Tywin Lannister
+			}
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lannister_7 # Jaime Lannister
+			# }
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Clegane_3 # Gregor Clegane
+			# }
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lorch_2 # Amory Lorch
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Stark_3 # Eddard Stark
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Arryn_3 # Jon Arryn
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Tully_1 # Hoster Tully
+			}
+		}
+	}
+	8284.1.2 = {
+		death = { death_reason = death_vanished } # PLACEHOLDER
+	}
+	8288.1.1 = { give_nickname = nick_the_beggar_king }
+	8291.1.1 = {
+		trait = arrogant
+		trait = education_diplomacy_3
+	}
+	8295.1.1 = {
+		#employer = 600000040 #Illyrio # AGOT TODO Reenable once Pentos is added
+	}
+	8298.1.1 = {
+		# employer = 300100 #Drogo # AGOT TODO Reenable once Dothrakis are added
+	}
+	8298.8.1 = {
+		death = {
+			death_reason = death_execution
+			#killer = 300100 # Killed by Khal Drogo AGOT TODO No Drogo
+		}
+	}
+}
+Targaryen_9 = {
+	name = Daenerys # The Daenerys Stormborn
+	female = yes
+	dynasty = dynn_Targaryen
+	dna = Targaryen_9
+
+	martial = 4
+	diplomacy = 3
+	intrigue = 2
+	stewardship = 3
+	learning = 5
+	prowess = 4
+
+	religion = the_seven_main
+	culture = high_valyrian
+	sexuality = bisexual
+
+	trait = intellect_good_1
+	trait = beauty_good_3
+	give_nickname = nick_stormborn
+
+	father = Targaryen_1
+	mother = Targaryen_2
+
+	8284.1.1 = {
+		birth = yes
+		# employer = 600000041 #Braavos AGOT TODO No Braavos yet
+		effect = {
+			set_relation_friend = character:Darry_3 #Willem Darry
+			# clr_dynasty_flag = prefers_agnatic
+			#add_character_flag = targaryen
+			#add_character_flag = exiled_royal_family # AGOT TODO
+			add_character_flag = potential_targ_lunatic
+			#add_character_modifier = name = abomination_of_incest # AGOT TODO
+			#add_pressed_claim = title:e_the_iron_throne # AGOT TODO ; should already get claim by game
+			#add_pressed_claim = title:d_kings_landing
+			#add_pressed_claim = title:c_kings_landing
+
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Baratheon_2 # Robert Baratheon
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Baratheon_2 # Robert Baratheon
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Baratheon_3 # Stannis Baratheon
+			}
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lannister_1 # Tywin Lannister
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Lannister_1 # Tywin Lannister
+			}
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lannister_7 # Jaime Lannister
+			# }
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Clegane_3 # Gregor Clegane
+			# }
+			# add_opinion = {
+			 # modifier = opinion_vengeance
+				# target = character:Lorch_2 # Amory Lorch
+			# }
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Stark_3 # Eddard Stark
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Arryn_3 # Jon Arryn
+			}
+			add_opinion = {
+				modifier = usurped_title
+				target = character:Tully_1 # Hoster Tully
+			}
+		}
+	}
+	8284.1.2 = {
+		death = { death_reason = death_vanished } # PLACEHOLDER
+	}
+	8292.1.1 = {
+		effect = {
+			set_relation_guardian = character:Targaryen_8 #Viserys
+		}
+	}
+	8294.1.1 = {
+		trait = depressed_1
+		trait = trusting
+		trait = shy
+		trait = temperate
+	}
+	8295.1.1 = {
+		#employer = 600000040 #Illyrio # AGOT TODO Reenable once Pentos is added
+		effect = {
+			set_relation_guardian = character:Targaryen_8 #Viserys
+		}
+	}
+	8298.1.1 = {
+		#add_spouse = 300100 # Khal Drogo Reenable once Drogo is back in Game
+		effect = {
+			remove_relation_guardian = character:Targaryen_8 #Viserys
+			set_relation_guardian = character:Mormont_3 #Jorah Mormont
+		}
+		# effect = {
+			# if = {
+				# limit = { NOT = { game_start_date = 8298.10.10 } }
+				# add_artifact = dragon_egg
+				# new_artifact = {
+					# set_artifact_flag = dany_dragon_eggs #special flag so she gets three canon dragons
+					# set_name = [Root.GetDanyDragonEggsName]
+				# }
+			# }
+		# }
+	}
+	8298.4.1 = { # Character development among the Dothraki
+		remove_trait = depressed_1
+		remove_trait = shy
+		trait = authoritative
+	}
+	8298.8.1 = { # Viserys's death
+		trait = ambitious
+	}
+	8298.10.10 = { # Drogo's death
+		#trait = child_dragon
+		trait = widowed
+		#trait = dead_daenerys_crown # AGOT TODO trait
+		effect = {
+			#remove_trait = dead_daenerys_crown # AGOT TODO trait
+			# add_character_flag = viserion
+			# add_character_flag = rhaegal
+			# fertility = -0.2
+			# character_event = { id = traditional_claims.199 days = 2 }
+			# if = {
+				# limit = { has_game_rule = { name = shattered_realms value = off } }
+				# add_character_flag = dany_no_tame_dragon #Stop dany taming dragon before correct event
+				# set_global_flag = aegon_invasion #prohibit young griff invasion until possible tangent is passed
+				# add_character_flag = danys_eastern_quest
+				# character_event = { id = clash_of_kings.5099 days = 50 } #check quest every 50 days
+				# if = {
+					# limit = { NOT = { has_landed_title = k_meereen } }
+					# narrative_event = { id = clash_of_kings.50 }
+				# }
+			# }
+			# else = {
+				# if = {
+					# limit = { has_landed_title = d_great_grass_sea }
+					# activate_title = { status = no title = d_great_grass_sea }
+					# d_great_grass_sea = { destroy_landed_title = THIS }
+				# }
+				# if = {
+					# limit = { has_landed_title = k_great_grass_sea }
+					# activate_title = { status = no title = k_great_grass_sea }
+					# k_great_grass_sea = { destroy_landed_title = THIS }
+				# }
+			# }
+			#employer = 13635000 #Xaro Xhoan Daxos
+			reverse_add_opinion = {
+				modifier = love_opinion #opinion_infatuated
+				target = character:Mormont_3 # Jorah Mormont
+				opinion = 40
+			}
+			#any_courtier = { # AGOT TODO
+			#	limit = {
+			#		culture = culture:dothraki
+			#	}
+			#	add_opinion = {
+			#		modifier = loyal_servant
+			#		target = ROOT
+			#	}
+			#}
+			# any_courtier = {
+				# limit = {
+					# culture = high_valyrian
+					# is_ruler = no
+					# NOT = { father_even_if_dead = { always = yes } }
+				# }
+				# death = yes
+			# }
+			# 639 = { set_province_flag = dragon_intel_rebirth } # Lhazosh roughly where she hatched them
+			#add_character_flag = dragon_intel_rebirth # AGOT TODO
+		}
+	}
+	8300.1.1 = {
+		remove_trait = widowed
+		#effect = { # AGOT TODO
+		#	remove_relation_guardian = character:Mormont_3 #Jorah Mormont
+		#	spawn_army = {
+		#		name = army_unsullied_name
+		#		men_at_arms = {
+		#			type = unsullied # 10 000
+		#			stacks = 100
+		#		}
+		#		# location = # Astapor
+		#		# origin = # Astapor
+		#	}
+		#	spawn_army = { # Astapori Host
+		#		name = army_freedmen_name
+		#		levies = 5000
+		#		# location = # Astapor
+		#		# origin = # Astapor
+		#	}
+		#	spawn_army = { # Yunkaii Host
+		#		name = army_freedmen_name
+		#		levies = 2000
+		#		# location = # Astapor
+		#		# origin = # Astapor
+		#	}
+		#	606 = { #Meereen ID, fill once known
+		#		add_province_modifier = {
+		#			name = recently_looted_modifier
+		#			years = 5
+		#		}
+		#	}
+		#	613 = { #Astapor ID, fill once known
+		#		add_province_modifier = {
+		#			name = recently_looted_modifier
+		#			years = 5
+		#		}
+		#	}
+		#	612 = { #Slaver's Road ID, fill once known
+		#		add_province_modifier = {
+		#			name = recently_looted_modifier
+		#			years = 5
+		#		}
+		#	}
+		#	616 = { #Ghiscar Point ID, fill once known
+		#		add_province_modifier = {
+		#			name = recently_looted_modifier
+		#			years = 5
+		#		}
+		#	}
+
+		#	add_gold = 1000
+		#	add_prestige = 800
+		#	narrative_event = { id = feast_for_crows.50 days = 1 }
+
+		#	# Needs both trait and opinion
+		#	any_courtier = {
+		#		limit = {
+		#			trait = former_slave # AGOT TODO trait
+		#		}
+		#		opinion = { who = ROOT modifier = opinion_abolished_slavery_former_slave months = 2400 }
+		#	}
+
+		#	add_character_flag = enacted_seniority
+
+		#	# Disabled for now, im not dure if that maneuver will work in CK3
+		#	character:16571013 = { #give hizdhar meereen city holding
+		#		if = {
+		#			limit = { is_alive = yes is_ruler = yes }
+		#			b_meereen = {
+		#				gain_title = PREV
+		#				character:16571013 = { capital = PREV }
+		#			}
+		#		}
+		#	}
+		#	any_vassal = {
+		#		limit = {
+		#			tier = BARON
+		#			culture = high_valyrian
+		#			is_theocracy = no
+		#		}
+		#		add_character_flag = cull_me_check
+		#		character_event = { id = high_valyrian.2 }
+		#	}
+		#	remove_trait = child_dragon
+		#}
+		#trait = wild_dragon
+
+		#trait = liberator AGOT TODO Trait
+		trait = education_diplomacy_3
+	}
+	8300.4.2 = {
+		effect = {
+			#set_relation_lover = character:16892322 # Daario Naharis AGOT TODO Readd Daario
+		}
+	}
+}
+
+##Issue of Rhaegar
+Targaryen_10 = {
+	name = Rhaenys # daughter of Rhaegar
+	female = yes
+	dynasty = dynn_Targaryen
+	dna = Targaryen_10
+
+	religion = the_seven_main
+	culture = salt_dornish
+
+	father = Targaryen_3
+	mother = Martell_7
+
+	8280.8.1 = {
+		birth = yes
+		effect = {
+			set_culture = culture:high_valyrian
+			add_character_flag = has_scripted_appearance
+			set_variable = { name = agot_dna value = flag:martell }
+			#add_character_modifier = grandchild_of_incest # AGOT TODO
+			# character_event = { id = high_valyrian.3 days = 2000 }
+		}
+	}
+	8282.1.1 = {
+		employer = Targaryen_1
+		effect = {
+			start_cat_story_cycle_effect = yes
+		}
+	}
+	8283.6.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lorch_2 # Ser Amory Lorch
+		}
+	}
+}
+Targaryen_11 = {
+	name = Aegon # aka Aegon, son of Rhaegar. Later claimaint Aegon VI
+	dynasty = dynn_Targaryen
+	dna = Targaryen_11
+
+	martial = 5
+	diplomacy = 7
+	intrigue = 4
+	stewardship = 7
+	learning = 7
+	#health = 7 # AGOT TODO
+	prowess = 8
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_2
+	trait = intellect_good_1
+
+	father = Targaryen_3
+	mother = Martell_7
+
+	8282.1.1 = {
+		birth = yes
+		effect = {
+			#add_character_modifier = grandchild_of_incest # AGOT TODO
+			# character_event = { id = high_valyrian.3 days = 2000 }
+		}
+		employer = Targaryen_1
+	}
+	8283.6.1 = {
+		#trait = has_missing # AGOT TODO trait
+		death = {
+			death_reason = death_murder_known
+			killer = Clegane_3 # Ser Gregor Clegane
+		}
+	}
+}
+
+Targaryen_12 = {
+	name = Aegon # aka Aegon, son of Rhaegar as Young Griff
+	#dna = Targaryen_12 AGOT TODO DNA
+
+	martial = 5
+	diplomacy = 7
+	intrigue = 4
+	stewardship = 7
+	learning = 7
+	#health = 7 # AGOT TODO
+	prowess = 8
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_2
+	trait = intellect_good_1
+
+	disallow_random_traits = yes
+
+	#mother = 125099
+
+	8282.1.1 = {
+		birth = yes
+		effect = {
+			if = {
+				limit = { NOT = { game_start_date = 8283.6.1 } }
+				death = { death_reason = death_accident }
+			}
+			#set_house = none # AGOT TODO
+		}
+	}
+	8283.6.1 = {
+		#employer = 600000040 # Illyrio Mopatis # AGOT TODO Reenable once Pentos is added
+		#effect = { # AGOT TODO
+		#	add_character_flag = high_valyrian
+		#}
+	}
+	8284.1.1 = {
+		#employer = Toyne_4 #Myles Toyne # AGOT TODO no golden company title
+	}
+	8288.8.1 = {
+		trait = humble
+	}
+	8290.8.1 = {
+		trait = temperate
+	}
+	8292.1.1 = {
+		#trait = squire # AGOT TODO trait
+		effect = {
+			set_relation_guardian = character:Connington_4 # Jon Connington
+		}
+	}
+	8292.8.1 = {
+		trait = brave
+		trait = shrewd
+	}
+	8297.1.1 = {
+		employer = Strickland_1 #Harry Strickland
+		trait = scholar
+		trait = ambitious
+		effect = {
+			set_relation_friend = character:Connington_4 # Jon Connington
+			set_relation_friend = character:88149 # Rolly Duckfield
+			#set_relation_friend = character:600000040 # Illyrio Mopatis AGOT TODO Reenable when Braavos exists
+		}
+	}
+	8298.1.1 = {
+		trait = education_martial_3
+		#trait = inspiring_leader # AGOT TODO trait
+		effect = {
+			remove_relation_guardian = character:Connington_4 # Jon Connington
+		}
+	}
+	# 8299.1.1 = {
+		# effect = {
+			# random_friend = {
+				# limit = { character = Connington_4 }
+				# character_event = { id = knight.19 days = 365 } #knighhood event
+			# }
+		# }
+	# }
+	8300.2.28 = {
+		#trait = forbid_marriage # AGOT TODO trait
+		dynasty = dynn_Targaryen
+		# effect= {
+			# #Make room for canon flank commanders
+			# remove_all_commanders = yes
+		# }
+	}
+	8300.3.1 = {
+		#add_pressed_claim = title:e_the_iron_throne # AGOT TODO ; should already get claim by game
+		#add_pressed_claim = title:d_kings_landing
+		#add_pressed_claim = title:c_kings_landing
+		#add_pressed_claim = title:d_dragonstone
+		#add_pressed_claim = title:c_dragonstone
+
+		#effect = { # AGOT TODO
+		#	set_house = dynn_Targaryen # AGOT TODO
+		#	if = { #Landless workaround, give title back to rain house
+		#		limit = { has_landed_title = b_maelstrom_watch }
+		#		b_maelstrom_watch = { c_rain_house = { holder_scope = { gain_title = PREVPREV } } }
+		#	}
+		#	if = {
+		#		limit = { ai = no }
+		#		remove_trait = forbid_marriage # AGOT TODO trait
+		#	}
+		#	add_character_flag = rebel_leader
+		#	trait = rebel_leader
+		#	add_unpressed_claim = title:k_the_stormlands
+		#	304 = {
+		#		add_province_modifier = {
+		#			name = utterly_defeated
+		#			duration = 1800
+		#		}
+		#	}
+		#	add_character_flag = claimant_adventurer
+		#	add_character_flag = young_griff_claimant
+
+		#	### TODO: Assign Knights
+		#	# Connington_4 - Jon Connington
+		#	# Peake_3 - Laswell Peake
+		#	# 125008 - Tristan Rivers
+		#	# 125004 - Gorys Edoryen
+		#	# 125007 - Marq Mandrake
+		#	# Mudd_2 - John Muddd
+		#	spawn_army = { # Jon Connington, Aegon VI Targaryen, Harry Strickland, Gorys Edoryen
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 500
+		#			stacks = 5
+		#		}
+		#		men_at_arms = {
+		#			type = pikemen_unit # 500
+		#			stacks = 5
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 500
+		#			stacks = 5
+		#		}
+		#		men_at_arms = {
+		#			type = light_cavalry # 500
+		#			stacks = 5
+		#		}
+		#		men_at_arms = {
+		#			type = armored_horsemen # 200
+		#			stacks = 4
+		#		}
+		#		men_at_arms = {
+		#			type = archers # 100
+		#			stacks = 1
+		#		}
+		#		men_at_arms = {
+		#			type = longbowmen # 200
+		#			stacks = 2
+		#		}
+		#		### location = #Griffin's Roost
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Tristan Rivers
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = pikemen_unit # 300
+		#			stacks = 3
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 300
+		#			stacks = 3
+		#		}
+		#		men_at_arms = {
+		#			type = light_cavalry # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = armored_horsemen # 150
+		#			stacks = 3
+		#		}
+		#		men_at_arms = {
+		#			type = longbowmen # 100
+		#			stacks = 1
+		#		}
+		#		### location = #Crow's Nest
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Laswell Peake
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 300
+		#			stacks = 3
+		#		}
+		#		men_at_arms = {
+		#			type = pikemen_unit # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = light_cavalry # 300
+		#			stacks = 3
+		#		}
+		#		men_at_arms = {
+		#			type = armored_horsemen # 50
+		#			stacks = 1
+		#		}
+		#		men_at_arms = {
+		#			type = archers # 100
+		#			stacks = 1
+		#		}
+		#		men_at_arms = {
+		#			type = longbowmen # 100
+		#			stacks = 1
+		#		}
+		#		### location = #Rain House
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Marq Mandrake
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 100
+		#			stacks = 1
+		#		}
+		#		men_at_arms = {
+		#			type = pikemen_unit # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 200
+		#			stacks = 2
+		#		}
+		#		### location = #Estermont
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Desanted on Tarth
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = pikemen_unit # 200
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 100
+		#			stacks = 1
+		#		}
+		#		### location = #Tarth
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Crashed on the Stepstones
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = pikemen_unit # 600
+		#			stacks = 6
+		#		}
+		#		men_at_arms = {
+		#			type = armored_footmen # 700
+		#			stacks = 7
+		#		}
+		#		men_at_arms = {
+		#			type = light_cavalry # 600
+		#			stacks = 6
+		#		}
+		#		men_at_arms = {
+		#			type = armored_horsemen # 100
+		#			stacks = 2
+		#		}
+		#		men_at_arms = {
+		#			type = war_elephant # 25
+		#			stacks = 1
+		#		}
+		#		### location = #Bloodstone
+		#		### origin = #King's Landing?
+		#	}
+		#	spawn_army = { # Crashed on the Stepstones
+		#		name = the_golden_company_name
+		#		men_at_arms = {
+		#			type = light_footmen # 700
+		#			stacks = 7
+		#		}
+		#		men_at_arms = {
+		#			type = light_cavalry # 900
+		#			stacks = 9
+		#		}
+		#		men_at_arms = {
+		#			type = archers # 100
+		#			stacks = 1
+		#		}
+		#		men_at_arms = {
+		#			type = longbowmen # 300
+		#			stacks = 3
+		#		}
+		#		### location = #Sunstone
+		#		### origin = #King's Landing?
+		#	}
+		#	# else = {
+		#		remove_trait = forbid_marriage # AGOT TODO trait
+		#		# if = {
+		#			# limit = { has_landed_title = d_young_griffs_host }
+		#			# activate_title = { status = no title = d_young_griffs_host }
+		#			# d_young_griffs_host = { destroy_landed_title = THIS }
+		#		# }
+		#	# }
+		#	add_opinion = {
+		#		target = character:Baratheon_3 # Stannis Baratheon
+		#		modifier = usurped_title
+		#	}
+		#	add_opinion = {
+		#		target = character:Baratheon_7 # Tommen Baratheon
+		#		modifier = usurped_title
+		#	}
+		#	add_opinion = {
+		#		target = character:Lannister_7 # Jaime Lannister
+		#		modifier = attempted_murder_close_family_crime
+		#	}
+		#}
+	}
+}
+
+###### HOUSE VELARYON (id = dynn_Velaryon)
+############################
+### The Old, The True, The Brave
+###
+Velaryon_1 = {
+	name = Lucerys # Canon, Monford's father. Aerys' Master of Ships
+	dynasty = dynn_Velaryon
+	dna = Velaryon_1
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_57
+	mother = Velaryon_p_2
+
+	trait = lustful
+	trait = arbitrary
+	trait = ambitious
+	trait = brave
+
+	8244.1.1 = { birth = yes }
+	8260.1.1 = {
+		add_spouse = Velaryon_rs_1
+		trait = education_martial_2
+		trait = knight
+	}
+	8277.1.1 = {
+		give_council_position = councillor_admiral # Master of Ships
+	}
+	8284.1.1 = { death = { death_reason = death_accident } } # died during storm while Daenerys was born
+}
+Velaryon_58 = {
+	name = Alyssa
+	dynasty = dynn_Velaryon
+	dna = Velaryon_58
+	female = yes
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_57
+	mother = Velaryon_p_2
+
+	8246.1.1 = { birth = yes }
+	8298.1.1 = { death = yes }
+}
+Velaryon_59 = {
+	name = Addam
+	dynasty = dynn_Velaryon
+	dna = Velaryon_59
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_57
+	mother = Velaryon_p_2
+
+	8249.1.1 = { birth = yes }
+	8265.1.1 = {
+		trait = education_stewardship_2
+		trait = knight
+	}
+	8268.1.1 = { add_spouse = Velaryon_p_3 }
+	8284.1.1 = { death = { death_reason = death_accident } } # died during storm while Daenerys was born
+}
+Velaryon_60 = {
+	name = Daenaera
+	dynasty = dynn_Velaryon
+	dna = Velaryon_60
+	female = yes
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_57
+	mother = Velaryon_p_2
+
+	8251.1.1 = { birth = yes }
+}
+Velaryon_rs_1 = {
+	name = Elinor
+	female = yes
+	dna = Velaryon_rs_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	trait = education_diplomacy_1
+
+	8248.1.1 = { birth = yes }
+	8281.1.1 = { death = yes }
+}
+Velaryon_p_3 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	8249.1.1 = { birth = yes }
+}
+### Issue of Lucerys
+Velaryon_2 = {
+	name = Monford # Canon
+	dynasty = dynn_Velaryon
+	dna = Velaryon_2
+
+	martial = 5
+	diplomacy = 5
+	intrigue = 1
+	stewardship = 5
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_1
+	mother = Velaryon_rs_1
+
+	disallow_random_traits = yes
+	trait = beauty_good_2
+	trait = rowdy
+
+	8268.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = forgiving
+		trait = arrogant
+	}
+	8284.1.1 = {
+		add_spouse = Velaryon_rs_2
+		remove_trait = rowdy
+		trait = education_martial_3
+		trait = knight
+		trait = brave
+		trait = impatient
+	}
+	8298.10.28 = {
+		religion = rhllor
+	}
+	8299.7.1 = {
+		# Died at the Battle of the Blackwater
+		death = {
+			death_reason = death_battle
+			killer = Lannister_8
+		}
+	}
+}
+Velaryon_rs_2 = {
+	name = Lianna
+	female = yes
+	# AGOT TODO dna = agot_dna_Velaryon_rs_2
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	8268.1.1 = { birth = yes }
+	8298.10.28 = {
+		religion = rhllor
+	}
+}
+Velaryon_5 = {
+	name = Aurane # Monford's half-brother
+	dynasty = dynn_Velaryon
+	dna = Velaryon_5
+
+	martial = 5
+	diplomacy = 8
+	intrigue = 8
+	stewardship = 3
+	learning = 4
+	prowess = 6
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = bastard
+	trait = beauty_good_3
+	trait = intellect_good_1
+	trait = charming #AGOT PLACEHOLDER AGAINST ERRORS, REPLACE IF NEEDED
+
+	disallow_random_traits = yes
+
+	father = Velaryon_1 # Aegor Velaryon
+
+	8278.1.1 = {
+		birth = yes
+		give_nickname = nick_waters
+	}
+	8284.8.1 = {
+		trait = brave
+		trait = rowdy
+	}
+	8286.8.1 = {
+		trait = deceitful
+		trait = gregarious
+	}
+	8288.8.1 = {
+		trait = callous
+	}
+	8294.1.1 = {
+		remove_trait = rowdy
+		trait = ambitious
+		trait = education_martial_2
+	}
+	8299.7.1 = {
+		employer = Baratheon_5
+	}
+	8300.1.1 = {
+		employer = Baratheon_7
+	}
+	#8300.2.9 = {
+	#	give_council_position = councillor_admiral # Master of Ships # AGOT TODO
+	#}
+	8300.3.1 = { #Date too early.
+		employer = 0
+		# effect = { #Becomes a Pirate
+			# set_character_faith_history = faith:pirate
+			# character_event = { id = pirate.1 days = 1 }
+			# #Create some Pirate companions that came from King's Landing
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 35
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_2
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 27
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_1
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 29
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_2
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 21
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_1
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 24
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_2
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+			# create_character = {
+				# random_traits = yes
+				# dynasty = none
+				# religion = THIS
+				# culture = crownlander
+				# female = no
+				# age = 26
+				# trait = pirate # AGOT TODO trait
+				# trait = education_martial_1
+			# }
+			# new_character = {
+				# random_list = {
+					# 10 = { trait = education_martial_prowess_3 }
+					# 30 = { trait = education_martial_prowess_2 }
+					# Cassel_2 = { trait = education_martial_prowess_1 }
+				# }
+			# }
+		# }
+	}
+}
+
+### Issue of Monford
+Velaryon_3 = {
+	name = Monterys
+	dynasty = dynn_Velaryon
+	# dna = Velaryon_3
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	trait = beauty_good_2
+
+	father = Velaryon_2
+	mother = Velaryon_rs_2
+
+	8293.1.1 = {
+		birth = yes #six years old
+	}
+	8298.10.28 = {
+		religion = rhllor
+	}
+}
+Velaryon_4 = {
+	name = Jacaerys # non-canon brother of Monterys to ensure Velaryons don't die out
+	dynasty = dynn_Velaryon
+	dna = Velaryon_1
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_2
+	mother = Velaryon_rs_2
+
+	8295.1.1 = { birth = yes }
+	8298.10.28 = {
+		religion = rhllor
+	}
+	8299.7.1 = {
+		employer = Velaryon_3
+	}
+}
+
+###some cousins cause why not
+Velaryon_61 = {
+	name = Valaena
+	dynasty = dynn_Velaryon
+	dna = Velaryon_61
+	female = yes
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_59
+	mother = Velaryon_p_3
+
+	8270.1.1 = { birth = yes }
+}
+Velaryon_62 = {
+	name = Vaemond
+	dynasty = dynn_Velaryon
+	dna = Velaryon_62
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_59
+	mother = Velaryon_p_3
+
+	8274.1.1 = { birth = yes }
+	8293.1.1 = { trait = knight }
+}
+Velaryon_63 = {
+	name = Victor
+	dynasty = dynn_Velaryon
+	dna = Velaryon_63
+
+	religion = the_seven_main
+	culture = high_valyrian
+
+	father = Velaryon_59
+	mother = Velaryon_p_3
+
+	8276.1.1 = { birth = yes }
+	8295.1.1 = { trait = knight }
+}
+
+###### HOUSE CELTIGAR (id = dynn_Celtigar)
+############################
+###
+###
+Celtigar_1 = {
+	name = Alysanne
+	female = yes
+	dynasty = dynn_Celtigar
+	dna = Celtigar_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_50
+	mother = Celtigar_rs_4
+
+	8245.1.1 = { birth = yes }
+	8291.1.1 = { death = yes }
+}
+Celtigar_2 = {
+	name = Ardrian # Canon, a lord
+	dynasty = dynn_Celtigar
+	dna = Celtigar_2
+
+	stewardship = 9
+	prowess = 6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_50
+	mother = Celtigar_rs_4
+
+	8243.1.1 = { birth = yes }
+	8259.1.1 = {
+		trait = knight
+		trait = arrogant
+		trait = greedy
+		trait = cynical
+		trait = education_diplomacy_3
+		give_nickname = nick_the_red_crab
+	}
+	8261.1.1 = { add_spouse = Celtigar_rs_1 }
+	8280.1.1 = {
+		add_gold = 400
+	}
+	8299.7.1 = {
+		effect = {
+			title:e_the_iron_throne.holder = { #Joffrey Baratheon
+				imprison = {
+					target = ROOT
+					type = house_arrest
+				}
+			}
+		}
+	}
+}
+Celtigar_rs_1 = {
+	name = Moelle
+	female = yes
+	dna = Celtigar_rs_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	8243.1.1 = { birth = yes }
+}
+##Issue of Adrian
+Celtigar_3 = {
+	name = Maric
+	dynasty = dynn_Celtigar
+	dna = Celtigar_3
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_2
+	mother = Celtigar_rs_1
+
+	8270.1.1 = { birth = yes }
+	8289.1.1 = { trait = knight }
+}
+Celtigar_4 = {
+	name = Mylenda
+	female = yes
+	dynasty = dynn_Celtigar
+	dna = Celtigar_4
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_2
+	mother = Celtigar_rs_1
+
+	8272.1.1 = { birth = yes }
+}
+Celtigar_5 = {
+	name = Harrold # Gold Cloak (AGOT Video Game)
+	dynasty = dynn_Celtigar
+	dna = Celtigar_5
+
+	martial = 6
+	prowess = 6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_2
+	mother = Celtigar_rs_1
+
+	trait = education_martial_2
+	trait = rowdy
+	trait = wrathful
+
+	8274.1.1 = { birth = yes }
+	8293.1.1 = {
+		trait = knight
+		#effect = { # AGOT TODO
+		#	set_employer = title:b_kings_landing.holder
+		#}
+	}
+	8298.11.2 = { #killed on day of ned's execution
+		death = {
+			death_reason = death_duel
+			killer = Westford_2 #Mors Westford
+		}
+	}
+}
+Celtigar_6 = {
+	name = Malora
+	female = yes
+	dynasty = dynn_Celtigar
+	dna = Celtigar_6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_2
+	mother = Celtigar_rs_1
+
+	8276.1.1 = { birth = yes }
+}
+Celtigar_7 = {
+	name = Terrence # semi-canon
+	dynasty = dynn_Celtigar
+	dna = Celtigar_7
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_2
+	mother = Celtigar_rs_1
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = rowdy
+
+	8277.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = knight
+		trait = brave
+	}
+	8297.1.1 = {
+		trait = nightswatch
+		death = { death_reason = death_battle }
+	}
+}
+
+###cousins
+Celtigar_59 = {
+	name = Edwell
+	dynasty = dynn_Celtigar
+	dna = Celtigar_59
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_58
+	mother = Celtigar_p_2
+
+	8250.1.1 = { birth = yes }
+	8269.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Celtigar_p_4 }
+	8284.1.1 = { death = { death_reason = death_accident } } # died during storm while Daenerys was born
+}
+Celtigar_p_4 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	8251.1.1 = { birth = yes }
+}
+Celtigar_60 = {
+	name = Jeyne
+	dynasty = dynn_Celtigar
+	female = yes
+
+	dna = Celtigar_60
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_59
+	mother = Celtigar_p_4
+
+	8273.1.1 = { birth = yes }
+}
+Celtigar_54 = {
+	name = Corbin
+	dynasty = dynn_Celtigar
+	dna = Celtigar_54
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_53
+	mother = Celtigar_p_3
+
+	trait = gregarious
+	trait = lustful
+	trait = wrathful
+	trait = generous
+	trait = scarred
+	trait = beauty_bad_1
+	trait = education_martial_2
+
+	8250.1.1 = { birth = yes }
+	8266.1.1 = { trait = knight }
+	8271.1.1 = { employer = Kern_3 } # Bryan Kern
+}
+Celtigar_55 = {
+	name = Casella
+	dynasty = dynn_Celtigar
+	dna = Celtigar_55
+	female = yes
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Celtigar_53
+	mother = Celtigar_p_3
+
+	trait = ambitious
+	trait = diligent
+	trait = patient
+	trait = education_intrigue_3
+
+	8254.1.1 = { birth = yes }
+}
+
+###### HOUSE SCALES (id = dynn_Scales)
+############################
+###
+###
+Scales_4 = {
+	name = Aurion # a lord
+	dynasty = dynn_Scales
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_19
+	mother = Scales_p_1
+
+	8201.1.1 = { birth = yes }
+	8218.1.1 = { trait = knight }
+	8220.1.1 = { add_spouse = Scales_rs_4 }
+	8243.1.1 = { death = yes }
+}
+Scales_rs_4 = {
+	name = Prunella
+	female = yes
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	8204.1.1 = { birth = yes }
+	8258.1.1 = { death = yes }
+}
+### Issue of Aurion
+Scales_21 = {
+	name = Aemira
+	dynasty = dynn_Scales
+	female = yes
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_4
+	mother = Scales_rs_4
+
+	8224.1.1 = { birth = yes }
+	8239.1.1 = {
+		effect = {
+			set_relation_soulmate = {
+				reason = soulmate_professed_love
+				target = character:Longwaters_7
+			}
+		}
+	}
+	8246.1.1 = { death = { death_reason = death_childbirth } }
+}
+Scales_5 = {
+	name = Elena
+	dynasty = dynn_Scales
+	female = yes
+
+	dna = Scales_5
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_4
+	mother = Scales_rs_4
+
+	8227.1.1 = { birth = yes }
+	8283.1.1 = { death = yes }
+}
+Scales_3 = {
+	name = Russell # a lord
+	dynasty = dynn_Scales
+
+	dna = Scales_3
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_4
+	mother = Scales_rs_4
+
+	8233.1.1 = { birth = yes }
+	8253.1.1 = { trait = knight }
+	8255.1.1 = {
+		add_spouse = Scales_p_2
+	}
+	8283.1.1 = { death = yes }
+}
+Scales_p_2 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8204.1.1 = { birth = yes }
+	8258.1.1 = { death = yes }
+}
+### Issue of Russell
+Scales_1 = {
+	name = Elyas # a lord
+	dynasty = dynn_Scales
+
+	dna = Scales_1
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_3
+	mother = Scales_p_2
+
+	8260.1.1 = { birth = yes }
+	8280.1.1 = {
+		trait = knight
+	}
+	8298.10.28 = {
+		religion = rhllor
+	}
+}
+Scales_22 = {
+	name = Benethon # Canon, queens man
+	dynasty = dynn_Scales
+
+	dna = Scales_22
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_3
+	mother = Scales_p_2
+
+	8264.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = knight
+	}
+	8284.1.1 = {
+		employer = Baratheon_3 #temporary, until barony is found
+	}
+	8298.10.28 = {
+		religion = rhllor
+	}
+}
+Scales_2 = {
+	name = Bethany
+	female = yes
+	dynasty = dynn_Scales
+
+	dna = Scales_2
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Scales_3
+	mother = Scales_p_2
+
+	8266.1.1 = { birth = yes }
+	8282.1.1 = {
+		add_spouse = Sweet_5 #Symon Sweet
+	}
+}
+
+###### HOUSE LONGWATERS (id = dynn_Longwaters)
+############################
+###
+###
+Longwaters_7 = {
+	name = Bartimos
+	dynasty_house = house_Longwaters
+
+	dna = Longwaters_7
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_1
+	mother = Celtigar_56
+
+	8221.1.1 = { birth = yes }
+	8239.1.1 = {
+		add_spouse = Scales_21 # Aemira Scales - d.d. 8246
+	}
+	8246.1.1 = { add_trait = depressed_1 }
+	8283.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+Longwaters_2 = {
+	name = Rennifer # Guy who brags about having dragon blood
+	dynasty_house = house_Longwaters #Longwaters
+	dna = Longwaters_2
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_1
+	mother = Celtigar_56
+
+	trait = education_stewardship_2
+	trait = arrogant
+
+	8224.1.1 = {
+		birth = yes
+	}
+	8288.1.1 = {
+		employer = Baratheon_2 #Robert Baratheon - Canon date of when he moves to KL
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 #Joffrey Baratheon
+	}
+	8300.1.1 = {
+		employer = Baratheon_7 #Tommen Baratheon
+	}
+}
+### Issue of Bartimos
+Longwaters_3 = {
+	name = Nerys
+	dynasty_house = house_Longwaters
+	female = yes
+
+	dna = Longwaters_3
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_7
+	mother = Scales_21
+
+	8241.1.1 = { birth = yes }
+	8246.1.1 = {
+		effect = {
+			set_relation_rival = character:Longwaters_5 # NC Flavour - Despises Maric for "killing" their mother in childbirth
+		}
+	}
+	8297.1.1 = { death = yes }
+}
+Longwaters_4 = {
+	name = Daena
+	dynasty_house = house_Longwaters
+	female = yes
+
+	dna = Longwaters_4
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_7
+	mother = Scales_21
+
+	8244.1.1 = { birth = yes }
+	8287.1.1 = {
+		add_trait = ill
+		death = {
+			death_reason = death_ill
+		}
+	}
+}
+Longwaters_5 = {
+	name = Maric
+	dynasty_house = house_Longwaters
+
+	dna = Longwaters_5
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_7
+	mother = Scales_21
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = { add_trait = knight }
+	8267.1.1 = { add_spouse = Sunglass_34 } # Ellyn Sunglass
+	8293.1.1 = { death = yes }
+}
+Longwaters_6 = {
+	name = Rolland
+	dynasty_house = house_Longwaters
+
+	dna = Longwaters_6
+
+	religion = the_seven_main
+	culture = westerosi_valyrian
+
+	father = Longwaters_5
+	mother = Sunglass_34
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = { add_trait = knight }
+	8290.1.1 = { add_spouse = Longwaters_rs_6 }
+}
+Longwaters_rs_6 = {
+	name = Eglantine
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8274.1.1 = { birth = yes }
+}
+
+### LOWBORN
+############################
+###
+###
+202081092 = {
+	name = Qyburn
+	#dna = "cgahjwljgch"
+
+	religion = the_seven_main
+	culture = crownlander
+
+	martial = 2
+	stewardship = 4
+	intrigue = 3
+	diplomacy = 5
+	learning = 8
+	prowess = 3
+
+	trait = intellect_good_2
+	trait = sadistic
+	trait = ambitious
+	trait = cynical
+	trait = deceitful
+
+	8239.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8255.1.1 = {
+		trait = education_learning_4
+		trait = maester
+		effect = {
+			add_trait = lifestyle_physician
+			add_trait_xp = {
+				trait = lifestyle_physician
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+		#effect = { add_character_flag = serving_with_lord } # AGOT TODO
+	}
+	8278.1.1 = {
+		employer = Citadel_27
+	}
+	8284.1.1 = {
+		remove_trait = maester #expelled from order
+		remove_trait = education_learning_4
+		trait = education_intrigue_4
+		effect = {
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+		#employer = 129174366 #Pentos # AGOT TODO Reenable once Pentos is added
+	}
+	#8285.1.1 = { employer = 134174356 } #Pentos AGOTODO Reenable once Pentos exists
+	#8286.1.1 = { employer = 80012560 } # Vargo Hoat AGOT TODO Reenable once Mercs
+	8299.10.1 = { employer = Baratheon_5 } #Joffrey I "Baratheon"
+	8300.1.2 = { employer = Baratheon_7 } #Tommen I "Baratheon"
+	8300.2.9 = {
+		#give_council_position = councillor_spymaster # Master of Whisperers # AGOT TODO
+	}
+}
+203081092 = {
+	name = Shae
+	female = yes
+
+	# AGOT TODO dna = agot_dna_Shae
+
+	fertility = 0.1 # AGOT TODO
+
+	#religion = "gods_lorath"
+	religion = princely_arbiter
+	culture = "lorathi"
+
+	trait = beauty_good_3
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = {
+		trait = craven
+		trait = education_diplomacy_1
+		trait = deceitful
+		trait = arrogant
+		trait = ambitious
+		trait = lifestyle_reveler
+	}
+	8298.11.2 = {
+		employer = Baratheon_5 # Joffrey Baratheon
+	}
+	8300.2.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_8 # Tyrion Lannister
+		}
+	}
+}
+200300507 = {
+	name = Thoros
+	dynasty = dynn_Myr # of Myr #AGOT TODO - should he have a dynasty at all?
+
+	#dna = "dbfkf0edaa0"
+
+	religion = rhllor
+	culture = myrish
+
+	martial = 10
+	diplomacy = 10
+	prowess = 6
+
+	8256.1.1 = {
+		birth = yes
+		# effect = { set_immune_to_pruning = yes }
+	}
+	8272.1.1 = {
+		trait = education_learning_1
+		trait = drunkard
+		trait = gluttonous
+		trait = arrogant
+		trait = cynical
+		trait = education_martial_prowess_3
+		effect = {
+			add_trait = lifestyle_reveler
+			add_trait_xp = {
+				trait = lifestyle_reveler
+				value = trait_third_level
+			}
+		}
+	}
+	8276.1.1 = { trait = devoted }
+	8280.1.1 = {employer = Targaryen_1 } # Aerys II Targaryen
+	8284.1.1 = {employer = Baratheon_2 } # Robert Baratheon
+	8298.10.28 = {
+		remove_trait = drunkard
+		remove_trait = gluttonous
+		remove_trait = arrogant
+		remove_trait = cynical
+		effect = {
+			remove_trait = lifestyle_reveler
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+		trait = generous
+		trait = brave
+		employer = Dondarrion_2 #Beric
+		#give_council_position = councillor_court_chaplain # AGOT TODO
+	}
+	8299.11.5 = {
+		employer = Tully_5 #Stoneheart
+	}
+}
+204081092 = {
+	name = Robert #ROBER STRONG (aka Undead Gregor Clegane)
+	#dynasty = 1510 #Strong #AGOT TODO - should he have his own dynasty?
+	dynasty = dynn_Strong #AGOT TODO - for now he will be unlinked I guess!
+
+	#dna = "bibea0h0000"
+
+	martial = 10 #9
+	diplomacy = 2
+	intrigue = 2
+	stewardship = 2
+	learning = 2
+	prowess = 12
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = giant
+	trait = physique_good_3
+	trait = strong
+	trait = intellect_bad_3
+
+	8265.1.1 = {
+		birth = yes
+		effect = {
+			#set_immune_to_pruning = yes # AGOT TODO
+			if = {
+				limit = {
+					NOT = { game_start_date = 8300.3.1 }
+				}
+				death = natural
+			}
+		}
+	}
+	8300.3.1 = {
+		employer = Baratheon_7 #Tommen Baratheon
+		#trait = undead AGOT TODO Trait
+		trait = knight
+		trait = education_martial_1
+		trait = brave
+		trait = sadistic
+		trait = wrathful
+	}
+	8300.7.1 = {
+		effect = { add_character_flag = agot_is_kingsguard_member }
+	}
+}
+
+###Grandmaester Pycelle###
+Pycelle_1 = {
+	name = Pycelle
+	# dna = dna_Pycelle
+
+	martial = 4
+	diplomacy = 5
+	intrigue = 8
+	stewardship = 5
+	learning = 5
+	#health = 11 # AGOT TODO
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = education_learning_4
+	trait = intellect_good_2
+	trait = deceitful
+	trait = craven
+	trait = ambitious
+	trait = arbitrary
+	trait = lustful
+
+	8216.9.1 = { birth = yes }
+	8232.9.1 = {
+		trait = maester
+		effect = {
+			add_trait = lifestyle_physician
+			add_trait_xp = {
+				trait = lifestyle_physician
+				value = trait_third_level
+			}
+		}
+	}
+	8245.1.1 = {
+		# remove_trait = maester
+		# effect = { add_trait_force_tooltip = archmaester }
+		add_trait = maester
+		# employer = 88765003 #Hake AGOT Disabled - Throws errors cause unlanded
+	}
+	# 8249.1.1 = {
+	# 	employer = 88765004 #Harmune AGOT Disabled - Throws errors cause unlanded
+	# }
+	8259.2.1 = { #becomes grand maester
+		employer = Targaryen_122 #Aegon V the Unlikley
+		effect = {
+			add_character_flag = grandmaester
+			#give_council_position = councillor_maester # Grand Maester # AGOT TODO
+		}
+	}
+	8259.6.1 = {
+		employer = Targaryen_127 # Jaehaerys II Targaryen
+	}
+	8262.1.1 = {
+		employer = Targaryen_1 # Aerys II Targaryen
+	}
+	8284.1.1 = { employer = Baratheon_2 } # Robert Baratheon
+	8298.10.28 = { employer = Baratheon_5 } # Joffrey Baratheon
+	8300.1.2 = { employer = Baratheon_7 } # Tommen Baratheon
+	8300.5.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Eunuch_1 # Varys
+		}
+	}
+}
+
+Eunuch_1 = {
+	name = Varys # THE Varys
+	religion = rhllor
+	culture = lyseni
+
+	dna = Eunuch_1
+
+	martial = 3
+	diplomacy = 12
+	intrigue = 13
+	stewardship = 6
+	learning = 7
+	prowess = 0
+	#health = 7 # AGOT TODO
+
+	trait = education_intrigue_4
+	trait = intellect_good_3
+	trait = patient
+	trait = gregarious
+
+	8257.1.1 = { birth = yes }
+	8267.1.1 = {
+		trait = eunuch
+		trait = ambitious
+		trait = deceitful
+		trait = schemer
+		#employer = 129174366 # Terro Myrakis, Pentos # AGOT TODO Reenable once Pentos is added
+	}
+	8269.1.1 = {
+		trait = fashionable
+		#employer = 600000040 # Illyrio Mopatis # AGOT TODO Reenable once Pentos is added
+		effect = {
+			#set_relation_friend = character:600000040 #Illyrio Mopatis # AGOT TODO reenable once essos is added
+		}
+	}
+	8279.1.1 = {
+		employer = Targaryen_1 #Aerys
+		religion = the_seven_main
+		give_council_position = councillor_spymaster # Master of Whisperers # AGOT TODO
+	}
+	8284.1.1 = { employer = Baratheon_2 } #Robert Baratheon
+	8298.10.28 = { employer = Baratheon_5 } #Joffrey Baratheon
+	8300.3.1 = {
+		employer = Targaryen_12 # Aegon
+		#give_council_position = councillor_spymaster # AGOT TODO
+		effect = {
+			set_relation_friend = character:Targaryen_12
+		}
+	}
+}
+
+##Moon Boy##
+696969102 = {
+	name = Moon_Boy
+
+	religion = the_seven_main
+	culture = crownlander
+
+	#dna = "bbeaf0aiag0"
+
+	trait = intellect_bad_1
+
+	#employer = Targaryen_1 # AGOT TODO
+
+	8280.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8284.1.1 = {employer = Baratheon_2 }
+	8295.1.1 = {
+		trait = education_intrigue_3
+		trait = poet
+		trait = gregarious
+	}
+	8298.10.28 = { employer = Baratheon_5 }
+	8300.1.2 = { employer = Baratheon_7 } #Tommen Baratheon
+}
+
+Pyromancer_1 = { #Aerys' pyromancer
+	name = Rossart
+	dna = Pyromancer_1
+
+	intrigue = 5
+	stewardship = 5
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8249.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8265.1.1 = {
+		trait = sadistic
+		trait = ambitious
+		trait = lifestyle_mystic
+		trait = education_intrigue_3
+		trait = fire_obsessed
+	}
+	8278.1.1 = {
+		employer = Targaryen_1
+		#give_council_position = councillor_advisor # Small Council Advisor # AGOT TODO
+		# effect = {
+			# liege = {
+				# opinion = {
+				# modifier = opinion_pyromancer
+					# who = ROOT
+					# years = 100
+				# multiplier = 2
+				# }
+			# }
+		# }
+	}
+	8283.5.1 = {
+		#give_council_position = councillor_castellan # Hand of the King # AGOT TODO
+	}
+	8283.6.1 = {
+		death = {
+			death_reason = death_execution
+			killer = Lannister_7 # Jaime Lannister
+		}
+	}
+}
+Pyromancer_2 = { #pyromancer killed by Jaime
+	name = Garigus
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8246.1.1 = {
+		birth = yes
+	}
+	8262.1.1 = {
+		trait = cynical
+		trait = craven
+		trait = diligent
+		trait = lifestyle_mystic
+		trait = education_learning_2
+		trait = fire_obsessed
+	}
+	8278.1.1 = {
+		employer = Targaryen_1
+	}
+	8283.6.4 = {
+		death = {
+			death_reason = death_execution
+			killer = Lannister_7 # Jaime Lannister
+		}
+	}
+}
+Pyromancer_3 = { #pyromancer killed by Jaime
+	name = Belis
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8249.1.1 = {
+		birth = yes
+	}
+	8265.1.1 = {
+		trait = craven
+		trait = arbitrary
+		trait = ambitious
+		trait = lifestyle_mystic
+		trait = education_learning_2
+		trait = fire_obsessed
+	}
+	8278.1.1 = {
+		employer = Targaryen_1
+	}
+	8283.6.4 = {
+		death = {
+			death_reason = death_execution
+			killer = Lannister_7 # Jaime Lannister
+		}
+	}
+}
+
+696969104 = {
+	name = Tallad # Canon, Tallad the Tall
+
+	intrigue = 3
+	stewardship = 1
+	diplomacy = 2
+	martial = 2
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = ambitious
+	trait = physique_good_1
+	trait = brave
+	trait = gregarious
+	trait = education_martial_1
+
+	8279.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8284.1.1 = { employer = Baratheon_2 } #Robert Baratheon
+	8295.1.1 = {
+		trait = knight
+		give_nickname = nick_the_tall
+		#dynasty = 1524 # AGOT TODO - Review: he is described as being lowborn.
+	}
+	8298.10.28 = { employer = Baratheon_5 } #Joffrey Baratheon
+	8300.1.1 = { employer = Baratheon_7 } #Tommen Baratheon
+	8300.5.17 = { #Imprisoned by Qyburn
+		effect = {
+			title:e_the_iron_throne.holder = { #Tommen Baratheon
+				imprison = {
+					target = ROOT
+					type = dungeon
+				}
+			}
+		}
+	}
+}
+696969105 = { #member of the City Watch of King's Landing
+	name = Allar
+	dynasty = dynn_Deem #Deem
+
+	intrigue = 3
+	stewardship = 2
+	diplomacy = 1
+	martial = 3
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	disallow_random_traits = yes
+
+	trait = ambitious
+	trait = arbitrary
+	trait = sadistic
+	trait = arrogant
+	trait = education_martial_1
+
+	8263.1.1 = {
+		birth = yes
+		employer = Targaryen_1 #Jaehaerys II Targaryen
+	}
+	8262.1.1 = {
+		employer = Targaryen_1 #Aerys II Targaryen
+	}
+	8283.6.1 = {
+		employer = Baratheon_2 #Robert Baratheon
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 #Joffrey Baratheon
+	}
+	8299.2.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_8 #Tyrion Lannister
+		}
+	}
+}
+696969106 = { #member of the City Watch of King's Landing
+	name = Humfrey
+	# dynasty = 0 #Unknown can make him the bastard of any Crownlander house for flavour
+
+	martial = 4	#Competent enough to become commander of Dragon Gate
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = bastard
+	trait = education_martial_2
+
+	8260.1.1 = {
+		birth = yes
+		employer = Targaryen_127 #Jaehaerys II Targaryen
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+		give_nickname = nick_waters
+	}
+	8262.1.1 = {
+		employer = Targaryen_1 #Aerys II Targaryen
+	}
+	8283.6.1 = {
+		employer = Baratheon_2 #Robert Baratheon
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 #Joffrey Baratheon
+	}
+	8300.1.1 = {
+		employer = Baratheon_7 #Tommen Baratheon
+	}
+}

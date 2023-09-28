@@ -1,0 +1,124 @@
+﻿name_list_braavosi = {
+
+	cadet_dynasty_names = {
+		"dynn_Antaryon"
+		"dynn_Dimittis"
+		"dynn_Dothare"
+		"dynn_Erastes"
+		"dynn_Ferys"
+		"dynn_Forel"
+		"dynn_Fregar"
+		"dynn_Gasparyon"
+		"dynn_Gresayn"
+		"dynn_Lornel"
+		"dynn_Lostayn"
+		"dynn_Manterys"
+		"dynn_Marnel"
+		"dynn_Nestoris"
+		"dynn_Otherys"
+		"dynn_Parnel"
+		"dynn_Pranelis"
+		"dynn_Prestayn"
+		"dynn_Reyaan"
+		"dynn_Tavellen"
+		"dynn_Tendyris"
+		"dynn_Terys"
+		"dynn_Torone"
+		"dynn_Valaros"
+		"dynn_Velaron"
+		"dynn_Volentin"
+		"dynn_Zalyne"
+	}
+
+	dynasty_names = {
+		"dynn_Antaryon"
+		"dynn_Dimittis"
+		"dynn_Dothare"
+		"dynn_Erastes"
+		"dynn_Ferys"
+		"dynn_Forel"
+		"dynn_Fregar"
+		"dynn_Gasparyon"
+		"dynn_Gresayn"
+		"dynn_Lornel"
+		"dynn_Lostayn"
+		"dynn_Manterys"
+		"dynn_Marnel"
+		"dynn_Nestoris"
+		"dynn_Otherys"
+		"dynn_Parnel"
+		"dynn_Pranelis"
+		"dynn_Prestayn"
+		"dynn_Reyaan"
+		"dynn_Tavellen"
+		"dynn_Tendyris"
+		"dynn_Terys"
+		"dynn_Torone"
+		"dynn_Valaros"
+		"dynn_Velaron"
+		"dynn_Volentin"
+		"dynn_Zalyne"
+	}
+
+	male_names = {
+		Adelmo Ado Agreo Alario Alezzo Alfo Allaquo Allaro Allorano Amystello Arbelo Arrigo Arro Arzero
+		Balarro Barbo Bellero Bello Benonio Beqqo Bessaro Bobono Broteo Brunarro Brusco
+		Clarenzo Corso Corvio Cossomo
+		Dadello Danilo Dellono Denyo Denzo Doloro Domenio Donalo Dontario Doro Dorseo Duro
+		Elanzo Elyo Elyo Errio Essario Essedaro Ezzelyno
+		Falyrio Faro Ferrego Ferro Fredo
+		Galeo Garyso Gesso Groleo Gyleno Gylo Gylonaro Gyloro
+		Idario Isso Issoro Izembaro
+		Lodovio Loraro Lotharo Lotho Luco
+		Malo Malonaro Marello Marrigo Marro Marselo Melio Mero Moredo Moresano Moroggo Mosadio Myrio Myrmello
+		Narbo Nello Nevio Noho
+		Obaro Ollo Oppo Orbelo Ordello Oro Orso Orybaso
+		Parmello Pello Pereno Perezimo Phario Pondo Probio Pynto Pytho
+		Qarro
+		Rallo Rego Remio Rodano Rogaro Roggo Roro Rudario
+		Seggato Sellagoro Senio Sipoto Syrano Syrio
+		Tagganaro Tenesio Ternaro Ternesio Terrello Terrio Terro Tertullo Tessario Tolomelo Tomarro Tormo Torreo Trellio Tycho Tyrenzo
+		Ufredo Uthero
+		Valyro Varro Vilardo Visario Vollo
+		Wendello
+		Yanzo Yorko Yorro
+		Zarabelo Ziolo Zonario
+	}
+	female_names = {
+		Alia Annara Arana Arrella
+		Belenna Bellegere Bellenora Brea
+		Calla Clea
+		Daena Danara Dellana
+		Elora Emyria Eroea Essella
+		Hermea
+		Idana Irea
+		Jenara Jyana
+		Lanna Lara Laressa Lianna
+		Marra Melane Melia Meliana Mylla Mysenda
+		Narha Nyalia
+		Ornela Orolantia
+		Ralla Retia Risina
+		Sellanora Serah Serala Shana Syneta Syrella
+		Taela Tiaelle Tyanna
+		Valessa
+		Wendeyne
+		Yna
+		Zabella Zanna Zea
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}

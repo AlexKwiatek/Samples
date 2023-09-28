@@ -1,0 +1,296 @@
+﻿574350 = {
+	name = Craster
+	dynasty = dynn_Crasters_Keep
+
+	dna = 574350
+
+	religion = cold_gods
+	culture = forestman
+
+	trait = sadistic
+	trait = arrogant
+	trait = greedy
+	trait = lustful
+
+	8240.1.1 = {
+		birth = yes
+	}
+	8299.7.8 = {
+		death = {
+			death_reason = death_murder_known # Mutiny at Craster's Keep
+			killer = 121411 # Dirk
+		}
+	}
+}
+574351 = {
+	name = Ferny
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	8241.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574352 = {
+	name = Dalla
+	female = yes
+
+	dna = 574352
+
+	religion = old_gods_btw
+	culture = forestman
+
+	8249.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574353 = {
+	name = Esgred
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	8251.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574354 = {
+	name = Yegresch
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	8254.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574355 = {
+	name = Vilwuor
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	8255.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574356 = {
+	name = Jonellar
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	8257.1.1 = {
+		birth = yes
+	}
+	8280.1.1 = { add_spouse = 574350 }
+}
+574357 = {
+	name = Rynny
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574351
+
+	8258.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574358 = {
+	name = Kyrar
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574351
+
+	8259.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574359 = {
+	name = Larra
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574351
+
+	8260.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574360 = {
+	name = Maerydah
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574351
+
+	8261.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574361 = {
+	name = Layayella
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574351
+
+	8269.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574362 = {
+	name = Morra
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574352
+
+	8270.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574363 = {
+	name = Nella
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574353
+
+	8271.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574364 = {
+	name = Dyah
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574354
+
+	8275.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574365 = {
+	name = Valwyla
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574355
+
+	8276.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574366 = {
+	name = Snowilhd
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574359
+
+	8277.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574367 = {
+	name = Ysilla
+	dynasty = dynn_Crasters_Keep
+	female = yes
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574360
+
+	8278.1.1 = { birth = yes }
+	8280.1.1 = { add_spouse = 574350 }
+}
+574368 = {
+	name = Gilly
+	dynasty = dynn_Crasters_Keep
+	female = yes
+	dna = 574368
+
+	learning = 0
+	stewardship = 0
+	martial = 0
+	diplomacy = 3
+	intrigue = 4
+
+	religion = cold_gods
+	culture = forestman
+
+	trait = compassionate
+	trait = brave
+	trait = family_first
+	trait = shy
+
+	father = 574350
+	mother = 574360
+
+	8280.1.1 = { birth = yes }
+	8282.1.1 = { add_spouse = 574350 } #Yes, early but W.A.D
+	8300.1.1 = {
+		employer = Stark_7
+	}
+}
+574369 = {
+	name = Owen
+	dynasty = dynn_Crasters_Keep
+
+	religion = cold_gods
+	culture = forestman
+
+	father = 574350
+	mother = 574368
+
+	8300.1.1 = {
+		birth = yes
+		employer = Stark_7
+	}
+}

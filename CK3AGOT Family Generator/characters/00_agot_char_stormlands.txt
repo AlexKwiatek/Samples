@@ -1,0 +1,9048 @@
+﻿####################################################
+####				THE STORMLANDS				####
+####################################################
+
+###### HOUSE BARATHEON (id = dynn_Baratheon)
+############################
+###
+###
+Baratheon_1 = {
+	name = Steffon
+	dynasty = dynn_Baratheon
+	dna = Baratheon_1
+
+	martial = 6
+	diplomacy = 7
+	intrigue = 3
+	stewardship = 5
+	learning = 4
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = physique_good_1
+	trait = education_diplomacy_3
+
+	disallow_random_traits = yes
+
+	father = Baratheon_75 # Ormund Baratheon
+	mother = Targaryen_130 # Rhaelle Targaryen
+
+	8246.1.1 = { birth = yes }
+	8250.1.1 = {
+		trait = honorable
+		employer = Baratheon_75
+	}
+	8252.1.1 = { #King's landing page
+		#trait = squire # AGOT TODO trait
+		effect = {
+			set_relation_guardian = character:Targaryen_122 # Aegon V Targaryen
+			set_relation_friend = character:Targaryen_1 # Aerys II Targaryen
+			set_relation_friend = {
+				reason = friend_served_as_pages_together
+				target = character:Baratheon_1
+			}
+		}
+	}
+	8252.8.1 = {
+		trait = diligent
+	}
+	8254.8.1 = {
+		trait = gregarious
+	}
+	8256.8.1 = {
+		trait = just
+	}
+	8259.11.1 = {
+		add_spouse = Estermont_5 # Cassana Estermont
+	}
+	8262.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		effect = { remove_relation_guardian = character:Targaryen_122} # Aegon V Targaryen
+		trait = knight
+	}
+	8262.11.11 = { #Ninepenny Kings
+		###
+		# MEGAWAR STANCE: JAEHAERYS TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		# EXPIRES ON 8260.12.31
+		###
+	}
+	8278.1.1 = {
+		death = {
+			death_reason = death_accident # Shipwrecked
+		}
+	}
+}
+
+### Issue of Steffon
+Baratheon_2 = {
+	name = Robert # Canon, THE Robert Baratheon, AKA: Bobby B
+	dynasty = dynn_Baratheon
+
+	dna = Baratheon_2
+
+	martial = 10
+	diplomacy = 8
+	intrigue = 4
+	stewardship = 1
+	learning = 5
+	prowess = 11
+	fertility = 0.5
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = heterosexual
+
+	trait = physique_good_3
+
+	disallow_random_traits = yes
+
+	father = Baratheon_1
+	mother = Estermont_5
+
+	8262.10.1 = { birth = yes }
+	8266.1.1 = { trait = brave }
+	8268.1.1 = {
+		effect = { set_relation_guardian = character:Arryn_3 } # Jon Arryn
+	}
+	8269.5.1 = { trait = gregarious	}
+	8273.1.1 = {
+		trait = wrathful
+		effect = {
+			set_relation_friend = { reason = best_friend_childhood_oath target = character:Stark_3 } # Eddard Stark
+			set_relation_best_friend = { reason = best_friend_childhood_oath target = character:Stark_3 } # Eddard Stark
+			set_relation_friend = character:Estermont_10 # Alysanne Estermont
+		}
+	}
+	8278.1.1 = {
+		trait = lustful
+		effect = {
+			set_relation_lover = character:Estermont_10 # Alysanne Estermont
+			remove_relation_guardian = character:Arryn_3 # Jon Arryn
+		}
+	}
+	8278.10.1 = {
+		trait = education_martial_3
+		trait = education_martial_prowess_3
+		trait = aggressive_attacker
+		trait = organizer
+		#trait = heavy_infantry_leader # AGOT TODO trait
+		#trait = inspiring_leader # AGOT TODO trait
+		trait = knight
+		effect = {
+			set_relation_friend = character:Arryn_3 # Jon Arryn
+			set_variable = {
+				name = signature_weapon
+				value = flag:hammer #GODS HE WAS STRONG THEN
+			}
+
+		}
+	}
+	8280.1.1 = {
+		effect = {
+			add_unpressed_claim = title:e_the_iron_throne
+			remove_relation_lover = character:Estermont_10 # Alysanne Estermont
+		}
+	}
+	8281.1.1 = {
+		trait = fornicator #Mya Stone is born
+	}
+	8282.1.1 = {
+		effect = {
+			add_unpressed_claim = title:k_the_crownlands
+			add_unpressed_claim = title:d_kings_landing
+			add_unpressed_claim = title:c_kings_landing
+			add_unpressed_claim = title:k_dragonstone
+			add_unpressed_claim = title:d_dragonstone
+			add_unpressed_claim = title:c_dragonstone
+			create_alliance = { # By friendship
+				target = character:Stark_3 # Ned
+				allied_through_owner = ROOT # Robert
+				allied_through_target = character:Stark_3 # Ned
+			}
+			character:Stark_3 = {
+				add_opinion = {
+					target = ROOT
+					modifier = perk_negotiated_alliance_opinion
+				}
+			}
+		}
+	}
+	8284.1.1 = { # Crowned Stag
+		effect = {
+			remove_variable = pre_war_liege
+			#character_event = { id = roberts_rebellion.13 } # AGOT TODO trait
+			add_prestige = 500
+			#every_vassal = { remove_character_flag = against_king } # AGOT TODO
+			#remove_character_flag = rebel_leader
+			add_character_flag = crowned_by_high_septon
+
+			reverse_add_opinion = {
+				target = character:Baratheon_4 # Renly Baratheon
+				modifier = received_title_kingdom
+			}
+			set_relation_friend = character:200300507 # Thoros of Myr
+
+			#Loyalists
+			add_hook = {
+				target = character:Stark_3 # Eddard Stark
+				type = loyalty_hook
+			}
+			add_hook = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				type = loyalty_hook
+			}
+
+			remove_claim = title:k_the_stormlands
+			remove_claim = title:d_shipbreaker_bay
+			remove_claim = title:c_storms_end
+			remove_claim = title:k_dragonstone
+			remove_claim = title:d_dragonstone
+			remove_claim = title:c_dragonstone
+			create_alliance = { # By marriage
+				target = character:Lannister_1 # Tywin Lannister
+				allied_through_owner = character:Baratheon_2 # Robert Baratheon
+				allied_through_target = character:Lannister_6 # Cersei Lannister
+			}
+			add_opinion = {
+				target = character:Lannister_6 # Cersei Lannister
+				modifier = hate_opinion
+				opinion = -40
+			}
+			reverse_add_opinion = {
+				target = character:Lannister_6 # Cersei Lannister
+				modifier = hate_opinion
+				opinion = -150
+			}
+			character:Martell_4 = { # Doran Martell
+				dynasty = { # House Martell
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = murdered_close_family_crime
+						}
+					}
+				}
+			}
+		}
+		add_spouse = Lannister_6 # Cersei Lannister
+		trait = drunkard
+		trait = lifestyle_reveler
+		trait = profligate
+		trait = rakish
+		remove_trait = brave
+		trait = gluttonous
+	}
+	8284.6.2 = {
+		effect = {
+			trigger_event = { id = agot_crowned_stag.0001 days = 1 }
+		}
+	}
+	8294.1.1 = {
+		effect = {
+			#Iron bank Loan
+			# add_character_flag = loan_taken
+			# set_variable = { which = loan_amount value = 600 }
+			# set_variable = { which = loan_interest value = 0.25 }
+
+			# set_variable = { which = cash_reserve value = -600 } #for bank records
+			# set_variable = { which = outstanding_loans value = 600 }
+			# add_character_modifier = {
+				# name = "loan_timer"
+				# duration = 1825
+			# }
+			# iron_bank = {
+				# ROOT = { save_persistent_event_target = { name = loan_bank scope = PREV } }
+			# }
+			# character_event = { id = bankruptcy.2099 days = 1 } #adjust bank records
+			# if = { #this is calculated for the player so they can repay instantly
+				# limit = {
+					# ai = no
+				# }
+				# calculate_loan_repayable_effect = yes
+			# }
+		}
+	}
+	8298.10.28 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_6 # Cersei Lannister
+		}
+	}
+}
+Baratheon_3 = {
+	name = Stannis # Canon, THE Stannis the Mannis Baratheon
+	dynasty = dynn_Baratheon
+
+	dna = Baratheon_3
+
+	martial = 11
+	diplomacy = 2
+	intrigue = 6
+	stewardship = 8
+	learning = 5
+	prowess = 5
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = asexual
+
+	trait = physique_good_1
+
+	disallow_random_traits = yes
+
+	father = Baratheon_1
+	mother = Estermont_5
+
+	8264.1.1 = { birth = yes }
+	8270.8.1 = {
+		trait = just
+	}
+	8274.8.1 = {
+		trait = stubborn
+	}
+	8279.1.1 = {
+		trait = callous
+		trait = cynical
+	}
+	8280.1.1 = {
+		trait = education_martial_4
+		trait = education_martial_prowess_2
+		trait = unyielding_defender
+		trait = forder
+		trait = military_engineer
+		#trait = back_seat_leader # AGOT TODO trait
+		trait = knight
+		employer = Baratheon_2 #Robert Baratheon
+	}
+	8284.1.1 = { # Crowned Stag
+		give_council_position = councillor_admiral
+		trait = strategist
+		effect = {
+			add_hook = {
+				target = character:Seaworth_1 # Davos Seaworth
+				type = loyalty_hook
+			}
+			# if = {
+				# limit = { NOT = { year = 8298 } }
+				# character_event = { id = roberts_rebellion.18 }
+			# }
+			# e_the_iron_throne = {
+				# holder_scope = {
+					# opinion = {
+						# modifier = opinion_loyal
+						# who = ROOT
+						# years = 100
+					# }
+				# }
+			# }
+		}
+	}
+	8284.6.2 = {
+		if = {
+			limit = {
+				agot_has_historical_events_trigger = yes
+				NOT = { has_character_flag = rooloo_blocker }
+			}
+			random_list = {
+				0 = {
+					trigger_event = { id = agot_filler_rhllor.0001 days = { 3600 5400 } } # 3600 5400
+					modifier = {
+						add = agot_historic_event_chance
+					}
+				}
+				0 = {
+					add_character_flag = rooloo_blocker
+					modifier = {
+						add = agot_nonhistoric_event_chance
+						has_game_rule = agot_story_random_events_random_outcomes
+					}
+				}
+			}
+		}
+	}
+	8287.1.1 = {
+		add_spouse = Florent_10 # Selyse Florent
+		effect = {
+			create_alliance = { # By marriage
+				target = character:Florent_2 # Alester Florent
+				allied_through_owner = ROOT # Stannis Baratheon
+				allied_through_target = character:Florent_10 # Selyse Florent
+			}
+		}
+	}
+	8298.10.28 = {
+		# trait = dead_stannis_crown
+		religion = rhllor
+		#trait = lightbringer # AGOT TODO trait
+		trait = faith_warrior # Chosen by Rhllor
+		effect = {
+			add_piety = 400
+			#change_variable = { which = "red_god_magic" value = 10 } # AGOT TODO
+			# set_global_flag = chosen_by_rhllor_found
+			# letter_event = { id = clash_of_kings.3699 days = 1 } #bastard letter
+			add_pressed_claim = title:e_the_iron_throne
+			add_pressed_claim = title:d_kings_landing
+			add_pressed_claim = title:c_kings_landing
+		}
+	}
+	8299.1.4 = {
+		###
+		# MEGAWAR STANCE: STANNIS BARATHEON
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8299.2.20 = {
+		add_piety = -200
+		remove_trait = physique_good_1
+		#trait = kinslayer_3 #shadow
+		effect = {
+			# health = -2 # Shadow number one
+			reverse_add_opinion = {
+				target = character:Tyrell_13 # Loras Tyrell
+				modifier = hate_opinion
+				opinion = -40
+			}
+			reverse_add_opinion = {
+				target = character:Tarth_6 # Brienne Tarth
+				modifier = hate_opinion
+				opinion = -40
+			}
+		}
+	}
+	8299.3.2 = {
+		add_piety = -200
+		#effect = { health = -2 } # Shadow number two # AGOT TODO
+	}
+	8299.3.3 = {
+		effect = { # Stannis' Loyalists
+			add_hook = {
+				target = character:Morrigen_2 # Lester Morrigen
+				type = loyalty_hook
+			}
+			add_hook = {
+				target = character:Estermont_4 # Lomas Estermont
+				type = loyalty_hook
+			}
+			add_hook = {
+				target = character:Estermont_7 # Andrew Estermont
+				type = loyalty_hook
+			}
+			add_hook = {
+				target = character:Caron_6 # Rolland Storm
+				type = loyalty_hook
+			}
+			# if = {
+				# limit = { NOT = { year = 8300 } }
+				# #character_event = { id = 999900230 }
+				# e_the_iron_throne = { holder_scope = { letter_event = { id = clash_of_kings.13 } } }
+			# }
+			# add_character_flag = rebel_leader
+			# trait = rebel_leader
+			# any_vassal = {
+				# add_character_flag = against_king
+				# remove_character_flag = neutral
+			# }
+			# b_stone_drum = { ROOT = { capital = PREV } }
+			# Florent_2 = {
+				# if = {
+					# limit = {
+						# prisoner = no
+						# is_alive = yes
+					# }
+					# reverse_opinion = { #Alester Florent
+						# who = ROOT
+						# modifier = opinion_pre_mega_war_castellan
+						# years = 100
+					# }
+				# }
+			# }
+		}
+	}
+	8299.3.4 = {
+		effect = {
+			add_pressed_claim = title:c_storms_end
+		}
+	}
+	8300.3.1 = {
+		effect = {
+			add_pressed_claim = title:k_the_north
+			#add_character_flag = war_for_the_north # AGOT TODO
+			# narrative_event = { id = feast_for_crows.1 }
+			# b_the_nightfort = { ROOT = { capital = PREV } }
+		}
+	}
+}
+Baratheon_4 = {
+	name = Renly # Canon, THE Renly Baratheon
+	dynasty = dynn_Baratheon
+
+	dna = Baratheon_4
+
+	martial = 6
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 3
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = homosexual
+
+	trait = education_diplomacy_3
+	trait = beauty_good_2
+	trait = temperate
+	trait = compassionate
+
+	father = Baratheon_1
+	mother = Estermont_5
+
+	8277.1.1 = { birth = yes }
+	8287.1.1 = {
+		#trait = squire # AGOT TODO trait
+	}
+	8290.1.1 = {
+		trait = gregarious
+		trait = arrogant
+	}
+	8292.1.1 = {
+		trait = fashionable
+		trait = diplomat
+	}
+	8293.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+	}
+	8294.1.1 = {
+		#give_council_position = councillor_chancellor # Master of Laws # AGOT TODO
+		effect = {
+			every_vassal = {
+				add_opinion = {
+					target = ROOT
+					modifier = impressed_opinion
+					opinion = 40
+				}
+			}
+		}
+	}
+	8297.1.1 = {
+		effect = {
+			set_relation_lover = character:Tyrell_13 # Loras Tyrell
+		}
+	}
+	8298.10.28 = {
+		effect = {
+			add_pressed_claim = title:e_the_iron_throne
+			add_pressed_claim = title:d_kings_landing
+			add_pressed_claim = title:c_kings_landing
+		}
+	}
+	8299.1.5 = {
+		add_spouse = Tyrell_14 # Margaery Tyrell
+		remove_trait = arrogant #to keep trait number at 4
+		trait = ambitious
+		effect = {
+			create_alliance = { # By marriage
+				target = character:Tyrell_8 # Mace Tyrell
+				allied_through_owner = ROOT # Renly Baratheon
+				allied_through_target = character:Tyrell_14 # Margaery Tyrell
+			}
+		}
+	}
+	8299.2.11 = {
+		effect = {
+			# character_event = { id = clash_of_kings.508 }
+			###
+			# MEGAWAR STANCE: RENLY BARATHEON
+			# FILL ONCE MEGAWAR IS RESTORED
+			###
+		}
+	}
+	8299.3.3 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Tarth_6 # Brienne Tarth (official)
+			# killer = Baratheon_3 # Stannis Baratheon
+		}
+	}
+}
+
+### Issue of Robert
+Baratheon_5 = {
+	name = Joffrey # Canon
+	dynasty = dynn_Baratheon
+	# AGOT TODO dna = Baratheon_5
+
+	martial = 6
+	diplomacy = 4
+	intrigue = 9
+	stewardship = 4
+	learning = 4
+	prowess = 3
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = education_intrigue_1
+	trait = beauty_good_2
+
+	father = Baratheon_2
+	mother = Lannister_6
+
+	disallow_random_traits = yes
+
+	8286.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = flag_secret_bastard
+			set_real_father = character:Lannister_7 # Jaime Lannister
+		}
+	}
+	8290.1.1 = {
+		trait = sadistic
+	}
+	8292.1.1 = {
+		effect = {
+			set_relation_guardian = character:Lannister_6 # Cersei Lannister
+		}
+	}
+	8292.8.1 = {
+		trait = arrogant
+		trait = wrathful
+	}
+	8296.8.1 = {
+		trait = greedy
+	}
+	8297.1.1 = {
+		effect = {
+			create_betrothal = character:Stark_8 # Sansa Stark
+		}
+	}
+	8298.10.28 = {
+		#dynasty = dynn_Lannister # Commented out. He is still in-lore a Baratheon at this point.
+		trait = torturer
+		trait = disputed_heritage
+		effect = {
+			# character_event = { id = clash_of_kings.501 }
+
+			#add_character_flag = lannister_baratheon # AGOT TODO
+			add_character_flag = crowned_by_high_septon
+			#Iron bank Loan
+			# add_character_flag = loan_taken
+			# set_variable = { which = loan_amount value = 600 }
+			# set_variable = { which = loan_interest value = 0.25 }
+
+			# set_variable = { which = cash_reserve value = -600 } #for bank records
+			# set_variable = { which = outstanding_loans value = 600 }
+			# add_character_modifier = {
+				# name = "loan_timer"
+				# duration = 830
+			# }
+			# iron_bank = {
+				# ROOT = { save_persistent_event_target = { name = loan_bank scope = PREV } }
+			# }
+			# character_event = { id = bankruptcy.2099 days = 1 } #adjust bank records
+			# if = { #this is calculated for the player so they can repay instantly
+				# limit = {
+					# ai = no
+				# }
+				# calculate_loan_repayable_effect = yes
+			# }
+
+			# reverse_add_opinion = {
+				# target = character:Stark_3 # Eddard Stark
+				# modifier = opinion_suspected_bastard
+			# }
+			# mother = {
+				# give_minor_title = title_regent
+				# father = {
+					# opinion = {
+						# who = ROOT
+						# modifier = opinion_grandchild
+						# years = 100
+						# multiplier = 4
+					# }
+				# }
+			# }
+			character:Martell_4 = { # Doran Martell
+				dynasty = { # House Martell
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = murdered_close_family_crime
+						}
+					}
+				}
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_4 # Renly Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Stark_6 # Robb Stark
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Tully_1 # Hoster Tully
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Martell_4 # Doran Martell
+				modifier = uncertain_lineage_opinion
+			}
+		}
+	}
+	8298.11.2 = {
+		effect = {
+			# mother = {
+				# give_minor_title = title_regent
+			# }
+			# add_opinion = {
+				# target = character:Lannister_1 # Tywin Lannister
+				# modifier = opinion_pre_mega_war_castellan
+			# }
+			character:Stark_6 = { # Robb Stark
+				dynasty = { # House Stark
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = executed_close_family_crime
+						}
+					}
+				}
+				# any_vassal_or_below = { # AGOT TODO
+					# add_opinion = {
+						# target = ROOT
+						# modifier = executed_my_countryman_modifier
+					# }
+				# }
+			}
+			character:Tully_7 = { # Edmure Tully
+				dynasty = { # House Tully
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = executed_close_family_crime
+						}
+					}
+				}
+				# any_vassal_or_below = { # AGOT TODO
+					# add_opinion = {
+						# target = ROOT
+						# modifier = executed_my_countryman_modifier
+					# }
+				# }
+			}
+			character:Arryn_8 = { # Robert Arryn
+				dynasty = { # House Arryn
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = executed_close_family_crime
+						}
+					}
+				}
+			}
+		}
+	}
+	8299.2.11 = { #ACoK
+		###
+		# MEGAWAR STANCE: LANNISTER
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8299.3.3 = {
+		add_spouse = Tyrell_14 # Margaery Tyrell
+		effect = {
+			create_alliance = { # By marriage
+				target = character:Tyrell_8 # Mace Tyrell
+				allied_through_owner = ROOT # Joffrey Baratheon
+				allied_through_target = character:Tyrell_14 # Margaery Tyrell
+			}
+		}
+	}
+	8299.7.2 = { #ASoS
+		effect = {
+			#character_event = { id = 999900234 }
+			add_character_flag = brightwater_keep_promised
+			# add_opinion = {
+				# target = character:Martell_4
+				# modifier = opinion_pre_mega_war_advisor
+			# }
+		}
+	}
+	# 8299.12.1 = {
+		# trait = widowswail #given Widow's Wail by Tywin
+	# }
+	8300.1.1 = {
+		death = {
+			death_reason = death_poison
+			killer = Lannister_8 # Tyrion Lannister
+			# killer = Baelish_2 # Petyr Baelish
+			# killer = Redwyne_2 # Olenna Redwyne
+		}
+	}
+}
+Baratheon_6 = {
+	name = Myrcella # Canon
+	dynasty = dynn_Baratheon
+	female = yes
+
+	dna = Baratheon_6
+
+	martial = 4
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 6
+	learning = 7
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = beauty_good_2
+	trait = intellect_good_1
+
+	disallow_random_traits = yes
+
+	father = Baratheon_2
+	mother = Lannister_6
+
+	8290.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = flag_secret_bastard
+			set_real_father = character:Lannister_7 # Jaime Lannister
+		}
+	}
+	8296.1.1 = {
+		trait = compassionate
+		trait = brave
+		trait = trusting
+		effect = { set_relation_guardian = character:Lannister_6 } # Cersei Lannister
+	}
+	8298.10.28 = {
+		#dynasty = dynn_Lannister #Lannister #AGOT TODO - Is this needed? They are still Baratheons in lore...
+		trait = disputed_heritage
+		effect = {
+			#add_character_flag = lannister_baratheon # AGOT TODO
+			#add_character_flag = lannister_scum # AGOT TODO
+
+			character:Martell_4 = { # Doran Martell
+				dynasty = { # House Martell
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = murdered_close_family_crime
+						}
+					}
+				}
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_4 # Renly Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Stark_6 # Robb Stark
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Tully_1 # Hoster Tully
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Martell_4 # Doran Martell
+				modifier = uncertain_lineage_opinion
+			}
+		}
+	}
+	8299.2.1 = {
+		effect = {
+			set_relation_guardian = character:Martell_4 # Doran Martell
+			create_betrothal = character:Martell_11 # Trystane Martell
+		}
+	}
+	8300.2.25 = { # Gerold Dayne
+		trait = scarred
+		trait = wounded_1
+	}
+}
+Baratheon_7 = {
+	name = Tommen # Canon
+	dynasty = dynn_Baratheon
+	# AGOT TODO dna = agot_dna_Baratheon_7
+
+	martial = 5
+	diplomacy = 4
+	intrigue = 4
+	stewardship = 4
+	learning = 4
+
+	religion = the_seven_main
+	culture = crownlander
+
+	disallow_random_traits = yes
+
+	father = Baratheon_2
+	mother = Lannister_6
+
+	8291.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = flag_secret_bastard
+			set_real_father = character:Lannister_7 # Jaime Lannister
+		}
+	}
+	8297.1.1 = {
+		trait = compassionate
+		trait = honest
+		trait = content
+		trait = trusting
+		effect = { set_relation_guardian = character:Lannister_6 } # Cersei Lannister
+	}
+	8298.10.28 = {
+		#dynasty = dynn_Lannister #AGOT TODO - is this needed? They are still Baratheons in lore at this point.
+		trait = disputed_heritage
+		effect = {
+			#add_character_flag = lannister_baratheon # AGOT TODO
+			#add_character_flag = lannister_scum # AGOT TODO
+
+			character:Martell_4 = { # Doran Martell
+				dynasty = { # House Martell
+					every_dynasty_member = {
+						add_opinion = {
+							target = ROOT
+							modifier = murdered_close_family_crime
+						}
+					}
+				}
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Baratheon_4 # Renly Baratheon
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Stark_6 # Robb Stark
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Tully_1 # Hoster Tully
+				modifier = uncertain_lineage_opinion
+			}
+			reverse_add_opinion = {
+				target = character:Martell_4 # Doran Martell
+				modifier = uncertain_lineage_opinion
+			}
+		}
+	}
+	8300.1.1 = { #inherited from Joffrey
+		#trait = widowswail # AGOT TODO trait
+		effect = {
+			# character_event = { id = clash_of_kings.501 }
+
+			add_character_flag = crowned_by_high_septon
+			# trait = civil_war
+			add_character_flag = depose_liege_target
+			#add_character_flag = king_iron_throne # AGOT TODO
+			add_character_flag = brightwater_keep_promised
+
+			#Iron bank Loan # AGOT TODO
+			# add_character_flag = loan_taken
+			# set_variable = { which = loan_amount value = 600 }
+			# set_variable = { which = loan_interest value = 0.25 }
+
+			# set_variable = { which = cash_reserve value = -600 } #for bank records
+			# set_variable = { which = outstanding_loans value = 600 }
+			# add_character_modifier = {
+				# name = "loan_timer"
+				# duration = 100
+			# }
+			# iron_bank = {
+				# ROOT = { save_persistent_event_target = { name = loan_bank scope = PREV } }
+			# }
+			# character_event = { id = bankruptcy.2099 days = 1 } #adjust bank records
+			# if = { #this is calculated for the player so they can repay instantly
+				# limit = {
+					# ai = no
+				# }
+				# calculate_loan_repayable_effect = yes
+			# }
+			# add_opinion = {
+				# target = character:Martell_4
+				# modifier = opinion_pre_mega_war_advisor
+			# }
+			# add_opinion = {
+				# target = character:Tyrell_8
+				# modifier = opinion_pre_mega_war_admiral
+			# }
+		}
+	}
+	8300.3.1 = {
+		add_spouse = Tyrell_14 # Margaery Tyrell
+		effect = {
+			set_relation_guardian = character:Tyrell_14 # Margaery Tyrell
+			create_alliance = { # By marriage
+				target = character:Tyrell_8 # Mace Tyrell
+				allied_through_owner = ROOT # Tommen Baratheon
+				allied_through_target = character:Tyrell_14 # Margaery Tyrell
+			}
+			# add_character_modifier = {
+				# name = cat_story_modifier # Ser Pounce
+			# }
+			# Marbrand_4 = { give_minor_title = title_commander } #Addam Marbrand
+			# Brax_6 = { give_minor_title = title_commander } #Flement Brax
+			# Crakehall_8 = { give_minor_title = title_commander } #Lyle Strongboar
+			# 202352 = { give_minor_title = title_commander } #Osfryd Kettleblack
+		}
+	}
+	8300.5.17 = {
+		effect = {
+			# character:Lannister_2 = { #Kevan Lannister
+				# give_minor_title = title_regent
+			# }
+			# add_opinion = {
+				# target = character:Tyrell_8 # Mace Tyrell
+				# modifier = opinion_pre_mega_war_castellan
+			# }
+		}
+	}
+}
+Baratheon_8 = {
+	name = Edric # Canon, THE Edric Storm
+	dynasty = dynn_Baratheon
+	# AGOT TODO dna = agot_dna_Baratheon_8
+
+	martial = 3
+	diplomacy = 3
+	intrigue = 3
+	stewardship = 3
+	learning = 3
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = bastard
+	trait = physique_good_2
+	trait = arrogant
+	trait = compassionate
+	trait = gregarious
+	trait = brave
+	give_nickname = nick_storm
+
+	father = Baratheon_2
+	mother = Florent_13
+
+	disallow_random_traits = yes
+
+	8287.9.1 = {
+		birth = yes
+		employer = Baratheon_4
+		effect = {
+			set_relation_guardian = character:Penrose_2 # Cortnay Penrose
+		}
+	}
+	8299.3.3 = {
+		employer = Baratheon_3
+		effect = { set_relation_guardian = character:Baratheon_3 } # Stannis Baratheon
+	}
+	8299.12.1 = {
+		#employer = 88108 #Tregar Ormollen AGOT TODO He is Lyseni
+		effect = {
+			set_relation_guardian = character:Estermont_7 # Andrew Estermont
+			set_relation_friend = character:Estermont_7 # Andrew Estermont
+			set_relation_friend = character:Gower_5 # Gerald Gower
+			# k_lys = {
+				# holder_scope = {
+					# reverse_banish = PREVPREV #Went with Edric Storm
+				# }
+			# }
+		}
+	}
+}
+Baratheon_rs_1 = {
+	name = Joanna # Gendry's mother
+	female = yes
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8265.1.1 = {
+		birth = yes
+		employer = Targaryen_1 # Aerys II Targaryen
+	}
+	8283.6.1 = {
+		employer = Baratheon_2 # Robert Baratheon
+	}
+	8284.6.1 = {
+		set_employer = title:b_goldguard_heights.holder
+		trait = fornicator #Gendry born
+	}
+	8289.1.1 = { death = yes }
+}
+Baratheon_9 = {
+	name = Gendry # Canon, THE Gendry
+	# AGOT TODO dna = agot_dna_Baratheon_9
+
+	martial = 2
+	learning = 1
+	stewardship = 1
+	diplomacy = 4
+	intrigue = 3
+	prowess = 3
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = bastard
+	trait = physique_good_3
+	trait = brave
+	trait = honorable
+	trait = stubborn
+	trait = education_stewardship_1
+	give_nickname = nick_the_bull
+
+	#father = Baratheon_2
+	mother = Baratheon_rs_1
+
+	8284.6.1 = {
+		birth = yes
+		effect = {
+			set_employer = title:b_goldguard_heights.holder
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+		}
+	}
+	8298.10.28 = {
+		effect = {
+			set_employer = title:b_harrentown.holder
+		}
+	}
+	8299.2.1 = { #Joins brotherhood (a little bit earlier than in canon so he's present in ACoK bookmark with Beric)
+		employer = Dondarrion_2 #Beric Dondarrion
+		effect = {
+			set_relation_friend = character:Stark_Dummy_9 # Arya Stark
+		}
+		#dynasty = 1516 #of the Hollow Hill. # AGOT TODO - Needs review. Should Gendry really have a house at this point?
+		trait = knight
+	}
+	8299.11.5 = {
+		employer = Tully_5 #Lady Stoneheart
+	}
+}
+Baratheon_rs_2 = {
+	name = Becca # Mya's mother
+	female = yes
+
+	religion = the_seven_main
+	culture = valeman
+
+	trait = beauty_good_2
+
+	8261.1.1 = {
+		birth = yes
+		employer = Arryn_3
+	}
+	8292.1.1 = { death = yes }
+}
+Baratheon_10 = {
+	name = Mya # Canon, THE Mya Stone
+	female = yes
+	# AGOT TODO dna = agot_dna_Baratheon_10
+
+	religion = the_seven_main
+	culture = valeman
+
+	martial = 3
+	diplomacy = 4
+	intrigue = 5
+	stewardship = 4
+	learning = 4
+
+	trait = bastard
+	trait = beauty_good_2
+	trait = brave
+	trait = stubborn
+	trait = gregarious
+	trait = education_martial_2
+	give_nickname = nick_stone
+
+	father = Baratheon_2
+	mother = Baratheon_rs_2
+
+	8281.1.1 = {
+		birth = yes
+		effect = {
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+		}
+		employer = Arryn_3
+	}
+	8294.1.1 = { trait = lustful }
+	8297.1.1 = { employer = Arryn_8 }
+}
+Baratheon_rs_3 = {
+	name = Mhaegen # Barra's mother
+	female = yes
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = beauty_good_1
+
+	8280.1.1 = {
+		birth = yes
+		employer = Baratheon_2 # Robert Baratheon
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 # Joffrey Baratheon
+	}
+	8299.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_6 #Cersei
+		}
+	}
+}
+Baratheon_rs_4 = {
+	name = Barra # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = bastard
+	trait = beauty_good_1
+
+	#father = Baratheon_2
+	mother = Baratheon_rs_3
+
+	8298.1.1 = {
+		birth = yes
+		employer = Baratheon_2 # Robert Baratheon
+		effect = {
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+		}
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 # Joffrey Baratheon
+	}
+	8299.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_6 # Cersei Lannister
+		}
+	}
+}
+Baratheon_rs_5 = {
+	name = Bessie # Bella's mother Thank the gods for BESSIE
+	female = yes
+
+	religion = the_seven_main
+	culture = riverlander
+	sexuality = bisexual #by popular demand
+
+	trait = beauty_good_3
+	trait = lustful
+	trait = physique_good_1
+
+	8260.1.1 = {
+		birth = yes
+		effect = {
+			set_employer = title:b_stoney_sept.holder
+		}
+	}
+	8299.1.1 = { death = yes }
+}
+Baratheon_rs_6 = {
+	name = Bella # Canon
+	female = yes
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = bastard
+	trait = beauty_good_1
+
+	#father = Baratheon_2
+	mother = Baratheon_rs_5
+
+	8283.10.1 = {
+		birth = yes
+		effect = {
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+			set_employer = title:b_stoney_sept.holder
+		}
+	}
+}
+Baratheon_rs_7 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = riverlander
+
+	8262.1.1 = { birth = yes }
+	8290.1.1 = { death = yes }
+}
+Baratheon_11 = {
+	name = Cedric # Semi-canon
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = bastard
+	give_nickname = nick_rivers
+
+	#father = Baratheon_2
+	mother = Baratheon_rs_7
+
+	8282.1.1 = {
+		birth = yes
+		effect = {
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+		}
+	}
+	8299.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_6 # Cersei Lannister
+		}
+	}
+}
+Baratheon_rs_8 = {
+	name = Bethany
+	female = yes
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8265.1.1 = { birth = yes }
+	8296.1.1 = { death = yes }
+}
+Baratheon_12 = {
+	name = Harry # Semi-canon
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = bastard
+	give_nickname = nick_waters
+
+	#father = Baratheon_2
+	mother = Baratheon_rs_8
+
+	8285.1.1 = {
+		birth = yes
+		employer = Baratheon_2 # Robert Baratheon
+		effect = {
+			set_real_father = character:Baratheon_2 # Robert Baratheon
+			set_variable = { name = agot_dna value = flag:baratheon }
+		}
+	}
+	8298.10.28 = {
+		employer = Baratheon_5 # Joffrey Baratheon
+	}
+	8299.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Lannister_6 # Cersei Lannister
+		}
+	}
+}
+
+### Issue of Stannis
+Baratheon_13 = {
+	name = Shireen # Canon
+	dynasty = dynn_Baratheon
+	female = yes
+
+	dna = Baratheon_13
+
+	martial = 2
+	diplomacy = 10
+	intrigue = 2
+	stewardship = 4
+	learning = 7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	disallow_random_traits = yes
+
+	father = Baratheon_3
+	mother = Florent_10
+
+	8289.3.1 = { #she was still nine in early 299AC
+		birth = yes
+		trait = greyscale
+	}
+	8290.3.1 = {
+		remove_trait = greyscale
+		#trait = greyscale_scarred AGOT TODO Trait
+	}
+	8293.1.1 = { trait = shy }
+	8295.1.1 = { trait = compassionate }
+	8295.3.1 = {
+		effect = {
+			set_relation_guardian = character:Florent_10 # Selyse Florent
+		}
+	}
+	8297.1.1 = { trait = humble }
+	8299.1.1 = {
+		religion = rhllor
+	}
+}
+
+###### HOUSE TARTH (id = dynn_Tarth)
+############################
+###
+###
+Tarth_1 = {
+	name = Selwyn # Canon, a lord
+	dynasty = dynn_Tarth
+
+	dna = Tarth_1
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = heterosexual
+
+	father = Tarth_35
+	mother = Tarth_36
+
+	trait = physique_good_2
+	trait = compassionate
+	trait = honest
+	trait = just
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = {
+		trait = knight
+		trait = education_martial_2
+		give_nickname = nick_the_evenstar
+	}
+	8264.1.1 = { add_spouse = Tarth_rs_1 }
+	8282.1.1 = { trait = lifestyle_reveler }
+	8299.7.2 = { # Storm of Swords
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Tarth_rs_1 = {
+	name = Jocelyn # Selwyn's wife
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8243.1.1 = { birth = yes }
+	8282.1.1 = { death = yes } # died when Brienne was young
+}
+Tarth_2 = {
+	name = Endrew # Canon
+	dynasty = dynn_Tarth
+	# AGOT TODO dna = agot_dna_Tarth_2
+
+	martial = 7
+	diplomacy = 3
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tarth_35
+	mother = Tarth_36
+
+	trait = content
+
+	8250.1.1 = { birth = yes }
+	8266.1.1 = {
+		trait = knight
+	}
+	8270.1.1 = {
+		trait = nightswatch
+	}
+	8299.12.1 = {
+		death = {
+			death_reason = death_battle # Bridge of Skulls
+			killer = 157001 # The Weeper
+		}
+	}
+}
+
+### Issue of Selwyn
+Tarth_3 = {
+	name = Galladon # Canon
+	dynasty = dynn_Tarth
+
+	dna = Tarth_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tarth_1
+	mother = Tarth_rs_1
+
+	8276.1.1 = { birth = yes }
+	8288.1.1 = {
+		death = {
+			death_reason = death_accident # drowned when Brienne was 8
+		}
+	}
+}
+Tarth_4 = {
+	name = Arianne # Canon
+	dynasty = dynn_Tarth
+	female = yes
+	# AGOT TODO dna = agot_dna_Tarth_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tarth_1
+	mother = Tarth_rs_1
+
+	8278.1.1 = { birth = yes }
+	8279.1.1 = { death = yes }
+}
+Tarth_5 = {
+	name = Alysanne # Canon
+	female = yes
+	dynasty = dynn_Tarth
+	# AGOT TODO dna = agot_dna_Tarth_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tarth_1
+	mother = Tarth_rs_1
+
+	8279.1.1 = { birth = yes }
+	8280.1.1 = { death = yes }
+}
+Tarth_6 = {
+	name = Brienne # Canon, THE Brienne
+	dynasty = dynn_Tarth
+	female = yes
+
+	dna = Tarth_6
+
+	martial = 7
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 6
+	learning = 6
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tarth_1
+	mother = Tarth_rs_1
+
+	trait = beauty_bad_2
+	trait = physique_good_2
+	trait = strong
+	trait = brave
+	trait = shy
+	trait = rowdy
+
+	8280.1.1 = {
+		birth = yes
+		add_character_flag = tomboy
+	}
+	8290.1.1 = { trait = lifestyle_blademaster }
+	8296.1.1 = {
+		trait = education_martial_2
+		trait = education_martial_prowess_4
+		trait = celibate
+		trait = trusting
+		trait = stubborn
+	}
+	8298.1.1 = {
+		trait = knight
+		give_nickname = nick_the_maid
+	}
+	8299.1.1 = { employer = Baratheon_4 } # Renly Baratheon
+	8299.2.11 = {
+		give_nickname = nick_the_blue
+		effect = {
+			#add_character_flag = rainbow_guard # AGOT TODO
+		}
+	}
+	8299.3.3 = {
+		employer = Stark_6
+		effect = {
+			reverse_add_opinion = {
+				target = character:Tyrell_13 # Loras Tyrell
+				modifier = murdered_close_family_crime
+			}
+		}
+	}
+	8299.9.24 = {
+		effect = {
+			#title:d_brave_companions.holder = { # Vargo Hoat AGOT TODO
+			#	imprison = {
+			#		target = ROOT
+			#		type = dungeon
+			#	}
+			#}
+		}
+	}
+	8299.10.3 = {
+		effect = {
+			release_from_prison = yes
+			title:d_the_dreadfort.holder = { # Roose Bolton
+				imprison = {
+					target = ROOT
+					type = house_arrest
+				}
+			}
+		}
+	}
+	8299.10.22 = {
+		employer = Baratheon_5 # Joffrey
+		effect = {
+			release_from_prison = yes
+		}
+	}
+	8299.11.5 = { #given Oathkeeper by Jaime
+		#trait = oathkeeper # AGOT TODO trait
+	}
+	8300.1.2 = { employer = Baratheon_7 }	#Tommen
+	8300.5.3 = {
+		trait = disfigured # Bit off half face
+		effect = {
+			#title:d_brotherhood.holder = { # Lady Stoneheart # AGOT TODO
+			#	imprison = {
+			#		target = ROOT
+			#		type = house_arrest
+			#	}
+			#}
+		}
+	}
+}
+
+###### HOUSE PENROSE (id = dynn_Penrose)
+############################
+###
+###
+Penrose_1 = {
+	name = Steffon # Mentioned, a lord, "old and sickly"
+	dynasty = dynn_Penrose
+
+	dna = Penrose_1
+
+	martial = 6
+	diplomacy = 5
+	intrigue = 6
+	stewardship = 4
+	learning = 5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_36
+	mother = Penrose_p_2
+
+	trait = education_diplomacy_2
+	trait = compassionate
+	trait = patient
+
+	8232.1.1 = { birth = yes }
+	8248.1.1 = {
+		trait = knight
+	}
+	8252.1.1 = { add_spouse = Trant_34 }
+	8290.1.1 = { trait = widowed }
+	8295.1.1 = { trait = infirm }
+}
+Penrose_44 = {
+	name = Elaena
+	dynasty = dynn_Penrose
+	female = yes
+
+	dna = Penrose_44
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_36
+	mother = Penrose_p_2
+
+	8235.1.1 = { birth = yes }
+}
+### Issue of Steffon
+Penrose_2 = {
+	name = Cortnay # Canon, Steffon's son
+	dynasty = dynn_Penrose
+
+	dna = Penrose_2
+
+	martial = 13
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 8
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_1
+	mother = Trant_34
+
+	trait = brave
+	trait = diligent
+	trait = arrogant
+	trait = stubborn
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = {
+		trait = knight
+		trait = education_martial_3
+		employer = Baratheon_1 # Steffon Baratheon (Storm's End)
+	}
+	8278.1.1 = { add_spouse = Swann_2 }
+	8284.1.1 = { employer = Baratheon_4 } # Renly Baratheon (Storm's End)
+	8294.1.1 = {
+		give_council_position = councillor_castellan # Castellan
+	}
+	8299.3.2 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Baratheon_3 # Stannis Baratheon
+		}
+	}
+}
+Penrose_45 = {
+	name = Jasper
+	dynasty = dynn_Penrose
+
+	dna = Penrose_45
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_1
+	mother = Trant_34
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = { trait = knight }
+}
+
+### Issue of Cortnay
+Penrose_3 = {
+	name = Jon
+	dynasty = dynn_Penrose
+
+	dna = Penrose_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_2
+	mother = Swann_2
+
+	8280.1.1 = { birth = yes }
+}
+Penrose_4 = {
+	name = Jocelyn
+	dynasty = dynn_Penrose
+	female = yes
+
+	dna = Penrose_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Penrose_2
+	mother = Swann_2
+
+	8284.1.1 = { birth = yes }
+}
+
+###### HOUSE ERROL (id = dynn_Errol)
+############################
+###
+###
+Errol_1 = {
+	name = Shyra # Canon, a lord
+	female = yes
+	dynasty = dynn_Errol
+	dna = Errol_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_21
+	mother = Errol_p_2
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Errol_rs_1 }
+	8299.3.1 = { death = yes }
+}
+Errol_rs_1 = {
+	name = Desmond
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+Errol_2 = {
+	name = Sebastion # Canon, a lord
+	dynasty = dynn_Errol
+	dna = Errol_2
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Errol_1
+	father = Errol_rs_1
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = {
+		trait = knight
+	}
+	8299.7.2 = { # Storm of Swords
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Errol_3 = {
+	name = Serwyn
+	dynasty = dynn_Errol
+	# AGOT TODO dna = agot_dna_Errol_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Errol_1
+	father = Errol_rs_1
+
+	8282.1.1 = { birth = yes }
+	8298.1.1 = { trait = knight }
+}
+### cousins
+Errol_23 = {
+	name = Triston
+	dynasty = dynn_Errol
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_22
+	mother = Errol_p_3
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = { trait = knight }
+}
+Errol_24 = {
+	name = Shireen
+	dynasty = dynn_Errol
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_22
+	mother = Errol_p_3
+
+	8253.1.1 = { birth = yes }
+}
+Errol_25 = {
+	name = Sarya
+	dynasty = dynn_Errol
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_22
+	mother = Errol_p_3
+
+	8256.1.1 = { birth = yes }
+}
+### Issue of Triston
+Errol_26 = {
+	name = Simon
+	dynasty = dynn_Errol
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_23
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = knight }
+}
+Errol_27 = {
+	name = Tyana
+	dynasty = dynn_Errol
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Errol_23
+
+	8279.1.1 = { birth = yes }
+}
+
+###### HOUSE HASTY (id = dynn_Hasty)
+############################
+###
+###
+Hasty_1 = {
+	name = Belwyn # a lord
+	dynasty = dynn_Hasty
+	# AGOT TODO dna = agot_dna_Hasty_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_23
+	mother = Hasty_p_1
+
+	8212.1.1 = { birth = yes }
+	8228.1.1 = { trait = knight }
+	8232.1.1 = { add_spouse = Hasty_rs_1 }
+	8260.1.1 = { death = yes }
+}
+Hasty_rs_1 = {
+	name = Shireen
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8220.1.1 = { birth = yes }
+	8260.1.1 = { death = yes }
+}
+### Issue of Belwyn
+Hasty_2 = {
+	name = Bonifer # Canon, a lord
+	dynasty = dynn_Hasty
+	# AGOT TODO dna = agot_dna_Hasty_2
+
+	martial = 8
+	diplomacy = 4
+	intrigue = 4
+	stewardship = 4
+	learning = 5
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = heterosexual
+
+	father = Hasty_1
+	mother = Hasty_rs_1
+
+	trait = just
+	trait = compassionate
+	trait = honorable
+	trait = education_martial_2
+
+	8239.1.1 = { birth = yes }
+	8255.1.1 = { #him and rhaella infatuated
+		trait = knight
+	}
+	8258.1.1 = {
+		trait = zealous
+		trait = celibate
+	}
+	8275.1.1 = { give_nickname = nick_the_good }
+	8282.9.15 = { # Robert's Rebellion
+		###
+		# MEGAWAR STANCE: AERYS II TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8299.7.2 = { # Battle of Blackwater
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Hasty_3 = {
+	name = Barristan
+	dynasty = dynn_Hasty
+	# AGOT TODO dna = agot_dna_Hasty_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_1
+	mother = Hasty_rs_1
+
+	8242.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+### Issue of Barristan
+Hasty_4 = {
+	name = Bryce
+	dynasty = dynn_Hasty
+	# AGOT TODO dna = agot_dna_Hasty_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_3
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = { trait = knight }
+}
+Hasty_24 = {
+	name = Borys
+	dynasty = dynn_Hasty
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_3
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = { trait = knight }
+}
+Hasty_25 = {
+	name = Floris
+	dynasty = dynn_Hasty
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_3
+
+	8264.1.1 = { birth = yes }
+}
+Hasty_5 = {
+	name = Harys
+	dynasty = dynn_Hasty
+	# AGOT TODO dna = agot_dna_Hasty_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_4
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = { trait = knight }
+}
+Hasty_26 = {
+	name = Robert
+	dynasty = dynn_Hasty
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hasty_4
+
+	8284.1.1 = { birth = yes }
+}
+
+###### HOUSE BUCKLER (id = dynn_Buckler)
+############################
+###
+###
+Buckler_1 = {
+	name = Ralph # Canon
+	dynasty = dynn_Buckler
+	# AGOT TODO dna = agot_dna_Buckler_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Buckler_42 # Byron Buckler
+	mother = Buckler_p_2
+
+	trait = gregarious
+
+	8256.1.1 = { birth = yes }
+	8272.1.1 = { trait = knight }
+	8275.1.1 = { add_spouse = Buckler_rs_1 }
+}
+Buckler_46 = {
+	name = Myrena
+	dynasty = dynn_Buckler
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Buckler_42 # Byron Buckler
+	mother = Buckler_p_2
+
+	8260.1.1 = { birth = yes }
+}
+Buckler_rs_1 = {
+	name = Alerie
+	female = yes
+
+	trait = education_diplomacy_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8256.1.1 = { birth = yes }
+}
+### Issue of Ralph
+Buckler_2 = {
+	name = Bryen
+	dynasty = dynn_Buckler
+	# AGOT TODO dna = agot_dna_Buckler_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Buckler_rs_1
+	father = Buckler_1
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = { trait = knight }
+}
+Buckler_47 = {
+	name = Alyssa
+	dynasty = dynn_Buckler
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Buckler_rs_1
+	father = Buckler_1
+
+	8283.1.1 = { birth = yes }
+}
+Buckler_48 = {
+	name = Bowen
+	dynasty = dynn_Buckler
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Buckler_rs_1
+	father = Buckler_1
+
+	8285.1.1 = { birth = yes }
+}
+Buckler_49 = {
+	name = Andria
+	dynasty = dynn_Buckler
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Buckler_rs_1
+	father = Buckler_1
+
+	8287.1.1 = { birth = yes }
+}
+Buckler_3 = {
+	name = Clement # Semi-canon
+	dynasty = dynn_Buckler
+	# AGOT TODO dna = agot_dna_Buckler_3
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Buckler_43 # Balon Buckler
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = honorable
+	trait = stubborn
+	trait = brave
+
+	8248.1.1 = { birth = yes }
+	8264.1.1 = { trait = knight }
+	8281.1.1 = {
+		employer = Buckler_1
+	}
+}
+Buckler_4 = {
+	name = Brus # Canon
+	dynasty = dynn_Buckler
+	# AGOT TODO dna = agot_dna_Buckler_4
+
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Buckler_43 # Balon Buckler
+
+	trait = education_martial_2
+	trait = gregarious
+
+	8254.1.1 = { birth = yes }
+	8270.1.1 = {
+		trait = knight
+		trait = drunkard
+	}
+	8284.1.1 = {
+		employer = Baratheon_3
+	}
+	8299.1.1 = {
+		religion = rhllor
+	}
+	8300.8.17 = {
+		add_spouse = Kingsblood_7 # Gerra Redbeard
+	}
+}
+
+###### HOUSE FELL (id = dynn_Fell)
+############################
+###
+###
+Fell_1 = {
+	name = Lucas # Mentioned
+	dynasty = dynn_Fell
+	dna = Fell_1
+
+	martial = 6
+	diplomacy = 5
+	intrigue = 1
+	stewardship = 7
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Fell_44
+	mother = Fell_p_1
+
+	trait = brave
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = {
+		add_spouse = Fell_rs_1
+		trait = knight
+	}
+	8282.9.15 = { # Roberts Rebellion
+		###
+		# MEGAWAR STANCE: AERYS II TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8282.12.1 = {
+		death = {
+			death_reason = death_duel # Summerhall
+			killer = Baratheon_2 # Robert baratheon
+		}
+	}
+}
+Fell_rs_1 = {
+	name = Alora
+	female = yes
+
+	trait = education_diplomacy_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8246.1.1 = { birth = yes }
+	8286.1.1 = { death = yes }
+}
+Fell_2 = {
+	name = Glendon # Mentioned, AKA: Silveraxe
+	dynasty = dynn_Fell
+	dna = Fell_2
+
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_2
+	trait = strong
+	trait = brave
+	trait = fickle
+
+	father = Fell_1
+	mother = Fell_rs_1
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		add_spouse = Fell_rs_2
+		give_nickname = nick_silveraxe
+		trait = knight
+	}
+	8295.1.1 = { death = yes }
+}
+Fell_rs_2 = {
+	name = Alysanne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8262.1.1 = { birth = yes }
+}
+Fell_3 = {
+	name = Willis
+	dynasty = dynn_Fell
+	dna = Fell_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Fell_1
+	mother = Fell_rs_1
+
+	8266.1.1 = { birth = yes }
+	8282.1.1 = { trait = knight }
+}
+Fell_4 = {
+	name = Dickon
+	dynasty = dynn_Fell
+	# AGOT TODO dna = agot_dna_Fell_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Fell_1
+	mother = Fell_rs_1
+
+	8268.1.1 = { birth = yes }
+	8284.1.1 = { trait = knight }
+}
+Fell_5 = {
+	name = Harwood # Canon
+	dynasty = dynn_Fell
+	dna = Fell_5
+
+	martial = 6
+	diplomacy = 2
+	intrigue = 5
+	stewardship = 4
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = brave
+
+	father = Fell_2
+	mother = Fell_rs_2
+
+	8278.1.1 = { birth = yes }
+	8294.1.1 = {
+		trait = knight
+	}
+	8299.3.3 = {
+		religion = rhllor
+	}
+	8300.6.1 = {
+		death = { death_reason = death_accident } # dies in a iced lake
+	}
+}
+
+###### HOUSE CONNINGTON (id = dynn_Connington)
+############################
+###
+###
+Connington_1 = {
+	name = Alyn
+	dynasty = dynn_Connington
+	# AGOT TODO dna = agot_dna_Connington_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_42
+
+	8220.1.1 = { birth = yes }
+	8236.1.1 = { trait = knight }
+	8239.1.1 = { add_spouse = Connington_rs_1 }
+	8267.1.1 = { death = yes }
+}
+Connington_rs_1 = {
+	name = Helicent
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8219.1.1 = { birth = yes }
+	8260.1.1 = { death = yes }
+}
+
+### Issue of Alyn
+Connington_2 = {
+	name = Armond # Canon
+	dynasty = dynn_Connington
+	# AGOT TODO dna = agot_dna_Connington_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_1
+	mother = Connington_rs_1
+
+	trait = arrogant
+	trait = greedy
+
+	8240.1.1 = { birth = yes }
+	8256.1.1 = { trait = knight }
+	8260.1.1 = { add_spouse = Connington_rs_2 }
+	8279.1.1 = { death = yes }
+}
+Connington_rs_2 = {
+	name = Bethany # Mentioned
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8240.1.1 = { birth = yes }
+	8281.1.1 = { death = yes }
+}
+Connington_3 = {
+	name = Raymund
+	dynasty = dynn_Connington
+	# AGOT TODO dna = agot_dna_Connington_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_1
+	mother = Connington_rs_1
+
+	8241.1.1 = { birth = yes }
+	8257.1.1 = { add_spouse = Connington_rs_3 }
+	8258.1.1 = { trait = knight }
+	8276.1.1 = { death = yes }
+}
+Connington_rs_3 = {
+	name = Lia
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8241.1.1 = { birth = yes }
+	8280.1.1 = { death = yes }
+}
+
+### Issue of Armond
+Connington_4 = {
+	name = Jon # The Jon Connington Jon Con
+	dynasty = dynn_Connington
+	dna = Connington_4
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 9
+	stewardship = 4
+	learning = 5
+	prowess = 8
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = homosexual
+
+	disallow_random_traits = yes
+
+
+	father = Connington_2
+	mother = Connington_rs_2
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		trait = education_martial_2
+		trait = education_martial_prowess_3
+		trait = lifestyle_blademaster
+		trait = arrogant
+		trait = brave
+		trait = ambitious
+		trait = just
+	}
+	8282.9.15 = { # Robert's Rebellion
+		###
+		# MEGAWAR STANCE: AERYS II TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+		give_council_position = councillor_castellan
+	}
+	8283.1.1 = {
+		#employer = Toyne_4 #Myles Toyne # AGOT TODO no golden company title
+		death = { death_reason = death_disappearance }
+	}
+	# 8297.1.1 = {
+	# 	employer = Strickland_1 #Harry Strickland
+	# }
+	# 8300.3.1 = {
+	# 	employer = Targaryen_12 #Young Griff
+	# 	trait = greyscale
+	# 	# effect = {
+	# 		# character_event = { id = feast_for_crows.160 } #end siege in griffins roost
+	# 	# }
+	# }
+}
+
+### Issue of Raymund
+Connington_5 = {
+	name = Ronald # Canon, given the title
+	dynasty = dynn_Connington
+	dna = Connington_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_stewardship_2
+	trait = ambitious
+	trait = deceitful
+	trait = greedy
+	trait = cynical
+
+	father = Connington_3
+	mother = Connington_rs_3
+
+	8258.1.1 = { birth = yes }
+	8273.1.1 = { add_spouse = Connington_rs_4 }
+	8279.1.1 = {
+		trait = knight
+	}
+	8281.1.1 = {
+		give_council_position = councillor_castellan # Castellan
+	}
+	8295.1.1 = { death = yes }
+}
+Connington_rs_4 = {
+	name = Bethany
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8258.1.1 = { birth = yes }
+}
+
+### Issue of Ronald
+Connington_6 = {
+	name = Ronnet # Canon, AKA: Red Ronnet Connington
+	dynasty = dynn_Connington
+	dna = Connington_6
+
+	martial = 9
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = heterosexual
+
+	father = Connington_5
+	mother = Connington_rs_4
+
+	trait = education_martial_1
+	trait = brave
+	trait = wrathful
+	trait = rude
+
+	8274.1.1 = { birth = yes } #6 years older than brienne
+	8280.1.1 = { give_nickname = nick_the_red }
+	8290.1.1 = {
+		trait = knight
+		trait = aggressive_attacker
+	}
+	8299.7.2 = {
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Connington_7 = {
+	name = Raymund # Canon
+	dynasty = dynn_Connington
+	dna = Connington_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_5
+	mother = Connington_rs_4
+
+	8276.1.1 = { birth = yes }
+}
+Connington_8 = {
+	name = Alynne # Canon
+	dynasty = dynn_Connington
+	female = yes
+	dna = Connington_8
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_5
+	mother = Connington_rs_4
+
+	8279.1.1 = { birth = yes }
+}
+
+### Issue of Ronnet
+Connington_9 = {
+	name = Ronald # Canon
+	dynasty = dynn_Connington
+	# AGOT TODO dna = agot_dna_Connington_9
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Connington_6 # Ronnet Connington
+
+	trait = bastard
+	give_nickname = nick_storm
+
+	trait = rowdy
+
+	8294.1.1 = { birth = yes }
+}
+
+###### HOUSE ROGERS (id = dynn_Rogers)
+############################
+###
+###
+Rogers_1 = {
+	name = Harrold # canon
+	dynasty = dynn_Rogers
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_35
+
+	trait = brave
+	trait = calm
+	trait = temperate
+	trait = compassionate
+	trait = strong
+
+	8232.1.1 = { birth = yes }
+	8248.1.1 = {
+		trait = knight
+		trait = education_martial_2
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+	8253.1.1 = { add_spouse = Stark_126 } #Branda Stark
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Rogers_36 = {
+	name = Alaric
+	dynasty = dynn_Rogers
+	# AGOT TODO dna = agot_dna_Rogers_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_35
+
+	trait = rude
+	trait = gregarious
+	trait = diligent
+	trait = education_stewardship_3
+
+	8235.1.1 = { birth = yes }
+	8251.1.1 = { trait = knight }
+	8255.1.1 = { add_spouse = Rogers_rs_1 }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Rogers_rs_1 = {
+	name = Alynne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8235.1.1 = { birth = yes }
+	8290.1.1 = { death = yes }
+}
+Rogers_2 = {
+	name = Brandon # a lord
+	dynasty = dynn_Rogers
+	# AGOT TODO dna = agot_dna_Rogers_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_1
+	mother = Stark_126
+
+	trait = cynical
+	trait = stubborn
+	trait = bossy
+	trait = physique_good_1
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = {
+		trait = authoritative
+		trait = education_diplomacy_3
+		trait = knight
+	}
+}
+Rogers_3 = {
+	name = Beron
+	dynasty = dynn_Rogers
+	# AGOT TODO dna = agot_dna_Rogers_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_1
+	mother = Stark_126
+
+	trait = beauty_good_1
+	trait = brave
+	trait = gluttonous
+	trait = rowdy
+
+	8272.1.1 = { birth = yes }
+	8288.1.1 = {
+		trait = gregarious
+		trait = knight
+		trait = education_martial_2
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+}
+Rogers_37 = {
+	name = Arya
+	dynasty = dynn_Rogers
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_1
+	mother = Stark_126
+
+	trait = compassionate
+	trait = shy
+	trait = curious
+	trait = beauty_good_1
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = humble
+		trait = education_stewardship_3
+	}
+}
+### Issue of Brandon
+Rogers_38 = {
+	name = Branda
+	dynasty = dynn_Rogers
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_2
+
+	trait = physique_good_1
+
+	8289.1.1 = { birth = yes }
+}
+Rogers_39 = {
+	name = Alyn
+	dynasty = dynn_Rogers
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_2
+
+	trait = physique_good_1
+
+	8291.1.1 = { birth = yes }
+}
+### Issue of Alaric
+Rogers_40 = {
+	name = Corwin
+	dynasty = dynn_Rogers
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_36
+	mother = Rogers_rs_1
+
+	trait = brave
+	trait = trusting
+	trait = shy
+	trait = education_martial_2
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+Rogers_41 = {
+	name = Benara
+	dynasty = dynn_Rogers
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rogers_40
+
+	8280.1.1 = { birth = yes }
+}
+
+###### HOUSE GRANDISON (id = dynn_Grandison)
+############################
+###
+###
+Grandison_1 = {
+	name = Harys # Mentioned, supported Targaryens
+	dynasty = dynn_Grandison
+	# AGOT TODO dna = agot_dna_Grandison_1
+
+	martial = 6
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_7
+	mother = Grandison_rs_4
+
+	trait = brave
+	trait = diligent
+	trait = honorable
+	trait = education_martial_1
+
+	8221.1.1 = { birth = yes }
+	8237.1.1 = {
+		add_spouse = Cafferen_31
+		trait = knight
+	}
+	8282.9.15 = { # Robert's Rebellion
+		###
+		# MEGAWAR STANCE: AERYS II TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8283.3.1 = { trait = wounded_1 } #Get injured on the trident.
+	8283.6.1 = {
+		death = {
+			death_reason = death_wounded_1 #Dies from his wounds
+		}
+	}
+}
+Grandison_2 = {
+	name = Harlan # Canon, Kingsguard
+	dynasty = dynn_Grandison
+	dna = Grandison_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	martial = 9
+	prowess = 12
+
+	trait = compassionate
+	trait = education_martial_2
+	trait = honest
+	trait = brave
+
+	father = Grandison_7
+	mother = Grandison_rs_4
+
+	8222.1.1 = { birth = yes }
+	8238.1.1 = {
+		trait = knight
+	}
+	8259.6.1 = {
+		effect = { add_character_flag = agot_is_kingsguard_member }
+	}
+	8281.1.1 = {
+		trait = kingsguard
+		death = yes
+	}
+}
+
+### Issue of Harys
+Grandison_3 = {
+	name = Hugh # Canon
+	dynasty = dynn_Grandison
+
+	dna = Grandison_3
+
+	religion = the_seven_main
+	culture = stormlander
+	sexuality = heterosexual
+
+	father = Grandison_1
+	mother = Cafferen_31
+
+	trait = gregarious
+	trait = content
+	trait = brave
+	trait = temperate
+	trait = education_diplomacy_3
+
+	8237.1.1 = { birth = yes }
+	8253.1.1 = {
+		add_spouse = Grandison_rs_2
+		trait = knight
+	}
+	8287.1.1 = { give_nickname = nick_greybeard }
+}
+Grandison_32 = {
+	name = Ella
+	dynasty = dynn_Grandison
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_1
+	mother = Cafferen_31
+
+	8240.1.1 = { birth = yes }
+}
+Grandison_rs_2 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8237.1.1 = { birth = yes }
+	8290.1.1 = { death = yes }
+}
+
+### Issue of Hugh
+Grandison_4 = {
+	name = Humfrey
+	dynasty = dynn_Grandison
+	# AGOT TODO dna = agot_dna_Grandison_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_3
+	mother = Grandison_rs_2
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+	8275.1.1 = { add_spouse = Grandison_rs_3 }
+}
+Grandison_rs_3 = {
+	name = Cassandra
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8255.1.1 = { birth = yes }
+}
+Grandison_33 = {
+	name = Hanna
+	dynasty = dynn_Grandison
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_3
+	mother = Grandison_rs_2
+
+	8257.1.1 = { birth = yes }
+}
+Grandison_34 = {
+	name = Arthur
+	dynasty = dynn_Grandison
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_3
+	mother = Grandison_rs_2
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+Grandison_35 = {
+	name = Nerra
+	dynasty = dynn_Grandison
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_3
+	mother = Grandison_rs_2
+
+	8263.1.1 = { birth = yes }
+}
+Grandison_5 = {
+	name = Narbert # Canon
+	dynasty = dynn_Grandison
+	dna = Grandison_5
+
+	martial = 6
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_2
+	trait = gregarious
+	trait = lazy
+
+	father = Grandison_3
+	mother = Grandison_rs_2
+
+	8266.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = knight
+	}
+	8299.3.3 = {
+		employer = Baratheon_3
+		religion = rhllor
+	}
+}
+
+### Issue of Humfrey
+Grandison_6 = {
+	name = Olyver
+	dynasty = dynn_Grandison
+	# AGOT TODO dna = agot_dna_Grandison_6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_4
+	mother = Grandison_rs_3
+
+	8277.1.1 = { birth = yes }
+	8293.1.1 = { trait = knight }
+}
+Grandison_36 = {
+	name = Harys
+	dynasty = dynn_Grandison
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_4
+	mother = Grandison_rs_3
+
+	8281.1.1 = { birth = yes }
+	8297.1.1 = { trait = knight }
+}
+Grandison_37 = {
+	name = Robert
+	dynasty = dynn_Grandison
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Grandison_4
+	mother = Grandison_rs_3
+
+	8284.1.1 = { birth = yes }
+}
+
+###### HOUSE MORRIGEN (id = dynn_Morrigen)
+############################
+###
+###
+Morrigen_1 = {
+	name = Ronnet # a lord
+	dynasty = dynn_Morrigen
+	# AGOT TODO dna = agot_dna_Morrigen_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Morrigen_25
+	mother = Morrigen_p_2
+
+	8250.1.1 = { birth = yes }
+	8266.1.1 = { trait = knight }
+	8272.1.1 = { add_spouse = Morrigen_rs_1 }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Morrigen_26 = {
+	name = Doryssa
+	dynasty = dynn_Morrigen
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Morrigen_25
+	mother = Morrigen_p_2
+
+	8253.1.1 = { birth = yes }
+}
+Morrigen_rs_1 = {
+	name = Annara
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8256.1.1 = { birth = yes }
+	8295.1.1 = { death = yes }
+}
+Morrigen_2 = {
+	name = Lester # Canon, a lord
+	dynasty = dynn_Morrigen
+	# AGOT TODO dna = agot_dna_Morrigen_2
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Morrigen_1
+	mother = Morrigen_rs_1
+
+	trait = education_martial_2
+	trait = honest
+	trait = just
+
+	8272.1.1 = { birth = yes }
+	8288.1.1 = {
+		trait = knight
+	}
+}
+Morrigen_3 = {
+	name = Richard # Canon
+	dynasty = dynn_Morrigen
+	# AGOT TODO dna = agot_dna_Morrigen_3
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Morrigen_1
+	mother = Morrigen_rs_1
+
+	8277.1.1 = { birth = yes }
+	8293.1.1 = {
+		trait = knight
+	}
+}
+Morrigen_4 = {
+	name = Guyard # Canon, Renly's Kingsguard
+	dynasty = dynn_Morrigen
+	# AGOT TODO dna = agot_dna_Morrigen_4
+
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Morrigen_1
+	mother = Morrigen_rs_1
+
+	8281.1.1 = { birth = yes } #was a suckling babe during Robert's Rebellion according to Randyll Tarly, could be just an insult though
+	8297.1.1 = {
+		trait = knight
+		trait = arrogant
+		trait = wrathful
+		trait = education_martial_3
+		trait = poet
+	}
+	8298.10.28 = {
+		employer = Baratheon_4
+	}
+	8299.2.11 = {
+		effect = {
+			#add_character_flag = rainbow_guard # AGOT TODO
+			#add_ambition = obj_become_kingsguard # AGOT TODO
+		}
+		give_nickname = nick_the_green
+	}
+	8299.3.3 = {
+		employer = Baratheon_3
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Tyrell_12 # Garlan Tyrell
+		}
+	}
+}
+
+###### HOUSE KELLINGTON (id = dynn_Kellington)
+############################
+###
+###
+Kellington_1 = {
+	name = Edric # a lord
+	dynasty = dynn_Kellington
+	# AGOT TODO dna = agot_dna_Kellington_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Kellington_21
+	mother = Kellington_p_2
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = { trait = knight }
+	8277.1.1 = { add_spouse = Kellington_rs_1 }
+}
+Kellington_25 = {
+	name = Cara
+	dynasty = dynn_Kellington
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Kellington_21
+	mother = Kellington_p_2
+
+	8264.1.1 = { birth = yes }
+}
+Kellington_26 = {
+	name = Elenda
+	dynasty = dynn_Kellington
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Kellington_21
+	mother = Kellington_p_2
+
+	8267.1.1 = { birth = yes }
+}
+Kellington_rs_1 = {
+	name = Denira
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8262.1.1 = { birth = yes }
+}
+### Issue of Edric
+Kellington_2 = {
+	name = Quellon
+	dynasty = dynn_Kellington
+	# AGOT TODO dna = agot_dna_Kellington_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Kellington_rs_1
+	father = Kellington_1
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = { trait = knight }
+}
+Kellington_27 = {
+	name = Quentyn
+	dynasty = dynn_Kellington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	mother = Kellington_rs_1
+	father = Kellington_1
+
+	8282.1.1 = { birth = yes }
+	8298.1.1 = { trait = knight }
+}
+### Issue of Cortnay
+Kellington_28 = {
+	name = Criston
+	dynasty = dynn_Kellington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Kellington_24
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { trait = knight }
+}
+
+###### HOUSE WYLDE (id = dynn_Wylde)
+############################
+###
+###
+Wylde_1 = {
+	name = Willem # a lord
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_60
+
+	8209.1.1 = { birth = yes }
+	8225.1.1 = { trait = knight }
+	8226.1.1 = { add_spouse = Wylde_rs_1 }
+	8262.1.1 = { death = yes }
+}
+Wylde_rs_1 = {
+	name = Malora
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8209.1.1 = { birth = yes }
+	8276.1.1 = { death = yes }
+}
+
+### Issue of Willem
+Wylde_2 = {
+	name = Rickard
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_1
+	mother = Wylde_rs_1
+
+	8234.1.1 = { birth = yes }
+	8250.1.1 = { trait = knight }
+	8252.1.1 = { add_spouse = Wylde_rs_2 }
+	8280.1.1 = { death = yes }
+}
+Wylde_rs_2 = {
+	name = Floris
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8213.1.1 = { birth = yes }
+	8255.1.1 = { death = yes }
+}
+Wylde_6 = {
+	name = Tyana # Canon, married Aenys Frey
+	dynasty = dynn_Wylde
+	female = yes
+	# AGOT TODO dna = agot_dna_Wylde_6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_1
+	mother = Wylde_rs_1
+
+	8237.1.1 = { birth = yes }
+	8270.1.1 = {
+		death = {
+			death_reason = death_childbirth
+		}
+	}
+}
+Wylde_3 = {
+	name = Ormund # Canon
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_3
+
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_1
+	mother = Wylde_rs_1
+
+	trait = education_stewardship_2
+	trait = patient
+	trait = honest
+	trait = lazy
+	trait = content
+
+	8239.1.1 = { birth = yes }
+	8255.1.1 = {
+		trait = knight
+	}
+	8299.3.3 = { employer = Baratheon_3 }
+}
+Wylde_5 = {
+	name = Gawen # Canon, former Master-at-arms in Storm's End
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_5
+
+	martial = 10
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_1
+	mother = Wylde_rs_1
+
+	8243.1.1 = { birth = yes }
+	8259.1.1 = {
+		trait = education_martial_2
+		trait = craven
+		trait = knight
+		add_spouse = Wylde_rs_4
+	}
+	8270.1.1 = {
+		employer = Baratheon_1
+		#give_council_position = councillor_marshal # Master-at-arms # AGOT TODO
+	}
+	8283.3.1 = {
+		death = {
+			death_reason = death_dungeon # Siege of Storm's End
+			killer = Baratheon_3 # Stannis Baratheon
+		}
+	}
+}
+Wylde_rs_4 = {
+	name = Ellyn
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8245.1.1 = { birth = yes }
+}
+
+### Issue of Rickard
+Wylde_4 = {
+	name = Casper # Canon, a lord
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_4
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_2
+	mother = Wylde_rs_2
+
+	8260.1.1 = { birth = yes }
+	8262.1.1 = {
+		add_spouse = Wylde_rs_3
+		trait = knight
+	}
+}
+Wylde_rs_3 = {
+	name = Jocelyn
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8246.1.1 = { birth = yes }
+}
+Wylde_12 = {
+	name = Jon # Canon
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_12
+
+	martial = 5
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_2
+	mother = Wylde_rs_2
+
+	8266.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = knight
+	}
+	8293.1.1 = { add_spouse = Vypren_2 } # Elyana Vypren
+}
+
+
+### Issue of Casper
+Wylde_7 = {
+	name = Criston
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_4
+	mother = Wylde_rs_3
+
+	8285.1.1 = { birth = yes }
+}
+Wylde_8 = {
+	name = Coryanne
+	dynasty = dynn_Wylde
+	female = yes
+	# AGOT TODO dna = agot_dna_Wylde_8
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_4
+	mother = Wylde_rs_3
+
+	8287.1.1 = { birth = yes }
+}
+Wylde_9 = {
+	name = Ormund
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_9
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_4
+	mother = Wylde_rs_3
+
+	8290.1.1 = { birth = yes }
+}
+
+### Issue of Gawen
+Wylde_10 = {
+	name = Gladden #Canon
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_10
+
+	martial = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_5
+	mother = Wylde_rs_4
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = knight
+		trait = education_martial_2
+	}
+	8298.10.28 = {
+		death = {
+			death_reason = death_battle # Mummer's Ford
+			killer = Clegane_3 # Gregor Clegane
+		}
+	}
+}
+Wylde_11 = {
+	name = Tyana
+	dynasty = dynn_Wylde
+	female = yes
+	# AGOT TODO dna = agot_dna_Wylde_11
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_5
+	mother = Wylde_rs_4
+
+	8264.1.1 = { birth = yes }
+}
+### Issue of Jon
+Wylde_13 = {
+	name = Rickard
+	dynasty = dynn_Wylde
+	# AGOT TODO dna = agot_dna_Wylde_13
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wylde_12
+	mother = Vypren_2
+
+	8295.1.1 = { birth = yes }
+}
+
+###### HOUSE ESTERMONT (id = dynn_Estermont)
+############################
+###
+###
+Estermont_1 = {
+	name = Edwyn # Mentioned
+	dynasty = dynn_Estermont
+	# AGOT TODO dna = agot_dna_Estermont_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_40
+	mother = Estermont_p_2
+
+	trait = patient
+	trait = zealous
+
+	8212.1.1 = { birth = yes }
+	8230.1.1 = {
+		add_spouse = Estermont_rs_1
+		trait = knight
+	}
+	8299.7.2 = {
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8300.1.4 = { death = yes }
+}
+Estermont_rs_1 = {
+	name = Alynne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8215.1.1 = { birth = yes }
+	8286.1.1 = { death = yes }
+}
+Estermont_2 = {
+	name = Gawen
+	dynasty = dynn_Estermont
+	# AGOT TODO dna = agot_dna_Estermont_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_40
+
+	8215.1.1 = { birth = yes }
+	8277.1.1 = { death = yes }
+}
+
+### Issue of Edwyn
+Estermont_3 = {
+	name = Eldon # Canon
+	dynasty = dynn_Estermont
+	dna = Estermont_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	martial = 8
+	#health = 8 # AGOT TODO
+	prowess = 6
+
+	father = Estermont_1
+	mother = Estermont_rs_1
+
+	trait = arrogant
+
+	8230.1.1 = { birth = yes }
+	8246.1.1 = {
+		add_spouse = Baratheon_76 #Cassandra Baratheon, great-aunt of Stannis
+		trait = knight
+	}
+	8300.1.4 = {
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+	8300.3.1 = { add_spouse = Santagar_3 } # Spotted Sylva
+}
+Estermont_4 = {
+	name = Lomas # Canon
+	dynasty = dynn_Estermont
+	dna = Estermont_4
+
+	#health = 8 # AGOT TODO
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_1
+	mother = Estermont_rs_1
+
+	trait = education_martial_3
+	trait = just
+	trait = diligent
+
+	8235.1.1 = { birth = yes }
+	8244.1.1 = { employer = Estermont_1 }
+	8256.1.1 = {
+		trait = knight
+	}
+	8270.1.1 = { add_spouse = Estermont_rs_2 }
+	8299.1.1 = { employer = Baratheon_3 }
+}
+Estermont_rs_2 = {
+	name = Elenda
+	female = yes
+
+	trait = education_diplomacy_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8250.1.1 = { birth = yes }
+}
+Estermont_5 = {
+	name = Cassana # Canon, married Steffon Baratheon
+	dynasty = dynn_Estermont
+	female = yes
+	dna = Estermont_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_1
+	mother = Estermont_rs_1
+
+	8240.1.1 = { birth = yes }
+	8278.1.1 = {
+		death = {
+			death_reason = death_accident # Shipwrecked
+		}
+	}
+}
+
+### Issue of Eldon
+Estermont_6 = {
+	name = Aemon # Canon
+	dynasty = dynn_Estermont
+	dna = Estermont_6
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_3
+	mother = Baratheon_76
+
+	8246.1.1 = { birth = yes }
+	8266.1.1 = {
+		add_spouse = Estermont_rs_3
+		trait = knight
+	}
+}
+Estermont_rs_3 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8250.1.1 = { birth = yes }
+}
+
+### Issue of Lomas
+Estermont_7 = {
+	name = Andrew # Canon
+	dynasty = dynn_Estermont
+	dna = Estermont_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	martial = 8
+	prowess = 6
+
+	trait = honest
+	trait = diligent
+	trait = just
+	trait = brave
+
+	father = Estermont_4
+	mother = Estermont_rs_2
+
+	8270.1.1 = { birth = yes }
+	8280.1.1 = {
+		#trait = squire # AGOT TODO trait
+		effect = {
+			set_relation_guardian = character:Baratheon_3 # Stannis Baratheon
+		}
+	}
+	8286.1.1 = {
+		trait = education_martial_2
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		employer = Baratheon_3
+		effect = {
+			remove_relation_guardian = character:Baratheon_3 # Stannis Baratheon
+		}
+	}
+	8299.12.1 = {
+		#employer = 88108 #Tregar Ormollen AGOT TODO He is Lyseni
+		# effect = {
+			# k_lys = {
+				# holder_scope = {
+					# reverse_banish = PREVPREV #Went with Edric Storm
+				# }
+			# }
+		# }
+	}
+}
+
+### Issue of Aemon
+Estermont_8 = {
+	name = Alyn # Canon
+	dynasty = dynn_Estermont
+	dna = Estermont_8
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_6
+	mother = Estermont_rs_3
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = knight
+	}
+}
+
+### Issue of Gawen
+Estermont_9 = {
+	name = Gunthor
+	dynasty = dynn_Estermont
+	# AGOT TODO dna = agot_dna_Estermont_9
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_2
+
+	8240.1.1 = { birth = yes }
+	8262.1.1 = { add_spouse = Estermont_rs_4 }
+	8283.6.1 = { #siege of storm's end
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+Estermont_rs_4 = {
+	name = Laena
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8240.1.1 = {
+		 birth = yes
+	}
+	8293.1.1 = { death = yes }
+}
+
+### Issue of Gunthor
+Estermont_10 = {
+	name = Alysanne # Mentioned, Robert's Friend/Lover
+	female = yes
+	dynasty = dynn_Estermont
+	dna = Estermont_10
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Estermont_9
+	mother = Estermont_rs_4
+
+	8263.1.1 = { birth = yes }
+	8283.6.1 = { #siege of storm's end
+		trait = widowed
+	}
+}
+
+###### HOUSE MERTYNS (id = dynn_Mertyns)
+############################
+###
+###
+Mertyns_1 = {
+	name = Renly # a lord
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_1
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_57
+	mother = Mertyns_p_2
+
+	trait = brave
+	trait = diligent
+	trait = honest
+	trait = education_martial_2
+
+	8230.1.1 = { birth = yes }
+	8246.1.1 = { trait = knight }
+	8249.1.1 = { add_spouse = Mertyns_rs_1 }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Mertyns_44 = {
+	name = Cameron
+	dynasty = dynn_Mertyns
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_57
+	mother = Mertyns_p_2
+
+	8234.1.1 = { birth = yes }
+	8250.1.1 = { trait = knight }
+	8291.1.1 = { death = yes }
+}
+Mertyns_rs_1 = {
+	name = Mary # Canon
+	female = yes
+
+	#health = 8 # AGOT TODO
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = compassionate
+	trait = diligent
+	trait = education_diplomacy_3
+	trait = gregarious
+	trait = brave
+
+	8230.1.1 = { birth = yes }
+	8283.1.1 = { trait = widowed }
+}
+
+### Issue of Renly
+Mertyns_2 = {
+	name = Michael # Mentioned, a lord
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_1
+	mother = Mertyns_rs_1
+
+	trait = brave
+	trait = arrogant
+	trait = diligent
+	trait = vengeful
+	trait = education_stewardship_2
+
+	8250.1.1 = { birth = yes }
+	8266.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Morrigen_26 } # Doryssa Morrigen
+}
+Mertyns_3 = {
+	name = Lester # Mentioned
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_1
+	mother = Mertyns_rs_1
+
+	trait = honorable
+	trait = compassionate
+	trait = diligent
+	trait = education_stewardship_3
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+}
+Mertyns_4 = {
+	name = Jon # Mentioned
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_1
+	mother = Mertyns_rs_1
+
+	trait = chaste
+	trait = gregarious
+	trait = brave
+	trait = education_martial_3
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+### Issue of Cameron
+Mertyns_45 = {
+	name = Patrek
+	dynasty = dynn_Mertyns
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_44
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { trait = knight }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Mertyns_46 = {
+	name = Elyana
+	dynasty = dynn_Mertyns
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_44
+
+	8261.1.1 = { birth = yes }
+}
+### Issue of Michael
+Mertyns_5 = {
+	name = Guyard # Mentioned
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_2
+	mother = Morrigen_26
+
+	trait = intellect_good_1
+
+	8271.1.1 = { birth = yes }
+	8287.1.1 = { trait = knight }
+}
+Mertyns_6 = {
+	name = Dermot # Mentioned
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_6
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_2
+	mother = Morrigen_26
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = knight
+		trait = brave
+	}
+	8299.7.1 = {
+		trait = wounded_1 #Blackwater
+	}
+	8300.1.1 = {
+		remove_trait = wounded_1
+		trait = scarred
+	}
+}
+Mertyns_7 = {
+	name = Elys # Mentioned
+	dynasty = dynn_Mertyns
+	# AGOT TODO dna = agot_dna_Mertyns_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_2
+	mother = Morrigen_26
+
+	8277.1.1 = { birth = yes }
+	8293.1.1 = { trait = knight }
+}
+### Issue of Lester
+Mertyns_47 = {
+	name = Emmett # Mentioned
+	dynasty = dynn_Mertyns
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_3
+
+	8276.1.1 = { birth = yes }
+	8292.1.1 = { trait = knight }
+}
+### Issue of Patrek
+Mertyns_48 = {
+	name = Leona
+	dynasty = dynn_Mertyns
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_45
+
+	8278.1.1 = { birth = yes } # marry off by 298
+}
+Mertyns_49 = {
+	name = Jeyne
+	dynasty = dynn_Mertyns
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Mertyns_45
+
+	8281.1.1 = { birth = yes } # marry off by 298
+}
+
+###### HOUSE GOWER (id = dynn_Gower)
+############################
+###
+###
+Gower_1 = {
+	name = Steffon
+	dynasty = dynn_Gower
+	# AGOT TODO dna = agot_dna_Gower_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Gower_24
+	mother = Gower_rs_2
+
+	8250.1.1 = { birth = yes }
+	8270.1.1 = { add_spouse = Cargyll_28 }
+}
+Gower_2 = {
+	name = Danica
+	dynasty = dynn_Gower
+	female = yes
+	# AGOT TODO dna = agot_dna_Gower_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Gower_1
+	mother = Cargyll_28
+
+	8281.1.1 = { birth = yes }
+}
+Gower_3 = {
+	name = Marianne
+	dynasty = dynn_Gower
+	female = yes
+	# AGOT TODO dna = agot_dna_Gower_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Gower_1
+	mother = Cargyll_28
+
+	8283.1.1 = { birth = yes }
+}
+Gower_4 = {
+	name = Desmera
+	dynasty = dynn_Gower
+	female = yes
+	# AGOT TODO dna = agot_dna_Gower_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Gower_1
+	mother = Cargyll_28
+
+	8288.1.1 = { birth = yes }
+}
+Gower_5 = {
+	name = Gerald # Canon
+	dynasty = dynn_Gower
+	# AGOT TODO dna = agot_dna_Gower_5
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Gower_24
+	mother = Gower_rs_2
+
+	trait = wrathful
+	trait = honest
+	trait = education_martial_2
+
+	8254.1.1 = { birth = yes }
+	8270.1.1 = {
+		trait = knight
+	}
+	8299.3.3 = {
+		employer = Baratheon_3
+	}
+}
+
+###### HOUSE TUDBURY (id = dynn_Tudbury)
+############################
+###
+###
+Tudbury_1 = {
+	name = Michael # a lord
+	dynasty = dynn_Tudbury
+	# AGOT TODO dna = agot_dna_Tudbury_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tudbury_21
+	mother = Tudbury_rs_3
+
+	8267.1.1 = { birth = yes }
+	8285.1.1 = { add_spouse = Tudbury_rs_1 }
+}
+Tudbury_rs_1 = {
+	name = Senelle
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8267.1.1 = { birth = yes }
+}
+Tudbury_2 = {
+	name = Melessa
+	dynasty = dynn_Tudbury
+	female = yes
+	# AGOT TODO dna = agot_dna_Tudbury_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tudbury_1
+	mother = Tudbury_rs_1
+
+	8288.1.1 = { birth = yes }
+}
+Tudbury_3 = {
+	name = Durran
+	dynasty = dynn_Tudbury
+	# AGOT TODO dna = agot_dna_Tudbury_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Tudbury_1
+	mother = Tudbury_rs_1
+
+	8291.1.1 = { birth = yes }
+}
+
+###### HOUSE HERSTON (id = dynn_Herston)
+############################
+###
+###
+Herston_1 = {
+	name = Jeren # a lord
+	dynasty = dynn_Herston
+	# AGOT TODO dna = agot_dna_Herston_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Herston_23
+
+	8256.1.1 = { birth = yes }
+	8276.1.1 = { add_spouse = Herston_rs_1 }
+}
+Herston_rs_1 = {
+	name = Matrice
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8256.1.1 = { birth = yes }
+}
+Herston_2 = {
+	name = Benedict
+	dynasty = dynn_Herston
+	# AGOT TODO dna = agot_dna_Herston_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Herston_1
+	mother = Herston_rs_1
+
+	8274.1.1 = { birth = yes }
+}
+Herston_3 = {
+	name = Jeyne
+	dynasty = dynn_Herston
+	female = yes
+	# AGOT TODO dna = agot_dna_Herston_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Herston_1
+	mother = Herston_rs_1
+
+	8277.1.1 = { birth = yes }
+}
+Herston_4 = {
+	name = Jon
+	dynasty = dynn_Herston
+	# AGOT TODO dna = agot_dna_Herston_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Herston_1
+	mother = Herston_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+Herston_26 = {
+	name = Harlan # modcanon, Knight of the Red Chicken
+	dynasty = dynn_Herston
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Herston_25
+
+	trait = bastard
+	give_nickname = nick_storm
+
+	trait = brave
+	trait = education_martial_2
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+	8299.7.1 = { trait = scarred }
+}
+
+###### HOUSE STAEDMON (id = dynn_Staedmon)
+############################
+###
+###
+Staedmon_1 = {
+	name = Alesander # Canon, a lord
+	dynasty = dynn_Staedmon
+	# AGOT TODO dna = agot_dna_Staedmon_1
+
+	martial = 4
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 10
+	learning = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staedmon_48
+	mother = Staedmon_rs_4
+
+	trait = greedy
+	trait = education_stewardship_4
+
+	8261.1.1 = { birth = yes }
+	8277.1.1 = {
+		trait = knight
+		give_nickname = nick_pennylover
+	}
+	8279.1.1 = { add_spouse = Staedmon_rs_1 }
+}
+Staedmon_rs_1 = {
+	name = Tyana
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8261.1.1 = { birth = yes }
+}
+Staedmon_2 = {
+	name = Arstan
+	dynasty = dynn_Staedmon
+	# AGOT TODO dna = agot_dna_Staedmon_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staedmon_48
+	mother = Staedmon_rs_4
+
+	8263.1.1 = { birth = yes }
+	8267.1.1 = { death = yes }
+}
+Staedmon_3 = {
+	name = Arrec
+	dynasty = dynn_Staedmon
+	# AGOT TODO dna = agot_dna_Staedmon_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staedmon_48
+	mother = Staedmon_rs_4
+
+	8264.1.1 = { birth = yes }
+}
+
+### Issue of Alesander
+Staedmon_4 = {
+	name = Addam
+	dynasty = dynn_Staedmon
+	# AGOT TODO dna = agot_dna_Staedmon_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staedmon_1
+	mother = Staedmon_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+
+###### HOUSE LONMOUTH (id = dynn_Lonmouth)
+############################
+### The Choice Is Yours
+###
+Lonmouth_1 = {
+	name = Joffrey
+	dynasty = dynn_Lonmouth
+	# AGOT TODO dna = agot_dna_Lonmouth_1
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lonmouth_23
+	mother = Lonmouth_p_2
+
+	8241.1.1 = { birth = yes }
+	8261.1.1 = { add_spouse = Lonmouth_rs_1 }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Lonmouth_rs_1 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8241.1.1 = { birth = yes }
+}
+Lonmouth_2 = {
+	name = Richard # Canon, a lord, Rhaegar's squire
+	dynasty = dynn_Lonmouth
+
+	dna = Lonmouth_2
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lonmouth_1
+	mother = Lonmouth_rs_1
+
+	trait = brave
+	trait = deceitful
+
+	8266.1.1 = { birth = yes }
+	8277.1.1 = {
+		#trait = squire # AGOT TODO trait
+	}
+	8282.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		employer = Targaryen_3
+
+		trait = education_martial_2
+		trait = drunkard
+	}
+	8283.12.31 = {
+		employer = Lonmouth_23
+	}
+}
+Lonmouth_3 = {
+	name = Corenna
+	dynasty = dynn_Lonmouth
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lonmouth_1
+	mother = Lonmouth_rs_1
+
+	8270.1.1 = { birth = yes }
+}
+
+###### HOUSE TRANT (id = dynn_Trant)
+############################
+###
+###
+Trant_1 = {
+	name = Steffon # a lord
+	dynasty = dynn_Trant
+	# AGOT TODO dna = agot_dna_Trant_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_33
+	mother = Trant_rs_4
+
+	8252.1.1 = { birth = yes }
+	8277.1.1 = { add_spouse = Errol_25 } # Sarya Errol
+}
+Trant_2 = {
+	name = Meryn # Canon, Kingsguard
+	dynasty = dynn_Trant
+	# AGOT TODO dna = agot_dna_Trant_2
+
+	martial = 8
+	diplomacy = 5
+	intrigue = 8
+	stewardship = 5
+	learning = 2
+	prowess = 8
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_33
+	mother = Trant_rs_4
+
+	trait = temperate
+	trait = deceitful
+	trait = sadistic
+	trait = education_martial_2
+	trait = education_martial_prowess_2
+
+	8253.1.1 = { birth = yes }
+	8269.1.1 = {
+		trait = knight
+	}
+	8284.1.1 = { # Kingsguard
+		effect = { add_character_flag = agot_is_kingsguard_member }
+	}
+}
+Trant_3 = {
+	name = Barra
+	dynasty = dynn_Trant
+	female = yes
+	# AGOT TODO dna = agot_dna_Trant_3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_33
+	mother = Trant_rs_4
+
+	8264.1.1 = { birth = yes }
+	8268.1.1 = {
+		trait = ill
+		death = { death_reason = death_ill }
+	}
+}
+Trant_4 = {
+	name = Richard
+	dynasty = dynn_Trant
+	# AGOT TODO dna = agot_dna_Trant_4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_33
+	mother = Trant_rs_4
+
+	8265.1.1 = { birth = yes }
+	8271.1.1 = { death = { death_reason = death_accident } }
+}
+Trant_5 = {
+	name = Mylenda
+	dynasty = dynn_Trant
+	female = yes
+	# AGOT TODO dna = agot_dna_Trant_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_33
+	mother = Trant_rs_4
+
+	8267.1.1 = { birth = yes }
+}
+
+### Issue of Steffon
+Trant_6 = {
+	name = Brella
+	dynasty = dynn_Trant
+	female = yes
+	# AGOT TODO dna = agot_dna_Trant_6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_1
+	mother = Errol_25
+
+	8278.1.1 = { birth = yes }
+}
+Trant_7 = {
+	name = Clifford
+	dynasty = dynn_Trant
+	# AGOT TODO dna = agot_dna_Trant_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_1
+	mother = Errol_25
+
+	8280.1.1 = { birth = yes }
+	8284.1.1 = {
+		trait = ill
+		death = { death_reason = death_ill }
+	}
+}
+Trant_8 = {
+	name = Brienne
+	dynasty = dynn_Trant
+	female = yes
+	# AGOT TODO dna = agot_dna_Trant_8
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_1
+	mother = Errol_25
+
+	8282.1.1 = { birth = yes }
+}
+Trant_9 = {
+	name = Alysanne
+	dynasty = dynn_Trant
+	female = yes
+	# AGOT TODO dna = agot_dna_Trant_9
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_1
+	mother = Errol_25
+
+	8283.1.1 = { birth = yes }
+}
+Trant_10 = {
+	name = Morton
+	dynasty = dynn_Trant
+	# AGOT TODO dna = agot_dna_Trant_10
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Trant_1
+	mother = Errol_25
+
+	8287.1.1 = { birth = yes }
+}
+
+###### HOUSE PEASEBURY (id = dynn_Peasebury)
+############################
+###
+###
+Peasebury_1 = {
+	name = Robin # Canon, a lord
+	dynasty = dynn_Peasebury
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Peasebury_22
+	mother = Peasebury_p_3
+
+	trait = craven
+	trait = wrathful
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = {
+		trait = knight
+	}
+	8278.1.1 = { add_spouse = Peasebury_rs_1 }
+	8299.3.3 = {
+		religion = the_seven_main # AGOT TODO religion = rhllor # AGOT TODO
+	}
+}
+Peasebury_kg = {
+	name = Pearse # ModCanon, the knight of the pantry
+	dynasty = dynn_Peasebury
+
+	prowess = 7
+
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Peasebury_22
+	mother = Peasebury_p_3
+
+	trait = brave
+	trait = gluttonous
+	trait = content
+	trait = generous
+
+	8265.1.1 = { birth = yes }
+	8281.1.1 = {
+		trait = knight
+		give_nickname = nick_knight_of_the_pantry
+		trait = education_martial_prowess_3
+		trait = education_martial_2
+		trait = logistician
+		trait = reaver
+		trait = refusing_marriage
+		trait = fire_obsessed
+		effect = {
+			add_character_modifier = training_for_kingsguard
+		}
+	}
+	8284.1.1 = { # Kingsguard
+		effect = { add_character_flag = agot_is_kingsguard_member }
+		trait = kingsguard
+	}
+	8288.1.1 = { # too many peas :(
+		trait = gout_ridden
+	}
+	8289.6.1 = { #died at Pyke
+		death = {
+			death_reason = death_drowned # Fell off a boat, drowned in his armour :(
+		}
+	}
+}
+
+Peasebury_rs_1 = {
+	name = Elinda
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8260.1.1 = { birth = yes }
+}
+Peasebury_2 = {
+	name = Elinor
+	dynasty = dynn_Peasebury
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Peasebury_1
+	mother = Peasebury_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+Peasebury_3 = {
+	name = Ronnel
+	dynasty = dynn_Peasebury
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Peasebury_1
+	mother = Peasebury_rs_1
+
+	8282.1.1 = { birth = yes }
+}
+
+###### HOUSE WAGSTAFF (id = dynn_Wagstaff)
+############################
+###
+###
+Wagstaff_1 = {
+	name = Robert # a lord
+
+	dynasty = dynn_Wagstaff
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_25
+	mother = Wagstaff_p_2
+
+	8224.1.1 = { birth = yes }
+	8240.1.1 = { trait = knight }
+	8242.1.1 = { add_spouse = Wagstaff_rs_1 }
+	8290.1.1 = { death = yes }
+}
+Wagstaff_rs_1 = {
+	name = Myrcella
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8224.1.1 = { birth = yes }
+	8280.1.1 = { death = yes }
+}
+Wagstaff_2 = {
+	name = Humfrey # Canon, betrothed Brienne Tarth
+	dynasty = dynn_Wagstaff
+
+	stewardship = 8
+	martial = 6
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_25
+	mother = Wagstaff_p_2
+
+	trait = wrathful
+	trait = arrogant
+	trait = just
+	trait = education_stewardship_2
+
+	8231.1.1 = { birth = yes }
+	8247.1.1 = {
+		trait = knight
+		trait = lifestyle_blademaster
+	}
+	8257.1.1 = {
+		employer = Grandison_7 # Michael Grandison
+		give_council_position = councillor_castellan # Castellan
+	}
+	8298.1.1 = { death = yes }
+}
+
+### Issue of Robert
+Wagstaff_3 = {
+	name = Beric
+	dynasty = dynn_Wagstaff
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_1
+	mother = Wagstaff_rs_1
+
+	8243.1.1 = { birth = yes }
+	8259.1.1 = { trait = knight }
+	8261.1.1 = { add_spouse = Wagstaff_rs_2 }
+	8283.1.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+Wagstaff_rs_2 = {
+	name = Alynne
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8243.1.1 = { birth = yes }
+	8285.1.1 = { death = yes }
+}
+Wagstaff_4 = {
+	name = Harwood
+	dynasty = dynn_Wagstaff
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_1
+	mother = Wagstaff_rs_1
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = {
+		trait = knight
+	}
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+
+### Issue of Beric
+Wagstaff_5 = {
+	name = Harlan # a lord
+	dynasty = dynn_Wagstaff
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_3
+	mother = Wagstaff_rs_2
+
+	8274.1.1 = { birth = yes }
+	8290.1.1 = { trait = knight }
+}
+Wagstaff_6 = {
+	name = Rhonda
+	dynasty = dynn_Wagstaff
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_3
+	mother = Wagstaff_rs_2
+
+	8275.1.1 = { birth = yes }
+}
+Wagstaff_rs_3 = {
+	name = Rhea
+	dynasty = dynn_Wagstaff
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_3
+	mother = Wagstaff_rs_2
+
+	8277.1.1 = { birth = yes }
+	8279.1.1 = { death = yes }
+}
+Wagstaff_7 = {
+	name = Rhoelle
+	dynasty = dynn_Wagstaff
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Wagstaff_3
+	mother = Wagstaff_rs_2
+
+	8279.1.1 = { birth = yes }
+}
+
+###### HOUSE SWYGERT (id = dynn_Swygert)
+############################
+###
+###
+Swygert_1 = {
+	name = Gunthor # a lord
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_rs_3
+	mother = Swygert_26
+
+	8230.1.1 = { birth = yes }
+	8248.1.1 = { add_spouse = Swygert_rs_1 }
+}
+Swygert_rs_1 = {
+	name = Emma
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8230.1.1 = { birth = yes }
+	8274.1.1 = { death = yes }
+}
+
+### Issue of Gunthor
+Swygert_2 = {
+	name = Myrcella
+	dynasty = dynn_Swygert
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_1
+	mother = Swygert_rs_1
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { death = yes }
+}
+Swygert_3 = {
+	name = Criston
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_1
+	mother = Swygert_rs_1
+
+	8257.1.1 = { birth = yes }
+	8275.1.1 = { add_spouse = Swygert_rs_2 }
+}
+Swygert_rs_2 = {
+	name = Brella
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8257.1.1 = { birth = yes }
+}
+Swygert_4 = {
+	name = Bethany
+	female = yes
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_1
+	mother = Swygert_rs_1
+
+	8259.1.1 = { birth = yes }
+}
+
+### Issue of Criston
+Swygert_5 = {
+	name = Dalla
+	female = yes
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_3
+	mother = Swygert_rs_2
+
+	8285.1.1 = { birth = yes }
+}
+Swygert_6 = {
+	name = Senelle
+	dynasty = dynn_Swygert
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_3
+	mother = Swygert_rs_2
+
+	8286.1.1 = { birth = yes }
+}
+Swygert_7 = {
+	name = Myles
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_3
+	mother = Swygert_rs_2
+
+	8287.1.1 = { birth = yes }
+}
+Swygert_8 = {
+	name = Barra
+	female = yes
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_3
+	mother = Swygert_rs_2
+
+	8288.1.1 = { birth = yes }
+}
+Swygert_9 = {
+	name = Jon
+	dynasty = dynn_Swygert
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Swygert_3
+	mother = Swygert_rs_2
+
+	8289.1.1 = { birth = yes }
+}
+
+###### HOUSE MUSGOOD (id = dynn_Musgood)
+############################
+###
+###
+Musgood_1 = {
+	name = Alaric # a lord
+	dynasty = dynn_Musgood
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_27
+	mother = Musgood_rs_5
+
+	8252.1.1 = { birth = yes }
+	8270.1.1 = { add_spouse = Musgood_rs_1 }
+	8294.1.1 = { death = yes }
+}
+Musgood_rs_1 = {
+	name = Meredyth
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8252.1.1 = { birth = yes }
+	8294.1.1 = { death = yes }
+}
+Musgood_2 = {
+	name = Gawen
+	dynasty = dynn_Musgood
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_27
+	mother = Musgood_rs_5
+
+	8253.1.1 = { birth = yes }
+}
+Musgood_3 = {
+	name = Alesander
+	dynasty = dynn_Musgood
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_27
+	mother = Musgood_rs_5
+
+	8254.1.1 = { birth = yes }
+}
+
+### Issue of Alaric
+Musgood_4 = {
+	name = Argilac # a lord
+	dynasty = dynn_Musgood
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_1
+	mother = Musgood_rs_1
+
+	8281.1.1 = { birth = yes }
+	8299.1.1 = { add_spouse = Musgood_rs_2 }
+}
+Musgood_rs_2 = {
+	name = Leonette
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8281.1.1 = { birth = yes }
+}
+Musgood_5 = {
+	name = Armond
+	dynasty = dynn_Musgood
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_1
+	mother = Musgood_rs_1
+
+	8283.1.1 = { birth = yes }
+}
+Musgood_6 = {
+	name = Lhea
+	dynasty = dynn_Musgood
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Musgood_1
+	mother = Musgood_rs_1
+
+	8285.1.1 = { birth = yes }
+}
+
+###### HOUSE HORPE (id = dynn_Horpe)
+############################
+###
+###
+Horpe_1 = {
+	name = Harys # a lord
+	dynasty = dynn_Horpe
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Horpe_23
+	mother = Horpe_rs_3
+
+	8261.1.1 = { birth = yes }
+	8288.1.1 = { add_spouse = Horpe_rs_1 }
+}
+Horpe_rs_1 = {
+	name = Ellyn
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8270.1.1 = { birth = yes }
+}
+Horpe_2 = {
+	name = Myrcella
+	dynasty = dynn_Horpe
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Horpe_23
+	mother = Horpe_rs_3
+
+	8268.1.1 = { birth = yes }
+}
+Horpe_3 = {
+	name = Richard # Canon, Stannis' Bodyguard
+	dynasty = dynn_Horpe
+	#dna = bfcfdgcbedp
+
+	martial = 10
+	prowess = 12
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Horpe_23
+	mother = Horpe_rs_3
+
+	trait = education_martial_3
+	trait = brave
+	trait = cynical
+	trait = ambitious
+	trait = callous
+
+	8264.1.1 = { birth = yes }
+	8280.1.1 = {
+		trait = knight
+		employer = Baratheon_2
+		#effect = {
+		#	add_ambition = obj_become_kingsguard # AGOT TODO
+		#}
+	}
+	8284.1.1 = { employer = Baratheon_3 }
+	8299.1.1 = {
+		religion = rhllor
+	}
+}
+Horpe_4 = {
+	name = Jeyne
+	dynasty = dynn_Horpe
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Horpe_1
+	mother = Horpe_rs_1
+
+	8289.1.1 = { birth = yes }
+}
+
+###### HOUSE BOLLING (id = house_Bolling)
+############################
+###
+###
+Bolling_1 = {
+	name = Durran # a lord
+	dynasty_house = house_Bolling
+	dna = Bolling_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_31
+	mother = Bolling_rs_11
+
+	8245.1.1 = { birth = yes }
+	8263.1.1 = { add_spouse = Bolling_rs_1 }
+	8292.1.1 = { death = yes }
+}
+Bolling_rs_1 = {
+	name = Leona
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8245.1.1 = { birth = yes }
+	8292.1.1 = { death = yes }
+}
+Bolling_2 = {
+	name = Ormund
+	dynasty_house = house_Bolling
+	dna = Bolling_2
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_31
+	mother = Bolling_rs_11
+
+	8246.1.1 = { birth = yes }
+	8288.1.1 = { death = yes }
+}
+Bolling_3 = {
+	name = Eglantine
+	dynasty_house = house_Bolling
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_31
+	mother = Bolling_rs_11
+
+	8247.1.1 = { birth = yes }
+	8257.1.1 = { death = yes }
+}
+
+### Issue of Cleoden
+Bolling_4 = {
+	name = Herbert # Canon, a lord
+	dynasty_house = house_Bolling
+	dna = Bolling_4
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_1
+	mother = Bolling_rs_1
+
+	trait = education_martial_1
+
+	8272.1.1 = { birth = yes }
+	8288.1.1 = {
+		trait = knight
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_duel # Battle of Blackwater
+			killer = 223081092 # Creighton Longbough
+		}
+	}
+}
+Bolling_5 = {
+	name = Arlan # a lord
+	dynasty_house = house_Bolling
+	dna = Bolling_5
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_1
+	mother = Bolling_rs_1
+
+	8273.1.1 = { birth = yes }
+}
+Bolling_6 = {
+	name = Donyse
+	dynasty_house = house_Bolling
+	female = yes
+	dna = Bolling_6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_1
+	mother = Bolling_rs_1
+
+	8275.1.1 = { birth = yes }
+}
+Bolling_7 = {
+	name = Larra
+	dynasty_house = house_Bolling
+	female = yes
+	dna = Bolling_7
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_1
+	mother = Bolling_rs_1
+
+	8277.1.1 = { birth = yes }
+}
+Bolling_8 = {
+	name = Ronald
+	dynasty_house = house_Bolling
+	dna = Bolling_8
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Bolling_1
+	mother = Bolling_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+
+###### HOUSE WENSINGTON (id = house_Wensington)
+############################
+###
+###
+Wensington_1 = {
+	name = Leo # a lord
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_rs_3
+	mother = Wensington_31
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Wensington_rs_1 }
+	8299.1.1 = { death = { death_reason = death_battle } }
+}
+Wensington_rs_1 = {
+	name = Brella
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+Wensington_2 = {
+	name = Eglantine
+	female = yes
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_rs_3
+	mother = Wensington_31
+
+	8255.1.1 = { birth = yes }
+}
+Wensington_3 = {
+	name = Michael
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_rs_3
+	mother = Wensington_31
+
+	8257.1.1 = { birth = yes }
+	8273.1.1 = { trait = knight }
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Wensington_4 = {
+	name = Annara
+	dynasty_house = house_Wensington
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_1
+	mother = Wensington_rs_1
+
+	8279.1.1 = { birth = yes }
+}
+Wensington_5 = {
+	name = Leonette
+	dynasty_house = house_Wensington
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_1
+	mother = Wensington_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+Wensington_6 = {
+	name = Harlan # a lord
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_1
+	mother = Wensington_rs_1
+
+	8282.1.1 = { birth = yes }
+	8298.1.1 = { trait = knight }
+}
+Wensington_7 = {
+	name = Stevron
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_1
+	mother = Wensington_rs_1
+
+	8284.1.1 = { birth = yes }
+}
+Wensington_8 = {
+	name = Harbert
+	dynasty_house = house_Wensington
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wensington_1
+	mother = Wensington_rs_1
+
+	8286.1.1 = { birth = yes }
+}
+
+###### HOUSE SEAWORTH (id = dynn_Seaworth)
+############################
+###
+###
+Seaworth_1 = {
+	name = Davos # Canon
+
+	martial = 7
+	diplomacy = 9
+	stewardship = 9
+	intrigue = 7
+	learning = 5
+	prowess = 3
+
+	dna = Seaworth_1
+
+	religion = the_seven_main
+	culture = crownlander
+	sexuality = heterosexual
+
+	trait = honest
+	trait = education_stewardship_3
+	trait = brave
+	trait = just
+	trait = intellect_good_2
+	trait = honorable
+
+	8251.1.1 = { birth = yes }
+	8259.1.1 = {
+		#employer = 175300542 # Roro Uhoris # AGOT TODO Reenable once Stepstones are added
+	}
+	8270.1.1 = {
+		#employer = 129174366 # Terro Myrakis, Pentos # AGOT TODO Reenable once Pentos is added
+	}
+	8274.1.1 = { add_spouse = Seaworth_rs_1 }
+	8280.1.1 = {
+		effect = { set_relation_friend = character:119982370 } # Salladhor Saan
+	}
+	8284.1.1 = {
+		effect = {
+			#set_global_flag = davos_appeared # AGOT TODO
+			reverse_add_opinion = {
+				target = character:Baratheon_3 # Stannis Baratheon
+				modifier = trust_opinion
+				opinion = 50
+			}
+		}
+		give_nickname = nick_the_onion_knight
+		trait = knight
+		dynasty = dynn_Seaworth
+	}
+	8300.1.1 = {
+		give_nickname = nick_the_onion_lord
+		give_council_position = councillor_castellan # Hand of the King
+	}
+	8300.2.1 = {
+		#trait = has_missing # AGOT TODO trait
+		effect = {
+			#add_character_flag = davos_seaworth # AGOT TODO
+			# c_whiteharbor = {
+				# holder_scope = {
+					# ROOT = {
+						# imprison = PREV
+						# add_character_flag = captured_in_battle
+					# }
+				# }
+			# }
+		}
+	}
+}
+Seaworth_rs_1 = {
+	name = Marya
+	female = yes
+
+	dna = Seaworth_rs_1
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8253.1.1 = { birth = yes }
+}
+Seaworth_2 = {
+	name = Dale # Canon
+
+	dna = Seaworth_2
+
+	martial = 10
+	diplomacy = 9
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = honorable
+
+	8275.1.1 = { birth = yes }
+	8284.1.1 = {
+		dynasty = dynn_Seaworth
+	}
+	8285.1.1 = {
+		effect = {
+			set_culture = culture:stormlander
+		}
+	}
+	8293.1.1 = {
+		add_spouse = Seaworth_rs_2
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Lannister_8 # Tyrion Lannister
+		}
+	}
+}
+Seaworth_rs_2 = {
+	name = Sarya
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8274.1.1 = { birth = yes }
+	8299.7.1 = { trait = widowed }
+}
+Seaworth_3 = {
+	name = Allard # Canon
+
+	dna = Seaworth_3
+
+	martial = 10
+	diplomacy = 9
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	trait = education_martial_2
+	trait = brave
+	trait = arrogant
+	trait = wrathful
+
+	8276.1.1 = { birth = yes }
+	8284.1.1 = { dynasty = dynn_Seaworth }
+	8286.1.1 = {
+		effect = {
+			set_culture = culture:stormlander
+		}
+	}
+	8289.1.1 = { trait = lustful }
+	8299.1.1 = {
+		effect = {
+			# set_relation_lover = character:135300003 # Braavosi Lover AGOT TODO Readd when Braavos is real
+		}
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Lannister_8 # Tyrion Lannister
+		}
+	}
+}
+Seaworth_4 = {
+	name = Matthos # Canon
+
+	dna = Seaworth_4
+
+	religion = the_seven_main
+	culture = crownlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	trait = education_martial_2
+	trait = arrogant
+	trait = honorable
+
+	8277.1.1 = { birth = yes }
+	8284.1.1 = { dynasty = dynn_Seaworth }
+	8287.1.1 = {
+		effect = {
+			set_culture = culture:stormlander
+		}
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Lannister_8 # Tyrion Lannister
+		}
+	}
+}
+Seaworth_5 = {
+	name = Maric # Canon
+
+	dna = Seaworth_5
+
+	religion = the_seven_main
+	culture = crownlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	8279.1.1 = { birth = yes }
+	8284.1.1 = { dynasty = dynn_Seaworth }
+	8289.1.1 = {
+		effect = {
+			set_culture = culture:stormlander
+		}
+	}
+	8295.1.1 = {
+		employer = Baratheon_3 # Oarmaster on Fury
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Lannister_8 # Tyrion Lannister
+		}
+	}
+}
+Seaworth_6 = {
+	name = Devan # Canon
+	dynasty = dynn_Seaworth
+
+	martial = 5
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	8287.1.1 = { birth = yes }
+	8295.7.1 = {
+		effect = {
+			set_relation_guardian = character:Baratheon_3 # Stannis Baratheon
+		}
+		#trait = squire # AGOT TODO trait
+	}
+	8299.1.1 = {
+		religion = rhllor
+		trait = zealous
+	}
+}
+Seaworth_7 = {
+	name = Stannis # Canon
+	dynasty = dynn_Seaworth
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	8290.1.1 = { birth = yes }
+}
+Seaworth_8 = {
+	name = Steffon # Canon
+	dynasty = dynn_Seaworth
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Seaworth_1
+	mother = Seaworth_rs_1
+
+	8293.1.1 = { birth = yes }
+}
+
+###### HOUSE SUGGS (id = dynn_Suggs)
+############################
+###
+###
+Suggs_1 = {
+	name = Clayton # Canon
+	dynasty = dynn_Suggs
+
+	martial = 7
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = education_martial_1
+	trait = beauty_bad_1
+	trait = physique_good_2
+	trait = zealous
+	trait = sadistic
+	trait = lustful
+	trait = brave
+
+	8266.1.1 = { birth = yes }
+	8284.1.1 = {
+		employer = Baratheon_3
+		trait = knight
+	}
+	8298.1.1 = {
+		religion = rhllor
+	}
+}
+
+###### HOUSE TOYNE (id = dynn_Toyne)
+############################
+###
+###
+Toyne_1 = {
+	name = Arys # Golden Company
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_26 #Leo Toyne
+
+	8170.1.1 = { birth = yes }
+	#8178.6.1 = { # AGOT TODO
+	#	effect = {
+	#		set_employer = title:k_golden_company.holder
+	#	}
+	#}
+	8233.1.1 = { death = yes }
+}
+Toyne_2 = {
+	name = Gawen
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_1
+
+	8195.1.1 = {
+		birth = yes
+		#effect = { # AGOT TODO
+		#	set_employer = title:k_golden_company.holder
+		#}
+	}
+	8252.1.1 = { death = yes }
+}
+Toyne_3 = {
+	name = Leo
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_2
+
+	8216.1.1 = {
+		birth = yes
+		#effect = { # AGOT TODO
+		#	set_employer = title:k_golden_company.holder
+		#}
+	}
+	8277.1.1 = { death = yes }
+}
+Toyne_4 = {
+	name = Myles # Canon, AKA: The Blackheart
+	dynasty = dynn_Toyne
+
+	martial = 10
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = just
+	trait = diligent
+	trait = gregarious
+	trait = authoritative
+	trait = education_martial_3
+
+	father = Toyne_3
+
+	8244.1.1 = { birth = yes }
+	#8245.1.1 = { # AGOT TODO
+	#	effect = {
+	#		set_employer = title:k_golden_company.holder
+	#	}
+	#}
+	#8259.1.1 = { # AGOT TODO
+	#	employer = Strickland_18 # Randyll Stickland
+	#}
+	8265.1.1 = {
+		#employer = Strickland_19 # Hosman Stickland # AGOT TODO
+		give_nickname = nick_blackheart
+	}
+	8297.1.1 = { death = yes }
+}
+
+### Simon Toyne branch
+Toyne_5 = {
+	name = Armond
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_24 #Roland Toyne
+
+	8178.1.1 = { birth = yes }
+	8245.1.1 = { death = yes }
+}
+Toyne_6 = {
+	name = Theo
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_5
+
+	8205.1.1 = { birth = yes }
+	8268.1.1 = { death = yes }
+}
+Toyne_7 = {
+	name = Michael
+	dynasty = dynn_Toyne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_6
+
+	8230.1.1 = { birth = yes }
+	8275.1.1 = { death = yes }
+}
+Toyne_8 = {
+	name = Simon # Canon, leader of Kingswood Brotherhood
+	dynasty = dynn_Toyne
+
+	martial = 3
+	diplomacy = 3
+	intrigue = 4
+	stewardship = 2
+	learning = 3
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Toyne_7
+
+	trait = ambitious
+	trait = deceitful
+	trait = education_martial_2
+	trait = brave
+
+	8248.1.1 = { birth = yes }
+	# 8280.1.1 = {
+		# effect = { character_event = { id = roberts_rebellion.Cassel_2 days = 1 } } #Kingswood Brotherhood # AGOT TODO
+	# }
+	8281.6.1 = {
+		death = {
+			death_reason = death_duel
+			killer = Selmy_3 # Barristan Selmy
+		}
+	}
+}
+
+###### HOUSE WHITEHEAD (id = dynn_Whitehead)
+############################
+###
+###
+Whitehead_1 = {
+	name = Denys # a lord
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_31
+	mother = Whitehead_rs_4
+
+	8248.1.1 = { birth = yes }
+	8256.1.1 = { add_spouse = Whitehead_rs_1 }
+}
+Whitehead_rs_1 = {
+	name = Brienne
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8248.1.1 = { birth = yes }
+}
+Whitehead_2 = {
+	name = Leyla
+	female = yes
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_31
+	mother = Whitehead_rs_4
+
+	8250.1.1 = { birth = yes }
+}
+Whitehead_3 = {
+	name = Eglantine
+	dynasty = dynn_Whitehead
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_31
+	mother = Whitehead_rs_4
+
+	8253.1.1 = { birth = yes }
+}
+Whitehead_4 = {
+	name = Meredyth
+	dynasty = dynn_Whitehead
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_31
+	mother = Whitehead_rs_4
+
+	8255.1.1 = { birth = yes }
+	8300.1.1 = { death = yes }
+}
+Whitehead_5 = {
+	name = Richard
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_31
+	mother = Whitehead_rs_4
+
+	8260.1.1 = { birth = yes }
+	8278.1.1 = { add_spouse = Whitehead_rs_2 }
+}
+Whitehead_rs_2 = {
+	name = Gwyneth
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8260.1.1 = { birth = yes }
+}
+Whitehead_6 = {
+	name = Devan
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_5
+	mother = Whitehead_rs_2
+
+	8282.1.1 = { birth = yes }
+}
+Whitehead_7 = {
+	name = Senelle
+	female = yes
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_5
+	mother = Whitehead_rs_2
+
+	8284.1.1 = { birth = yes }
+}
+Whitehead_8 = {
+	name = Cedrik
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_5
+	mother = Whitehead_rs_2
+
+	8286.1.1 = { birth = yes }
+}
+Whitehead_9 = {
+	name = Gowen
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_5
+	mother = Whitehead_rs_2
+
+	8288.1.1 = { birth = yes }
+}
+Whitehead_10 = {
+	name = Lynesse
+	female = yes
+	dynasty = dynn_Whitehead
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_1
+	mother = Whitehead_rs_1
+
+	8280.1.1 = { birth = yes }
+}
+Whitehead_11 = {
+	name = Addam # Canon
+	dynasty = dynn_Whitehead
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_1
+	mother = Whitehead_rs_1
+
+	trait = ambitious #Joined Lord Connington
+
+	8281.1.1 = { birth = yes }
+	8297.1.1 = {
+		trait = knight
+	}
+}
+Whitehead_12 = {
+	name = Ravella
+	dynasty = dynn_Whitehead
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Whitehead_1
+	mother = Whitehead_rs_1
+
+	8284.1.1 = { birth = yes }
+}
+
+###### HOUSE BROWNHILL (id = dynn_Brownhill)
+############################
+###
+###
+Brownhill_1 = {
+	name = Addam
+	dynasty = dynn_Brownhill
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Brownhill_34
+
+	8202.1.1 = { birth = yes }
+	8218.1.1 = { trait = knight }
+	8230.1.1 = { add_spouse = Brownhill_p_1 }
+	8249.1.1 = { death = yes }
+}
+Brownhill_p_1 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8202.1.1 = { birth = yes }
+	8260.1.1 = { death = yes }
+}
+Brownhill_2 = {
+	name = Walter
+	dynasty = dynn_Brownhill
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Brownhill_1
+	mother = Brownhill_p_1
+
+	8232.1.1 = { birth = yes }
+	8248.1.1 = { trait = knight }
+	8260.1.1 = { add_spouse = Brownhill_p_2 }
+}
+Brownhill_p_2 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8232.1.1 = { birth = yes }
+}
+Brownhill_3 = {
+	name = Walter
+	dynasty = dynn_Brownhill
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Brownhill_2
+	mother = Brownhill_p_2
+
+	8265.1.1 = { birth = yes }
+	8281.1.1 = { trait = knight }
+}
+
+####################################################
+####				DORNISH MARCHES				####
+####################################################
+
+###### HOUSE CARON (id = dynn_Caron)
+############################
+### No Song so Sweet
+###
+Caron_1 = {
+	name = Rolland
+	dynasty = dynn_Caron
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Caron_47
+	mother = Caron_p_2
+
+	8237.1.1 = { birth = yes }
+	8253.1.1 = {
+		add_spouse = Caron_p_1
+		trait = knight
+	}
+	8276.1.1 = { death = yes }
+}
+Caron_p_1 = {
+	name = Jeyne # placeholder wife
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8237.1.1 = { birth = yes }
+}
+### Issue of Rolland
+Caron_2 = {
+	name = Bryen  # Canon, a lord
+	dynasty = dynn_Caron
+
+	dna = Caron_2
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Caron_1 # Rolland Caron
+	mother = Caron_p_1
+
+	trait = lustful
+
+	8257.1.1 = { birth = yes }
+	8273.1.1 = {
+		add_spouse = Caron_rs_1
+		trait = knight
+	}
+	8288.12.1 = { trait = typhus}
+	8289.1.1 = {
+		death = { death_reason = death_typhus }
+	}
+}
+Caron_rs_1 = {
+	name = Cassana # Mentioned
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8257.1.1 = { birth = yes }
+	8288.12.1 = { trait = typhus }
+	8289.1.1 = {
+		death = { death_reason = death_typhus }
+	}
+}
+Caron_3 = {
+	name = Colin
+	dynasty = dynn_Caron
+
+	martial = 2
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	trait = education_martial_2
+
+	father = Caron_1 # Rolland Caron
+	mother = Caron_p_1
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = {
+		trait = knight
+	}
+	8280.1.1 = {
+		add_spouse = Estermont_10
+		employer = Baratheon_2
+	}
+	8283.6.1 = {
+		death = {
+			death_reason = death_battle # Siege of Storm's End
+			killer = Tyrell_8 # Mace Tyrell
+		}
+	}
+}
+Caron_4 = {
+	name = Mylenda # Canon, married Petyr Frey
+	dynasty = dynn_Caron
+	female = yes
+
+	dna = Caron_4
+
+	religion = the_seven_main
+	culture = marcher
+
+	trait = lustful
+	trait = deceitful
+
+	father = Caron_1 # Rolland Caron
+	mother = Caron_p_1
+
+	8261.1.1 = { birth = yes }
+}
+
+### Issue of Bryen
+Caron_5 = {
+	name = Bryce # Canon, a lord, Renly's Kingsguard
+	dynasty = dynn_Caron
+
+	dna = Caron_5
+
+	religion = the_seven_main
+	culture = marcher
+
+	martial = 5
+	prowess = 12
+
+	father = Caron_2
+	mother = Caron_rs_1
+
+	trait = brave
+	trait = arrogant
+	trait = diligent
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = {
+		trait = knight
+		trait = education_martial_3
+	}
+	8299.2.11 = {
+		give_nickname = nick_the_orange
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_battle # Battle of Blackwater
+			killer = Foote_6 # Philip Foote
+		}
+	}
+}
+Caron_6 = {
+	name = Rolland # Canon, AKA: Bastard of Nightsong
+	dynasty = dynn_Caron
+
+	martial = 7
+	prowess = 12
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Caron_2
+
+	trait = bastard
+	trait = zealous
+	trait = patient
+	trait = honorable
+	give_nickname = nick_storm # Bastard of Nightsong
+	trait = education_martial_3
+
+	8273.1.1 = { birth = yes }
+	8285.1.1 = {
+		trait = scarred # Pox Scarred
+	}
+	8289.1.1 = {
+		trait = knight
+	}
+	8299.1.1 = {
+		employer = Baratheon_4
+	}
+	8299.3.3 = {
+		employer = Baratheon_3
+	}
+}
+Caron_7 = {
+	name = Elenda # Mentioned
+	dynasty = dynn_Caron
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Caron_2
+	mother = Caron_rs_1
+
+	8276.1.1 = { birth = yes }
+	8288.12.1 = { trait = typhus }
+	8289.1.1 = {
+		death = { death_reason = death_typhus }
+	}
+}
+Caron_8 = {
+	name = Morton # Mentioned, betrothed Brienne Tarth
+	dynasty = dynn_Caron
+
+	religion = the_seven_main
+	culture = marcher
+
+	dna = Caron_8
+
+	father = Caron_2
+	mother = Caron_rs_1
+
+	8277.1.1 = { birth = yes }
+	#8283.1.1 = { trait = timid } # AGOT TODO trait
+	8288.12.1 = { trait = typhus }
+	8289.1.1 = {
+		death = { death_reason = death_typhus }
+	}
+}
+Caron_9 = {
+	name = Ellyn
+	dynasty = dynn_Caron
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Caron_2
+	mother = Caron_rs_1
+
+	8279.1.1 = { birth = yes }
+	8288.12.1 = { trait = typhus }
+	8289.1.1 = {
+		death = { death_reason = death_typhus }
+	}
+}
+
+###### HOUSE SELMY (id = dynn_Selmy)
+############################
+###
+###
+Selmy_1 = {
+	name = Lyonel # Canon, Barristan's father, a lord
+	dynasty = dynn_Selmy
+	# AGOT TODO dna = Selmy_1
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_45
+
+	8215.1.1 = { birth = yes }
+	8231.1.1 = {
+		trait = knight
+	}
+	8235.1.1 = { add_spouse = Selmy_rs_1 }
+	8270.1.1 = { death = yes }
+}
+Selmy_rs_1 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8215.1.1 = { birth = yes }
+	8270.1.1 = { death = yes }
+}
+Selmy_2 = {
+	name = Lorent
+	dynasty = dynn_Selmy
+	# AGOT TODO dna = agot_dna_Selmy_2
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_45
+
+	8218.1.1 = { birth = yes }
+	8234.1.1 = { trait = knight }
+	8235.1.1 = { add_spouse = Selmy_rs_2 }
+	8265.1.1 = { death = yes }
+}
+Selmy_rs_2 = {
+	name = Maris
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8218.1.1 = { birth = yes }
+	8265.1.1 = { death = yes }
+}
+
+### Issue of Lyonel
+Selmy_3 = {
+	name = Barristan # Canon, THE Barristan Selmy
+	dynasty = dynn_Selmy
+
+	dna = Selmy_3
+
+	martial = 9
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	learning = 5
+	prowess = 8
+	#health = 9.5 # AGOT TODO
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_1
+	mother = Selmy_rs_1
+
+	trait = strong
+	trait = diligent
+	trait = honorable
+	trait = brave
+	trait = chaste
+	trait = gallant
+
+	8237.1.1 = { birth = yes }
+	8247.1.1 = {
+		give_nickname = nick_the_bold # at age 10, he tried to compete in a tourney as was dubbed the bold.
+	}
+	8253.1.1 = {
+		trait = knight
+		trait = education_martial_3
+		trait = education_martial_prowess_4
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+	8260.1.1 = {  # Joined the kingsguard.
+		effect = { add_character_flag = agot_is_kingsguard_member }
+		create_character_memory = {
+			type = agot_kingsguard_memory
+			participants = {
+				king = character:Targaryen_127
+			}
+		}
+	}
+	8284.1.1 = {
+		effect = {
+			remove_character_flag = agot_is_kingsguard_member
+			add_character_flag = agot_is_kingsguard_commander
+		}
+		trait = celibate
+	}
+	8298.10.30 = {  # Left the kingsguard.
+		#employer = 600000040 # Illyrio Mopatis # AGOT TODO Reenable once Pentos is added
+		effect = { remove_character_flag = agot_is_kingsguard_member }
+		trait = refusing_marriage
+	}
+	8299.6.1 = {
+		employer = Targaryen_9 # Daenerys Targaryen
+	}
+}
+
+Selmy_4 = {
+	name = Byron
+	dynasty = dynn_Selmy
+	# AGOT TODO dna = Selmy_4
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_1
+	mother = Selmy_rs_1
+
+	8238.1.1 = { birth = yes }
+	8254.1.1 = {
+		trait = knight
+		add_spouse = Horpe_24 # Mary Horpe
+	}
+	8268.1.1 = { death = yes }
+}
+Selmy_rs_3 = {
+	name = Elinor
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8238.1.1 = { birth = yes }
+	8275.1.1 = { death = yes }
+}
+
+### Issue of Lorent
+Selmy_5 = {
+	name = Simon
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+	sexuality = homosexual
+
+	father = Selmy_2
+	mother = Selmy_rs_2
+
+	8238.1.1 = { birth = yes }
+	8278.1.1 = { death = yes }
+}
+Selmy_6 = {
+	name = Willem
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_2
+	mother = Selmy_rs_2
+
+	8240.1.1 = { birth = yes }
+	8256.1.1 = { trait = knight }
+	8283.1.1 = { death = yes }
+}
+Selmy_46 = {
+	name = Berena
+	dynasty = dynn_Selmy
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_2
+	mother = Selmy_rs_2
+
+	8242.1.1 = { birth = yes }
+}
+
+### Issue of Byron
+Selmy_7 = {
+	name = Balon # a lord
+	dynasty = dynn_Selmy
+	# AGOT TODO dna = Selmy_7
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_4
+	mother = Horpe_24
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+	8275.1.1 = { add_spouse = Selmy_rs_4 }
+	8295.1.1 = { death = yes }
+}
+Selmy_8 = {
+	name = Armen
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_4
+	mother = Horpe_24
+
+	8257.1.1 = { birth = yes }
+	8273.1.1 = { trait = knight }
+}
+Selmy_9 = {
+	name = Manfred
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_4
+	mother = Horpe_24
+
+	8260.1.1 = { birth = yes }
+	8276.1.1 = { trait = knight }
+}
+Selmy_rs_4 = {
+	name = Ravella
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8255.1.1 = { birth = yes }
+}
+
+### Issue of Balon
+Selmy_10 = {
+	name = Arstan # Canon, a lord
+	# AGOT TODO dna = Selmy_10
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_7
+	mother = Selmy_rs_4
+
+	trait = compassionate
+
+	8275.1.1 = { birth = yes }
+	8291.1.1 = { trait = knight }
+}
+Selmy_47 = {
+	name = Marenda
+	dynasty = dynn_Selmy
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_7
+	mother = Selmy_rs_4
+
+	8280.1.1 = { birth = yes }
+}
+### Issue of Willem
+Selmy_48 = {
+	name = Darran
+	dynasty = dynn_Selmy
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_6
+
+	8263.1.1 = { birth = yes }
+	8279.1.1 = { trait = knight }
+	8283.6.1 = { death = { death_reason = death_battle } }
+}
+Selmy_49 = {
+	name = Tysane
+	dynasty = dynn_Selmy
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Selmy_6
+
+	8265.1.1 = { birth = yes }
+}
+
+
+###### HOUSE SWANN (id = dynn_Swann)
+############################
+###
+###
+Swann_1 = {
+	name = Gulian # Canon
+	dynasty = dynn_Swann
+	dna = Swann_1
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_36
+	mother = Swann_p_1
+
+	trait = patient
+
+	8253.1.1 = { birth = yes }
+	8269.1.1 = {
+		trait = knight
+		add_spouse = Swann_rs_1
+	}
+	8299.2.11 = {
+		trait = ill
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Swann_rs_1 = {
+	name = Jeyne
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8252.1.1 = { birth = yes }
+}
+Swann_2 = {
+	name = Jeyne # Canon
+	dynasty = dynn_Swann
+	female = yes
+
+	dna = Swann_2
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_36
+	mother = Swann_p_1
+
+	trait = zealous
+
+	8260.1.1 = { birth = yes }
+}
+Swann_3 = {
+	name = Clifford # Canon
+	dynasty = dynn_Swann
+
+	dna = Swann_3
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_36
+	mother = Swann_p_1
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = {
+		trait = knight
+	}
+}
+
+### Issue of Gulian
+Swann_4 = {
+	name = Donnel # Canon
+	dynasty = dynn_Swann
+
+	dna = Swann_4
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_1
+	mother = Swann_rs_1
+
+	trait = education_martial_1
+	trait = brave
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = {
+		trait = knight
+	}
+	8299.2.1 = {
+		employer = Baratheon_4 # Renly Baratheon
+	}
+	8299.3.3 = {
+		employer = Baratheon_3 # Stannis Baratheon
+	}
+	8299.7.1 = {
+		trait = wounded_1
+		employer = Swann_1
+	}
+}
+Swann_5 = {
+	name = Ravella # Canon, married Theomar Smallwood
+	dynasty = dynn_Swann
+	female = yes
+
+	dna = Swann_5
+
+	religion = the_seven_main
+	culture = marcher
+
+	trait = compassionate
+	trait = arrogant
+
+	father = Swann_1
+	mother = Swann_rs_1
+
+	8271.1.1 = { birth = yes }
+}
+Swann_6 = {
+	name = Balon # Canon, Kingsguard
+	dynasty = dynn_Swann
+
+	dna = Swann_6
+
+	martial = 5
+	diplomacy = 8
+	intrigue = 5
+	stewardship = 5
+	learning = 5
+	prowess = 12
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_1
+	mother = Swann_rs_1
+
+	trait = strong
+	trait = brave
+	trait = humble
+	trait = charming
+	disallow_random_traits = yes
+
+	8270.1.1 = { birth = yes }
+	8282.1.1 = {
+		trait = refusing_marriage
+		effect = {
+			add_character_modifier = training_for_kingsguard
+			set_focus = education_martial
+		}
+	}
+	8286.1.1 = {
+		trait = knight
+		trait = education_martial_2
+		trait = honorable
+	}
+	8299.5.3 = {
+		effect = { add_character_flag = agot_is_kingsguard_member }
+	}
+}
+
+### Junior Branch
+Swann_7 = {
+	name = Cyrenna # Canon, married Walder Frey
+	dynasty = dynn_Swann
+	female = yes
+
+	dna = Swann_7
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_35
+	mother = Swann_rs_5
+
+	8225.1.1 = { birth = yes }
+	8249.1.1 = {
+		trait = ill
+		death = { death_reason = death_ill }
+	}
+}
+Swann_8 = {
+	name = Corenna # Canon, married Stevron Frey
+	female = yes
+	dynasty = dynn_Swann
+
+	dna = Swann_8
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Swann_35
+	mother = Swann_rs_5
+
+	8230.1.1 = { birth = yes }
+	8251.1.1 = {
+		trait = ill
+		death = { death_reason = death_ill }
+	}
+}
+
+###### HOUSE DONDARRION (id = dynn_Dondarrion)
+############################
+###
+###
+Dondarrion_1 = {
+	name = Edric
+	dynasty = dynn_Dondarrion
+
+	dna = Dondarrion_1
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Dondarrion_41
+	mother = Dondarrion_p_2
+
+	8247.1.1 = { birth = yes }
+	8263.1.1 = { trait = knight }
+	8273.1.1 = { add_spouse = Dondarrion_rs_1 }
+	8296.1.1 = { death = yes }
+}
+Dondarrion_43 = {
+	name = Thea
+	dynasty = dynn_Dondarrion
+	female = yes
+
+	dna = Dondarrion_43
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Dondarrion_41
+	mother = Dondarrion_p_2
+
+	trait = arrogant
+	trait = lazy
+	trait = gregarious
+	trait = education_diplomacy_2
+
+	8251.1.1 = { birth = yes }
+}
+Dondarrion_rs_1 = {
+	name = Tyana
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8257.1.1 = { birth = yes }
+}
+Dondarrion_2 = {
+	name = Beric # Canon, AKA: The Lightning Lord
+	dynasty = dynn_Dondarrion
+
+	dna = Dondarrion_2
+
+	martial = 6
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 6
+	learning = 6
+	prowess = 6
+
+	religion = the_seven_main
+	culture = marcher
+
+	trait = beauty_good_1
+	trait = bossy
+
+	disallow_random_traits = yes
+
+	father = Dondarrion_1
+	mother = Dondarrion_rs_1
+
+	8277.1.2 = { birth = yes }
+	8285.8.1 = { trait = diligent }
+	#8287.1.1 = { trait = squire } # AGOT TODO trait
+	8287.8.1 = {
+		trait = just
+		trait = authoritative
+	}
+	8293.1.1 = {
+		#remove_trait = squire # AGOT TODO trait
+		trait = knight
+		trait = education_diplomacy_3
+		trait = arrogant
+	}
+	8294.1.1 = { add_spouse = Dayne_6 } # Allyria Dayne
+	8298.10.28 = {
+		trait = scarred
+		remove_trait = arrogant
+		trait = temperate
+		trait = patient
+		trait = holy_warrior
+		religion = rhllor
+		trait = faith_warrior # Favored by Rhllor
+		#trait = resurrected_by_rhllor # AGOT TODO trait
+		effect = {
+			#change_variable = { which = "red_god_magic" value = 10 } # AGOT TODO
+			#add_character_flag = redgod_protection_battle
+			set_relation_friend = character:200300507 # Thoros of Myr
+		}
+	}
+	8299.2.11 = {
+		trait = one_eyed # Lost an eye in fight with Ser Gregor
+	}
+	#8298.11.11 = {
+		# death = {
+			# death_reason = death_battle # Mummer's Ford
+			# killer = Clegane_3 # Gregor Clegane
+		# }
+	# }
+	8299.10.7 = {
+		effect = { add_gold = 80 }
+	}
+	8299.11.5 = {
+		religion = rhllor
+		#trait = resurrected_by_rhllor # AGOT TODO trait
+		death = { death_reason = death_suicide } # Gave his life for Catelyn
+	}
+}
+Dondarrion_3 = {
+	name = Manfred
+	dynasty = dynn_Dondarrion
+
+	dna = Dondarrion_3
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Dondarrion_1
+	mother = Dondarrion_rs_1
+
+	8278.1.1 = { birth = yes }
+	8299.2.11 = {
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Dondarrion_4 = {
+	name = Jena
+	dynasty = dynn_Dondarrion
+	female = yes
+
+	dna = Dondarrion_4
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Dondarrion_1
+	mother = Dondarrion_rs_1
+
+	8281.1.1 = { birth = yes }
+	8298.10.28 = { employer = Dondarrion_3 }
+}
+### cousin
+Dondarrion_44 = {
+	name = Moraine
+	dynasty = dynn_Dondarrion
+	female = yes
+
+
+	dna = Dondarrion_44
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Dondarrion_42
+	mother = Dondarrion_p_3
+
+	trait = compassionate
+	trait = temperate
+	trait = shy
+	trait = physique_bad_1
+	trait = beauty_good_1
+
+	8249.1.1 = { birth = yes }
+	8283.6.1 = { trait = depressed_1 }
+}
+
+###### HOUSE CAFFEREN (id = dynn_Cafferen)
+############################
+###
+###
+Cafferen_1 = {
+	name = Jon # Mentioned
+	dynasty = dynn_Cafferen
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_24
+	mother = Cafferen_p_2
+
+	trait = brave
+
+	8248.1.1 = { birth = yes }
+	8264.1.1 = { trait = knight }
+	8268.1.1 = { add_spouse = Cafferen_rs_1 }
+	8282.9.15 = { # Robert's Rebellion
+		###
+		# MEGAWAR STANCE: AERYS II TARGARYEN
+		# FILL ONCE MEGAWAR IS RESTORED
+		# EXPIRES ON 8282.12.15
+		###
+	}
+	8283.1.1 = {
+		death = {
+			death_reason = death_duel # Battle of Ashford
+			killer = Tarly_1 # Randyl Tarly
+		}
+	}
+}
+Cafferen_32 = {
+	name = Alyn
+	dynasty = dynn_Cafferen
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_24
+	mother = Cafferen_p_2
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = { trait = knight }
+}
+Cafferen_33 = {
+	name = Tynalla
+	dynasty = dynn_Cafferen
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_24
+	mother = Cafferen_p_2
+
+	8256.1.1 = { birth = yes }
+}
+Cafferen_rs_1 = {
+	name = Ilona
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8248.1.1 = { birth = yes }
+}
+
+### Issue of Jon
+Cafferen_2 = {
+	name = Steffon # a lord
+	dynasty = dynn_Cafferen
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_1
+	mother = Cafferen_rs_1
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = { trait = knight }
+	8299.7.2 = { # Battle of Blackwater
+		###
+		# MEGAWAR STANCE: NEUTRAL
+		# FILL ONCE MEGAWAR IS RESTORED
+		###
+	}
+}
+Cafferen_3 = {
+	name = Blane
+	dynasty = dynn_Cafferen
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_1
+	mother = Cafferen_rs_1
+
+	8270.1.1 = { birth = yes }
+	8286.1.1 = { trait = knight }
+}
+Cafferen_27 = {
+	name = Myrcella
+	dynasty = dynn_Cafferen
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_1
+	mother = Cafferen_rs_1
+
+	8275.1.1 = { birth = yes }
+}
+Cafferen_4 = {
+	name = Elyssa
+	dynasty = dynn_Cafferen
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cafferen_1
+	mother = Cafferen_rs_1
+
+	8279.1.1 = { birth = yes }
+}
+
+###### HOUSE COLE (id = dynn_Cole)
+############################
+###
+###
+Cole_28 = {
+	name = Morton
+	dynasty = dynn_Cole
+	dna = Cole_28
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_27
+
+	8230.1.1 = { birth = yes }
+	8246.1.1 = {
+		trait = knight
+	}
+	8250.1.1 = { add_spouse = Cole_rs_9 }
+	8279.1.1 = {
+		trait = widowed
+	}
+	8298.1.1 = { death = yes }
+}
+Cole_rs_9 = {
+	name = Mathelda
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8233.1.1 = { birth = yes }
+	8279.1.1 = { death = yes }
+}
+Cole_29 = {
+	name = Jasper
+	dynasty = dynn_Cole
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_28
+	mother = Cole_rs_9
+
+	trait = twin
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = {
+		trait = knight
+	}
+	8271.1.1 = { add_spouse = Wensington_2 } #modcanon Wensington marriage
+	8283.1.1 = { death = yes }
+}
+Cole_30 = {
+	name = Johanna
+	dynasty = dynn_Cole
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_28
+	mother = Cole_rs_9
+
+	trait = twin
+
+	8252.1.1 = { birth = yes }
+	8320.1.1 = { death = yes }
+}
+Cole_32 = {
+	name = Clifford
+	dynasty = dynn_Cole
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_29
+	mother = Wensington_2
+
+	8274.1.1 = { birth = yes }
+	8290.1.1 = {
+		trait = knight
+	}
+	8350.1.1 = { death = yes }
+}
+Cole_33 = {
+	name = Arthur
+	dynasty = dynn_Cole
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_29
+	mother = Wensington_2
+
+	8277.1.1 = { birth = yes }
+	8290.1.1 = {
+		trait = knight
+	}
+	8350.1.1 = { death = yes }
+}
+Cole_34 = {
+	name = Willem
+	dynasty = dynn_Cole
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Cole_29
+	mother = Wensington_2
+
+	8280.1.1 = { birth = yes }
+	8296.1.1 = {
+		trait = knight
+	}
+	8350.1.1 = { death = yes }
+}
+
+###### HOUSE of the King's Mountain (id = dynn_Kings_Mountain)
+############################
+###
+###
+Kings_Mountain_1 = {
+	name = Patrek # Canon
+	dynasty = dynn_Sendney
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = brave
+	trait = arrogant
+	trait = wrathful
+	trait = honorable
+
+	father = Kings_Mountain_6
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = knight
+	}
+	8299.1.1 = {
+		religion = rhllor
+	}
+	8299.7.1 = { employer = Baratheon_3 } # Lands lost
+}
+Kings_Mountain_7 = {
+	name = Lyonel # not a lord
+	dynasty = dynn_Sendney
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Kings_Mountain_1
+
+	8282.1.1 = { birth = yes }
+	8299.1.1 = { trait = knight }
+}
+
+###### HOUSE STRAW (id = dynn_Straw)
+############################
+###
+###
+Straw_1 = {
+	name = Simon # non-canon
+	dynasty = dynn_Straw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_22
+
+	8227.1.1 = { birth = yes }
+	8242.1.1 = { trait = knight }
+	8246.1.1 = { add_spouse = Shaw_7 }
+	8278.1.1 = { death = yes }
+}
+Straw_2 = {
+	name = Lomas # non-canon
+	dynasty = dynn_Straw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_1
+	mother = Shaw_7
+
+	8257.1.1 = { birth = yes }
+	8273.1.1 = { trait = knight }
+}
+Straw_3 = {
+	name = "Dick" #Dick Straw
+	dynasty = dynn_Straw
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_29
+
+	8251.1.1 = { birth = yes }
+	8267.1.1 = {
+		trait = education_martial_1
+		trait = lazy
+		trait = lustful
+	}
+	8282.1.1 = {
+		#employer = 1684230 #Tattered Prince # AGOT TODO no windblown title
+		trait = scarred
+	}
+}
+Straw_24 = {
+	name = Sarissa # non-canon
+	dynasty = dynn_Straw
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_1
+	mother = Shaw_7
+
+	8251.1.1 = { birth = yes }
+}
+Straw_25 = { #Stillborn
+	name = Silas
+	dynasty = dynn_Straw
+
+	religion = the_seven_main
+	culture = riverlander
+
+	father = Straw_1
+	mother = Shaw_7
+
+	8253.1.2 = {
+		birth = yes
+		death = { death_reason = death_delivery } #make sure they are not alive
+	}
+}
+Straw_26 = {
+	name = Casper # non-canon
+	dynasty = dynn_Straw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_1
+	mother = Shaw_7
+
+	8259.1.1 = { birth = yes }
+	8275.1.1 = { trait = knight }
+}
+Straw_27 = {
+	name = Cara # non-canon
+	dynasty = dynn_Straw
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_1
+	mother = Shaw_7
+
+	8263.1.1 = { birth = yes }
+}
+Straw_30 = {
+	name = Sebastion # non-canon
+	dynasty = dynn_Straw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Straw_23
+
+	8258.1.1 = { birth = yes }
+	8274.1.1 = { trait = knight }
+}
+
+###### HOUSE WORMWOOD (id = dynn_Wormwood)
+############################
+###
+###
+Wormwood_1 = {
+	name = Ronnel # non-canon
+	dynasty = dynn_Wormwood
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_33
+	mother = Chelsted_29
+
+	trait = strong
+
+	8243.1.1 = { birth = yes }
+	8259.1.1 = {
+		trait = knight
+		trait = zealous
+		trait = honorable
+		trait = forgiving
+		trait = education_martial_2
+	}
+	8262.1.1 = { add_spouse = Celtigar_1 } #Non-canon Celtigar marriage
+}
+Wormwood_2 = {
+	name = Mary # non-canon
+	dynasty = dynn_Wormwood
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	trait = arbitrary
+	trait = compassionate
+
+	8262.1.1 = { birth = yes }
+}
+Wormwood_3 = {
+	name = Morden # non-canon
+	dynasty = dynn_Wormwood
+
+	religion = the_seven_main
+	culture = stormlander
+
+	disallow_random_traits = yes
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	8263.1.1 = { birth = yes }
+	8279.1.1 = {
+		trait = knight
+		trait = arrogant
+		trait = just
+		trait = vengeful
+		trait = education_diplomacy_2
+	}
+	8283.1.1 = { death = { death_reason = death_battle } }
+}
+Wormwood_6 = {
+	name = Joy # non-canon
+	dynasty = dynn_Wormwood
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	trait = gluttonous
+	trait = calm
+
+	8265.1.1 = { birth = yes }
+}
+Wormwood_7 = {
+	name = Melicent # non-canon
+	dynasty = dynn_Wormwood
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	trait = lazy
+	trait = humble
+	trait = gregarious
+
+	8266.1.1 = { birth = yes }
+}
+Wormwood_4 = {
+	name = Moros # non-canon
+	dynasty = dynn_Wormwood
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	disallow_random_traits = yes
+	trait = rowdy
+
+	8268.1.1 = { birth = yes }
+	8281.1.1 = {
+		#trait = squire
+		trait = craven
+		trait = chaste
+	}
+	8284.1.1 = {
+		remove_trait = rowdy
+		trait = knight
+	}
+	8292.1.1 = { add_spouse = Rogers_37 }
+}
+Wormwood_5 = {
+	name = Balon # non-canon
+	dynasty = dynn_Wormwood
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	disallow_random_traits = yes
+	trait = diligent
+	trait = impatient
+	trait = charming
+	trait = clubfooted
+
+	8271.1.1 = { birth = yes }
+}
+Wormwood_8 = {
+	name = Matthos # non-canon
+	dynasty = dynn_Wormwood
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_1
+	mother = Celtigar_1
+
+	disallow_random_traits = yes
+	trait = greedy
+	trait = cynical
+	trait = curious
+
+	8272.1.1 = { birth = yes }
+	8288.1.1 = { trait = knight }
+}
+Wormwood_41 = {
+	name = Scolera # non-canon
+	dynasty = dynn_Wormwood
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Wormwood_32
+	mother = Grandison_38
+
+	8226.1.1 = { birth = yes }
+}
+
+###### HOUSE CROWELL (id = dynn_Crowell)
+############################
+###
+###
+Crowell_1 = {
+	name = Robin # non-canon
+	dynasty = dynn_Crowell
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Crowell_19
+
+	8247.1.1 = { birth = yes }
+	8273.1.1 = { trait = knight }
+}
+
+###### HOUSE SHAW(id = dynn_Shaw)
+############################
+###
+###
+Shaw_1 = {
+	name = Morgan # non-canon
+	dynasty = dynn_Shaw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_28
+	mother = Shaw_p_1
+
+	8222.1.1 = { birth = yes }
+	8238.1.1 = { trait = knight }
+	8260.1.1 = { add_spouse = Wormwood_41 }
+	8286.1.1 = { death = yes }
+}
+Shaw_2 = {
+	name = Lormon # non-canon
+	dynasty = dynn_Shaw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_1
+	mother = Wormwood_41
+
+	8246.1.1 = { birth = yes }
+	8262.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Whitehead_4 }
+}
+Shaw_3 = {
+	name = Lundram # non-canon
+	dynasty = dynn_Shaw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_1
+	mother = Wormwood_41
+
+	8249.1.1 = { birth = yes }
+	8265.1.1 = { trait = knight }
+}
+Shaw_4 = {
+	name = Alanna # non-canon
+	dynasty = dynn_Shaw
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_1
+	mother = Wormwood_41
+
+	8253.1.1 = { birth = yes }
+}
+Shaw_5 = {
+	name = Byron # non-canon
+	dynasty = dynn_Shaw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_1
+	mother = Wormwood_41
+
+	8255.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+}
+Shaw_6 = {
+	name = Ormund # non-canon
+	dynasty = dynn_Shaw
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_2
+	mother = Whitehead_4
+
+	8272.1.1 = { birth = yes }
+	8288.1.1 = { trait = knight }
+}
+Shaw_7 = {
+	name = Shyra # non-canon
+	dynasty = dynn_Shaw
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Shaw_28
+
+	8227.1.1 = { birth = yes }
+	8279.1.1 = { death = yes }
+}
+
+###### HOUSE STILLMAN(id = dynn_Stillman)
+############################
+###
+###
+Stillman_1 = {
+	name = Rickard # a lord
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_41
+
+	8248.1.1 = { birth = yes }
+	8270.1.1 = { trait = knight }
+	8299.1.1 = { death = yes }
+}
+Stillman_2 = {
+	name = Brus
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_41
+
+	8250.1.1 = { birth = yes }
+	8270.1.1 = { trait = knight }
+	8296.1.1 = { death = yes }
+}
+Stillman_3 = {
+	name = Walter
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_41
+
+	8253.1.1 = { birth = yes }
+	8271.1.1 = { trait = knight }
+}
+### Issue of Rickard
+Stillman_4 = {
+	name = Myles # a lord
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8270.1.1 = { birth = yes }
+	8287.1.1 = { trait = knight }
+}
+Stillman_5 = {
+	name = Johanna
+	dynasty = dynn_Stillman
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8272.1.1 = { birth = yes }
+}
+Stillman_6 = {
+	name = Daved
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8274.1.1 = { birth = yes }
+	8290.1.1 = { trait = knight }
+}
+Stillman_7 = {
+	name = Steffon
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8276.1.1 = { birth = yes }
+	8295.1.1 = { trait = knight }
+}
+Stillman_8 = {
+	name = Grance
+	dynasty = dynn_Stillman
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8279.1.1 = { birth = yes }
+}
+Stillman_9 = {
+	name = Cassandra
+	dynasty = dynn_Stillman
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Stillman_1
+
+	8281.1.1 = { birth = yes }
+}
+
+###### IMPORTANT CHARACTERS WITHOUT HOUSE
+############################
+###
+###
+
+### Brotherhood members
+164307 = {
+	name = Jack # Canon, AKA: The Smiling Knight
+
+	martial = 2
+	diplomacy = 2
+	intrigue = 3
+	stewardship = 2
+	learning = 3
+	prowess = 24
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = lunatic_1
+
+	disallow_random_traits = yes
+
+	8255.1.1 = { birth = yes }
+	8261.8.1 = { trait = brave }
+	8263.8.1 = { trait = vengeful }
+	8265.8.1 = {
+		trait = just
+		trait = sadistic
+	}
+	8271.1.1 = {
+		trait = education_martial_1
+		trait = education_martial_prowess_3
+		trait = knight
+		give_nickname = nick_the_smiling_knight
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8281.6.1 = {
+		death = {
+			death_reason = death_duel
+			killer = Dayne_5 #Arthur Dayne
+		}
+	}
+}
+
+2000994 = {
+	name = Cressen # Canon, Maester Cressen
+
+	martial = 4
+	diplomacy = 9
+	intrigue = 5
+	stewardship = 9
+	learning = 8
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8219.1.1 = { birth = yes }
+	8235.1.1 = {
+		employer = Baratheon_71 #Lyonel Baratheon
+		trait = humble
+		trait = education_learning_3
+		trait = celibate
+		trait = content
+		trait = maester
+		trait = lifestyle_physician
+		trait = just
+		effect = {
+			# title:c_storms_end.holder = { # Maester of Storm's End
+			# 	appoint_court_position = {
+			# 		recipient = ROOT
+			# 		court_position = maester_court_position
+			# 	}
+			# }
+			add_trait_xp = {
+				trait = lifestyle_physician
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8250.1.1 = {
+		employer = Baratheon_75 #Ormund Baratheon
+	}
+	8259.11.10 = {
+		employer = Baratheon_1 #Steffon Baratheon
+	}
+	8278.1.1 = {
+		employer = Baratheon_2 #Robert Baratheon
+	}
+	8284.1.1 = {
+		effect = { # Maester of Dragonstone
+			#add_character_flag = serving_with_lord # AGOT TODO
+			set_employer = title:c_dragonstone.holder
+			set_relation_court_physician = title:c_dragonstone.holder
+			# assign_councillor_type = {
+				# type = councillor_physician
+				# target = title:c_dragonstone.holder
+			# }
+		}
+	}
+	8299.1.1 = { death = death_poison }
+}
+2001994 = {
+	name = Pylos # Canon, Maester Pylos
+
+	martial = 4
+	diplomacy = 7
+	intrigue = 10
+	stewardship = 7
+	learning = 7
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = diligent
+	trait = temperate
+	trait = compassionate
+	trait = brave
+
+	8274.1.1 = { birth = yes }
+	8299.1.1 = {
+		trait = education_learning_2
+		trait = lifestyle_physician
+		trait = maester
+		effect = { # Maester of Dragonstone
+			#add_character_flag = serving_with_lord # AGOT TODO
+			set_employer = title:c_dragonstone.holder
+			set_relation_court_physician = title:c_dragonstone.holder
+			# assign_councillor_type = {
+				# type = councillor_physician
+				# target = title:c_dragonstone.holder
+			# }
+		}
+	}
+}
+188003994 = {
+	name = Jurne # Canon, Maester Jurne
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8260.1.1 = { birth = yes }
+	8284.1.1 = {
+		trait = education_learning_2
+		trait = lifestyle_physician
+		trait = maester
+		effect = { # Maester of Storm's End
+			#add_character_flag = serving_with_lord # AGOT TODO
+			set_employer = title:c_storms_end.holder
+			set_relation_court_physician = title:c_storms_end.holder
+			# assign_councillor_type = {
+				# type = councillor_physician
+				# target = title:c_storms_end.holder
+			# }
+		}
+	}
+}
+2001996 = {
+	name = Barre # Canon, Septon Barre
+
+	learning = 8
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = zealous
+	trait = diligent
+
+	8258.1.1 = { birth = yes }
+	8284.1.1 = {
+		employer = Baratheon_3
+		trait = devoted # Septon
+	}
+	8299.1.1 = {
+		effect = {
+			character:Baratheon_3 = { #Stannis Baratheon
+				imprison = {
+					target = ROOT
+					type = dungeon
+				}
+			}
+			reverse_add_opinion = {
+				modifier = treachery_opinion
+				target = character:Baratheon_3 #Stannis Baratheon
+			}
+		}
+	}
+}
+Melisandre_1 = {
+	name = Melisandre # Canon, THE Melisandre of Asshai
+	#dynasty = 69115
+	female = yes
+	dna = Melisandre_1
+
+	martial = 3
+	diplomacy = 7
+	intrigue = 13
+	stewardship = 5
+	learning = 13
+
+	trait = education_intrigue_4
+	trait = authoritative
+	trait = zealous
+	trait = callous
+	trait = beauty_good_3
+	trait = charming
+	trait = infertile
+
+	disallow_random_traits = yes
+
+	religion = rhllor
+	culture = volantene # AGOT TODO asshaii
+
+	8273.1.1 = {
+		birth = yes
+		#effect = { # AGOT TODO
+		#	set_culture = culture:asshai # We can set the ethnnicity via char history, no need for culture changing anymore
+		#	if = {
+		#		limit = { NOT = { year = 8284 } }
+		#		set_employer = title:d_rhllor.holder
+		#		d_rhllor = {
+		#			holder_scope = {
+		#				opinion = { who = ROOT modifier = opinion_my_slave }
+		#				reverse_opinion = { who = ROOT modifier = opinion_my_owner }
+		#			}
+		#		}
+		#	}
+		#}
+		#trait = slave
+	}
+	8284.1.1 = {
+		trait = devoted # Red Priestess
+		trait = fire_obsessed
+		remove_trait = slave
+		#trait = former_slave # AGOT TODO trait
+		effect = {
+			#add_character_flag = shadowbinder_magic_knowledge # AGOT TODO
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = trait_third_level
+			}
+		}
+	}
+	8298.1.1 = {
+		employer = Baratheon_3
+	}
+}
+2004994 = {
+	name = Patchface # Canon
+
+	learning = 7
+	diplomacy = 8
+	martial = 1
+	stewardship = 3
+	intrigue = 4
+
+	culture = volantene
+	religion = rhllor
+
+	trait = intellect_good_1
+	trait = education_diplomacy_1
+
+	8270.1.1 = {
+		birth = yes
+		trait = slave
+	}
+
+	8277.12.2 = {
+		employer = Baratheon_1
+		remove_trait = slave
+		#trait = former_slave # AGOT TODO trait
+	}
+	8278.1.1 = {
+		employer = Baratheon_2
+		remove_trait = intellect_good_1 # AGOT TODO, why loose it? What if you want to do some juicy breeding?
+		trait = possessed_1
+		trait = gluttonous
+		trait = poet
+		#trait = dull # AGOT TODO opposite trait to intellect_good_1
+		trait = lunatic_1
+		trait = scaly #so he's gross and weird lookin
+		religion = drowned_god_main
+		effect = {
+			add_learning_skill = -4
+			add_diplomacy_skill = -4
+		}
+	}
+	8284.1.1 = { employer = Baratheon_3 }
+}
+2005995 = {
+	name = Dermot # Canon
+	dynasty = dynn_Rainwood # of the Rainwood
+
+	martial = 4
+	stewardship = 1
+	intrigue = 3
+	diplomacy = 2
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_2
+	trait = patient
+	trait = diligent
+
+	8264.1.1 = { birth = yes }
+	8280.1.1 = {
+		trait = knight
+		trait = lifestyle_blademaster
+	}
+	8284.1.1 = { employer = Baratheon_3 } # Stannis Baratheon
+	8299.7.1 = { employer = Baratheon_5 } # Joffrey Baratheon
+	8300.1.1 = { employer = Baratheon_7 } # Tommen Baratheon
+}
+333000654 = {
+	name = Malegorn # Canon
+	dynasty = dynn_Redpool # of the Red Pool
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = reachman
+
+	8254.1.1 = { birth = yes }
+	8270.1.1 = {
+		trait = knight
+		trait = lustful
+	}
+	8284.1.1 = {
+		employer = Baratheon_3
+	}
+	8299.1.1 = {
+		religion = rhllor
+	}
+	8300.8.17 = {
+		add_spouse = Kingsblood_7 # Grisel Redbeard
+	}
+}
+88000501 = {
+	name = Colen # Canon
+	dynasty = dynn_Greenpools # of Greenpools
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = compassionate
+	trait = honorable
+	trait = education_martial_2
+
+	8240.1.1 = { birth = yes }
+	8256.1.1 = {
+		trait = knight
+	}
+	8293.1.1 = { employer = Baratheon_4 }# Renly Baratheon
+	8299.3.3 = { employer = Baratheon_3 } # Stannis Baratheon
+}
+88000538 = {
+	name = Timon # Canon
+
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8262.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = knight
+	}
+	8290.1.1 = {
+		give_nickname = nick_the_scrapesword
+	}
+	8299.2.11 = { employer = Baratheon_4 }# Renly Baratheon
+	8299.3.3 = { employer = Baratheon_3 } # Stannis Baratheon
+	8299.7.1 = { employer = Baratheon_5 } # Joffrey Baratheon
+}
+
+Scaly_1 = { #RIP you beautiful bastard
+	name = Allard
+
+	dna = Scaly_1
+
+	religion = the_seven_main
+	culture = stormlander
+
+	diplomacy = 9
+	martial = 8
+	stewardship = 7
+	intrigue = 5
+	learning = 4
+	prowess = 12
+
+	trait = scaly
+	trait = ruthless
+	trait = sadistic
+	trait = ambitious
+
+	8248.1.1 = {
+		birth = yes
+		give_nickname = nick_the_scaly_prefix
+	}
+	8264.1.1 = {
+		trait = education_martial_2
+		trait = education_martial_prowess_4
+		trait = organizer
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+	8270.1.1 = {
+		move_to_pool = yes
+	}
+}
+###
+###	House Morrison
+###
+Morrison_1 = {
+	name = Jaime # a lord
+	dynasty = dynn_Morrison
+
+	religion = the_seven_main
+	culture = stormlander
+
+#	father =
+#	mother =
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Morrison_rs_1 }
+}
+Morrison_rs_1 = {
+	name = Patricia
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8254.1.1 = { birth = yes }
+}
+###
+###	House Grimsby
+###
+Grimsby_1 = {
+	name = Jerion # a lord
+	dynasty = dynn_Grimsby
+
+	religion = the_seven_main
+	culture = stormlander
+
+#	father =
+#	mother =
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Grimsby_rs_1 }
+}
+Grimsby_rs_1 = {
+	name = Malla
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8254.1.1 = { birth = yes }
+}
+###
+###	House Rooke
+###
+Rooke_1 = {
+	name = Matthos # a lord
+	dynasty = dynn_Rooke
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rooke_3
+	mother = Rooke_rs_3
+
+	8255.1.1 = { birth = yes }
+	8272.1.1 = { add_spouse = Rooke_rs_1 }
+}
+Rooke_rs_1 = {
+	name = Osmera
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8254.1.1 = { birth = yes }
+}
+Rooke_2 = {
+	name = Raymont
+	dynasty = dynn_Rooke
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rooke_1
+	mother = Rooke_rs_1
+
+	8272.10.1 = { birth = yes }
+}
+Rooke_4 = {
+	name = Lymond
+	dynasty = dynn_Rooke
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Rooke_1
+	mother = Rooke_rs_1
+
+	8274.10.1 = { birth = yes }
+}
+Rooke_3 = {
+	name = Ludwin # a lord
+	dynasty = dynn_Rooke
+
+	religion = the_seven_main
+	culture = stormlander
+
+#	father =
+#	mother =
+
+	8218.1.1 = { birth = yes }
+	8236.1.1 = { add_spouse = Rooke_rs_3 }
+	8270.1.1 = { death = yes }
+}
+Rooke_rs_3 = {
+	name = Scolera
+	female = yes
+
+	religion = the_seven_main
+	culture = vineman
+
+	8217.1.1 = { birth = yes }
+}
+###########
+## House Staines ##
+###########
+
+Staines_1 = {
+	name = Myles
+	dynasty = dynn_Staines
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Staines_rs_1 }
+}
+
+Staines_rs_1 = {
+	name = Ibera
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+
+Staines_2 = {
+	name = Garon
+	dynasty = dynn_Staines
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staines_1
+	mother = Staines_rs_1
+
+	8272.1.1 = { birth = yes }
+}
+
+Staines_3 = {
+	name = Morton
+	dynasty = dynn_Staines
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Staines_1
+	mother = Staines_rs_1
+
+	8273.1.1 = { birth = yes }
+}
+##################
+## House Dennecent ##
+##################
+
+Dennecent_1 = { # Lord
+	name = Jarmyn
+	dynasty = dynn_Dennecent
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Dennecent_rs_1 }
+}
+
+Dennecent_rs_1 = {
+	name = Jynna
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+
+Dennecent_2 = {
+	name = Regenard
+	dynasty = dynn_Dennecent
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Dennecent_1
+	mother = Dennecent_rs_1
+
+	8271.1.1 = { birth = yes }
+}
+
+Dennecent_3 = {
+	name = Michael
+	dynasty = dynn_Dennecent
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Dennecent_1
+	mother = Dennecent_rs_1
+
+	8273.1.1 = { birth = yes }
+}
+###################
+## HOUSE Hildreath ##
+###################
+
+Hildreath_1 = { # Lord
+	name = Monfryd
+	dynasty = dynn_Hildreath
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Hildreath_rs_1 }
+}
+
+Hildreath_rs_1 = {
+	name = Genna
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+
+Hildreath_2 = {
+	name = Godry
+	dynasty = dynn_Hildreath
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hildreath_1
+	mother = Hildreath_rs_1
+
+	8271.1.1 = { birth = yes }
+}
+
+Hildreath_3 = {
+	name = Meona
+	female = yes
+	dynasty = dynn_Hildreath
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hildreath_1
+	mother = Hildreath_rs_1
+
+	8272.1.1 = { birth = yes }
+}
+
+Hildreath_4 = {
+	name = Lester
+	dynasty = dynn_Hildreath
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Hildreath_1
+	mother = Hildreath_rs_1
+
+	8273.1.1 = { birth = yes }
+}
+#################
+## HOUSE Densmore ##
+##################
+
+Densmore_1 = { # Lord
+	name = Guyard
+	dynasty = dynn_Densmore
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Densmore_rs_1 }
+}
+
+Densmore_rs_1 = {
+	name = Corenna
+	female = yes
+
+	religion = the_seven_main
+	culture = stormlander
+
+	8252.1.1 = { birth = yes }
+}
+
+Densmore_2 = {
+	name = Mandon
+	dynasty = dynn_Densmore
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Densmore_1
+	mother = Densmore_rs_1
+
+	8271.1.1 = { birth = yes }
+}
+
+Densmore_3 = {
+	name = Marenda
+	female = yes
+	dynasty = dynn_Densmore
+
+	religion = the_seven_main
+	culture = stormlander
+
+	father = Densmore_1
+	mother = Densmore_rs_1
+
+	8272.1.1 = { birth = yes }
+}
+
+#################
+## HOUSE Spurn ##
+##################
+
+Spurn_1 = { # Lord
+	name = Gallard
+	dynasty = dynn_Spurn
+
+	religion = the_seven_main
+	culture = marcher
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = { trait = knight }
+	8270.1.1 = { add_spouse = Spurn_rs_1 }
+}
+
+Spurn_rs_1 = {
+	name = Jynna
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8256.1.1 = { birth = yes }
+}
+
+Spurn_2 = {
+	name = Kane
+	dynasty = dynn_Spurn
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Spurn_1
+	mother = Spurn_rs_1
+
+	8273.1.1 = { birth = yes }
+}
+
+Spurn_3 = {
+	name = Ralph
+	dynasty = dynn_Spurn
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Spurn_1
+	mother = Spurn_rs_1
+
+	8276.1.1 = { birth = yes }
+}
+
+#################
+## HOUSE Ginett ##
+##################
+
+Ginett_1 = { # Lord
+	name = Silas
+	dynasty = dynn_Ginett
+
+	religion = the_seven_main
+	culture = marcher
+
+	8242.1.1 = { birth = yes }
+	8258.1.1 = { trait = knight }
+	8260.1.1 = { add_spouse = Ginett_rs_1 }
+}
+
+Ginett_rs_1 = {
+	name = Thea
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8246.1.1 = { birth = yes }
+}
+
+Ginett_2 = {
+	name = Sarella
+	female = yes
+	dynasty = dynn_Ginett
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Ginett_1
+	mother = Ginett_rs_1
+
+	8265.1.1 = { birth = yes }
+}
+
+Ginett_3 = {
+	name = Ronard
+	dynasty = dynn_Ginett
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Ginett_1
+	mother = Ginett_rs_1
+
+	8267.1.1 = { birth = yes }
+}
+
+Ginett_4 = {
+	name = Palmen
+	dynasty = dynn_Ginett
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Ginett_1
+	mother = Ginett_rs_1
+
+	8270.1.1 = { birth = yes }
+}
+
+#################
+## HOUSE Peck ##
+##################
+
+Peck_1 = { # Lord
+	name = Petyr
+	dynasty = dynn_Peck
+
+	religion = the_seven_main
+	culture = marcher
+
+	8254.1.1 = { birth = yes }
+	8269.1.1 = { trait = knight }
+	8271.1.1 = { add_spouse = Peck_rs_1 }
+}
+
+Peck_rs_1 = {
+	name = Miriam
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8255.1.1 = { birth = yes }
+}
+
+Peck_2 = {
+	name = Jonlon
+	dynasty = dynn_Peck
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Peck_1
+	mother = Peck_rs_1
+
+	8272.1.1 = { birth = yes }
+}
+
+Peck_3 = {
+	name = Herbert
+	dynasty = dynn_Peck
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Peck_1
+	mother = Peck_rs_1
+
+	8278.1.1 = { birth = yes }
+}
+
+#################
+## HOUSE Lambert ##
+##################
+
+Lambert_1 = { # Lord
+	name = Eldric
+	dynasty = dynn_Lambert
+
+	religion = the_seven_main
+	culture = marcher
+
+	8248.1.1 = { birth = yes }
+	8263.1.1 = { trait = knight }
+	8265.1.1 = { add_spouse = Lambert_rs_1 }
+}
+
+Lambert_rs_1 = {
+	name = Onora
+	female = yes
+
+	religion = the_seven_main
+	culture = marcher
+
+	8247.1.1 = { birth = yes }
+}
+
+Lambert_2 = {
+	name = Gilard
+	dynasty = dynn_Lambert
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lambert_1
+	mother = Lambert_rs_1
+
+	8266.1.1 = { birth = yes }
+}
+
+Lambert_3 = {
+	name = Kerena
+	female = yes
+	dynasty = dynn_Lambert
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lambert_1
+	mother = Lambert_rs_1
+
+	8278.1.1 = { birth = yes }
+}
+
+Lambert_4 = {
+	name = Kyle
+	dynasty = dynn_Lambert
+
+	religion = the_seven_main
+	culture = marcher
+
+	father = Lambert_1
+	mother = Lambert_rs_1
+
+	8280.1.1 = { birth = yes }
+}

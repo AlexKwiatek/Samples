@@ -1,0 +1,361 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+rhoynish = {
+	color = { 0.89 0.48 0.05 }
+
+	ethos = ethos_egalitarian
+	heritage = heritage_rhoynish
+	language = language_rhoynish
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_equal_inheritance
+		tradition_agrarian
+		tradition_seafaring
+		tradition_metal_craftsmanship
+		agot_tradition_rhoynish
+	}
+
+	name_list = name_list_rhoynish
+
+	coa_gfx = {
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		rhoynish_building_gfx
+		indian_building_gfx
+	}
+	clothing_gfx = {
+		rhoynish_clothing_gfx
+		indian_clothing_gfx
+	}
+	unit_gfx = {
+		rhoynish_unit_gfx
+		indian_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Salt_Dornish_1
+	10 = Salt_Dornish_2
+	10 = Salt_Dornish_3
+	10 = Salt_Dornish_4
+	10 = Salt_Dornish_5
+	10 = Salt_Dornish_6
+	10 = Salt_Dornish_7
+	10 = Salt_Dornish_8
+	10 = Salt_Dornish_9
+	10 = Salt_Dornish_10
+	10 = Salt_Dornish_11
+	10 = Salt_Dornish_12
+	10 = Salt_Dornish_13
+	10 = Salt_Dornish_14
+	10 = Salt_Dornish_15
+
+}
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+greenblood = {
+	color = { 1.00 0.63 0.24 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_rhoynish
+	language = language_rhoynish
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_seafaring
+		agot_tradition_insular_marriage
+		tradition_poetry
+		tradition_music_theory
+		agot_tradition_greenblood
+	}
+
+	name_list = name_list_rhoynish
+
+	coa_gfx = {
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		rhoynish_building_gfx
+		indian_building_gfx
+	}
+	clothing_gfx = {
+		rhoynish_clothing_gfx
+		indian_clothing_gfx
+	}
+	unit_gfx = {
+		rhoynish_unit_gfx
+		indian_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Salt_Dornish_1
+	10 = Salt_Dornish_2
+	10 = Salt_Dornish_3
+	10 = Salt_Dornish_4
+	10 = Salt_Dornish_5
+	10 = Salt_Dornish_6
+	10 = Salt_Dornish_7
+	10 = Salt_Dornish_8
+	10 = Salt_Dornish_9
+	10 = Salt_Dornish_10
+	10 = Salt_Dornish_11
+	10 = Salt_Dornish_12
+	10 = Salt_Dornish_13
+	10 = Salt_Dornish_14
+	10 = Salt_Dornish_15
+
+}
+
+	parents = { rhoynish }
+	created = 7600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+salt_dornish = {
+	color = { 0.87 0.59 0.29 }
+
+	ethos = ethos_egalitarian
+	heritage = heritage_rhoynish
+	language = language_common
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_metal_craftsmanship
+		tradition_legalistic
+		tradition_hit_and_run
+		tradition_welcoming
+		agot_tradition_salt_dornish
+	}
+
+	name_list = name_list_salt_dornish
+
+	coa_gfx = {
+		dornish_coa_gfx
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		salt_dornish_building_gfx
+		mena_building_gfx
+	}
+	clothing_gfx = {
+		salt_dornish_clothing_gfx
+		mena_clothing_gfx
+		rhoynish_clothing_gfx
+	}
+	unit_gfx = {
+		salt_dornish_unit_gfx
+		mena_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Salt_Dornish_1
+	10 = Salt_Dornish_2
+	10 = Salt_Dornish_3
+	10 = Salt_Dornish_4
+	10 = Salt_Dornish_5
+	10 = Salt_Dornish_6
+	10 = Salt_Dornish_7
+	10 = Salt_Dornish_8
+	10 = Salt_Dornish_9
+	10 = Salt_Dornish_10
+	10 = Salt_Dornish_11
+	10 = Salt_Dornish_12
+	10 = Salt_Dornish_13
+	10 = Salt_Dornish_14
+	10 = Salt_Dornish_15
+
+}
+
+	parents = {
+		rhoynish
+		andal
+	}
+	created = 7600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+sand_dornish = {
+	color = { 1.00 0.72 0.43 }
+
+	ethos = ethos_communal
+	heritage = heritage_rhoynish
+	language = language_common
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_dryland_dwellers
+		tradition_pastoralists
+		tradition_horse_breeder
+		tradition_warriors_of_the_dry
+		agot_tradition_sand_dornish
+	}
+
+	name_list = name_list_sand_dornish
+
+	coa_gfx = {
+		dornish_coa_gfx
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		sand_dornish_building_gfx
+		mena_building_gfx
+	}
+	clothing_gfx = {
+		sand_dornish_clothing_gfx
+		mena_clothing_gfx
+		rhoynish_clothing_gfx
+	}
+	unit_gfx = {
+		sand_dornish_unit_gfx
+		sub_sahran_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Sand_Dornish_1
+	10 = Sand_Dornish_2
+	10 = Sand_Dornish_3
+	10 = Sand_Dornish_4
+	10 = Sand_Dornish_5
+	10 = Sand_Dornish_6
+	10 = Sand_Dornish_7
+	10 = Sand_Dornish_8
+	10 = Sand_Dornish_9
+	10 = Sand_Dornish_10
+	10 = Sand_Dornish_11
+	10 = Sand_Dornish_12
+	10 = Sand_Dornish_13
+	10 = Sand_Dornish_14
+
+}
+
+	parents = {
+		rhoynish
+		andal
+	}
+	created = 7600.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+selhori = {
+	color = { 0.82 0.62 0.44 }
+
+	ethos = ethos_spiritual
+	heritage = heritage_rhoynish
+	language = language_rhoynish
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_wetlanders
+		tradition_stalwart_defenders
+		tradition_eye_for_an_eye
+	}
+
+	name_list = name_list_salt_dornish
+
+	coa_gfx = {
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		rhoynish_building_gfx
+		indian_building_gfx
+	}
+	clothing_gfx = {
+		rhoynish_clothing_gfx
+		indian_clothing_gfx
+	}
+	unit_gfx = {
+		rhoynish_unit_gfx
+		indian_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Salt_Dornish_1
+	10 = Salt_Dornish_2
+	10 = Salt_Dornish_3
+	10 = Salt_Dornish_4
+	10 = Salt_Dornish_5
+	10 = Salt_Dornish_6
+	10 = Salt_Dornish_7
+	10 = Salt_Dornish_8
+	10 = Salt_Dornish_9
+	10 = Salt_Dornish_10
+	10 = Salt_Dornish_11
+	10 = Salt_Dornish_12
+	10 = Salt_Dornish_13
+	10 = Salt_Dornish_14
+	10 = Salt_Dornish_15
+
+}
+
+	parents = { rhoynish }
+	created = 5000.1.1
+}
+
+
+# Generated on 2022-10-13 by ACOT Culture Tool
+summer_rhoynish = {
+	color = { 0.67 0.35 0.06 }
+
+	ethos = ethos_stoic
+	heritage = heritage_rhoynish
+	language = language_rhoynish
+	martial_custom = martial_custom_equal
+
+	traditions = {
+		tradition_equal_inheritance
+		tradition_land_of_the_bow
+		tradition_seafaring
+		tradition_esteemed_hospitality
+	}
+
+	name_list = name_list_salt_dornish
+
+	coa_gfx = {
+		rhoynish_coa_gfx
+	}
+	building_gfx = {
+		rhoynish_building_gfx
+		indian_building_gfx
+	}
+	clothing_gfx = {
+		rhoynish_clothing_gfx
+		indian_clothing_gfx
+	}
+	unit_gfx = {
+		rhoynish_unit_gfx
+		indian_unit_gfx
+	}
+
+	ethnicities = {
+
+	10 = Salt_Dornish_1
+	10 = Salt_Dornish_2
+	10 = Salt_Dornish_3
+	10 = Salt_Dornish_4
+	10 = Salt_Dornish_5
+	10 = Salt_Dornish_6
+	10 = Salt_Dornish_7
+	10 = Salt_Dornish_8
+	10 = Salt_Dornish_9
+	10 = Salt_Dornish_10
+	10 = Salt_Dornish_11
+	10 = Salt_Dornish_12
+	10 = Salt_Dornish_13
+	10 = Salt_Dornish_14
+	10 = Salt_Dornish_15
+
+}
+
+	parents = { rhoynish }
+	created = 7600.1.1
+}

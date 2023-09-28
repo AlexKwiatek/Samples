@@ -1,0 +1,1286 @@
+﻿####################################################
+####				NIGHTSWATCH					####
+####################################################
+
+###### EASTWATCH BY-THE-SEA
+############################
+###
+###
+121002 = {
+	name = Cotter
+
+	martial = 6
+	stewardship = 10
+
+	religion = drowned_god_main
+	culture = ironborn
+
+	trait = education_martial_2
+	trait = strong
+	trait = bastard
+	trait = rude
+	trait = brave
+
+	give_nickname = nick_pyke
+
+	8256.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = nightswatch
+		give_council_position = councillor_admiral
+	}
+}
+88000513 = {
+	name = Harmune
+
+	learning = 5
+
+	religion = drowned_god_main
+	culture = ironborn
+
+	trait = education_learning_2
+	trait = drunkard
+
+	8260.1.1 = { birth = yes }
+	8280.1.1 = {
+		trait = maester
+		trait = nightswatch
+		employer = 121002 # Cotter Pyke
+		effect = {
+			#add_character_flag = serving_with_lord # AGOT TODO
+		}
+	}
+}
+121418 = {
+	name = Emmett
+
+	martial = 4
+	stewardship = 2
+	diplomacy = 2
+	intrigue = 3
+	learning = 2
+	prowess = 10
+
+	religion = old_gods_south
+	culture = northman
+
+	trait = gregarious
+	trait = patient
+	trait = diligent
+	trait = education_martial_2
+	trait = just
+	trait = strong
+
+	8275.1.1 = { birth = yes }
+	8290.1.1 = {
+		employer = 121002 # Cotter Pyke
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+		give_nickname = nick_iron
+	}
+	8300.3.1 = {
+		employer = Stark_7 # Jon Snow
+	}
+}
+
+
+###### SHADOW TOWER
+############################
+###
+###
+121001 = {
+	name = Blane
+
+	martial = 8
+
+	religion = the_seven_main
+	culture = valeman
+
+	8255.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = nightswatch
+		effect = {
+			#add_character_modifier = nw_ranger # AGOT TODO modifier
+			set_employer = title:c_the_shadow_tower.holder
+		}
+	}
+}
+88000520 = {
+	name = Mullin
+
+	learning = 5
+	prowess = 6
+
+	religion = the_seven_main
+	culture = reachman
+
+	trait = education_learning_2
+
+	8255.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = maester
+		trait = nightswatch
+		employer = Mallister_6 # Denys Mallister
+		effect = {
+			#add_character_flag = serving_with_lord # AGOT TODO
+		}
+	}
+}
+121005 = {
+	name = Qhorin # canon, Halfhand
+
+	martial = 8
+	prowess = 10
+
+	religion = the_seven_main
+	culture = westerman
+
+	disallow_random_traits = yes
+
+	trait = just
+	trait = brave
+	trait = patient
+
+	8252.1.1 = { birth = yes }
+	8268.1.1 = {
+		trait = education_martial_3
+		trait = education_martial_prowess_4
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+	8272.1.1 = {
+		trait = nightswatch
+		employer = Mallister_6 # Denys Mallister
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8278.1.1 = {
+		trait = maimed
+		#give_council_position = councillor_marshal # AGOT TODO
+		give_nickname = nick_halfhand
+	}
+	8279.1.1 = {
+		remove_trait = maimed
+		effect = {
+			# add_character_modifier = { #Learned how to fight his left hand. Only in Reapers Due DLC to avoid overpowering
+				# name = martially_ambidextrous
+			# }
+		}
+	}
+	8299.7.1 = {
+		death = {
+			death_reason = death_duel
+			killer = Stark_7 # Jon Snow
+		}
+	}
+
+}
+
+###### CASTLE BLACK
+############################
+###
+###
+Noye_1 = { # Giga Chad Donal Noye
+	name = Donal
+	dynasty = dynn_Noye
+
+	martial = 4
+	stewardship = 7
+	prowess = 12
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_2
+	trait = education_martial_prowess_2
+	trait = strong
+	trait = honest
+	trait = trusting
+	trait = just
+	trait = diligent
+
+	disallow_random_traits = yes
+
+	8258.1.1 = { birth = yes }
+	8280.1.1 = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { employer ?= title:c_storms_end.holder }
+				}
+				set_employer = title:c_storms_end.holder
+			}
+			title:c_storms_end.holder = {
+				appoint_court_position = {
+					recipient = ROOT
+					court_position = court_smith_court_position # Baratheon Smith
+				}
+			}
+		}
+	}
+	8283.6.1 = {
+		trait = one_handed
+		trait = maimed
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8284.1.1 = {
+		remove_trait = maimed
+		trait = overseer
+	}
+	8290.1.1 = {
+		effect = {
+			title:c_storms_end.holder = {
+				revoke_court_position = {
+					recipient = ROOT
+					court_position = court_smith_court_position # Baratheon Smith
+				}
+			}
+		}
+		trait = nightswatch
+	}
+	8299.11.11 = {
+		death = {
+			death_reason = death_duel
+			killer = 157013 # Mag the Mighty
+		}
+	}
+
+}
+121006 = {
+	name = Paul
+
+	martial = 3
+	learning = 1
+	diplomacy = 4
+	intrigue = 2
+	stewardship = 3
+	prowess = 3
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = physique_good_3
+	trait = dull
+	trait = rowdy
+
+	disallow_random_traits = yes
+
+	8277.1.1 = { birth = yes }
+	8283.8.1 = {
+		trait = compassionate
+	}
+	8285.8.1 = {
+		trait = brave
+	}
+	8287.8.1 = {
+		trait = honorable
+	}
+	8295.1.1 = {
+		trait = education_martial_1
+		trait = nightswatch
+		give_nickname = nick_small
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8299.7.14 = {
+		death = { death_reason = death_battle }
+	}
+}
+121007 = {
+	name = Yoren
+	dna = 121007
+
+	religion = old_gods_south
+	culture = northman
+
+	diplomacy = 10
+	prowess = 12
+
+	trait = brave
+	trait = beauty_bad_1
+	trait = honest #similar to honorable but gives him diplo boost so he's a better chancellor
+	trait = rude
+	trait = diligent
+	trait = education_martial_2
+
+	8248.1.1 = { birth = yes }
+	8268.1.1 = { #ranger for thirty years
+		trait = hunchbacked
+
+		trait = nightswatch
+		employer = Buckler_41 # Lord Commander Buckler
+		give_council_position = councillor_chancellor # NW Head Wandering Crow
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8276.1.1 = {
+		employer = Qorgyle_2 # Jantos Qorgyle
+	}
+	8288.1.1 = {
+		employer = Mormont_2 # Jeor Mormont
+	}
+	8299.2.3 = {
+		death = {
+			death_reason = death_battle # Attack at the Gods Eye Town
+			killer = Lorch_2 # Amory Lorch
+		}
+	}
+}
+121008 = {
+	name = Chett
+
+	martial = 3
+	stewardship = 2
+	intrigue = 4
+	diplomacy = 2
+	learning = 1
+
+	religion = the_seven_main
+	culture = riverlander
+
+	disallow_random_traits = yes
+
+	trait = beauty_bad_2
+
+	disallow_random_traits = yes
+
+	8270.1.1 = { birth = yes }
+	8276.8.1 = {
+		trait = rowdy
+	}
+	8280.8.1 = {
+		trait = deceitful
+		trait = craven
+	}
+	8286.1.1 = {
+		remove_trait = rowdy
+		trait = education_stewardship_1
+		trait = wrathful
+		trait = callous
+	}
+	8289.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8299.7.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+121009 = {
+	name = Ollo
+	# dna="bhagnhpnblj"
+	# properties="cd0ddk"
+
+	martial = 2
+	stewardship = 1
+	intrigue = 2
+	diplomacy = 4
+	learning = 2
+	prowess = 6
+
+	#religion = trios # pirate AGOT TODO
+	religion = princely_arbiter
+	culture = tyroshi
+
+	trait = education_martial_2
+
+	disallow_random_traits = yes
+
+	8261.1.1 = { birth = yes }
+	8267.8.1 = {
+		trait = deceitful
+	}
+	8269.8.1 = {
+		trait = arrogant
+	}
+	8271.8.1 = {
+		trait = gregarious
+	}
+	8274.1.1 = {
+		trait = lustful
+	}
+	8282.1.1 = {
+		trait = nightswatch
+		give_nickname = nick_lophand
+		trait = one_handed
+		trait = maimed
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8283.1.1 = {
+		remove_trait = maimed
+	}
+	8299.5.5 = {
+		employer=121411
+		remove_trait = nightswatch
+		effect = { add_trait_force_tooltip = deserter }
+	}
+	8300.6.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+121010 = {
+	name = Cellador
+
+	religion = the_seven_main
+	culture = valeman
+
+	trait = education_learning_2
+
+	disallow_random_traits = yes
+
+	8250.1.1 = { birth = yes }
+	8256.8.1 = {
+		trait = arrogant
+	}
+	8258.8.1 = {
+		trait = rude
+	}
+	8260.8.1 = {
+		trait = zealous
+	}
+	8282.1.1 = {
+		trait = nightswatch
+		trait = devoted
+		trait = drunkard
+	}
+}
+121410 = {
+	name = Clydas
+
+	stewardship = 7
+	learning = 8
+	martial = 1
+	intrigue = 2
+	diplomacy = 4
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_stewardship_2
+
+	disallow_random_traits = yes
+
+	8240.1.1 = { birth = yes }
+	8246.8.1 = {
+		trait = shy
+	}
+	8248.8.1 = {
+		trait = diligent
+	}
+	8250.8.1 = {
+		trait = content
+		trait = scholar
+	}
+	8270.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+}
+121420 = {
+	name = Pypar
+
+	martial = 2
+	intrigue = 2
+	diplomacy = 2
+	stewardship = 1
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	disallow_random_traits = yes
+
+	trait = education_martial_1
+
+	8283.1.1 = { birth = yes }
+	8289.8.1 = {
+		trait = compassionate
+	}
+	8291.8.1 = {
+		trait = gregarious
+		trait = honest
+		trait = poet
+	}
+	8293.8.1 = {
+		trait = cynical
+	}
+	8298.1.1 = {
+		trait = nightswatch
+		effect = {
+			set_relation_friend = character:Stark_7 # Jon Snow
+			set_relation_friend = character:121421 # Grenn
+			set_relation_friend = character:Tarly_2 # Samwell Tarly
+			set_relation_friend = character:121419 # Todder
+			#add_character_modifier = nw_ranger # AGOT TODO modifier
+		}
+	}
+}
+121421 = {
+	name = Grenn
+
+	martial = 4
+	intrigue = 1
+	diplomacy = 3
+	stewardship = 1
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = strong
+	trait = education_martial_1
+
+	disallow_random_traits = yes
+
+	8282.1.1 = { birth = yes }
+	8288.8.1 = {
+		trait = arrogant
+	}
+	8290.8.1 = {
+		trait = honorable
+	}
+	8292.8.1 = {
+		trait = lustful
+	}
+	8298.1.1 = {
+		trait = nightswatch
+		effect = {
+			set_relation_friend = character:Stark_7 # Jon Snow
+			set_relation_friend = character:121420 # Pypar
+			set_relation_friend = character:Tarly_2 # Samwell Tarly
+			set_relation_friend = character:121419 # Todder
+			#add_character_modifier = nw_ranger # AGOT TODO modifier
+		}
+	}
+}
+121423 = {
+	name = Finn
+	# dna="cgflhibdabu"
+	# properties="0j0chk00000000"
+
+	martial = 4
+	diplomacy = 1
+	learning = 1
+	prowess = 6
+
+	religion = old_gods_south
+	culture = northman
+
+	trait = strong
+	trait = education_martial_1
+
+	disallow_random_traits = yes
+
+	8283.1.1 = { birth = yes }
+	8289.8.1 = {
+		trait = wrathful
+	}
+	8291.8.1 = {
+		trait = arrogant
+	}
+	8293.8.1 = {
+		trait = rude
+	}
+	8300.1.1 = {
+		trait = nightswatch
+		effect = {
+			set_relation_friend = character:Tuttle_5 # Gared
+		}
+	}
+}
+121430 = {
+	name = Munda
+	female = yes
+
+	religion = old_gods_btw
+	culture = forestman
+
+	martial = 3
+	intrigue = 2
+	prowess = 6
+
+	trait = intellect_good_1
+	trait = education_martial_2
+
+	disallow_random_traits = yes
+
+	8260.1.1 = { birth = yes }
+	8266.8.1 = {
+		trait = rude
+	}
+	8268.8.1 = {
+		trait = patient
+		trait = ambitious
+	}
+	8270.8.1 = {
+		trait = family_first
+	}
+}
+121424 = {
+	name = Cotter
+
+	# dna="amgchmlbabf"
+	# properties="gb0ihi00000000"
+
+	martial = 1
+	intrigue = 5
+	diplomacy = 1
+
+	religion = old_gods_btw
+	culture = forestman #Amanes: Put him in accordance with his sister below
+
+	mother = 121430
+
+	trait = intellect_good_1
+	#trait = wildling # AGOT TODO trait
+	trait = rowdy
+
+	disallow_random_traits = yes
+
+	8281.1.1 = { birth = yes }
+	8287.8.1 = {
+		trait = deceitful
+	}
+	8289.8.1 = {
+		trait = greedy
+		trait = ambitious
+	}
+	8291.8.1 = {
+		trait = patient
+	}
+	8300.1.1 = {
+		trait = nightswatch
+		trait = education_intrigue_3
+		effect = {
+			set_relation_friend = character:Tuttle_5 # Gared
+		}
+	}
+}
+121429 = {
+	name = Sylvi
+	female = yes
+
+	# dna="agkbfzeaifh"
+	# properties="gl0eck00000000"
+
+	martial = 3
+	intrigue = 2
+	prowess = 6
+
+	religion = old_gods_btw
+	culture = westerosi_valyrian
+
+	mother = 121430
+
+	trait = intellect_good_1
+	trait = education_martial_2
+
+	disallow_random_traits = yes
+
+	8284.1.1 = {
+		birth = yes
+		effect = {
+			set_culture = culture:forestman #for white hair
+		}
+	}
+	8290.8.1 = {
+		trait = family_first
+	}
+	8292.8.1 = {
+		trait = patient
+	}
+	8294.8.1 = {
+		trait = rude
+		trait = ambitious
+	}
+}
+121431 = {
+	name = Denner
+
+	religion = old_gods_south
+	culture = northman
+
+	martial = 4
+	prowess = 6
+
+	disallow_random_traits = yes
+
+	trait = intellect_good_1
+	trait = rude
+	trait = wrathful
+	trait = stubborn
+	trait = cynical
+
+	8246.1.1 = { birth = yes }
+	8275.1.1 = {
+		trait = nightswatch
+	}
+	8280.1.1 = {
+		trait = one_handed
+		trait = maimed
+		give_nickname = nick_frostfinger
+	}
+	8281.1.1 = {
+		remove_trait = maimed
+	}
+}
+121478 = {
+	name = Gared # Canon
+
+	martial = 8
+	prowess = 6
+
+	religion = old_gods_south
+	culture = northman
+
+	trait = education_martial_2
+
+	8243.1.1 = { birth = yes }
+	8251.1.1 = {
+		trait = nightswatch
+		effect = {
+		#add_character_modifier = nw_ranger # AGOT TODO modifier
+		}
+	}
+	8288.1.1 = {
+		employer = Mormont_2 # Jeor Mormont
+	}
+	8297.6.3 = { #Sees White Walkers, deserts Night's Watch
+		remove_trait = nightswatch
+		effect = { add_trait_force_tooltip = deserter }
+		employer = Stark_3 #Cought near Winterfell
+	}
+	8298.3.1 = {
+		death = {
+			death_reason = death_execution
+			killer = Stark_3 # Eddard Stark
+		}
+	}
+}
+121480 = {
+	name = Will # Canon
+
+	prowess = 6
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = education_martial_1
+
+	8268.1.1 = { birth = yes }
+	8272.1.1 = {
+		employer = Mallister_4 # Jason Mallister
+	}
+	8284.1.1 = {
+		effect = {
+			add_trait = lifestyle_hunter
+			add_trait_xp = {
+				trait = lifestyle_hunter
+				track = hunter
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8293.1.1 = {
+		trait = nightswatch
+		employer = Mormont_2 # Jeor Mormont
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8297.6.3 = {
+		# Others took him.
+		death = {
+			death_reason = death_vanished
+		}
+	}
+}
+121481 = {
+	name = Conwy
+
+	diplomacy = 10
+
+	religion = the_seven_main
+	culture = westerman
+
+	trait = education_intrigue_1
+
+	8262.1.1 = { birth = yes }
+	8290.1.1 = {
+		trait = nightswatch
+		employer = Mormont_2 # Jeor Mormont
+	}
+	#8299.2.3 = {
+	#	give_council_position = councillor_chancellor # AGOT TODO
+	#}
+}
+121417 = {
+	name = Tim # Canon
+
+	martial = 5
+	stewardship = 3
+	diplomacy = 2
+	intrigue = 3
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = valeman
+
+	trait = honorable
+	trait = diligent
+	trait = education_martial_2
+	trait = bastard
+	give_nickname = nick_stone
+
+	8269.1.1 = { birth = yes }
+	8285.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+}
+
+121419 = {
+	name = Todder
+
+	martial = 2
+	stewardship = 1
+	diplomacy = 1
+	intrigue = 2
+	learning = 1
+	prowess = 3
+
+	religion = the_seven_main
+	culture = reachman
+
+	trait = beauty_bad_2
+	trait = rude
+	trait = gregarious
+	trait = honest
+
+	8284.1.1 = { birth = yes }
+	8298.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+		give_nickname = nick_toad
+	}
+}
+
+121474 = {
+	name = Jeren
+
+	martial = 1
+	stewardship = 2
+	diplomacy = 2
+	intrigue = 1
+	learning = 3
+
+	religion = the_seven_main
+	culture = valeman
+
+	trait = weak
+	trait = bastard
+
+	8284.1.1 = { birth = yes }
+	8298.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+}
+
+121475 = {
+	name = Ulmer
+
+	martial = 3
+	stewardship = 1
+	diplomacy = 2
+	intrigue = 3
+	learning = 1
+	prowess = 12
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = greedy
+	trait = education_martial_2
+	trait = callous
+	trait = just
+	trait = gregarious
+	trait = brave
+
+	8248.1.1 = { birth = yes }
+	8281.6.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+}
+121476 = {
+	name = Bernarr #Black Bernarr
+
+	martial = 3
+	stewardship = 3
+	diplomacy = 2
+	intrigue = 1
+	learning = 1
+	prowess = 6
+
+	religion = old_gods_south
+	culture = northman
+
+	trait = education_martial_2
+	trait = honorable
+	trait = cynical
+
+	8270.1.1 = { birth = yes }
+	8286.1.1 = {
+		trait = nightswatch
+		give_nickname = nick_black
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+}
+121477 = {
+	name = Bernarr #Brown Bernarr
+
+	martial = 2
+	stewardship = 3
+	diplomacy = 3
+	intrigue = 2
+	learning = 8
+
+	religion = old_gods_south
+	culture = northman
+
+	trait = education_stewardship_2
+	trait = honorable
+	trait = cynical
+
+	8273.1.1 = { birth = yes }
+	8289.1.1 = {
+		trait = nightswatch
+		give_nickname = nick_brown
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8299.7.7 = {
+		death = { death_reason = death_battle } # Fist of First Men
+	}
+}
+
+###### MUTINEERS
+############################
+###
+###
+121411 = {
+	name = Dirk
+
+	martial = 3
+	stewardship = 2
+	intrigue = 2
+	diplomacy = 1
+	learning = 1
+	prowess = 3
+
+	religion = the_seven_main
+	culture = stormlander
+
+	trait = education_martial_1
+	trait = rowdy
+
+	disallow_random_traits = yes
+
+	8267.1.1 = { birth = yes }
+	8275.8.1 = {
+		trait = rude
+	}
+	8277.8.1 = {
+		trait = sadistic
+		trait = arbitrary
+	}
+	8283.1.1 = {
+		remove_trait = rowdy
+		trait = wrathful
+	}
+	8295.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		effect = { add_trait_force_tooltip = deserter }
+		dynasty = 559241 #of the Keep, to make him playable
+	}
+}
+121412 = {
+	name = Garth
+
+	martial = 2
+	stewardship = 3
+	intrigue = 2
+	diplomacy = 1
+	learning = 1
+	prowess = 3
+
+	religion = the_seven_main
+	culture = reachman
+
+	disallow_random_traits = yes
+
+	8273.1.1 = {
+		birth = yes
+	}
+	8279.8.1 = {
+		trait = rowdy
+	}
+	8281.8.1 = {
+		trait = deceitful
+	}
+	8289.1.1 = {
+		remove_trait = rowdy
+		trait = education_martial_1
+		trait = arbitrary
+		trait = arrogant
+		trait = vengeful
+	}
+	8291.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		employer = 121411 # Dirk
+		effect = { add_trait_force_tooltip = deserter }
+	}
+}
+121413 = {
+	name = Alan
+
+	martial = 2
+	stewardship = 1
+	intrigue = 1
+	diplomacy = 3
+	learning = 2
+	prowess = 6
+
+	religion = the_seven_main
+	culture = crownlander
+
+	disallow_random_traits = yes
+
+	8274.1.1 = { birth = yes }
+	8280.8.1 = {
+		trait = compassionate
+	}
+	8282.8.1 = {
+		trait = rowdy
+	}
+	8290.8.1 = {
+		remove_trait = rowdy
+		trait = arbitrary
+		trait = greedy
+		trait = education_martial_1
+	}
+	8295.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		employer = 121411 # Dirk
+		effect = { add_trait_force_tooltip = deserter }
+	}
+}
+121414 = {
+	name = Rolley
+
+	martial = 1
+	stewardship = 3
+	intrigue = 2
+	diplomacy = 1
+	learning = 2
+
+	religion = the_seven_main
+	culture = sisterman
+
+	trait = education_stewardship_1
+	trait = rowdy #AGOT Placeholder, feel free to replace
+
+	disallow_random_traits = yes
+
+	8270.1.1 = { birth = yes }
+	8276.8.1 = {
+		trait = craven
+	}
+	8278.8.1 = {
+		trait = deceitful
+	}
+	8280.8.1 = {
+		trait = greedy
+	}
+	8282.1.1 = {
+		trait = lustful
+	}
+	8291.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		employer = 121411 # Dirk
+		effect = { add_trait_force_tooltip = deserter }
+	}
+}
+121415 = {
+	name = Karl
+
+	martial = 1
+	stewardship = 3
+	intrigue = 2
+	diplomacy = 1
+	learning = 2
+	prowess = 3
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = clubfooted
+
+	disallow_random_traits = yes
+
+	8276.1.1 = { birth = yes }
+	8282.8.1 = {
+		trait = rude
+		trait = rowdy
+	}
+	8284.8.1 = {
+		trait = arrogant
+		trait = vengeful
+	}
+	8292.1.1 = {
+		trait = callous
+		trait = education_stewardship_1
+		remove_trait = rowdy
+	}
+	8294.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_steward # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		employer = 121411 # Dirk
+		effect = { add_trait_force_tooltip = deserter }
+	}
+}
+121416 = {
+	name = Mawney
+
+	martial = 1
+	stewardship = 2
+	intrigue = 3
+	diplomacy = 2
+	learning = 1
+	prowess = 6
+
+	religion = the_seven_main
+	culture = valeman
+
+	disallow_random_traits = yes
+
+	8272.1.1 = { birth = yes }
+	8280.8.1 = {
+		trait = rowdy
+	}
+	8282.8.1 = {
+		trait = deceitful
+		trait = cynical
+		trait = craven
+		trait = greedy
+	}
+	8288.1.1 = {
+		remove_trait = rowdy
+		trait = education_martial_1
+	}
+	8295.1.1 = {
+		trait = nightswatch
+		#effect = {
+		#	add_character_modifier = nw_ranger # AGOT TODO modifier
+		#}
+	}
+	8299.5.5 = {
+		remove_trait = nightswatch
+		employer = 121411 # Dirk
+		effect = { add_trait_force_tooltip = deserter }
+	}
+}
+
+
+###### HISTORIC LORD COMMANDERS
+############################
+###
+###
+121404 = {
+	name = Robin
+
+	martial = 12
+	stewardship = 12
+	prowess = 12
+
+	religion = old_gods_south
+	culture = first_man
+
+	#father = Reyne_52
+
+	trait = education_martial_2
+	trait = bastard
+	give_nickname = nick_hill
+
+	6384.1.1 = { birth = yes }
+	6405.6.1 = {
+		trait = nightswatch
+	}
+	6428.1.1 = { death = yes }
+}

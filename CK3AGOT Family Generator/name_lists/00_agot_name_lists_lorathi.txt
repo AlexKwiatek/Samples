@@ -1,0 +1,35 @@
+﻿name_list_lorathi = {
+
+	cadet_dynasty_names = {
+		"dynn_D_pst_han"
+	}
+
+	dynasty_names = {
+		{"dynn_D_pst_han"}
+		{ "dynn_Merion" }
+	}
+
+	male_names = {
+		Denzo
+		Jaqen
+	}
+	female_names = {
+		S_pst_vrone
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}

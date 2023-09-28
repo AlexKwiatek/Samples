@@ -1,0 +1,1132 @@
+﻿####MOST DEVOUT HOLDERS
+
+# TODO add following traits to each character: most_devout_member
+
+###### HIGH SEPTONS
+############################
+###
+###
+Most_Devout_1 = { #The First High Septon
+	name = Robeson
+	dynasty = dynn_Most_Devout
+
+	learning = 9
+	diplomacy = 8
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = education_learning_4
+	trait = zealous
+	trait = diligent
+	trait = patient
+	trait = honorable
+
+	6633.1.1 = {
+		birth = yes
+	}
+	6653.1.1 = {
+		trait = septon
+	}
+	6704.1.1 = { death = yes }
+}
+Most_Devout_2 = { #crowned Aegon
+	name = Garth
+	dynasty = dynn_Most_Devout
+
+	learning = 9
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = patient
+	trait = diligent
+	trait = temperate
+	trait = content
+	trait = septon
+
+	7950.1.1 = {
+		birth = yes
+		#effect = { set_global_flag = faith_armed } # AGOT TODO
+	}
+	8011.1.1 = { death = yes }
+}
+Most_Devout_3 = {
+	name = Ryam
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = reachman
+
+	trait = septon
+
+	7953.1.1 = { birth = yes }
+	8013.1.1 = { death = yes }
+}
+Most_Devout_4 = {
+	name = Humfrey
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = septon
+
+	7958.1.1 = { birth = yes }
+	8015.1.1 = { death = yes }
+}
+Most_Devout_5 = {
+	name = Wolmer
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = septon
+
+	7955.1.1 = { birth = yes }
+	8017.1.1 = { death = yes }
+}
+Most_Devout_6 = { # AGOT TODO ID
+	name = Perwyn
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = septon
+
+	7961.1.1 = { birth = yes }
+	8021.1.1 = { death = yes }
+}
+Most_Devout_7 = { # AGOT TODO ID
+	name = Martyn
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = westerman
+
+	trait = septon
+
+	7967.1.1 = { birth = yes }
+	8022.1.1 = { death = yes }
+}
+
+# Redwyne_26 moved to his dynasty;
+
+Most_Devout_8 = {
+	name = Pater
+	dynasty = dynn_Most_Devout
+
+	learning = 9
+
+	religion = the_seven_main
+	culture = reachman
+
+	trait = education_learning_2
+	trait = zealous
+	trait = content
+	trait = gregarious
+	trait = compassionate
+
+	7953.1.1 = {
+		birth = yes
+	}
+	7980.1.1 = {
+		trait = septon
+	}
+	8022.1.1 = {
+		trait = infirm
+		trait = blind
+		employer = Redwyne_26
+	}
+	8044.1.1 = { death = yes }
+}
+Most_Devout_9 = {
+	name = Runcel # High Lickspittle
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = education_learning_3
+	trait = patient
+	trait = trusting
+	trait = craven
+
+	7980.1.1 = { birth = yes }
+	8020.1.1 = { trait = septon }
+	8044.1.1 = { give_nickname = nick_the_high_lickspittle }
+	8054.1.1 = { death = yes }
+}
+Most_Devout_10 = {
+	name = Alfyn
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = riverlander
+
+	trait = education_learning_3
+	trait = diligent
+	trait = zealous
+	trait = content
+	trait = authoritative
+	trait = theologian
+
+	7990.1.1 = {
+		birth = yes
+	}
+	8010.1.1 = {
+		trait = septon
+	}
+	8020.1.1 = {
+		trait = one_legged
+		trait = maimed
+	}
+	8059.2.1 = {
+		death = { death_reason = death_ill } # Died of Shivers
+	}
+}
+
+# Hightower_67 moved to his dynasty;
+
+Most_Devout_11 = {
+	name = Lorcas
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	8040.1.1 = { birth = yes }
+	8070.1.1 = { trait = septon }
+	8102.1.1 = { death = yes }
+}
+Most_Devout_12 = {
+	name = Omer
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	8068.1.1 = { birth = yes }
+	8084.1.1 = { trait = septon }
+	8128.1.1 = { trait = infirm }
+	8130.1.1 = { death = yes }
+}
+Most_Devout_13 = {
+	name = Jon
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = vineman
+
+	trait = education_learning_3
+	trait = wrathful
+	trait = zealous
+
+	8081.1.1 = { birth = yes }
+	8097.1.1 = { trait = septon }
+	8144.1.1 = { death = yes }
+}
+Most_Devout_14 = { #Given great sept of baelor
+	name = Manfred
+	dynasty = dynn_Most_Devout
+
+	learning = 8
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = zealous
+	trait = ambitious
+	trait = education_learning_3
+
+	8101.1.1 = { birth = yes }
+	8117.1.1 = { trait = septon }
+	8166.1.1 = { death = yes }
+}
+Most_Devout_15 = { #Stonemason
+	name = Pate
+	dynasty = dynn_Most_Devout
+
+	learning = 0
+	diplomacy = 4
+	intrigue = 3
+	martial = 0
+	stewardship = 1
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = intellect_bad_2 #simple-minded
+	trait = humble
+	trait = diligent
+	trait = patient
+	trait = architect
+	trait = education_stewardship_1
+
+	8129.1.1 = {
+		birth = yes
+	}
+	8168.1.1 = {
+		trait = septon
+		give_nickname = nick_the_stonemason
+	}
+	8169.1.1 = {
+		trait = ill
+		death = { death_reason = death_ill }
+	}
+}
+Most_Devout_16 = { #8 year old Boy
+	name = Hobb
+	dynasty = dynn_Most_Devout
+
+	learning = 3
+	diplomacy = 3
+	intrigue = 2
+	martial = 0
+	stewardship = 1
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = education_learning_1
+	trait = compassionate
+	trait = trusting
+	trait = zealous
+
+	8161.1.1 = { birth = yes }
+	8169.1.1 = {
+		trait = septon
+		give_nickname = nick_the_child
+		effect = {
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+}
+	8186.1.1 = { death = yes }
+}
+Most_Devout_17 = {
+	name = Leo
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = honeywiner
+
+	trait = education_learning_3
+	trait = paranoid #distrusted bastards
+
+	8146.1.1 = { birth = yes }
+	8162.1.1 = { trait = septon }
+	8209.6.1 = {
+		# Died in the Great Spring Sickness
+		trait = spring_sickness
+		death = { death_reason = death_spring_sickness }
+	}
+}
+Most_Devout_18 = {
+	name = Addam
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8179.1.1 = { birth = yes }
+	8195.1.1 = { trait = septon }
+	8220.1.1 = { death = { death_reason = death_accident } }
+}
+Most_Devout_19 = {
+	name = Raymund
+	dynasty = dynn_Most_Devout
+
+	religion = the_seven_main
+	culture = crownlander
+
+	8200.1.1 = { birth = yes }
+	8216.1.1 = { trait = septon }
+	8260.1.1 = { death = yes }
+}
+Most_Devout_20 = {
+	name = Humfrey # The Fat One
+	dynasty = dynn_Most_Devout
+
+	martial = 2
+	diplomacy = 4
+	intrigue = 3
+	stewardship = 4
+	learning = 9
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = gluttonous
+	trait = greedy
+	trait = craven
+	trait = education_learning_2
+
+	8230.1.1 = {
+		birth = yes
+		effect = {
+			change_current_weight = 100
+		}
+		# effect = { set_immune_to_pruning = yes }
+	}
+	8250.1.1 = {
+		effect = {
+			add_trait = lifestyle_reveler
+			add_trait_xp = {
+				trait = lifestyle_reveler
+				value = {
+					integer_range = {
+						min = medium_lifestyle_random_xp_low
+						max = medium_lifestyle_random_xp_high
+					}
+				}
+			}
+		}
+	}
+	8260.1.1 = {
+		give_nickname = nick_the_fat_one
+		trait = high_septon
+	}
+	# 8294.1.1 = { #Lends Iron Throne gold
+		# effect = { # Can be only one debt at a time
+			# title:e_the_iron_throne.holder = { # Robert; Joffrey; Tommen
+				# set_up_loan_effect = {
+					# LENDER = ROOT
+					# AMOUNT = 1000
+				# }
+			# }
+		# }
+	# }
+	8299.5.1 = {
+		death = {
+			death_reason = death_beaten #death_rabble # Killed in the King's Landing riots
+		}
+	}
+}
+Most_Devout_21 = {
+	name = Simon # The 2nd One
+	dynasty = dynn_Most_Devout
+
+	# High Septon
+	martial = 0
+	diplomacy = 2
+	intrigue = 0
+	stewardship = 3
+	learning = 9
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = honest
+	trait = celibate
+	trait = content
+	trait = craven
+	trait = septon
+	trait = education_learning_3
+
+	8223.1.1 = {
+		birth = yes
+		# effect = { set_immune_to_pruning = yes }
+	}
+	# 8299.4.1 = { #Lends Iron Throne gold
+		# effect = { # Can be only one debt at a time
+			# title:e_the_iron_throne.holder = { # Robert; Joffrey; Tommen
+				# set_up_loan_effect = {
+					# LENDER = ROOT
+					# AMOUNT = 1000
+				# }
+			# }
+		# }
+	# }
+	8300.3.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = Kettleblack_4 #Osney Kettleblack
+		}
+	}
+}
+Most_Devout_22 = {
+	name = Sparrow # High Sparrow
+	dynasty = dynn_Most_Devout
+	# High Septon
+
+	martial = 5
+	diplomacy = 7
+	intrigue = 8
+	stewardship = 7
+	learning = 9
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = zealous
+	trait = ambitious
+	trait = diligent
+	trait = authoritative
+	trait = septon
+	trait = education_learning_3
+
+	8243.1.1 = {
+		birth = yes
+		# effect = { set_immune_to_pruning = yes }
+	}
+	8300.3.1 = {
+		give_nickname = nick_the_sparrow
+		effect = {
+			#add_character_flag = high_sparrow # AGOT TODO
+			add_character_flag = nickname_event
+		}
+	}
+}
+
+### The Most Devout
+77900 = {
+	name = "Ollidor"
+
+	learning = 9
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = lustful
+	trait = education_learning_3
+
+	8240.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8275.1.1 = {
+		trait = devoted # Septon
+		#employer = 77113 #TODO no most_devout title
+		#effect = { add_character_flag = themost_devout } # AGOT TODO
+	}
+}
+77901 = {
+	name = "Raynard"
+	learning = 8
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = lustful
+	trait = education_learning_3
+
+	8242.1.1 = { birth = yes }
+	8278.1.1 = {
+		trait = devoted # Septon
+		#employer = 77113 #TODO no most_devout title
+		#effect = { add_character_flag = themost_devout } # AGOT TODO
+	}
+}
+77902 = {
+	name = "Torbet"
+	learning = 8
+
+	religion = the_seven_main
+	culture = crownlander
+
+	trait = gluttonous
+	trait = humble
+	trait = education_learning_3
+
+	8236.1.1 = {
+		birth = yes
+		# effect = {
+			# dynasty = none
+			# set_immune_to_pruning = yes
+		# }
+	}
+	8278.1.1 = {
+		trait = devoted # Septon
+		#employer = 77113 #TODO no most_devout title
+		#effect = { add_character_flag = themost_devout } # AGOT TODO
+	}
+}
+
+# drogon = {
+# 	name="Drogon"
+# 	dynasty = 497001
+
+# 	#religion="dragon_rel"
+# 	#culture="dragon_culture"
+# 	culture = high_valyrian
+# 	religion = the_seven_main
+
+# 	trait = dragon
+
+# 	disallow_random_traits = yes
+
+# 	# father = 77990029 #unknown dragon
+# 	# mother = Targaryen_9 #Dany
+
+# 	8278.10.10 = {
+# 		birth=yes
+# 	}
+# }
+
+# drogon_1 = {
+# 	name = Drogon
+# 	dynasty = 497001
+
+# 	martial = 8
+# 	diplomacy = 9
+# 	intrigue = 1
+# 	stewardship = 6
+# 	learning = 5
+# 	prowess = 6
+
+# 	religion = old_gods_south
+# 	culture = northman
+
+# 	disallow_random_traits = yes
+
+# 	8263.1.1 = {
+# 		birth = yes
+# 		trait = dragon
+# 	}
+# 	8298.11.2 = {
+# 		death = {
+# 			death_reason = death_execution
+# 		}
+# 	}
+# }
+
+#Elden Ring Characters 
+#Carian Royal Family 
+#Valemen 
+Carian_1 = {
+	name = Rennala	#Rennala of the Full Moon
+	dynasty = dynn_Carian
+	female = yes
+	religion = the_seven_main
+	culture = riverlander
+	trait = education_learning_4
+	trait = intellect_good_3 
+	trait = physique_bad_1
+	trait = patient
+	trait = trusting
+	trait = calm
+	trait = compassionate
+	disallow_random_traits = yes
+	8260.1.1 = {
+		birth = yes
+		effect = {
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+				trait = lifestyle_mystic 
+				value = trait_third_level
+			}
+		}
+
+	}
+	8272.1.1 = {
+		add_matrilineal_spouse = Erdtree_3
+	}
+	8285.1.1 = {
+		remove_spouse = Erdtree_3
+		trait = depressed_1
+		trait = lunatic_1
+	}
+}
+
+Carian_2 = {
+	#Starscourge Radahn
+	name = Radahn
+	dynasty = dynn_Carian
+	martial = 10
+	diplomacy = 2
+	intrigue = 2
+	stewardship = 2
+	learning = 10
+	prowess = 10
+	religion = the_seven_main
+	culture = riverlander
+	sexuality = heterosexual
+	father = Erdtree_3	#Radagon
+	mother = Carian_1	#Rennala 
+	trait = giant
+	trait = physique_good_3
+	trait = brave
+	trait = arrogant
+	trait = gregarious
+	trait = wrathful
+	disallow_random_traits = yes
+	8272.1.1 = {
+		birth = yes
+		trait = rowdy
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:reyne
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+		}
+	}
+	8288.1.1 = {
+		remove_trait = rowdy
+		trait = knight
+		trait = education_martial_prowess_4
+		trait = education_martial_4
+	}
+	#Killed by Malenia? 
+}
+
+Carian_3 = {
+	#Praetor Rykard, the Blasphemous 
+	name = Rykard
+	dynasty = dynn_Carian
+	martial = 10
+	diplomacy = 2
+	intrigue = 10
+	stewardship = 7
+	learning = 10
+	prowess = 1
+	religion = the_seven_main
+	culture = riverlander
+	sexuality = heterosexual
+	father = Erdtree_3	#Radagon
+	mother = Carian_1	#Rennala 
+	trait = education_intrigue_4
+
+	trait = arbitrary
+	trait = ambitious
+	trait = greedy
+	trait = sadistic
+	disallow_random_traits = yes
+	8274.1.1 = {
+		birth = yes
+		trait = charming
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:reyne
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+		}
+	}
+	8282.1.1 = {
+		remove_trait = charming
+		trait = torturer
+		religion = rhllor		# Blasphemy 
+	}
+	8288.1.1 = {
+		add_spouse = Carian_rs_1		# Tanith from Essos 
+		effect = {
+			set_relation_lover = character:Carian_rs_1
+		}
+		# Rylene Grimm 
+	}
+}
+
+Carian_rs_1 = {
+	# Tanith of Myr  
+	name = Tanith
+	female = yes
+	religion = rhllor
+	culture = myrish
+
+	sexuality = heterosexual
+
+	trait = education_intrigue_3
+	trait = beauty_good_2
+	trait = ambitious
+	trait = deceitful
+	trait = zealous
+	trait = sadistic
+	disallow_random_traits = yes
+	8275.1.1 = {
+		birth = yes
+	}
+	8278.1.1 = {
+		trait = bossy 
+	}
+}
+
+Carian_4 = {
+	#Ranni the Witch
+	name = Ranni
+	dynasty = dynn_Carian
+	female = yes
+	martial = 10
+	diplomacy = 2
+	intrigue = 10
+	stewardship = 7
+	learning = 10
+	prowess = 1
+
+	religion = the_seven_main
+	culture = riverlander
+	sexuality = bisexual	#will marry tarnished of either gender? 
+
+	father = Erdtree_3	#Radagon
+	mother = Carian_1	#Rennala 
+	trait = physique_bad_2
+	trait = beauty_good_2
+	trait = intellect_good_2
+	trait = ambitious
+	trait = callous
+	trait = patient
+	trait = calm
+	disallow_random_traits = yes
+	8280.1.1 = {
+		birth = yes
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:reyne
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+
+		}
+	}
+	8283.1.1 = {
+		trait = pensive
+	}
+	8298.1.1 = {
+		remove_trait = pensive
+		trait = education_learning_4
+		effect = {
+			add_trait = lifestyle_mystic 
+			add_trait_xp = {
+				trait = lifestyle_mystic 
+				value = trait_third_level
+			}
+		}
+	}
+}
+
+#Rya - Dedicar - Tanith 
+#Issue of Rykard 
+Carian_5 = {
+	#Daughter of Rykard 
+	name = Rya
+
+	religion = rhllor 
+	culture = riverlander
+
+	trait = bastard
+	trait = beauty_good_1
+	trait = hunchbacked 
+	trait = trusting
+	trait = calm
+	trait = honest
+	trait = compassionate
+
+	8300.1.1 = {
+		birth = yes
+	}
+	8400.1.1 = {
+		death = yes
+	}
+}
+
+#The Golden Order - Westermen
+Erdtree_1 = {
+	name = Godwyn	#Father for Marika and Radogan  
+	dynasty = dynn_Erdtree
+	religion = the_seven_main
+	culture = reachman
+	8200.1.1 = {
+		birth = yes
+	}
+	8270.1.1 = {
+		death = yes
+	}
+}
+
+Erdtree_2 = {
+	name = Marika	# Marika's Tits! 
+	dynasty = dynn_Erdtree
+	female = yes
+	martial = 2
+	diplomacy = 8
+	intrigue = 5
+	stewardship = 6
+	learning = 4
+	religion = the_seven_main
+	culture = reachman
+	sexuality = bisexual
+	father = Erdtree_1
+	trait = beauty_good_2
+	trait = twin
+	trait = education_intrigue_3
+	trait = fickle
+	trait = vengeful
+	trait = ambitious
+	trait = zealous
+	disallow_random_traits = yes
+	8260.1.1 = {
+		birth = yes
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:rowan
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+		}
+	}
+	8272.1.1 = {
+		add_matrilineal_spouse = Loux_1
+	}
+	#Godwyn the Golden
+	#The Twins 
+}
+
+Erdtree_3 = {
+	name = Radagon	# Radagon of the Golden Order 
+	dynasty = dynn_Erdtree
+	martial = 9
+	diplomacy = 4
+	intrigue = 3
+	stewardship = 4
+	learning = 4
+	prowess = 10
+	fertility = 0.9
+	religion = the_seven_main
+	culture = reachman
+	sexuality = bisexual
+	father = Erdtree_1
+	trait = beauty_good_2
+	trait = twin
+	trait = education_martial_4
+	trait = education_martial_prowess_4
+	trait = brave
+	trait = compassionate
+	trait = just
+	trait = diligent
+	trait = disinherited
+	disallow_random_traits = yes
+	8260.1.1 = {
+		birth = yes
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:reyne
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+		}
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = trait_third_level
+			}
+		}
+	}
+}
+
+#Issue of Marika - Children with Godfrey 
+Erdtree_4 = {
+	name = Godwyn	#Godwyn the Golden, murdered by Ranni
+	dynasty = dynn_Erdtree
+	martial = 10
+	diplomacy = 2
+	intrigue = 10
+	stewardship = 7
+	learning = 10
+	prowess = 1
+	religion = the_seven_main
+	culture = reachman
+	father = Loux_1	#Godfrey 
+	mother = Erdtree_2	#Marika 
+	trait = beauty_good_3
+	trait = education_martial_prowess_3
+	trait = gregarious
+	trait = generous
+	trait = brave
+	trait = just
+	8280.1.1 = {
+		birth = yes
+		effect = {
+			set_variable = {
+				name = agot_dna
+				value = flag:rowan
+			}
+			agot_assign_strong_seed_traits_effect = yes 
+		}
+		add_trait = lifestyle_blademaster 
+	}
+	8283.1.1 = {
+		trait = charming
+	}
+	8296.1.1 = {
+		remove_trait = charming
+		trait = education_diplomacy_3
+		give_nickname = nick_the_golden
+	}
+	8297.1.1 = {
+		death = {
+			death_reason = death_mysterious
+			killer = Carian_4 #Ranni 
+		}
+	}
+}
+
+Erdtree_5 = {
+	name = Mohg	#Mohg 
+	dynasty = dynn_Erdtree
+	religion = the_seven_main
+	culture = reachman
+	sexuality = homosexual
+	father = Loux_1	#Godfrey 
+	mother = Erdtree_2	#Marika 
+	trait = beauty_bad_3
+	trait = scaly
+	trait = albino 
+	trait = twin
+	trait = possessed_1
+	8282.1.1 = {
+		birth = yes
+	}
+	8285.1.1 = {
+		trait = sadistic
+		trait = rowdy
+	}
+	8288.1.1 = {
+		trait = arbitrary
+	}
+	8291.1.1 = {
+		trait = zealous
+	}
+	8294.1.1 = {
+		trait = greedy
+	}
+	8298.1.1 = {
+		remove_trait = rowdy
+		trait = education_intrigue_4
+		trait = education_martial_prowess_2
+	}
+}
+
+Erdtree_6 = {
+	name = Morgott	#Morgott the Omen 
+	dynasty = dynn_Erdtree
+	religion = the_seven_main
+	culture = reachman
+	father = Loux_1	#Godfrey 
+	mother = Erdtree_2	#Marika 
+	trait = beauty_bad_3
+	trait = scaly
+	trait = albino 
+	trait = twin
+	8282.1.1 = {
+		birth = yes
+	}
+	8285.1.1 = {
+		trait = just
+		trait = pensive
+	}
+	8288.1.1 = {
+		trait = brave
+	}
+	8291.1.1 = {
+		trait = forgiving
+	}
+	8294.1.1 = {
+		trait = shy
+	}
+	8298.1.1 = {
+		remove_trait = pensive
+		trait = education_stewardship_3
+		trait = education_martial_prowess_3
+	}
+}
+
+# Erdtree_3 = { #Miquella - Older Twin 
+#compassionate
+#zealous 
+#physique_bad_3 
+#gardener - grew the Haligtree 
+# }
+# Erdtree_4 = { #Malenia  
+#greyscale 
+#scarred
+#one-eyed
+#blademaster 
+#prowess_4 
+# }
+# #Malenia's "Daughters "
+# Erdtree_5 #Melina - bastard 
+# #Loux - Sand Dornish
+Loux_1 = {
+	#Godfrey/Horah Loux 
+	name = Godfrey
+	dynasty = dynn_Loux
+	martial = 7
+	prowess = 12
+	religion = the_seven_main
+	culture = sand_dornish
+	trait = strong 
+	trait = physique_good_3  
+	trait = education_martial_4
+	trait = education_martial_prowess_4
+	trait = brave
+	8256.1.17 = {
+		birth = yes
+	}
+}
+
+Loux_2 = {
+	name = Nepheli	#Nepheli Loux 
+	dynasty = dynn_Loux
+	female = yes
+	martial = 7
+	prowess = 12
+	religion = the_seven_main
+	culture = sand_dornish
+	father = Loux_1
+	trait = strong 
+	trait = physique_good_2 
+	8279.1.1 = {
+		birth = yes
+		trait = rowdy
+	}
+	8280.1.1 = {
+		trait = brave
+	}
+	8295.1.1 = {
+		trait = education_martial_4
+		trait = education_martial_prowess_4
+	}
+}
+
+#Trusty Patches 
+Patches_1 = {
+	name = Patches
+	intrigue = 7
+	prowess = 8
+
+	religion = the_seven_main
+	culture = crownlander 
+
+	trait = education_intrigue_2
+	trait = education_martial_prowess_2
+	trait = shrewd
+	trait = deceitful
+	trait = cynical
+	trait = craven
+	trait = greedy
+
+	8260.1.1 = {
+		birth = yes
+	}
+	8275.1.1 = {
+		give_nickname = nick_trusty 
+	}
+	8400.1.1 = {
+		death = yes
+	}
+}

@@ -1,0 +1,86 @@
+﻿name_list_volantene = {
+
+	cadet_dynasty_names = {
+		"dynn_Edoryen"
+		"dynn_Istarion"
+		"dynn_Maegyr"
+		"dynn_Menarios"
+		"dynn_Nogarys"
+		"dynn_Paenymion"
+		"dynn_Qhaedar"
+		"dynn_Qoheros"
+		"dynn_Staegone"
+		"dynn_Tagaros"
+		"dynn_Vaelaros"
+		"dynn_Vhassar"
+		"dynn_Votar"
+	}
+
+	dynasty_names = {
+		"dynn_Edoryen"
+		"dynn_Istarion"
+		"dynn_Maegyr"
+		"dynn_Menarios"
+		"dynn_Nogarys"
+		"dynn_Paenymion"
+		"dynn_Qhaedar"
+		"dynn_Qoheros"
+		"dynn_Staegone"
+		"dynn_Tagaros"
+		"dynn_Vaelaros"
+		"dynn_Vhassar"
+		"dynn_Votar"
+	}
+
+	male_names = {
+		Adaros Agono Alassimo Alios Allaquo Anarro Andanys Aurio
+		Belaquo Belicho Bellio Beloro Benerro Bolquello Brunarro
+		Colloquo Copho
+		Daronno Demio Donano Donelos Doniphos
+		Egoros Elarro Erys Essalos
+		Gaherys Gonapho Gorys Gothos
+		Haego Halarro Horonno
+		Lopelo Loserys
+		Malaquo Malero Malys Maqarro Marano Maraphos Marqelo Matarys Methyso Mollono Moqorro Moro Mosaphos
+		Naqano Nassaros Navaphos Navys Nebrophos Nevosso Noroquo Nyessos Nyrio Nysseos
+		Orassio
+		Padaros Pallos Pandulo Paranys Parquello Paryos Pharasos
+		Qaeros Qarphos Qavo Qorello
+		Rallos Relapho Rodello Rogaro Rolloquo Ryllo
+		Syrano
+		Tessario Tybero
+		Varys Vhalaso Vhalerro Vogarro Vyrano Vyresso Vyronos Vysarro Vysarro
+	}
+	female_names = {
+		Arana
+		Bellona
+		Calla Callosa Clea Conosa
+		Danara Darisa Donaria Dorella
+		Elora Emyria Essela
+		Innaria Irea Irria
+		Laressa Lianna
+		Maenylla Megelle Melane Mendrea Mylla
+		Neryssa Nessaria Nyessa
+		Qorella
+		Raelle Ralla Rylea
+		Semerra Shana Soleia Syrana Syrella
+		Talia Talisa Tiaelle Tiressa Trianna
+		Vyrana
+	}
+
+	# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+	pat_grf_name_chance = 15
+	mat_grf_name_chance = 5
+	father_name_chance = 5
+	
+	# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+	pat_grm_name_chance = 10
+	mat_grm_name_chance = 15
+	mother_name_chance = 5
+	
+	
+
+	mercenary_names = {
+		#{ name = "mercenary_company_teutonic_brotherhood" }
+	}
+}
